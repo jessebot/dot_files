@@ -1,0 +1,15 @@
+---
+# Number of colors your terminal displays, typically something like: 16 or 256
+number_of_term_colors: 256
+timeout: 0.25
+tiles:
+  # Width AND height of each tile in the montage
+  size: 250
+  # width and height default to the tiles.size param above, unless
+  # explicitly set to numeric value other than 0
+  width: 0
+  height: 0
+  # number of tiles to display per row, tries to autocalculate
+  display_per_row: 0
+  # font size for image name below image. default: $((tilewidth/10))
+  font_size: 14

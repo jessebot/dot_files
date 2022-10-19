@@ -7,6 +7,10 @@
 .bashrc_locahost
 .cache
 .cups
+.config/asciinema/install-id
+.config/configstore/update-notifier-npm.json
+.config/glab-cli/aliases.yml
+.config/gh/hosts.yml
 .docker
 .gem
 .gnupg
@@ -18,6 +22,7 @@
 .kube
 .lesshst
 .local/share/**
+.local/state/**
 .matplotlib
 .mongorc.js
 .npm
@@ -33,6 +38,7 @@
 .Trash
 .vimfuzzyfinder
 .vim/plugged/**
+.vim/.netrwhist
 .viminfo
 .vnc
 .wget-hsts
@@ -48,4 +54,5 @@ Pictures
 Public
 cron
 go
+logs
 repos
