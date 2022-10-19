@@ -16,6 +16,7 @@
 .gnupg
 .gnupg_pre_2.1
 .gradle
+.gitconfig
 .hyper_plugins/**
 .ipython
 .krew
