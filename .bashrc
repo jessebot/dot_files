@@ -1,4 +1,3 @@
-##############################################################################
 #             @jessebot's personal .bashrc (and .bash_profile)               #
 ##############################################################################
 
@@ -7,7 +6,7 @@
 #                                 General                                    #
 # -------------------------------------------------------------------------- #
 
-# I hate bells
+# I hate bells a lot
 set bell-style none
 
 # If not running interactively, don't do anything
@@ -280,5 +279,3 @@ fi
 echo ""
 neofetch
 echo -e "\n"
-export KUBECONFIG=~/.kube/kubeconfig
-export KUBECONFIG=~/.kube/kubeconfig
