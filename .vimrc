@@ -234,6 +234,14 @@ augroup vimrcEx
 augroup END
 
 
+" this is a template file for python, to make sure certain data is always
+" there when populating a new file
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+  augroup END
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            CUSTOM Commands:
 "                 "Locally defined commands for helpfulness"
