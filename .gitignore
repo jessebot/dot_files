@@ -22,7 +22,9 @@
 .krew
 .kube
 .lesshst
-.local/share/**
+# this is just logs and pid, so we don't need to index it
+.local/share/karabiner/**
+.local/share/wezterm/**
 .local/state/**
 .matplotlib
 .mongorc.js
