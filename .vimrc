@@ -8,7 +8,10 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " this just loads .bashrc (.bash_profile on macOS) like a regular login shell
- set shell=bash\ --login
+"
+if !has('nvim')
+    set shell=bash\ --login
+endif
 
 " set window to 82 characters at start, to allow for line numbers & gitgutter
 set winwidth=82
@@ -55,7 +58,7 @@ syntax on
 let g:ycm_enable_semantic_highlighting=1
 
 
-   "                              Airline:
+"                                  Airline:
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -74,7 +77,7 @@ endfunction
 let g:airline_section_z = ':%l (%{LinePercent()}) :%v'
 
 
-"                               Ale:
+"                                  Ale:
 "           "linter warning and errors using existing linters"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
