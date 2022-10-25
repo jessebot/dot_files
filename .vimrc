@@ -344,7 +344,7 @@ map <leader>n :call RenameFile()<cr>
 "         "plugin manager for vim: https://github.com/junegunn/vim-plug
 "          plugin directory will be (on Linux/macOS): '~/.vim/plugged'
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-call plug#begin()
+call plug#begin("~/.vim/plugged")
 
 " -------------------- General IDE stuff ------------------------
 " adds a pretty status line
@@ -391,6 +391,9 @@ Plug 'stephpy/vim-yaml'
 
 " Golang, for future proofing
 " Plug 'fatih/vim-go'
+
+" This is helpful for markdown
+Plug 'junegunn/limelight.vim', {'for': 'markdown'}
 
 " --------------------------- HTML / CSS ----------------------------
 " make jinja templates prettier
