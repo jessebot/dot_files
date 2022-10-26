@@ -101,9 +101,23 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
+" change the default expandable and collapsable icons
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'ﲔ'
+
+" add syntax highlighting for entire file name in nerdtree
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+" highlight exact match
+" enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFolders = 1 
+" highlights the folder name
+let g:NERDTreeHighlightFoldersFullName = 1
 
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
