@@ -139,7 +139,7 @@ highlight gitcommitHeader        guifg=#5cc9fd
 " Gitgutter stuff
 highlight! link SignColumn LineNr
 " change sign color color
-highlight SignColumn guibg=#1d1d1d ctermbg=black
+" highlight SignColumn guibg=#323232
 " change the colors back to what they should be when there are changes
 highlight GitGutterAdd    guifg=#a8fd57 ctermfg=2
 highlight GitGutterChange guifg=#f7fb53 ctermfg=3
@@ -167,6 +167,3 @@ let g:NERDTreeExtensionHighlightColor['cfg'] = 'fdcd36'
 let g:NERDTreeExtensionHighlightColor['py'] = '5cc9fd' 
 " #a8fd57 lime green
 let g:NERDTreeExtensionHighlightColor['sh'] = 'a8fd57' 
-
-
-

@@ -26,6 +26,7 @@ set cursorline
 set colorcolumn=80
 
 
+
 "                                  Font:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fonts with icons/emojis require utf-8
@@ -109,15 +110,6 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 
 "                           NERDTree Config:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-
 " change the default expandable and collapsable icons
 let g:NERDTreeDirArrowExpandable = 'ﬀ'
 let g:NERDTreeDirArrowCollapsible = 'ﲔ'
@@ -167,13 +159,10 @@ set switchbuf=useopen
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 set scrolloff=3
-" See http://www.shallowsky.com/linux/noaltscreen.html
-" Prevent Vim from clobbering the scrollback buffer.
-set t_ti= t_te=
 
-" option has the effect of making Vim either more Vi-compatible, or make Vim
-" behave in a more useful way. default off when a vimrc or gvimrc
-" set nocompatible
+" See http://www.shallowsky.com/linux/noaltscreen.html
+" Prevent Vim from clobbering the scrollback buffer so it doesn't mangle it
+set t_ti= t_te=
 
 
 "                             NORMAL MODE ONLY:
@@ -184,6 +173,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" allow Copy from vim to browser
+set clipboard=unnamed,unnamedplus
 
 "                               INSERT MODE:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -193,17 +184,16 @@ set backspace=indent,eol,start
 " ----------------------------------------------------------------------------
 "                               INDENT ZONE
 " ----------------------------------------------------------------------------
-set expandtab
-set tabstop=4
-set shiftwidth=4
+" set tabstop=4
+set tabstop=8
 set softtabstop=4
+set shiftwidth=4
+set expandtab
 set autoindent
 " Enable file type detection. Use the default filetype settings, so that mail
 " gets 'tw' set to 72, 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
-" yaml needs a bit of help
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab foldlevelstart=20
 
 
 "                                SEARCHING:
@@ -320,8 +310,26 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        COMMANDS WE CALL ON START:
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup autoNerdTree
+    " Remove all auto-commands from the group AutoIndent
+    autocmd!
+    " Exit Vim if NERDTree is the only window remaining in the only tab.
+    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+    " Close the tab if NERDTree is the only window remaining in it.
+    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+    " Start NERDTree. If a file is specified, move the cursor to its window.
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+augroup END
+
+augroup autoIndent
+    autocmd!
+    " yaml needs a bit of help
+    autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldlevelstart=20
+augroup END
+
 augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
@@ -342,8 +350,10 @@ augroup END
 " USE TEMPLATE FILE: for .py (python), .md (markdown) files, prepopulate data
 if has("autocmd")
   augroup templates
-    autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
-    autocmd BufNewFile *.md 0r ~/.vim/templates/template.md
+      autocmd!
+      " Remove all auto-commands from the group AutoIndent
+        autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
+        autocmd BufNewFile *.md 0r ~/.vim/templates/template.md
   augroup END
 endif
 
