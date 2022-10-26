@@ -2,13 +2,12 @@
 "                       "vimrc of @jessebot on GitHub"
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             GENERAL ALL MODES:
 "                       "line numbers, cursorline, etc,"
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " this just loads .bashrc (.bash_profile on macOS) like a regular login shell
-"
+" but only in vim, this breaks in neovim for some reason :shrug:
 if !has('nvim')
     set shell=bash\ --login
 endif
@@ -27,7 +26,7 @@ set cursorline
 set colorcolumn=80
 
 
-"                                   Font:
+"                                  Font:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fonts with icons/emojis require utf-8
 set encoding=utf-8
@@ -58,7 +57,7 @@ syntax on
 let g:ycm_enable_semantic_highlighting=1
 
 
-"                                  Airline:
+"                                Airline:
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -78,7 +77,7 @@ let g:airline_section_z = ':%l (%{LinePercent()}) :%v'
 
 
 "                                  Ale:
-"           "linter warning and errors using existing linters"
+"           "linter for warning and errors, using *existing* linter tools"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
@@ -95,6 +94,17 @@ let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 
 
+"                             NERDTree:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,6 +115,8 @@ set foldlevel=99
 nnoremap <space> za
 " also allow me to see the doc strings
 let g:SimpylFold_docstring_preview=1
+" enable folding for markdown?
+let g:markdown_folding = 1
 
 
 "                                 BACKUPS:
@@ -256,7 +268,7 @@ let s:disableKeys = 0
 " we call this automatically, but this lets you disable/re-enable arrow
 function! ToggleArrowKeys()
     if s:disableKeys
-        map <Left> h 
+        map <Left> h
         map <Down> j
         map <Up> k
         map <Right> l
@@ -311,6 +323,7 @@ endif
 
 " disable arrow keys by default
 call ToggleArrowKeys()
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           ❤ LEADER KEY MAPPINGS:
@@ -390,10 +403,13 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'stephpy/vim-yaml'
 
 " Golang, for future proofing
-" Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 " This is helpful for markdown
-Plug 'junegunn/limelight.vim', {'for': 'markdown'}
+Plug 'junegunn/limelight.vim'
+
+" Now you can type emojis :) like :dog: which should become a dog :dog
+Plug 'junegunn/vim-emoji'
 
 " --------------------------- HTML / CSS ----------------------------
 " make jinja templates prettier

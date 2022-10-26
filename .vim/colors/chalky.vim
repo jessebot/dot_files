@@ -1,6 +1,6 @@
 " Vim color scheme
 "
-" Name:         chalky.vim
+" Name:         spaceChalk.vim
 " Maintainer:   @jessebot - Jesse Hitch
 " Last Change:  2022-10-08 08:18:29.0 +0200
 " License:      GPLv3
@@ -9,16 +9,20 @@
 
 " Colours in use
 " --------------
-" #f289f9 dark magenta
+" #CAEAFF chalky white
+" #ffaff9 light pink
+" #f289f9 magenta
 " #ff8d87 soft redish orange
 " #fdcd36 light orange
 " #f7fb53 soft yellow
 " #a8fd57 lime green
 " #5ac4b9 teal
-" #5cc9fd light blue
+" #5cc9fd blue
 " #5f87ff cornflower blue
 " #a3a8f8 medium purple
 "
+" #888888 gray
+" #323232 grayish black
 " #232336 blueish black
 " #2569aa darker blue
 " #f2748a pale red
@@ -33,16 +37,18 @@ endif
 hi Search ctermbg=White
 hi Search ctermfg=DarkBlue
 
-let g:colors_name = "chalky"
+let g:colors_name = "spaceChalk"
 
 " GUI Colors
 "
 " this is the general background of the whole editor and the plain text color
-highlight Normal      guibg=#232336 guifg=#E8FBFF
+" #E8FBFF
+highlight Normal      guibg=#232336 guifg=#CAEAFF
 highlight Cursor      guibg=#a3a8f8 guifg=Black  
-highlight CursorLine  guibg=#191E2F
-highlight LineNr      guibg=#323232 guifg=#888888
-highlight Folded      guibg=#5cc9fd guifg=#1d2652
+highlight CursorLine  guibg=#323232 
+" highlight LineNr      guibg=#323232 guifg=#888888
+highlight LineNr      guibg=#323232 guifg=#5f87ff
+highlight Folded      guibg=#3E3E3E guifg=#ffaff9
 highlight Visual      guibg=#5ac4b9
 
 " this one controls the column over 80 characters
