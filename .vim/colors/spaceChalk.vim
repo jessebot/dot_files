@@ -12,6 +12,7 @@
 " #CAEAFF chalky white
 " #ffaff9 light pink
 " #f289f9 magenta
+" #f2748a pale red
 " #ff8d87 soft redish orange
 " #fdcd36 light orange
 " #f7fb53 soft yellow
@@ -21,11 +22,11 @@
 " #5f87ff cornflower blue
 " #a3a8f8 medium purple
 "
-" #888888 gray
+" #2569aa darker blue
+" #585858 gray
 " #323232 grayish black
 " #232336 blueish black
-" #2569aa darker blue
-" #f2748a pale red
+" #1d2652 navy blue
 
 set background=dark
 
@@ -48,7 +49,7 @@ highlight Cursor      guibg=#a3a8f8 guifg=Black
 highlight CursorLine  guibg=#323232 
 highlight LineNr      guibg=#323232 guifg=#5f87ff
 highlight Folded      guibg=#3E3E3E guifg=#ffaff9
-highlight Visual      guibg=#5ac4b9
+highlight Visual      guibg=#2569aa guifg=#a8fd57
 
 " this one controls the column over 80 characters
 highlight ColorColumn guibg=#2569aa
