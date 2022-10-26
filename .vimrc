@@ -56,6 +56,8 @@ syntax on
 " this is supposed to help with syntax highlighting
 let g:ycm_enable_semantic_highlighting=1
 
+au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
+
 
 "                                Airline:
 "                 "A pure vim script status line for vim"
@@ -88,7 +90,7 @@ let g:ale_lint_on_text_changed = 'never'
 "                               Gitgutter:
 " "vim-gitgutter is a vim plugin that puts a symbol in a column to the left"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" use the nerdfont symbols inst4ead of -,+
+" use the nerdfont symbols instead of -,+
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
@@ -129,6 +131,7 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 
 " highlights the folder name
 let g:NERDTreeHighlightFoldersFullName = 1
+
 
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
@@ -187,6 +190,7 @@ nnoremap <c-l> <c-w>l
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" ----------------------------------------------------------------------------
 "                               INDENT ZONE
 " ----------------------------------------------------------------------------
 set expandtab
@@ -223,9 +227,7 @@ set wildmenu
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
 "                     CUSTOM FUNCTIONS AND COMMANDS:
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ----------------------------------------------------------------------------
@@ -275,7 +277,6 @@ endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 
 " ----------------------------------------------------------------------------
-" RENAME CURRENT FILE:
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
