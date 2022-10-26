@@ -94,7 +94,18 @@ let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 
 
-"                             NERDTree:
+"                           VimDevicons Config:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+" let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['mycoolfile'] = ''
+"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['in'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cfg'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+
+
+"                           NERDTree Config:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -106,7 +117,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " change the default expandable and collapsable icons
-let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowExpandable = 'ﬀ'
 let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
 " add syntax highlighting for entire file name in nerdtree

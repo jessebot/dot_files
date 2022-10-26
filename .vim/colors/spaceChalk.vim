@@ -144,3 +144,29 @@ highlight SignColumn guibg=#1d1d1d ctermbg=black
 highlight GitGutterAdd    guifg=#a8fd57 ctermfg=2
 highlight GitGutterChange guifg=#f7fb53 ctermfg=3
 highlight GitGutterDelete guifg=#f2748a ctermfg=1
+
+" -------------  NERDTree syntax colors for file browsing -------------------
+" #a8fd57 #5cc9fd #a3a8f8 #fdcd36
+
+" #a8fd57
+let g:WebDevIconsDefaultFolderSymbolColor = 'a8fd57'
+" #5cc9fd
+let g:WebDevIconsDefaultFileSymbolColor = '5cc9fd'
+"
+" set the default colors for different file types :)
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+" #a3a8f8 
+let g:NERDTreeExtensionHighlightColor['md'] = 'a3a8f8' 
+let g:NERDTreeExtensionHighlightColor['txt'] = 'a3a8f8' 
+" #fdcd36
+let g:NERDTreeExtensionHighlightColor['in'] = 'fdcd36' 
+let g:NERDTreeExtensionHighlightColor['yaml'] = 'fdcd36' 
+let g:NERDTreeExtensionHighlightColor['json'] = 'fdcd36' 
+let g:NERDTreeExtensionHighlightColor['cfg'] = 'fdcd36' 
+" #5cc9fd
+let g:NERDTreeExtensionHighlightColor['py'] = '5cc9fd' 
+" #a8fd57 lime green
+let g:NERDTreeExtensionHighlightColor['sh'] = 'a8fd57' 
+
+
+
