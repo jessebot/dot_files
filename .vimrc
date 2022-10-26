@@ -42,7 +42,7 @@ if (has("termguicolors"))
 endif
 
 " custom colorscheme to be more pastel and pretty
-colorscheme chalky
+colorscheme spaceChalk
 
 " clap
 let g:clap_theme = 'material_design_dark'
