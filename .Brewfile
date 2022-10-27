@@ -8,8 +8,8 @@
 brew "curl"
 brew "wget"
 
-# making things
-brew "cmake"
+# kitty is a terminal emulator
+brew "kitty"
 
 # terminal based web browser
 brew "lynx"
@@ -75,6 +75,9 @@ brew "glab"
 #                      Programming                        #
 #  ===-----------------------------------------------===  #
 ###########################################################
+#
+# making things
+brew "cmake"
 
 # programming languages and their package managers
 brew "python3"
