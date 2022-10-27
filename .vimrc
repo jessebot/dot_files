@@ -116,6 +116,21 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 let g:NERDTreeDirArrowExpandable = 'ﬀ'
 let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
+" change the default git nerdtree plugin icons
+let g:NERDTreeGitStatusUseNerdFonts = 1 
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'🤷',
+                \ 'Renamed'   :'',
+                \ 'Unmerged'  :'',
+                \ 'Deleted'   :'',
+                \ 'Dirty'     :'',
+                \ 'Ignored'   :'',
+                \ 'Clean'     :'',
+                \ 'Unknown'   :'',
+                \ }
+
 " add syntax highlighting for entire file name in nerdtree
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
