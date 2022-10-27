@@ -138,13 +138,12 @@ highlight gitcommitBranch        guifg=#fdcd36
 highlight gitcommitHeader        guifg=#5cc9fd
 
 " Gitgutter stuff
+" change sign column color for git to be the same as line number background
 highlight! link SignColumn LineNr
-" change sign color color
-" highlight SignColumn guibg=#323232
 " change the colors back to what they should be when there are changes
-highlight GitGutterAdd    guifg=#a8fd57 ctermfg=2
-highlight GitGutterChange guifg=#f7fb53 ctermfg=3
-highlight GitGutterDelete guifg=#f2748a ctermfg=1
+highlight GitGutterAdd    guibg=#323232 guifg=#a8fd57 ctermfg=2
+highlight GitGutterChange guibg=#323232 guifg=#f7fb53 ctermfg=3
+highlight GitGutterDelete guibg=#323232 guifg=#f2748a ctermfg=1
 
 " -------------  NERDTree syntax colors for file browsing -------------------
 " #a8fd57 #5cc9fd #a3a8f8 #fdcd36
