@@ -54,6 +54,8 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 # python packages' default location when you do pip3 install --user package
 export PATH=$PATH:$HOME/.local/bin
+# this is for non-M1 macs
+export PATH=$PATH:$HOME/Library/Python/3.10/bin
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
