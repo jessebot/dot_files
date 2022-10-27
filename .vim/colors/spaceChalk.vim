@@ -160,6 +160,7 @@ let g:NERDTreeExtensionHighlightColor['md'] = 'a3a8f8'
 let g:NERDTreeExtensionHighlightColor['txt'] = 'a3a8f8' 
 " #fdcd36
 let g:NERDTreeExtensionHighlightColor['in'] = 'fdcd36' 
+let g:NERDTreeExtensionHighlightColor['yml'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['yaml'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['json'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['cfg'] = 'fdcd36' 

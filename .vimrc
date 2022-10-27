@@ -105,6 +105,8 @@ let g:gitgutter_sign_removed = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['in'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cfg'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 
 
@@ -118,7 +120,6 @@ let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
-" highlight exact match
 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFolders = 1 
 " highlights the folder name
