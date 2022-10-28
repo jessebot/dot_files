@@ -467,7 +467,8 @@ Plug 'junegunn/vim-emoji'
 " make jinja templates prettier
 Plug 'lepture/vim-jinja'
 " CSS color, a multi-syntax context-sensitive color name highlighter
-Plug 'ap/vim-css-color'
+" set to jessebot's fork. (active PR to merge back to main) 
+Plug 'jessebot/vim-css-color', { 'branch': 'patch-1' }
 
 " --------------------------- python --------------------------------
 " tab completion maybe
@@ -477,6 +478,9 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'python-mode/python-mode'
 " requirements.text syntax highlighting
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+"---------- kitty -----------
+Plug 'fladson/vim-kitty'
 
 " ------------------------- k8s -------------------------------
 "

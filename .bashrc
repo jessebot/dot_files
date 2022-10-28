@@ -10,10 +10,10 @@
 set bell-style none
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+# case $- in
+#     *i*) ;;
+#       *) return;;
+# esac
 
 # default editor
 export EDITOR=vim
