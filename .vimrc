@@ -112,34 +112,35 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 
 "                           NERDTree Config:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" change the default expandable and collapsable icons
-let g:NERDTreeDirArrowExpandable = 'ﬀ'
-let g:NERDTreeDirArrowCollapsible = 'ﲔ'
+if !has('nvim')
+    " change the default expandable and collapsable icons
+    let g:NERDTreeDirArrowExpandable = 'ﬀ'
+    let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
-" change the default git nerdtree plugin icons
-let g:NERDTreeGitStatusUseNerdFonts = 1 
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'🤷',
-                \ 'Renamed'   :'',
-                \ 'Unmerged'  :'',
-                \ 'Deleted'   :'',
-                \ 'Dirty'     :'',
-                \ 'Ignored'   :'',
-                \ 'Clean'     :'',
-                \ 'Unknown'   :'',
-                \ }
+    " change the default git nerdtree plugin icons
+    let g:NERDTreeGitStatusUseNerdFonts = 1 
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
+                    \ 'Modified'  :'',
+                    \ 'Staged'    :'✚',
+                    \ 'Untracked' :'🤷',
+                    \ 'Renamed'   :'',
+                    \ 'Unmerged'  :'',
+                    \ 'Deleted'   :'',
+                    \ 'Dirty'     :'',
+                    \ 'Ignored'   :'',
+                    \ 'Clean'     :'',
+                    \ 'Unknown'   :'',
+                    \ }
 
-" add syntax highlighting for entire file name in nerdtree
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-" enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFolders = 1 
-" highlights the folder name
-let g:NERDTreeHighlightFoldersFullName = 1
-
+    " add syntax highlighting for entire file name in nerdtree
+    let g:NERDTreeFileExtensionHighlightFullName = 1
+    let g:NERDTreeExactMatchHighlightFullName = 1
+    let g:NERDTreePatternMatchHighlightFullName = 1
+    " enables folder icon highlighting using exact match
+    let g:NERDTreeHighlightFolders = 1 
+    " highlights the folder name
+    let g:NERDTreeHighlightFoldersFullName = 1
+endif
 
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
@@ -327,24 +328,26 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        COMMANDS WE CALL ON START:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup autoNerdTree
-    " Remove all auto-commands from the group AutoIndent
-    autocmd!
-    " Exit Vim if NERDTree is the only window remaining in the only tab.
-    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-    " Close the tab if NERDTree is the only window remaining in it.
-    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+if !has('nvim')
+    augroup autoNerdTree
+        " Remove all auto-commands from the group AutoIndent
+        autocmd!
+        " Exit Vim if NERDTree is the only window remaining in the only tab.
+        autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+        " Close the tab if NERDTree is the only window remaining in it.
+        autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-    " Start NERDTree. If a file is specified, move the cursor to its window.
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-augroup END
+        " Start NERDTree. If a file is specified, move the cursor to its window.
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+    augroup END
 
-augroup autoIndent
-    autocmd!
-    " yaml needs a bit of help
-    autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldlevelstart=20
-augroup END
+    augroup autoIndent
+        autocmd!
+        " yaml needs a bit of help
+        autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldlevelstart=20
+    augroup END
+endif
 
 augroup vimrcEx
   " Clear all autocmds in the group
@@ -404,94 +407,97 @@ noremap <Leader>w :w !sudo tee % > /dev/null
 map <leader>n :call RenameFile()<cr>
 
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"                                "vim-plug"
-"         "plugin manager for vim: https://github.com/junegunn/vim-plug
-"          plugin directory will be (on Linux/macOS): '~/.vim/plugged'
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-call plug#begin("~/.vim/plugged")
+if !has('nvim')
+    " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "                                "vim-plug"
+    "        plugin manager for vim: https://github.com/junegunn/vim-plug
+    "        plugin directory will be (on Linux/macOS): '~/.vim/plugged'
+    " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    call plug#begin()
 
-" -------------------- General IDE stuff ------------------------
-" adds a pretty status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" allow collapsing of functions for python and other supported languages
-Plug 'tmhedberg/SimpylFold'
-" indents lines and adds a line to show blocks of code
-Plug 'Yggdroot/indentLine'
-" this is a modern fuzzy searcher
-Plug 'liuchengxu/vim-clap'
+    " ------------------------- General IDE stuff ----------------------------
+    " adds a pretty status line
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " allow collapsing of functions for python and other supported languages
+    Plug 'tmhedberg/SimpylFold'
+    " indents lines and adds a line to show blocks of code
+    Plug 'Yggdroot/indentLine'
+    " this is a modern fuzzy searcher
+    Plug 'liuchengxu/vim-clap'
 
-" NerdTree - Tree explorer plugin - use :NERDTreeToggle to try it out
-"          - after nerdtree is on visible, use ? for help
-"
-" On-demand loading of nerdtree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" add tabs to nerdtree - experimental
-Plug 'jistr/vim-nerdtree-tabs'
-" puts little glyphs for different file types
-Plug 'ryanoasis/vim-devicons'
-" syntax highlighing for nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" add git awareness to see modified, merged, etc status of file in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
+    " NerdTree - Tree explorer plugin - use :NERDTreeToggle to try it out
+    "          - after nerdtree is on visible, use ? for help
+    "
+    " On-demand loading of nerdtree
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    " add tabs to nerdtree - experimental
+    Plug 'jistr/vim-nerdtree-tabs'
+    " puts little glyphs for different file types
+    Plug 'ryanoasis/vim-devicons'
+    " syntax highlighing for nerdtree
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " add git awareness to see modified, merged, etc status of file in nerdtree
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" git plugin for running git commands with :git
-Plug 'tpope/vim-fugitive'
-" puts a git + or - in side line to show git changes in file
-Plug 'airblade/vim-gitgutter'
+    " git plugin for running git commands with :git
+    Plug 'tpope/vim-fugitive'
+    " puts a git + or - in side line to show git changes in file
+    Plug 'airblade/vim-gitgutter'
 
-" general linter - will use common linters and highlight broken code
-Plug 'dense-analysis/ale'
+    " general linter - will use common linters and highlight broken code
+    Plug 'dense-analysis/ale'
 
-" ---------- Language Specific/File type Specific Stuff -------------
-" terraform linter
-Plug 'hashivim/vim-terraform'
+    " ---------- Language Specific/File type Specific Stuff -------------
+    " terraform linter
+    Plug 'hashivim/vim-terraform'
 
-" bash tab completion
-Plug 'WolfgangMehner/bash-support'
+    " bash tab completion
+    Plug 'WolfgangMehner/bash-support'
 
-" yaml syntax highlighting better
-Plug 'stephpy/vim-yaml'
+    " yaml syntax highlighting better
+    Plug 'stephpy/vim-yaml'
 
-" Golang, for future proofing
-Plug 'fatih/vim-go'
+    " Golang, for future proofing
+    Plug 'fatih/vim-go'
 
-" This is helpful for markdown
-Plug 'junegunn/limelight.vim'
+    " This is helpful for markdown
+    Plug 'junegunn/limelight.vim'
 
-" Now you can type emojis :) like :dog: which should become a dog :dog
-Plug 'junegunn/vim-emoji'
+    " Now you can type emojis :) like :dog: which should become a dog :dog
+    Plug 'junegunn/vim-emoji'
 
-" --------------------------- HTML / CSS ----------------------------
-" make jinja templates prettier
-Plug 'lepture/vim-jinja'
-" CSS color, a multi-syntax context-sensitive color name highlighter
-" set to jessebot's fork. (active PR to merge back to main) 
-Plug 'jessebot/vim-css-color', { 'branch': 'patch-1' }
+    " --------------------------- HTML / CSS ----------------------------
+    " make jinja templates prettier
+    Plug 'lepture/vim-jinja'
+    " CSS color, multi-syntax context-sensitive color name highlighter, for HEX
+    Plug 'ap/vim-css-color'
+    " cterm colors to be displayed pretty in vimscript at least
+    " Plug 'MicahElliott/vim-cterm-highlight'
 
-" --------------------------- python --------------------------------
-" tab completion maybe
-Plug 'ycm-core/YouCompleteMe'
+    " --------------------------- python --------------------------------
+    " tab completion maybe
+    Plug 'ycm-core/YouCompleteMe'
 
-" auto linting, docs, etc
-Plug 'python-mode/python-mode'
-" requirements.text syntax highlighting
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+    " auto linting, docs, etc
+    Plug 'python-mode/python-mode'
+    " requirements.text syntax highlighting
+    Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-"---------- kitty -----------
-Plug 'fladson/vim-kitty'
+    " ------------------------ kitty -------------------------------
+    Plug 'fladson/vim-kitty'
 
-" ------------------------- k8s -------------------------------
-"
-" For the current buffer (including modifications not on disk)
-" :KubeApply :KubeDelete :KubeCreate
-" And for the current directory (read from disk)
-" :KubeApplyDir :KubeDeleteDir
-Plug 'andrewstuart/vim-kubernetes'
+    " ------------------------- k8s -------------------------------
+    "
+    " For the current buffer (including modifications not on disk)
+    " :KubeApply :KubeDelete :KubeCreate
+    " And for the current directory (read from disk)
+    " :KubeApplyDir :KubeDeleteDir
+    Plug 'andrewstuart/vim-kubernetes'
 
-" helm yaml specifically (includes go support) doesn't seem to work for
-" auto-indenting, so it's off for now
-" Plug 'towolf/vim-helm'
+    " helm yaml specifically (includes go support) doesn't seem to work for
+    " auto-indenting, so it's off for now
+    " Plug 'towolf/vim-helm'
 
-call plug#end()
+    call plug#end()
+endif

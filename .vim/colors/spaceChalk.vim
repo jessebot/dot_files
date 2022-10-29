@@ -2,41 +2,48 @@
 "
 " Name:         spaceChalk.vim
 " Maintainer:   @jessebot - Jesse Hitch
-" Last Change:  2022-10-08 08:18:29.0 +0200
+" Last Change:  2022-10-29 12:11:06.0 +0200
 " License:      GPLv3
-" Notes: Use :help command to check vim help on what variables are called
-"        can also use http://bytefluent.com/vivify/ to find variables of colors
+" Notes: Use :help command to check vim help on what variables are called, e.g.
+"        Open a python file in vim and then type the following:
+"                       :syntax list
+"        That will give you all the syntax variable names and their colors as
+"        three x's, like: pythonInclude  xxx from import
+"        It may also be helpful to check out more about syntax/colors with:
+"                        :help syntax 
+"
+"        Finally, useful tool for learning what highlight variables are called:
+"        http://bytefluent.com/vivify/ to find variables of colors
 
 " Colours in use
 " --------------
 " #CAEAFF chalky white
 " #ffaff9 light pink
-" #f289f9 magenta
-" #f2748a pale red
+" #f289f9 neon magenta
+" #f2748a pale dark red
 " #ff8d87 soft redish orange
 " #fdcd36 light orange
-" #f7fb53 soft yellow
+" #f7fb53 bright yellow 
+" #f6f76a soft yellow 
 " #a8fd57 lime green
-" #5ac4b9 teal
+" #5ac4b9 teal (this color feels weird)
 " #5cc9fd blue
 " #5f87ff cornflower blue
 " #a3a8f8 medium purple
 "
+" #232336 blueish black
+" #1d2652 navy blue
 " #2569aa darker blue
 " #585858 gray
 " #323232 grayish black
-" #232336 blueish black
-" #1d2652 navy blue
-
-set background=dark
 
 hi clear
 
 if exists("syntax_on")
    syntax reset
 endif
-hi Search ctermbg=White
-hi Search ctermfg=DarkBlue
+
+set background=dark
 
 let g:colors_name = "spaceChalk"
 
@@ -45,7 +52,7 @@ let g:colors_name = "spaceChalk"
 " this is the general background of the whole editor and the plain text color
 " #E8FBFF
 highlight Normal      guibg=#232336 guifg=#CAEAFF
-highlight Cursor      guibg=#a3a8f8 guifg=Black  
+highlight Cursor      guibg=#a3a8f8 guifg=Black
 highlight CursorLine  guibg=#323232 
 highlight LineNr      guibg=#323232 guifg=#5f87ff
 highlight Folded      guibg=#3E3E3E guifg=#ffaff9
@@ -70,8 +77,6 @@ highlight Boolean    guifg=#5ac4b9
 highlight Number     guifg=#f289f9
 highlight Float      guifg=#f289f9
 highlight Type       guifg=#5cc9fd
-" highlight Identifier guifg=#a8fd57 gui=NONE
-" highlight Function   guifg=#5cc9fd gui=NONE
 highlight Identifier guifg=#fdcd36
 highlight Function   guifg=#5cc9fd
 highlight PreProc    guifg=#5f87ff
@@ -146,25 +151,26 @@ highlight GitGutterChange guibg=#323232 guifg=#f7fb53 ctermfg=3
 highlight GitGutterDelete guibg=#323232 guifg=#f2748a ctermfg=1
 
 " -------------  NERDTree syntax colors for file browsing -------------------
-" #a8fd57 #5cc9fd #a3a8f8 #fdcd36
+highlight Directory guifg=#5cc9fd 
+highlight NERDTreeCWD guifg=#f6f76a
+highlight NERDTreeDirSlash guifg=#a8fd57
+highlight NERDTreeClosable guifg=#fdcd36
+highlight NERDTreeOpenable guifg=#f289f9
 
-" #a8fd57
-let g:WebDevIconsDefaultFolderSymbolColor = 'a8fd57'
-" #5cc9fd
-let g:WebDevIconsDefaultFileSymbolColor = '5cc9fd'
-"
+let g:WebDevIconsDefaultFolderSymbolColor = '5f87ff' " #5f87ff cornflower blue
+let g:WebDevIconsDefaultFileSymbolColor = '5cc9fd' " #5cc9fd blue
+
 " set the default colors for different file types :)
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-" #a3a8f8 
+" all of these are pale purple: #a3a8f8
+let g:NERDTreeExtensionHighlightColor = {} 
 let g:NERDTreeExtensionHighlightColor['md'] = 'a3a8f8' 
 let g:NERDTreeExtensionHighlightColor['txt'] = 'a3a8f8' 
-" #fdcd36
+
+" all of these are oranger: #fdcd36
 let g:NERDTreeExtensionHighlightColor['in'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['yml'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['yaml'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['json'] = 'fdcd36' 
 let g:NERDTreeExtensionHighlightColor['cfg'] = 'fdcd36' 
-" #5cc9fd
-let g:NERDTreeExtensionHighlightColor['py'] = '5cc9fd' 
-" #a8fd57 lime green
-let g:NERDTreeExtensionHighlightColor['sh'] = 'a8fd57' 
+let g:NERDTreeExtensionHighlightColor['py'] = '5cc9fd' " #5cc9fd blue
+let g:NERDTreeExtensionHighlightColor['sh'] = 'a8fd57' " #a8fd57 lime green
