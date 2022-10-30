@@ -58,19 +58,19 @@ au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" use softer colors
+" use custome space_chalk theme :)
 let g:airline_theme='space_chalk'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 " changing separators to match personal powerline for shell
 let g:airline_left_sep=' '
-let g:airline_right_sep=''
+let g:airline_right_sep=' '
 
 " this is a smaller more consise final airline segment
 function! LinePercent()
     return line('.') * 100 / line('$') . '%'
 endfunction
-let g:airline_section_z = ':%l (%{LinePercent()}) :%v'
+let g:airline_section_z = ' %l (%{LinePercent()})  %v'
 
 
 "                                  Ale:
