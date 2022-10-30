@@ -22,28 +22,29 @@ set numberwidth=4
 " highlight current line - very useful, shouldn't turn off, you will be lost
 set cursorline
 
-" highlighted column 80, so you know when you're over 80 char
+" highlighted column 80, only on python files, to keep lines shorter
 set colorcolumn=80
 
 "                                  Font:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fonts with icons/emojis require utf-8
-set encoding=utf-8
+if !has('nvim')
+    " fonts with icons/emojis require utf-8
+    set encoding=utf-8
+endif
 " use specific font with the glyphs patched in
 set guifont=Mononoki\ Nerd\ Font:h15
 
 
 "                           Syntax Highlighting:
-  "                                and 
+"                                  and
 "                                 Colors:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use 24-bit (true-color) mode in Neovim 0.1.5+ and Vim 7.4+
 if has('nvim') || has('termguicolors')
   set termguicolors
+  " Enable syntax highlighting by default
+  syntax on
 endif
-
-" Enable syntax highlighting by default
-syntax on
 
 " clap
 let g:clap_theme = 'material_design_dark'
@@ -54,30 +55,11 @@ let g:ycm_enable_semantic_highlighting=1
 au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 
 
-"                                Airline:
-"                 "A pure vim script status line for vim"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" use custome space_chalk theme :)
-let g:airline_theme='space_chalk'
-" use powerline fonts
-let g:airline_powerline_fonts = 1
-" changing separators to match personal powerline for shell
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-
-" this is a smaller more consise final airline segment
-function! LinePercent()
-    return line('.') * 100 / line('$') . '%'
-endfunction
-let g:airline_section_z = ' %l (%{LinePercent()})  %v'
-
-
 "                                  Ale:
-"           "linter for warning and errors, using *existing* linter tools"
+"      "linter for warning and errors, using *existing* linter tools"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = '✘'
+let g:ale_sign_error = ''
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
 
@@ -97,11 +79,18 @@ let g:gitgutter_sign_removed = ''
 " let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['mycoolfile'] = ''
 "
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+" configs
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['in'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ini'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cfg'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
+
+" text files
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['pdf'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['doc'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['docx'] = ''
 
 
 "                           NERDTree Config:
@@ -112,7 +101,7 @@ if !has('nvim')
     let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 
     " change the default git nerdtree plugin icons
-    let g:NERDTreeGitStatusUseNerdFonts = 1 
+    let g:NERDTreeGitStatusUseNerdFonts = 1
     let g:NERDTreeGitStatusIndicatorMapCustom = {
                     \ 'Modified'  :'',
                     \ 'Staged'    :'✚',
@@ -131,7 +120,7 @@ if !has('nvim')
     let g:NERDTreeExactMatchHighlightFullName = 1
     let g:NERDTreePatternMatchHighlightFullName = 1
     " enables folder icon highlighting using exact match
-    let g:NERDTreeHighlightFolders = 1 
+    let g:NERDTreeHighlightFolders = 1
     " highlights the folder name
     let g:NERDTreeHighlightFoldersFullName = 1
 endif
@@ -161,15 +150,15 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 "                              BUFFER_STUFF:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Show (partial) command in the last line of the screen.
-" Set this option off if your terminal is slow.
-set showcmd
-
-" don't know what this is
-set switchbuf=useopen
-
-" allow unsaved background buffers and remember marks/undo for them
-set hidden
+if !has('nvim')
+    " don't know what this is
+    set switchbuf=useopen
+    " allow unsaved background buffers and remember marks/undo for them
+    set hidden
+    " Show (partial) command in the last line of the screen.
+    " Set this option off if your terminal is slow.
+    set showcmd
+endif
 set scrolloff=3
 
 " See http://www.shallowsky.com/linux/noaltscreen.html
@@ -201,31 +190,36 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
+if !has('nvim')
+    set autoindent
+endif
 " Enable file type detection. Use the default filetype settings, so that mail
 " gets 'tw' set to 72, 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
-
 "                                SEARCHING:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" remember more commands and search history
-set history=10000
-" not sure what this does
-set laststatus=2
+if !has('nvim')
+    " remember more commands and search history
+    set history=10000
+    " While typing a search command, show where the pattern, as it was typed so far, matches.
+    set incsearch
+    " highlight the matches
+    set hlsearch
+    " always show the status line
+    set laststatus=2
+    " make tab completion for files/buffers act like bash
+    set wildmenu
+endif
+
 set showmatch
-set incsearch
-" highlight the matches
-set hlsearch
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 " solve issue where sometimes search is used with white text on yellow bg
 
 " use emacs-style tab completion when selecting files, etc
 set wildmode=longest,list
-" make tab completion for files/buffers act like bash
-set wildmenu
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,6 +395,25 @@ noremap <Leader>w :w !sudo tee % > /dev/null
 
 map <leader>n :call RenameFile()<cr>
 
+
+"                                Airline:
+"                 "A pure vim script status line for vim"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" use custome space_chalk theme :)
+let g:airline_theme='space_chalk'
+" use powerline fonts
+let g:airline_powerline_fonts = 1
+" changing separators to match personal powerline for shell
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+
+" this is a smaller more consise final airline segment
+function! LinePercent()
+    return line('.') * 100 / line('$') . '%'
+endfunction
+let g:airline_section_z = ' %l (%{LinePercent()})  %v'
+
 if !has('nvim')
     " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "                                "vim-plug"
@@ -410,12 +423,11 @@ if !has('nvim')
     call plug#begin()
 
     " ------------------------- General IDE stuff ----------------------------
-    " my preferred colorscheme right now
-    Plug 'jessebot/space-chalk', { 'as': 'spacechalk', 'do': ':colorscheme spacechalk' }
-
     " adds a pretty status line
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+
+    " my preferred colorscheme right now
+    Plug 'jessebot/space-chalk', { 'as': 'spacechalk', 'do': ':colorscheme spacechalk' }
 
     " allow collapsing of functions for python and other supported languages
     Plug 'tmhedberg/SimpylFold'
@@ -429,7 +441,7 @@ if !has('nvim')
     " ------------------------------ NerdTree --------------------------------
     "         Tree explorer plugin - use :NERDTreeToggle to try it out
     "             after nerdtree is on visible, use ? for help
-    
+
     " On-demand loading of nerdtree
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     " add tabs to nerdtree - experimental
@@ -452,58 +464,58 @@ if !has('nvim')
     Plug 'dense-analysis/ale'
 
     " terraform linter
-    Plug 'hashivim/vim-terraform'
+    Plug 'hashivim/vim-terraform', {'for': 'tf'}
 
     " bash tab completion
-    Plug 'WolfgangMehner/bash-support'
+    Plug 'WolfgangMehner/bash-support', {'for': 'sh'}
 
     " yaml syntax highlighting better
-    Plug 'stephpy/vim-yaml'
+    Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
     " Golang, for future proofing
-    Plug 'fatih/vim-go'
+    Plug 'fatih/vim-go', { 'for': 'go' }
 
     " This is helpful for markdown
     Plug 'junegunn/limelight.vim'
 
     " Now you can type emojis :) like :dog: which should become a dog :dog
-    Plug 'junegunn/vim-emoji'
+    Plug 'junegunn/vim-emoji', { 'for': 'md' }
 
     " --------------------------- HTML / CSS ----------------------------
-    " make jinja templates prettier
-    Plug 'lepture/vim-jinja'
-    " CSS color, multi-syntax context-sensitive color name highlighter, for HEX
-    Plug 'ap/vim-css-color'
     " cterm colors to be displayed pretty in vimscript at least
-    " Plug 'MicahElliott/vim-cterm-highlight'
+    " only turn this on when you need it. it makes everything slow
+    " Plug 'MicahElliott/vim-cterm-highlight', { 'for': 'vim' }
+
+    " CSS color, multi-syntax context-sensitive color name highlighter, for HEX
+    Plug 'ap/vim-css-color', { 'for': ['vim', 'html', 'css', 'scss'] }
+
+
+    " make jinja templates prettier
+    Plug 'lepture/vim-jinja', { 'for': ['html', 'tpl'] }
+
 
     " --------------------------- python --------------------------------
-    " tab completion maybe
+    " tab completion
     Plug 'ycm-core/YouCompleteMe'
 
     " auto linting, docs, etc
-    Plug 'python-mode/python-mode'
+    Plug 'python-mode/python-mode', {'for': 'py'}
+
     " requirements.text syntax highlighting
     Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-    " ------------------------ kitty -------------------------------
-    Plug 'fladson/vim-kitty'
-
-    " ------------------------- k8s -------------------------------
-    "
+    " ---------------------------- k8s ----------------------------------
     " For the current buffer (including modifications not on disk)
-    " :KubeApply :KubeDelete :KubeCreate
+    "   :KubeApply :KubeDelete :KubeCreate
     " And for the current directory (read from disk)
-    " :KubeApplyDir :KubeDeleteDir
-    Plug 'andrewstuart/vim-kubernetes'
-
-    " helm yaml specifically (includes go support) doesn't seem to work for
-    " auto-indenting, so it's off for now
-    " Plug 'towolf/vim-helm'
+    "   :KubeApplyDir :KubeDeleteDir
+    Plug 'andrewstuart/vim-kubernetes', {'for': 'yaml'}
 
     call plug#end()
 endif
 
 " this has to be at the end of the file because it is a plugin I guess.
 " custom colorscheme to be more pastel and pretty
-colorscheme spacechalk
+if !has('nvim')
+    colorscheme spacechalk
+endif
