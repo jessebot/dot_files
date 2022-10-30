@@ -1,13 +1,10 @@
-../.config/nvim/init.vimset runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
+source ~/.vimrc
 
 " disable netrw at the very start of your init.lua (strongly advised)
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
-
-v:lua.require'nvim-tree'.setup()
-
-source ~/.vimrc
 
 call plug#begin()
 
@@ -15,7 +12,7 @@ call plug#begin()
 Plug 'glepnir/dashboard-nvim'
 
 " cute halloween dashboard for neovim start screen :3
-Plug 'folke/drop.nvim'
+" Plug 'folke/drop.nvim'
 
 " this is helpful for python highlighting
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }

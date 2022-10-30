@@ -12,7 +12,7 @@
                     },
                     {
                         "function": "powerline.segments.common.env.cwd",
-                        "before": "  ",
+                        "before": "  ",
                         "priority": 30,
                         "args": {
                             "use_shortened_path": true
@@ -32,8 +32,8 @@
                                 "changed": "  {}",
                                 "staged": "  {}",
                                 "stashed": "  {}",
-                                "ahead": "  {}",
-                                "behind": "  {}"
+                                "ahead": "  {}",
+                                "behind": "   {}"
                             }
                         }
                     },

@@ -1,7 +1,7 @@
 {
 "Profiles": [
 {
-  "Badge Text" : "",
+  "Badge Text" : "",
   "Working Directory" : "~",
   "Prompt Before Closing 2" : false,
   "Dynamic Profile Filename" : "\/Users\/jhitch\/Library\/Application Support\/iTerm2\/DynamicProfiles\/Profiles.json",
@@ -53,6 +53,7 @@
     "slogin",
     "telnet"
   ],
+  "Non-ASCII Ligatures" : false,
   "Scrollback Lines" : 1000,
   "Draw Powerline Glyphs" : true,
   "Flashing Bell" : true,
@@ -65,9 +66,11 @@
   },
   "BM Growl" : true,
   "Ansi 3 Color" : {
-    "Green Component" : 0.674033910034048,
-    "Blue Component" : 0.29084579493154233,
-    "Red Component" : 0.72714578619909509
+    "Red Component" : 0.9684478997799989,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.41834647836003569,
+    "Alpha Component" : 1,
+    "Green Component" : 0.97164821624755859
   },
   "Open Password Manager Automatically" : false,
   "Icon" : 1,
@@ -267,12 +270,14 @@
   "Send Code When Idle" : false,
   "ASCII Anti Aliased" : true,
   "Tags" : [
-
+    "Dynamic"
   ],
   "Ansi 9 Color" : {
-    "Green Component" : 0.28235295414924622,
-    "Blue Component" : 0.25098040699958801,
-    "Red Component" : 0.94901961088180542
+    "Red Component" : 0.97035980224609375,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.35326263905517408,
+    "Alpha Component" : 1,
+    "Green Component" : 0.41122192433258642
   },
   "Badge Right Margin" : 48,
   "Use Bold Font" : true,
@@ -298,9 +303,11 @@
     "Green Component" : 0.56004715856940013
   },
   "Ansi 1 Color" : {
-    "Green Component" : 0.22880050174078803,
-    "Blue Component" : 0.32056234871547967,
-    "Red Component" : 0.69980203619909509
+    "Red Component" : 0.94901960784313721,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.54117647058823526,
+    "Alpha Component" : 1,
+    "Green Component" : 0.45490196078431372
   },
   "Name" : "Solid Default",
   "Blinking Cursor" : true,
@@ -341,8 +348,8 @@
     "Green Component" : 0.1152772594
   },
   "Blur" : false,
-  "Normal Font" : "mononokiNerdFontComplete-Regular 16",
-  "Vertical Spacing" : 1.01,
+  "Normal Font" : "mononoki-Regular 17",
+  "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
     "Green Component" : 0.84705883264541626,
     "Blue Component" : 0.85098040103912354,
@@ -376,11 +383,11 @@
     "Green Component" : 0.1152772594
   },
   "Screen" : -2,
-  "tmux Pane Title" : "SSH",
+  "tmux Pane Title" : "Solid Default",
   "Bound Hosts" : [
 
   ],
-  "Non Ascii Font" : "HackNerdFontComplete-Regular 15",
+  "Non Ascii Font" : "SymbolsNerdFontCompleteM-2048-em 19",
   "Ansi 13 Color" : {
     "Red Component" : 0.99923568964004517,
     "Color Space" : "sRGB",

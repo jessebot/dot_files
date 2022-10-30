@@ -25,8 +25,6 @@ set cursorline
 " highlighted column 80, so you know when you're over 80 char
 set colorcolumn=80
 
-
-
 "                                  Font:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fonts with icons/emojis require utf-8
@@ -35,24 +33,20 @@ set encoding=utf-8
 set guifont=Mononoki\ Nerd\ Font:h15
 
 
+"                           Syntax Highlighting:
+  "                                and 
 "                                 Colors:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use 24-bit (true-color) mode in Neovim 0.1.5+ and Vim 7.4+
-if (has("termguicolors"))
-    set termguicolors
+if has('nvim') || has('termguicolors')
+  set termguicolors
 endif
 
-" custom colorscheme to be more pastel and pretty
-colorscheme spaceChalk
+" Enable syntax highlighting by default
+syntax on
 
 " clap
 let g:clap_theme = 'material_design_dark'
-
-
-"                           Syntax Highlighting:
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting by default
-syntax on
 
 " this is supposed to help with syntax highlighting
 let g:ycm_enable_semantic_highlighting=1
@@ -64,10 +58,10 @@ au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" use softer colors
+let g:airline_theme='space_chalk'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
-" use softer colors
-let g:airline_theme='murmur'
 " changing separators to match personal powerline for shell
 let g:airline_left_sep=' '
 let g:airline_right_sep=''
@@ -154,6 +148,7 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 " enable folding for markdown?
 let g:markdown_folding = 1
+let g:indentLine_fileTypeExclude = ['dashboard']
 
 
 "                                 BACKUPS:
@@ -406,7 +401,6 @@ noremap <Leader>w :w !sudo tee % > /dev/null
 
 map <leader>n :call RenameFile()<cr>
 
-
 if !has('nvim')
     " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "                                "vim-plug"
@@ -416,19 +410,26 @@ if !has('nvim')
     call plug#begin()
 
     " ------------------------- General IDE stuff ----------------------------
+    " my preferred colorscheme right now
+    Plug 'jessebot/space-chalk', { 'as': 'spacechalk', 'do': ':colorscheme spacechalk' }
+
     " adds a pretty status line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+
     " allow collapsing of functions for python and other supported languages
     Plug 'tmhedberg/SimpylFold'
+
     " indents lines and adds a line to show blocks of code
     Plug 'Yggdroot/indentLine'
+
     " this is a modern fuzzy searcher
     Plug 'liuchengxu/vim-clap'
 
-    " NerdTree - Tree explorer plugin - use :NERDTreeToggle to try it out
-    "          - after nerdtree is on visible, use ? for help
-    "
+    " ------------------------------ NerdTree --------------------------------
+    "         Tree explorer plugin - use :NERDTreeToggle to try it out
+    "             after nerdtree is on visible, use ? for help
+    
     " On-demand loading of nerdtree
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     " add tabs to nerdtree - experimental
@@ -440,15 +441,16 @@ if !has('nvim')
     " add git awareness to see modified, merged, etc status of file in nerdtree
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
+    " ------------------------------ git -------------------------------------
     " git plugin for running git commands with :git
     Plug 'tpope/vim-fugitive'
     " puts a git + or - in side line to show git changes in file
     Plug 'airblade/vim-gitgutter'
 
+    " ---------- Language Specific/File type Specific Stuff -------------
     " general linter - will use common linters and highlight broken code
     Plug 'dense-analysis/ale'
 
-    " ---------- Language Specific/File type Specific Stuff -------------
     " terraform linter
     Plug 'hashivim/vim-terraform'
 
@@ -501,3 +503,7 @@ if !has('nvim')
 
     call plug#end()
 endif
+
+" this has to be at the end of the file because it is a plugin I guess.
+" custom colorscheme to be more pastel and pretty
+colorscheme spacechalk
