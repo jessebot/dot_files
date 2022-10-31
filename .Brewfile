@@ -22,6 +22,7 @@ brew "asciinema"
 
 # main terminal based text editor
 brew "vim"
+brew "neovim"
 
 # fuzzy search, helps with completion and searching
 brew "fzf"
