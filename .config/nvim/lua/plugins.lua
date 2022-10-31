@@ -5,14 +5,15 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- adds a pretty status line -- 'vim-airline/vim-airline'
+    use '~/.vim/plugged/vim-airline'
+
     -- startup screen for neovim
     use 'glepnir/dashboard-nvim'
 
     -- cute halloween dashboard for neovim start screen :3
+    -- not sure why this doesn't work, so it's commented out
     -- use 'folke/drop.nvim'
-
-    -- adds a pretty status line -- 'vim-airline/vim-airline'
-    use '~/.vim/plugged/vim-airline'
 
     -- This is helpful for markdown -- 'junegunn/limelight.vim'
     use '~/.vim/plugged/limelight.vim'
