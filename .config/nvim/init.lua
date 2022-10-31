@@ -36,9 +36,10 @@ vim.g.indentLine_fileTypeExclude = [['dashboard']]
 vim.keymap.set('n', '<space>', 'za')
 
 require('plugins')
--- ------------------ these are custom plugin configs -----------------------
-require('user.dashboard')
-require('user.airline')
 
 -- Colors need to be enabled after the plugins, because the colors are a plugin
 vim.cmd [[colorscheme spacechalk]]
+
+-- --------- these are plugin configs for plugins imported by packer ---------
+require('user.airline')
+require('user.dashboard')
