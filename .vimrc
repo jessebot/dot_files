@@ -400,8 +400,6 @@ map <leader>n :call RenameFile()<cr>
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" use custome space_chalk theme :)
-let g:airline_theme='space_chalk'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 " changing separators to match personal powerline for shell
@@ -516,6 +514,6 @@ endif
 
 " this has to be at the end of the file because it is a plugin I guess.
 " custom colorscheme to be more pastel and pretty
-if !has('nvim')
-    colorscheme spacechalk
-endif
+colorscheme spacechalk
+" use custome space_chalk theme :)
+let g:airline_theme='space_chalk'
