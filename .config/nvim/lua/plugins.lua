@@ -15,10 +15,12 @@ return require('packer').startup(function(use)
     -- not sure why this doesn't work, so it's commented out
     -- use 'folke/drop.nvim'
 
-    -- This is helpful for markdown -- 'junegunn/limelight.vim'
-    use '~/.vim/plugged/limelight.vim'
+    -- ------------ telescope: extendable fuzzy finder over lists ------------
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
+         requires = {{'nvim-lua/plenary.nvim'} }
+    }
 
-    -- ------------------------------ git --------------------------------
+    -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
     use '~/.vim/plugged/vim-fugitive'
 
@@ -26,12 +28,11 @@ return require('packer').startup(function(use)
     -- 'airblade/vim-gitgutter'
     use '~/.vim/plugged/vim-gitgutter'
 
-
-    -- ----------- new nerdtree replacement needs this :) ----------------
+    -- ----------- nvim new nerdtree replacement needs this :) ---------------
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
 
-    -- ---------- Language Specific/File type Specific Stuff -------------
+    -- ---------- Language Specific/File type Specific Stuff -----------------
     -- general linter - will use common linters and highlight broken code
     -- 'dense-analysis/ale'
     use '~/.vim/plugged/ale'
@@ -51,4 +52,6 @@ return require('packer').startup(function(use)
     -- this is helpful for python highlighting
     use {'numirias/semshi',  run = ':UpdateRemoteuseins', ft = 'py'}
 
+    -- This is helpful for markdown -- 'junegunn/limelight.vim'
+    use '~/.vim/plugged/limelight.vim'
 end)
