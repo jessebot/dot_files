@@ -73,10 +73,3 @@ return require('packer').startup(function(use)
         require('packer').sync()
     end
 end)
-
-vim.cmd([[
-  augroup packer_exit
-    autocmd!
-    autocmd User PackerComplete quit
-  augroup end
-]])

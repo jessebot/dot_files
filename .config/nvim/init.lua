@@ -37,6 +37,13 @@ vim.keymap.set('n', '<space>', 'za')
 
 require('plugins')
 
+vim.cmd([[
+  augroup packer_exit
+    autocmd!
+    autocmd User PackerComplete quit
+  augroup end
+]])
+
 -- Colors need to be enabled after the plugins, because the colors are a plugin
 vim.cmd [[colorscheme spacechalk]]
 
