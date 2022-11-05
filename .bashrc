@@ -199,7 +199,7 @@ alias cat='dog'
 alias gc='git commit -m'
 alias gs='git status'
 # check all directories below current directory for their git status
-alias gsa='ls -1 -A | xargs -I % sh -c "toilet -f smblock % | lolcat ; cd %; git status --short; cd - > /dev/null; echo ''"'
+alias gsa='ls -1 -A | xargs -I % sh -c "if [ -d % ]; then toilet -f smblock % | lolcat ; cd %; git status --short; cd - > /dev/null; echo ''; fi"'
 alias gd='git diff'
 alias ga='git add .'
 alias gph='git push && git push --tags'
