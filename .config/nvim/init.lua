@@ -37,10 +37,22 @@ vim.keymap.set('n', '<space>', 'za')
 
 require('plugins')
 
+
+vim.cmd([[
+  function! QuitNeovimIfHeadless()
+    let s:ui = nvim_list_uis()
+    if empty(s:ui)
+      quit
+    else
+      echom 'oh no, we are good i guess'
+    endif
+  endfunction
+]])
+
 vim.cmd([[
   augroup packer_exit
     autocmd!
-    autocmd User PackerComplete quit
+    autocmd User PackerComplete call QuitNeovimIfHeadless()
   augroup end
 ]])
 
