@@ -1,6 +1,6 @@
 ###########################################################
 #  ===-----------------------------------------------===  #
-#                         General                         #
+#        General Brewfile for both macOS and Debian       #
 #  ===-----------------------------------------------===  #
 ###########################################################
 
@@ -53,6 +53,7 @@ brew "rich"
 # make fun text in the terminal
 brew "lolcat"
 brew "figlet"
+brew "toilet"
 brew "cowsay"
 
 # steam locamotive
