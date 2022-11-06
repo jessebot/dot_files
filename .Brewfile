@@ -8,9 +8,6 @@
 brew "curl"
 brew "wget"
 
-# kitty is a terminal emulator
-brew "kitty"
-
 # terminal based web browser
 brew "lynx"
 
@@ -35,12 +32,17 @@ brew "fzf"
 
 # ls replacement written in rust: https://github.com/Peltoche/lsd
 brew "lsd"
+
+# this is a file manager TUI: https://www.geeksforgeeks.org/ranger-a-cli-file-manager/
+brew "ranger"
+
 # like grep or ack, but more modern, for searching file text
 brew "ag"
+
 # diff, but with colors
 brew "colordiff"
 
-# terminal based system metrics
+# ------------ terminal based system metrics -----------
 brew "htop"
 brew "gotop"
 brew "neofetch"
@@ -50,14 +52,17 @@ brew "duf"
 # pretty formatting and syntax highlighting
 brew "rich"
 
-# make fun text in the terminal
+# -------------- make fun text in the terminal ----------
+# rainbow text
 brew "lolcat"
+# blocky fonts: https://devhints.io/figlet
 brew "figlet"
 brew "toilet"
-brew "cowsay"
 
 # steam locamotive
 brew "sl"
+# a cow that says things
+brew "cowsay"
 
 ###########################################################
 #  ===-----------------------------------------------===  #

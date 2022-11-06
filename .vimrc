@@ -497,10 +497,16 @@ if !has('nvim')
     Plug 'ycm-core/YouCompleteMe'
 
     " auto linting, docs, etc
-    Plug 'python-mode/python-mode', {'for': 'py'}
+    Plug 'python-mode/python-mode', { 'for': 'py' }
 
     " requirements.text syntax highlighting
-    Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+    Plug 'raimon49/requirements.txt.vim', { 'for': 'requirements' }
+
+    " pep8 style check
+    Plug 'nvie/vim-flake8', { 'for': 'py' }
+
+    " syntax checking
+    " Plug 'vim-syntastic/syntastic', { 'for': 'py' }
 
     " ---------------------------- k8s ----------------------------------
     " For the current buffer (including modifications not on disk)

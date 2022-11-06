@@ -35,14 +35,9 @@ vim.g.indentLine_fileTypeExclude = [['dashboard']]
 -- nnoremap <space> za
 vim.keymap.set('n', '<space>', 'za')
 
+-- both of these are required to make packer, our plugin manager work
 require('plugins')
-
-vim.cmd([[
-  augroup packer_exit
-    autocmd!
-    autocmd User PackerComplete quit
-  augroup end
-]])
+vim.cmd [[source ~/.config/nvim/packerinit.vim]]
 
 -- Colors need to be enabled after the plugins, because the colors are a plugin
 vim.cmd [[colorscheme spacechalk]]
