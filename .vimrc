@@ -62,6 +62,10 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = ''
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_enabled = 1
+" this doesn't seem to work
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'python': ['autoflake']}
 
 
 "                               Gitgutter:
@@ -493,20 +497,14 @@ if !has('nvim')
 
 
     " --------------------------- python --------------------------------
-    " tab completion
+    " tab completion, docs, etc
     Plug 'ycm-core/YouCompleteMe'
-
-    " auto linting, docs, etc
-    Plug 'python-mode/python-mode', { 'for': 'py' }
 
     " requirements.text syntax highlighting
     Plug 'raimon49/requirements.txt.vim', { 'for': 'requirements' }
 
-    " pep8 style check
+    " pep8 style check that works with ale - requires pip installed flake8
     Plug 'nvie/vim-flake8', { 'for': 'py' }
-
-    " syntax checking
-    " Plug 'vim-syntastic/syntastic', { 'for': 'py' }
 
     " ---------------------------- k8s ----------------------------------
     " For the current buffer (including modifications not on disk)
