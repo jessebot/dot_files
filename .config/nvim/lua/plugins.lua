@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
     -- adds a pretty status line -- 'vim-airline/vim-airline'
     use '~/.vim/plugged/vim-airline'
 
+    -- my preferred colorscheme right now -- use 'jessebot/space-chalk'
+    use '~/.vim/plugged/spacechalk'
+
     -- startup screen for neovim
     use 'glepnir/dashboard-nvim'
 
@@ -44,11 +47,11 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use 'nvim-tree/nvim-tree.lua'
 
-    -- ---------- Language Specific/File type Specific Stuff -----------------
     -- general linter - will use common linters and highlight broken code
     -- 'dense-analysis/ale'
     use '~/.vim/plugged/ale'
 
+    -- -------------------- Language Specific Stuff ------------------------
     -- terraform linter -- 'hashivim/vim-terraform'
     use '~/.vim/plugged/vim-terraform'
 
@@ -58,11 +61,8 @@ return require('packer').startup(function(use)
     -- yaml syntax highlighting better -- 'stephpy/vim-yaml'
     use '~/.vim/plugged/vim-yaml'
 
-    -- my preferred colorscheme right now -- use 'jessebot/space-chalk'
-    use '~/.vim/plugged/spacechalk'
-
     -- this is helpful for python highlighting
-    use {'numirias/semshi',  run = ':UpdateRemoteuseins', ft = 'py'}
+    use {'numirias/semshi',  run = ':UpdateRemoteuseins'}
 
     -- This is helpful for markdown -- 'junegunn/limelight.vim'
     use '~/.vim/plugged/limelight.vim'
