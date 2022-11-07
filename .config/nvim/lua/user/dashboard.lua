@@ -4,8 +4,6 @@ local version = vim.version()
 db.session_directory = vim.fn.stdpath("data") .. "/sessions"
 
 db.default_banner = {
-  '',
-  '',
   ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
   ' ⣿⣿⣿⠿⢛⡛⣛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
   ' ⣶⣾⣷⣿⣿⣶⣶⣤⣌⣙⣛⡻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
@@ -25,7 +23,7 @@ db.default_banner = {
   ' ⣿⣿⣿⣿⣿⣿⣿⠿⢋⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣫ ',
   ' ⣿⣿⣿⣿⣿⣿⣿⣿⣫⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣵⣿⣿ ',
   ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢏⣴⣿⣿⣿⣿ ',
-  ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢡⣿⣿⣿⡿⠿⠿ ',
+  ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢡⣿⣿⣿⣿⣿⣿ ',
     "N E O V I M - v " .. version.major .. "." .. version.minor,
 }
 
@@ -45,15 +43,6 @@ db.custom_center = {
         icon_hl = { link = icon_color },
         action = "Telescope oldfiles",
     },
-
-    {
-        desc = "Browse Files                  ",
-        shortcut = ".",
-        icon = "  ",
-        icon_hl = { link = icon_color },
-        action = "Telescope file_browser"
-    },
-    -- { shortcut = "<leader>fg", icon = " ", desc = "Find Word", action = "Telescope live_grep" },
 
     {
         desc = "New File                      ",
@@ -80,13 +69,6 @@ db.custom_center = {
         action = "PackerUpdate",
     },
     {
-        desc = "Setting                       ",
-        shortcut = "s",
-        icon = "  ",
-        icon_hl = { link = icon_color },
-        action = "edit $MYVIMRC",
-    },
-    {
         desc = "Exit                          ",
         shortcut = "q",
         icon = "  ",
@@ -108,12 +90,10 @@ vim.api.nvim_create_autocmd('Filetype', {
             setlocal nonumber norelativenumber nocursorline noruler
             nnoremap <buffer> f <cmd>Telescope find_files<CR>
             nnoremap <buffer> r <cmd>Telescope oldfiles<CR>
-            nnoremap <buffer> . <cmd>Telescope file_browser<CR>
             nnoremap <buffer> n <cmd>DashboardNewFile<CR>
             nnoremap <buffer> <leader>en <cmd>DashboardNewFile<CR>
             nnoremap <buffer> L <cmd>SessionLoad<CR>
             nnoremap <buffer> u <cmd>PackerUpdate<CR>
-            nnoremap <buffer> s <cmd>edit $MYVIMRC<CR>
             nnoremap <buffer> q <cmd>exit<CR>
         ]]
     end
