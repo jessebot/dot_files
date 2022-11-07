@@ -52,6 +52,11 @@ let g:clap_theme = 'material_design_dark'
 " this is supposed to help with syntax highlighting
 let g:ycm_enable_semantic_highlighting=1
 
+"                      Specific File Types:
+"           " things that apply to specific file types only"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ssh_known_hosts files
 au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 
 
