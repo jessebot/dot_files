@@ -149,7 +149,6 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 " enable folding for markdown?
 let g:markdown_folding = 1
-let g:indentLine_fileTypeExclude = ['dashboard']
 
 
 "                                 BACKUPS:
@@ -270,19 +269,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-" ----------------------------------------------------------------------------
-" OpenChangedFiles: Open a split for each dirty file in git
-function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
 
 " ----------------------------------------------------------------------------
 function! RenameFile()
