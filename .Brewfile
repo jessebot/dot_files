@@ -33,6 +33,9 @@ brew "fzf"
 # ls replacement written in rust: https://github.com/Peltoche/lsd
 brew "lsd"
 
+#  A cat(1) clone with syntax highlighting and Git integration.
+brew "bat"
+
 # this is a file manager TUI: https://www.geeksforgeeks.org/ranger-a-cli-file-manager/
 brew "ranger"
 
@@ -66,7 +69,7 @@ brew "cowsay"
 
 ###########################################################
 #  ===-----------------------------------------------===  #
-#                      Git                                #
+#                         Git                             #
 #  ===-----------------------------------------------===  #
 ###########################################################
 

@@ -164,7 +164,7 @@ alias gerp='grep'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
-# TODO: Write those docs with links to both apps (rich, and batcat)
+# TODO: Write those docs with links to both apps (rich, and bat)
 # Function to use the best syntax highlighting app for the job
 function dog {
     # if file has more lines than legnth of the terminal use app with pager
@@ -183,14 +183,8 @@ function dog {
             echo ""
         fi
     else
-        # On Linux, use batcat - sytnax highlighting + git support and pager
-        if [[ $(uname) == *"Linux"* ]]; then
-            batcat $1
-        else
-            # add line numbers
-            rich -n $1
-            echo ""
-        fi
+        # use batcat - sytnax highlighting + git support and pager
+        bat $1
     fi
 }
 
