@@ -79,7 +79,7 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " this is so we know what it is is telling us things are broken
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = 'ALE: [%linter%] %s [%severity%]'
 
 " prettier errors and warnings
 let g:ale_sign_error = ''

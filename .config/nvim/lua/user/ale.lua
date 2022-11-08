@@ -5,7 +5,7 @@
 vim.g.ale_enabled = 1
 
 -- so we know what exactly about ale is complaining
-vim.g.ale_echo_msg_format = '[%linter%] %s [%severity%]'
+vim.g.ale_echo_msg_format = 'ALE: [%linter%] %s [%severity%]'
 
 -- speed up ALE
 vim.g.ale_lint_on_text_changed = 'never'
