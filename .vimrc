@@ -15,9 +15,9 @@ endif
 " set window to 82 characters at start, to allow for line numbers & gitgutter
 set winwidth=82
 
-" line numbers for debugging and screen sharing, takes up 4 columns
+" line numbers for debugging and screen sharing, takes up 3 columns
 set number
-set numberwidth=4
+set numberwidth=3
 
 " highlight current line - very useful, shouldn't turn off, you will be lost
 set cursorline
@@ -60,29 +60,37 @@ let g:ycm_enable_semantic_highlighting=1
 au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 
 
-"                                  Ale:
+"                                  ALE:
 "      "linter for warning and errors, using *existing* linter tools"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = ''
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_text_changed = 'never'
+" enable ALE by default
 let g:ale_enabled = 1
-let g:ale_fix_on_save = 1
+" only enable these linters by default
 let g:ale_linters = { 'python': ['flake8', 'pyflakes'], }
+" this is disabled to speed up ALE
+let g:ale_lint_on_text_changed = 'never'
+
+" only enable these fixers by default
 let g:ale_fixers = {
-\   'python': ['autoflake'],
+\   'python': ['autoflake', 'auto'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
+" this will run the above fixers
+let g:ale_fix_on_save = 1
 
+" this is so we know what it is is telling us things are broken
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-"                               Gitgutter:
-" "vim-gitgutter is a vim plugin that puts a symbol in a column to the left"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" use the nerdfont symbols instead of -,+
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_removed = ''
+" prettier errors and warnings
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
+" put errors in our status line
+let g:airline#extensions#ale#enabled = 1
+
+" map the keys Ctrl+j and Ctrl+k to moving between errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
 "                           VimDevicons Config:
@@ -104,6 +112,13 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['pdf'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['doc'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['docx'] = ''
 
+" pictures
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['png'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jpg'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jpeg'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['icns'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['stl'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['webp'] = ''
 
 "                           NERDTree Config:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -116,12 +131,12 @@ if !has('nvim')
     let g:NERDTreeGitStatusUseNerdFonts = 1
     let g:NERDTreeGitStatusIndicatorMapCustom = {
                     \ 'Modified'  :'',
-                    \ 'Staged'    :'✚',
-                    \ 'Untracked' :'🤷',
-                    \ 'Renamed'   :'',
+                    \ 'Staged'    :'',
+                    \ 'Untracked' :'',
+                    \ 'Renamed'   :'',
                     \ 'Unmerged'  :'',
-                    \ 'Deleted'   :'',
-                    \ 'Dirty'     :'',
+                    \ 'Deleted'   :'',
+                    \ 'Dirty'     :'',
                     \ 'Ignored'   :'',
                     \ 'Clean'     :'',
                     \ 'Unknown'   :'',
@@ -136,6 +151,15 @@ if !has('nvim')
     " highlights the folder name
     let g:NERDTreeHighlightFoldersFullName = 1
 endif
+
+
+"                               Gitgutter:
+" "vim-gitgutter is a vim plugin that puts a symbol in a column to the left"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use the nerdfont symbols instead of -,+
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
 
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
@@ -452,6 +476,7 @@ if !has('nvim')
     " ------------------------------ git -------------------------------------
     " git plugin for running git commands with :git
     Plug 'tpope/vim-fugitive'
+
     " puts a git + or - in side line to show git changes in file
     Plug 'airblade/vim-gitgutter'
 
@@ -496,9 +521,6 @@ if !has('nvim')
 
     " requirements.text syntax highlighting
     Plug 'raimon49/requirements.txt.vim', { 'for': 'requirements' }
-
-    " pep8 style check that works with ale - requires pip installed flake8
-    Plug 'nvie/vim-flake8', { 'for': 'py' }
 
     " ---------------------------- k8s ----------------------------------
     " For the current buffer (including modifications not on disk)
