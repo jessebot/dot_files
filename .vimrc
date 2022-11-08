@@ -66,13 +66,13 @@ au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
 " enable ALE by default
 let g:ale_enabled = 1
 " only enable these linters by default
-let g:ale_linters = { 'python': ['flake8', 'pyflakes'], }
+let g:ale_linters = { 'python': ['ruff', 'flake8'], }
 " this is disabled to speed up ALE
 let g:ale_lint_on_text_changed = 'never'
 
 " only enable these fixers by default
 let g:ale_fixers = {
-\   'python': ['autoflake', 'auto'],
+\   'python': ['ruff', 'autoimport'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 " this will run the above fixers
