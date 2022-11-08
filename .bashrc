@@ -9,11 +9,12 @@
 # I hate bells a lot
 set bell-style none
 
-# If not running interactively, don't do anything
-# case $- in
-#     *i*) ;;
-#       *) return;;
-# esac
+# fixes "scp: Received message too long 169564991" error
+# If not running interactively, don't do anything, no outputs
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # default editor
 export EDITOR=vim
