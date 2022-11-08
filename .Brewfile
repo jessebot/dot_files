@@ -91,6 +91,7 @@ brew "cmake"
 
 # programming languages and their package managers
 brew "python3"
+brew "poetry"
 brew "go"
 brew "npm"
 
