@@ -1,5 +1,6 @@
 " Vim syntax file
 " Language:	Python
+"
 
 " :shrug:
 syn keyword pythonSelf self cls
@@ -24,7 +25,7 @@ syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?"""+ end=+"""+ keepend exclud
 syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?'''+ end=+'''+ keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
 hi link pythonDocstring    Comment
 
-" strings
+"-------------------------------- "strings" -------------------------------
 syn region pythonString     start=+[bB]\='+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonEscape,pythonEscapeError,@Spell
 syn region pythonString     start=+[bB]\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonEscape,pythonEscapeError,@Spell
 
@@ -48,12 +49,21 @@ syn match   pythonNumber    "\<\d\+[lLjJ]\=\>" display
 
 " built-ins and lambda
 syn keyword pythonLambdaExpr lambda
-syn keyword pythonBuiltinObj Ellipsis None NotImplemented
-syn keyword pythonBuiltinObj __debug__ __doc__ __file__ __name__ __package__
-syn keyword pythonBuiltinType type object
-syn keyword pythonBuiltinType str basestring unicode buffer bytearray bytes chr unichr
-syn keyword pythonBuiltinType dict int long float complex set frozenset list tuple
-syn keyword pythonBuiltinType file super vars zip
+syn keyword pythonConstant	NotImplemented Ellipsis __debug__
+" built-in functions
+syn keyword pythonBuiltin	abs all any bin bool chr classmethod
+syn keyword pythonBuiltin	compile complex delattr dict dir divmod
+syn keyword pythonBuiltin	enumerate eval filter float format
+syn keyword pythonBuiltin	frozenset getattr globals hasattr hash
+syn keyword pythonBuiltin	help hex id input int isinstance
+syn keyword pythonBuiltin	issubclass iter len list locals map max
+syn keyword pythonBuiltin	min next object oct open ord pow print
+syn keyword pythonBuiltin	property range repr reversed round set
+syn keyword pythonBuiltin	setattr slice sorted staticmethod str
+syn keyword pythonBuiltin	sum super tuple type vars zip __import__
+syn keyword pythonBuiltin	sum super tuple type vars zip __file__
+" Python 3.0 only
+syn keyword pythonBuiltin	ascii bytearray bytes exec memoryview
 
 " python function definition (parameters)
 syn match       pythonFunction          "\%(\%(def\s\|@\)\s*\)\@<=\h\%(\w\|\.\)*" contained nextgroup=pythonVars
@@ -71,4 +81,4 @@ syn match   pythonDottedName "[a-zA-Z_][a-zA-Z0-9_]*\(\.[a-zA-Z_][a-zA-Z0-9_]*\)
 syn match   pythonDot        "\." display containedin=pythonDottedName
 
 " boolean
-syn keyword pythonBoolean     True False
+syn keyword pythonBoolean True False
