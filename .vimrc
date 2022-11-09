@@ -105,12 +105,14 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ini'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cfg'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['toml'] = ''
 
 " text files
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['pdf'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['doc'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['docx'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
 
 " pictures
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['png'] = ''
