@@ -30,6 +30,9 @@ return require('packer').startup(function(use)
     -- not sure why this doesn't work, so it's commented out
     -- use 'folke/drop.nvim'
 
+    -- this is a modern fuzzy searcher
+    use '~/.vim/plugged/vim-clap'
+
     -- ------------ telescope: extendable fuzzy finder over lists ------------
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
          requires = {{'nvim-lua/plenary.nvim'} }
@@ -53,6 +56,9 @@ return require('packer').startup(function(use)
     -- general linter - will use common linters and highlight broken code
     -- 'dense-analysis/ale'
     use '~/.vim/plugged/ale'
+
+    -- syntax highlighting for neovim
+    use {'nvim-treesitter/nvim-treesitter'}
 
     -- terraform linter -- 'hashivim/vim-terraform'
     use '~/.vim/plugged/vim-terraform'

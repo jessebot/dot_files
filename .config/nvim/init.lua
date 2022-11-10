@@ -33,6 +33,7 @@ vim.cmd [[colorscheme spacechalk]]
 
 -- --------- these are plugin configs for plugins imported by packer ---------
 require('user.nvim-tree')
+require('user.tree-sitter')
 require('user.ale')
 require('user.airline')
 require('user.dashboard')
