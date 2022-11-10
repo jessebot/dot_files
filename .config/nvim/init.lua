@@ -3,6 +3,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- turn off the mouse scrolling because it is confusing
+vim.cmd [[set mousescroll=ver:0,hor:0]]
+
 -- vim.opt.window to 82 characters at start, to allow for line numbers & gitgutter
 vim.opt.winwidth = 82
 
@@ -29,6 +32,7 @@ vim.cmd [[source ~/.config/nvim/packerinit.vim]]
 vim.cmd [[colorscheme spacechalk]]
 
 -- --------- these are plugin configs for plugins imported by packer ---------
+require('user.nvim-tree')
 require('user.ale')
 require('user.airline')
 require('user.dashboard')

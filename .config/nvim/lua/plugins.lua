@@ -44,14 +44,16 @@ return require('packer').startup(function(use)
     use '~/.vim/plugged/vim-gitgutter'
 
     -- ----------- nvim new nerdtree replacement needs this :) ---------------
-    use 'nvim-tree/nvim-web-devicons'
-    use 'nvim-tree/nvim-tree.lua'
+    use {'nvim-tree/nvim-tree.lua',
+         requires = {'nvim-tree/nvim-web-devicons'},
+         tag = 'nightly'}
+
+    -- -------------------- Language Specific Stuff ------------------------
 
     -- general linter - will use common linters and highlight broken code
     -- 'dense-analysis/ale'
     use '~/.vim/plugged/ale'
 
-    -- -------------------- Language Specific Stuff ------------------------
     -- terraform linter -- 'hashivim/vim-terraform'
     use '~/.vim/plugged/vim-terraform'
 
