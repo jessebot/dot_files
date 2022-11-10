@@ -85,9 +85,6 @@ let g:ale_echo_msg_format = 'ALE: [%linter%] %s [%severity%]'
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 
-" put errors in our status line
-let g:airline#extensions#ale#enabled = 1
-
 " map the keys Ctrl+j and Ctrl+k to moving between errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -426,9 +423,13 @@ map <leader>n :call RenameFile()<cr>
 
 " use powerline fonts
 let g:airline_powerline_fonts = 1
+
+" put ALE errors in our status line
+let g:airline#extensions#ale#enabled = 1
+
 " changing separators to match personal powerline for shell
 let g:airline_left_sep=' '
-let g:airline_right_sep=' '
+let g:airline_right_sep=''
 
 " this is a smaller more consise final airline segment
 function! LinePercent()
