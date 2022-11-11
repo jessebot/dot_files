@@ -424,7 +424,7 @@ map <leader>n :call RenameFile()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " don't show the section if it's not in use e.g. error section
-let g:airline_skip_empty_sections=1
+let g:airline_skip_empty_sections = 1
 
 " use powerline fonts
 let g:airline_powerline_fonts = 1
@@ -440,7 +440,10 @@ let g:airline_right_sep=''
 function! LinePercent()
     return line('.') * 100 / line('$') . '%'
 endfunction
+
 let g:airline_section_z = ' %l (%{LinePercent()})  %v'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if !has('nvim')
     " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
