@@ -5,7 +5,13 @@
 vim.g.ale_enabled = 1
 
 -- so we know what exactly about ale is complaining
-vim.g.ale_echo_msg_format = 'ALE: [%linter%] %s [%severity%]'
+vim.g.ale_echo_msg_error_str = ''
+vim.g.ale_echo_msg_warning_str = ''
+vim.g.ale_echo_msg_format = '%severity% ALE: [%linter%]: %s'
+
+-- prettier error/warning signs for the sign column
+vim.g.ale_sign_error = ''
+vim.g.ale_sign_warning = ''
 
 -- speed up ALE
 vim.g.ale_lint_on_text_changed = 'never'
@@ -25,10 +31,6 @@ let g:ale_fixers = {
 ]]
 -- automatically apply above fixers
 vim.g.ale_fix_on_save = 1
-
--- prettier errors and warnings
-vim.g.ale_sign_error = ''
-vim.g.ale_sign_warning = ''
 
 -- TODO: how do you do these in lines below in lua?
 -- put errors in our status line
