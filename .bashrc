@@ -125,10 +125,23 @@ alias pythong='python3.10'
 alias python='python3.10'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# colors for less when displayingman pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;35m'
+
+
 # colordiff - diff, but with colors for accessibility
 alias diff='colordiff -uw'
+
 # always use vim instead of vi, TODO: check if vim installed?
 alias vi='vim'
+
 # we love a good tracer t
 alias tracert='traceroute'
 # whoami, whereami, whoareyou?
