@@ -79,7 +79,9 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " this is so we know what it is is telling us things are broken
-let g:ale_echo_msg_format = 'ALE: [%linter%] %s [%severity%]'
+let g:ale_echo_msg_error_str = ''
+let g:ale_echo_msg_warning_str = ''
+let g:ale_echo_msg_format = '%severity% ALE: [%linter%]: %s'
 
 " prettier errors and warnings
 let g:ale_sign_error = ''
@@ -420,6 +422,9 @@ map <leader>n :call RenameFile()<cr>
 "                                Airline:
 "                 "A pure vim script status line for vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" don't show the section if it's not in use e.g. error section
+let g:airline_skip_empty_sections=1
 
 " use powerline fonts
 let g:airline_powerline_fonts = 1
