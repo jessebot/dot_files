@@ -38,6 +38,8 @@ brew "bat"
 
 # this is a file manager TUI: https://www.geeksforgeeks.org/ranger-a-cli-file-manager/
 brew "ranger"
+# preview videos in the terminal
+brew "ffmpegthumbnailer"
 
 # like grep or ack, but more modern, for searching file text
 brew "ag"
