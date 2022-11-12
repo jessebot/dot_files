@@ -1,7 +1,9 @@
 -- opens nvim-tree on any file opening
+-- and adapts to sizes of other windows
 require("nvim-tree").setup({
+	open_on_setup_file = true,
 	view = {
-		width = 20,
+		adaptive_size = true,
 	},
 })
 
