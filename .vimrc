@@ -31,6 +31,7 @@ if !has('nvim')
     " fonts with icons/emojis require utf-8
     set encoding=utf-8
 endif
+
 " use specific font with the glyphs patched in
 set guifont=Mononoki\ Nerd\ Font:h15
 
@@ -40,7 +41,7 @@ set guifont=Mononoki\ Nerd\ Font:h15
 "                                 Colors:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use 24-bit (true-color) mode in Neovim 0.1.5+ and Vim 7.4+
-if has('nvim') || has('termguicolors')
+if has('termguicolors')
   set termguicolors
   " Enable syntax highlighting by default
   syntax on
@@ -55,10 +56,7 @@ let g:ycm_enable_semantic_highlighting=1
 "                      Specific File Types:
 "           " things that apply to specific file types only"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" ssh_known_hosts files
 au BufRead,BufNewFile known_hosts,ssh_known_hosts set filetype=ssh_known_hosts
-
 
 "                                  ALE:
 "      "linter for warning and errors, using *existing* linter tools"
