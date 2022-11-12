@@ -6,9 +6,6 @@ vim.g.loaded_netrwPlugin = 1
 -- turn off the mouse scrolling because it is confusing
 vim.cmd [[set mousescroll=ver:0,hor:0]]
 
--- vim.opt.window to 82 characters at start, to allow for line numbers & gitgutter
-vim.opt.winwidth = 82
-
 -- line numbers for debugging and screen sharing, takes up 4 columns
 vim.opt.number = true
 vim.opt.numberwidth = 4
