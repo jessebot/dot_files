@@ -79,7 +79,12 @@ if [[ $(uname) == *"Linux"* ]]; then
     export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
-    pip_packages="/home/linuxbrew/.linuxbrew/lib/python3.10/site-packages"
+    # This is for powerline, a fancy extensible prompt: https://powerline.readthedocs.io
+    if [ -d /home/linuxbrew/.linuxbrew/lib/python3.10/site-packages/powerline ]; then
+        pip_packages="/home/linuxbrew/.linuxbrew/lib/python3.10/site-packages"
+    else
+        pip_packages="$HOME/.local/lib/python3.10/site-packages"
+    fi
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
