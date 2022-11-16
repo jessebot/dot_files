@@ -60,14 +60,6 @@
                         }
                     },
                     {
-                        "function": "powerline.segments.common.players.spotify_dbus",
-                        "priority": 70,
-                        "name": "player",
-                        "args": {
-                            "format": "{state_symbol} {artist} - {title} ({total}}"
-                        }
-                    },
-                    {
                         "function": "powerline.segments.common.time.date",
                         "args": {
                             "format": " %H:%M"
