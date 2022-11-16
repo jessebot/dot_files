@@ -16,12 +16,13 @@
 		"darkestcyan": 23,
 		"darkcyan": 74,
 
-        "blue": 12,
+                "blue": 12,
 		"darkestblue": 24,
 		"darkblue": 31,
-        "cornflowerblue": [69, "5f87ff"],
+                "cornflowerblue": [69, "5f87ff"],
+                "blueishblack": [17, "232336"],
 
-        "magenta": [170, "f289f9"],
+                "magenta": [170, "f289f9"],
 
 		"red": 1,
 		"darkestred": 52,

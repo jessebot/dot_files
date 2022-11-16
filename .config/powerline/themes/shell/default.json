@@ -38,6 +38,10 @@
                         }
                     },
                     {
+                        "function": "powerline.segments.common.env.virtualenv",
+                        "priority": 50
+                    },
+                    {
                         "type": "string",
                         "highlight_groups": ["background"],
                         "draw_soft_divider": false,
@@ -46,7 +50,7 @@
                     },
                     {
                         "function": "powerline_kubernetes.kubernetes",
-                        "priority": 50,
+                        "priority": 60,
                         "args": {
                             "show_kube_logo": true,
                             "show_cluster": false,
@@ -57,7 +61,7 @@
                     },
                     {
                         "function": "powerline.segments.common.players.spotify_dbus",
-                        "priority": 60,
+                        "priority": 70,
                         "name": "player",
                         "args": {
                             "format": "{state_symbol} {artist} - {title} ({total}}"
@@ -68,6 +72,17 @@
                         "args": {
                             "format": " %H:%M"
                         }
+                    },
+                    {
+                        "function": "powerline.segments.common.bat.battery",
+                        "args": {
+                            "gamify": true,
+                            "full_heart": "♥ ",
+                            "empty_heart": "",
+                            "online": " ",
+                            "offline": " "
+                        }
+
                     }
                 ]
             }],

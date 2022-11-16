@@ -64,7 +64,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 # python packages' default location when you do pip3 install --user package
 export PATH=$PATH:$HOME/.local/bin
 # this is for non-M1 macs
-export PATH=$PATH:$HOME/Library/Python/3.10/bin
+export PATH=$PATH:/usr/local/bin
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
@@ -79,12 +79,7 @@ if [[ $(uname) == *"Linux"* ]]; then
     export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
-    # This is for powerline, a fancy extensible prompt: https://powerline.readthedocs.io
-    if [ -d /home/linuxbrew/.linuxbrew/lib/python3.10/site-packages/powerline ]; then
-        pip_packages="/home/linuxbrew/.linuxbrew/lib/python3.10/site-packages"
-    else
-        pip_packages="$HOME/.local/lib/python3.10/site-packages"
-    fi
+    pip_packages="/home/linuxbrew/.linuxbrew/lib/python3.11/site-packages"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -99,10 +94,10 @@ if [[ $(uname) == *"Darwin"* ]]; then
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On M1/M2: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
-        pip_packages="/opt/homebrew/lib/python3.10/site-packages"
+        pip_packages="/opt/homebrew/lib/python3.11/site-packages"
     else
         # For older macs before the M1, pre-2020
-        pip_packages="/usr/local/lib/python3.10/site-packages"
+        pip_packages="/usr/local/lib/python3.11/site-packages"
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
@@ -131,11 +126,11 @@ alias ter='tree'
 alias tre='tree'
 alias tere='tree'
 # can't spell python
-alias pthyon='python3.10'
-alias ptyhon='python3.10'
-alias pythong='python3.10'
-# alias because python2-python3.9 still in some places
-alias python='python3.10'
+alias pthyon='python3.11'
+alias ptyhon='python3.11'
+alias pythong='python3.11'
+# alias because versions lower than python3.11 still in some places
+alias python='python3.11'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
