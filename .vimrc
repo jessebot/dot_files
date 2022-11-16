@@ -508,8 +508,11 @@ if !has('nvim')
     " This is helpful for markdown
     Plug 'junegunn/limelight.vim'
 
+    " this is for pretty vim tables
+    Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
+
     " Now you can type emojis :) like :dog: which should become a dog :dog
-    Plug 'junegunn/vim-emoji', { 'for': 'md' }
+    Plug 'junegunn/vim-emoji', { 'for': 'markdown' }
 
     " --------------------------- HTML / CSS ----------------------------
     " cterm colors to be displayed pretty in vimscript at least
