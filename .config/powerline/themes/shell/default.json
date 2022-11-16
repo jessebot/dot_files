@@ -71,7 +71,7 @@
                         "args": {
                             "gamify": true,
                             "full_heart": "♥ ",
-                            "empty_heart": "",
+                            "empty_heart": " ",
                             "online": " ",
                             "offline": " "
                         }
