@@ -39,6 +39,7 @@
                     },
                     {
                         "function": "powerline.segments.common.env.virtualenv",
+                        "before": " ",
                         "priority": 50
                     },
                     {
