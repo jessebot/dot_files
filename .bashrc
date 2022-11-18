@@ -6,6 +6,9 @@
 #                                 General                                    #
 # -------------------------------------------------------------------------- #
 
+# this is for my specific locale, so that perl is chill about everything
+export LC_ALL=en_US.UTF-8
+
 # I hate bells a lot
 set bell-style none
 
