@@ -75,6 +75,9 @@ return require('packer').startup(function(use)
     -- This is helpful for markdown -- 'junegunn/limelight.vim'
     use '~/.vim/plugged/limelight.vim'
 
+    -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
+    use '~/.vim/plugged/vim-log-highlighting'
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

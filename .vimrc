@@ -541,6 +541,9 @@ if !has('nvim')
     "   :KubeApplyDir :KubeDeleteDir
     Plug 'andrewstuart/vim-kubernetes', {'for': 'yaml'}
 
+    " -------------------------- log files --------------------------------
+    Plug 'mtdl9/vim-log-highlighting', {'for': 'log'}
+
     call plug#end()
 endif
 
