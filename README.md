@@ -15,22 +15,22 @@ These started as my personal dot files, but then they became the sensible
   ## `asciinema`
   File: [`~/.config/asciinema/config`](.config/asciinema/config)
 
-  Local config file for [`asciinema`](https://asciinema.org/), a lightweight, purely text-based approach to terminal recording. Currently it just sets the shell command to be `/bin/bash --login`, which loads your bash variables. This could be changed to a different shell and their equivilent.
+  Config file for [`asciinema`](https://asciinema.org/), a lightweight, purely text-based approach to terminal recording. Currently it just sets the shell command to be `/bin/bash --login`, which loads your bash variables. This could be changed to a different shell and their equivilent.
 
   ## gh
   File: [`~/.config/gh`](.config/gh/config.yml)
 
-  Local config file for [`gh`](https://cli.github.com/), the GitHub CLI. There's not a ton in there, but it uses [`rich-cli`](https://github.com/Textualize/rich-cli) as a prettier pager, and firefox as a browser, and setting vim as an editor. The rest is stock, and subject to change.
+  Config file for [`gh`](https://cli.github.com/), the GitHub CLI. There's not a ton in there, but it uses [`rich-cli`](https://github.com/Textualize/rich-cli) as a prettier pager, and firefox as a browser, and setting vim as an editor. The rest is stock, and subject to change.
 
   ## glab-cli
   File: [`~/.config/glab-cli`](.config/glab-cli/config.yml)
 
-  Local config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool. There's not a ton in there, but it uses a dark theme, firefox as a browser, and vim as an editor.  The rest is stock, and subject to change.
+  Config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool. There's not a ton in there, but it uses a dark theme, firefox as a browser, and vim as an editor.  The rest is stock, and subject to change.
 
   ## karabiner
   File: [`~/.config/karabiner/karabiner.json`](.config/karabiner/karabiner.json)
 
-  Local config file for [karabiner](https://karabiner-elements.pqrs.org/),
+  Config file for [karabiner](https://karabiner-elements.pqrs.org/),
   which is used to map capslock to control on macOS and other key remapping that
   can be really useful.
 
@@ -164,9 +164,10 @@ These started as my personal dot files, but then they became the sensible
 
 <details>
   <summary>.vim*</summary>
-  local configuration for [vim](https://www.vim.org/), a text editor, and it's plugins, installed via vim-plug.
+ 
+  Configuration for [vim](https://www.vim.org/), a text editor, and it's plugins, installed via vim-plug.
 
-  [~/.vimrc](.vimrc) is the main file for the global vim configuration. We set a
+  [`~/.vimrc`](.vimrc) is the main file for the global vim configuration. We set a
   lot of defaults, including:
 
   - setting window width to 82 characters
@@ -188,16 +189,16 @@ These started as my personal dot files, but then they became the sensible
   - uses template files below
 
   Auto-install vim-plug:
-  - [~/.vim/autoload/plug.vim](.vim/autoload/plug.vim)
+  - [`~/.vim/autoload/plug.vim`](.vim/autoload/plug.vim)
 
   Files for syntax highlighting for python, ssh_known_hosts, and toml files:
-  - [~/.vim/syntax/python.vim](.vim/syntax/python.vim)
-  - [~/.vim/syntax/ssh_known_hosts.vim](.vim/syntax/ssh_known_hosts.vim)
-  - [~/.vim/syntax/toml.vim](.vim/syntax/toml.vim)
+  - [`~/.vim/syntax/python.vim`](.vim/syntax/python.vim)
+  - [`~/.vim/syntax/ssh_known_hosts.vim`](.vim/syntax/ssh_known_hosts.vim)
+  - [`~/.vim/syntax/toml.vim`](.vim/syntax/toml.vim)
 
   Files for default values in a python or markdown file:
-  - [~/.vim/templates/template.md](.vim/templates/template.md)
-  - [~/.vim/templates/template.py](.vim/templates/template.py)
+  - [`~/.vim/templates/template.md`](.vim/templates/template.md)
+  - [`~/.vim/templates/template.py`](.vim/templates/template.py)
 
 </details>
 
