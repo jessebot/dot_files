@@ -1,2 +1,2 @@
 [record]
-command = /bin/bash -l
+command = /bin/bash --login
