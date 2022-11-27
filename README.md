@@ -8,7 +8,7 @@ These started as my personal dot files, but then they became the sensible
 
 
 <details>
-  <summary>`.config`</summary>
+  <summary>.config</summary>
 
   Below are directories that would be located in your home directory, under `.config`.
 
@@ -151,19 +151,19 @@ These started as my personal dot files, but then they became the sensible
 </details>
 
 <details>
-  <summary>`.cron`</summary>
+  <summary>.cron</summary>
   local cron jobs for alarms and updates
 </details>
 
 <details>
-  <summary>`.local/bin`</summary>
+  <summary>.local/bin</summary>
   This is just where we throw a few really simple scripts like:
   imgcat, and it2setkeylabel for iterm2 to cat images in the terminal and use the touchbar on macOS with iterm2.
   there's also a `utc` command there, for ease of use printing the time in UTC.
 </details>
 
 <details>
-  <summary>`.vimrc` and `.vim/*`</summary>
+  <summary>.vim*</summary>
   local configuration for [vim](https://www.vim.org/), a text editor, and it's plugins, installed via vim-plug.
 
   [~/.vimrc](.vimrc) is the main file for the global vim configuration. We set a
@@ -202,7 +202,7 @@ These started as my personal dot files, but then they became the sensible
 </details>
 
 <details>
-  <summary>`.bash_profile`, `.bashrc`, `.bashrc_k8s`</summary>
+  <summary>.bash_profile, .bashrc, .bashrc_k8s</summary>
   Configuration for BASH. The `.bash_profile` just sources the `.bashrc`, since macOS default looks for bash_profile instead of bashrc.
 
   The `.bashrc` sets the following defaults:
@@ -227,31 +227,31 @@ These started as my personal dot files, but then they became the sensible
 </details>
 
 <details>
-  <summary>`.gitignore`</summary>
+  <summary>.gitignore</summary>
   Git ignore file for all sorts of things in a home directory that should never get committed.
 
 </details>
 
 <details>
-  <summary>`.hyper.js`</summary>
+  <summary>.hyper.js</summary>
   Sensible defaults for the hyper terminal emulator.
 
 </details>
 
 <details>
-  <summary>`.iterm2_shell_integration.bash`</summary>
+  <summary>.iterm2_shell_integration.bash</summary>
   This is for installing the iterm2 shell integration for macOS.
 
 </details>
 
 <details>
-  <summary>`.tmux.conf`</summary>
+  <summary>.tmux.conf</summary>
   Sets 256 colors for tmux and enables the powerline tmux status line.
 
 </details>
 
 <details>
-  <summary>`.zshrc`</summary>
+  <summary>.zshrc</summary>
   a .zshrc a friend wrote for me once, and I never removed :)
   Who knows what lives there. :shrug:
 
