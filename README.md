@@ -263,7 +263,6 @@ These started as my personal dot files, but then they became the sensible
 
   [`~/.vimrc`](.vimrc) is the main file for the global vim configuration. We set a
   lot of defaults, including:
-
   - setting window width to 82 characters
   - enabling line numbers
   - enabling highlighting of column cursor is on
