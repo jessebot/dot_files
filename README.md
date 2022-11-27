@@ -33,7 +33,7 @@ These started as my personal dot files, but then they became the sensible
     
   <blockquote>
     
-  File: [`~/.config/gh`](.config/gh/config.yml)
+  File: [`~/.config/gh/config.yml`](.config/gh/config.yml)
 
   Config file for [`gh`](https://cli.github.com/), the GitHub CLI. There's not a ton in there, but it uses [`rich-cli`](https://github.com/Textualize/rich-cli) as a prettier pager, and firefox as a browser, and setting vim as an editor. The rest is stock, and subject to change.
   
@@ -46,7 +46,7 @@ These started as my personal dot files, but then they became the sensible
     
   <blockquote>
     
-  File: [`~/.config/glab-cli`](.config/glab-cli/config.yml)
+  File: [`~/.config/glab-cli/config.yml`](.config/glab-cli/config.yml)
 
   Config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool. There's not a ton in there, but it uses a dark theme, firefox as a browser, and vim as an editor.  The rest is stock, and subject to change.
   
