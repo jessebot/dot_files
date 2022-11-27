@@ -12,29 +12,50 @@ These started as my personal dot files, but then they became the sensible
 
   Below are directories that would be located in your home directory, under `.config`.
 
-  ## `asciinema`
+  <blockquote>
+  
+  <details>
+    <summary>asciinema</summary>
+    
   File: [`~/.config/asciinema/config`](.config/asciinema/config)
 
   Config file for [`asciinema`](https://asciinema.org/), a lightweight, purely text-based approach to terminal recording. Currently it just sets the shell command to be `/bin/bash --login`, which loads your bash variables. This could be changed to a different shell and their equivilent.
+    
+  </details>
+    
 
-  ## gh
+  <details>
+    <summary>gh</summary>
+    
   File: [`~/.config/gh`](.config/gh/config.yml)
 
   Config file for [`gh`](https://cli.github.com/), the GitHub CLI. There's not a ton in there, but it uses [`rich-cli`](https://github.com/Textualize/rich-cli) as a prettier pager, and firefox as a browser, and setting vim as an editor. The rest is stock, and subject to change.
-
-  ## glab-cli
+    
+  </details>
+  
+  <details>
+    <summary>glab-cli</summary>
+    
   File: [`~/.config/glab-cli`](.config/glab-cli/config.yml)
 
   Config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool. There's not a ton in there, but it uses a dark theme, firefox as a browser, and vim as an editor.  The rest is stock, and subject to change.
-
-  ## karabiner
+    
+  </details>
+  
+  <details>
+    <summary>karabiner</summary>
+    
   File: [`~/.config/karabiner/karabiner.json`](.config/karabiner/karabiner.json)
 
   Config file for [karabiner](https://karabiner-elements.pqrs.org/),
   which is used to map capslock to control on macOS and other key remapping that
   can be really useful.
-
-  ## kitty
+    
+  </details>
+  
+  <details>
+    <summary>kitty</summary>
+    
   Files:
   - [`~/.config/kitty/kitty.conf`](.config/kitty/kitty.conf)
   - [`~/.config/kitty/kitty-dark.png`](.config/kitty/kitty-dark.png)
@@ -44,29 +65,40 @@ These started as my personal dot files, but then they became the sensible
   as well as a basic kitty.conf to use some [nerdfonts](https://www.nerdfonts.com/),
   and set up look and feel on macOS.
 
-  ## lsd
+  </details>
+  
+  <details>
+    <summary>lsd</summary>
+    
   File: [`~/.config/lsd/config.yaml`](.config/lsd/config.yaml)
 
   Config file for [`lsd`](https://github.com/Peltoche/lsd), an [`ls`](https://linux.die.net/man/1/ls) alternative with icons and pretty colors. There's an intension to write and release a theme for lsd eventually.
-
-  ## lsimg
+  
+  </details>
+  
+  <details>
+    <summary>lsimg</summary>
+    
   File: [`~/.config/lsimg/config.yaml`](.config/lsimg/config.yaml)
 
   This is a local project that I'm working on to rewrite a bash script in python,
   to do basic checking of images in the terminal. I might remove it though,
   because after discovering [ranger](https://github.com/ranger/ranger), it might not be really needed :shrug:
 
-  ## neofetch
+  </details>
+  
+  <details>
+    <summary>neofetch</summary>
   File: [`~/.config/neofetch/config.conf`](.config/neofetch/config.conf)
 
   Config file for [neofetch](https://github.com/dylanaraps/neofetch), A command-line system information tool written in bash 3.2+. The intension is to pair down information to only what's needed, and maybe have a cute image :)
-
-  ## nvim
-
+    
+  </details>
+  
   <details>
-    <summary>Config files for neovim</summary>
-
-    [neovim](https://neovim.io/) is a hyperextensible Vim-based text editor, which is in some ways a sucessor to vim. It's a lot faster, for one, and there's more support for more languages, which means more plugins. Uses [packer](https://github.com/wbthomason/packer.nvim) to manager neovim plugins.
+    <summary>nvim</summary>
+    
+  Config files for [neovim](https://neovim.io/) is a hyperextensible Vim-based text editor, which is in some ways a sucessor to vim. It's a lot faster, for one, and there's more support for more languages, which means more plugins. Uses [packer](https://github.com/wbthomason/packer.nvim) to manager neovim plugins.
 
     Each file explained below:
 
@@ -123,8 +155,10 @@ These started as my personal dot files, but then they became the sensible
     currently installing syntax for: "lua", "yaml", "bash", "hcl"
 
   </details>
-
-  ## Powerline
+  
+  <details>
+    <summary>Powerline</summary>
+    
   Configuration files for [powerline](https://github.com/powerline/powerline), a status line for BASH and tmux. We enable a space_chalk color theme, as well as battery information, git information, and local IP address.
 
   Files for colors:
@@ -140,13 +174,21 @@ These started as my personal dot files, but then they became the sensible
 
   File for configuring tmux status line:
   - [`~/.config/powerline/themes/tmux/default.json`](.config/powerline/)
+  
+  </details>
 
-  ## Ranger
+  <details>
+    <summary>Ranger</summary>
+    
   Files:
   - [`~/.config/ranger/scope.sh`](.config/ranger/scope.sh)
   - [`~/.config/ranger/rc.conf`](.config/ranger/rc.conf)
 
   [ranger](https://github.com/ranger/ranger) is a TUI file manager. We enable file previews using iterm2 and video previews using ffmpegthumbnailer. We also enable svg previews.
+  
+  </details>
+  
+  </blockquote>
 
 </details>
 
