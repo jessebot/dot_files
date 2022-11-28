@@ -146,7 +146,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
   - [`~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc`](.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc)
 
-  Config file for [neomutt], a terminal based email client. Config includes:
+  Config file for [NeoMutt], a terminal based email client. Config includes:
   - sets [neonwolf colorscheme]
   - sets character set to be utf-8 (emojis :))
   - sets basic IMAP and SMTP settings
@@ -158,7 +158,8 @@ to manage my dot files. Funny how these things work. :shrug:
   ```neomutt
   set my_user=you@youremail.com
   set my_name="Your Name"
-  # if you're using protonmail this is the password from protonmail-bridge
+  # if you're using protonmail this is the password from protonmail-bridge,
+  # after you login, not your actual email password
   set my_pass="areallycoolpasswordfordogs"
   ```
 
@@ -278,7 +279,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - [`~/.config/ranger/scope.sh`](.config/ranger/scope.sh)
   - [`~/.config/ranger/rc.conf`](.config/ranger/rc.conf)
 
-  [ranger][ranger] is a TUI file manager. Current configurations:
+  [ranger][ranger] is a [TUI] file manager. Current configurations:
   - enable file previews using [iterm2]
   - enable video previews using ffmpegthumbnailer
   - enable svg previews.
@@ -422,6 +423,23 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
+  <summary>.mailcap</summary>
+
+   <blockquote>
+
+   Config file for [NeoMutt's MIME Support], which is how [NeoMutt],
+   a [TUI] email client, handles attachments such as html in an email body,
+   or an in-line image.
+
+   We currently set the following:
+   - [w3m] for html in the terminal
+   - img2[sixel] for images in the terminal
+
+   </blockquote>
+
+</details>
+
+<details>
   <summary>.tmux.conf</summary>
 
 <blockquote>
@@ -456,7 +474,10 @@ Config file for [tmux]. Currently, it will:
 [neofetch]: https://github.com/dylanaraps/neofetch "neofetch"
 [powerline]: https://github.com/powerline/powerline "powerline"
 [rich-cli]: https://github.com/Textualize/rich-cli "rich cli"
+[sixel]: https://en.wikipedia.org/wiki/Sixel "sixel"
 [tmux]: https://github.com/tmux/tmux "tmux"
+[w3m]: https://w3m.org "w3m"
+[TUI]: https://en.wikipedia.org/wiki/Text-based_user_interface "TUI"
 
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
@@ -478,7 +499,8 @@ Config file for [tmux]. Currently, it will:
 [ranger]: https://github.com/ranger/ranger "ranger file manager"
 
 <!-- ---------------------------- Email -------------------------------- -->
-[neomutt]: https://neomutt.org "neomutt"
+[NeoMutt's MIME Support]: https://neomutt.org/guide/mimesupport "neomutt MIME support"
+[NeoMutt]: https://neomutt.org "neomutt"
 [neonwolf colorscheme]: https://gitlab.com/h3xx/mutt-colors-neonwolf "neonwolf neomutt colorscheme"
 
 <!-- ------------------------- Vim and Neovim ---------------------------- -->
