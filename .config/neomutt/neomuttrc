@@ -14,6 +14,7 @@ set assumed_charset = "iso-8859-1"
 # --------------------------- Themeing --------------------------- #
 # extremely neon color theme
 source ~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc
+
 # powerline theme
 source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
 
@@ -24,7 +25,7 @@ source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
 # if using protonmail, this should be the password from protonmail-bridge
 # $my_pass="Your Password"
 # $my_name="Your Name"
-#
+
 source ~/.config/neomutt/keys
 
 
@@ -40,23 +41,25 @@ set mbox_type     = Maildir
 set folder        = imap://127.0.0.1:1143/
 set record        = +Sent
 set postponed     = +Drafts
+# Specify where to save and/or look for postponed messages.
+# set postponed = +[Protonmail]/Drafts
 set trash         = +Trash
 set spoolfile     = +INBOX
 mailboxes         = +INBOX
-set mail_check    = 5 # seconds
 
+# ----------------------------- Caching --------------------------------- #
 # Store message headers locally to speed things up.
-# If hcache is a folder, Mutt will create sub cache folders for each account
-# which may speeds things up even more:
+# If header_cache is a folder, Mutt will create sub cache folders for
+# each account which may speeds things up even more:
+# ----------------------------------------------------------------------- #
 set header_cache = ~/.cache/mutt
 
+# --------------------------- Caching 2 --------------------------------- #
 # Store messages locally to speed things up, like searching message bodies.
 # Can be the same folder as header_cache.
 # This will cost important disk usage according to your e-mail amount.
+# ----------------------------------------------------------------------- #
 set message_cachedir = "~/.cache/mutt"
-
-# Specify where to save and/or look for postponed messages.
-set postponed = +[Protonmail]/Drafts
 
 # Allow Mutt to open a new IMAP connection automatically.
 unset imap_passive
@@ -66,7 +69,6 @@ set imap_keepalive = 300
 
 # How often to check for new mail (time in seconds).
 set mail_check = 360
-
 
 # --------------------------- SMTP settings --------------------------- #
 # Local protonmail-bridge host server: 127.0.0.1
@@ -78,5 +80,6 @@ set from      = $my_user
 set use_from  = yes
 
 set smtp_url = smtp://$my_user:$smtp_pass@127.0.0.1:1025
+
 set ssl_force_tls = yes
 set ssl_starttls = yes
