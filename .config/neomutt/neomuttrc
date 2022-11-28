@@ -52,6 +52,7 @@ mailboxes         = +INBOX
 # If header_cache is a folder, Mutt will create sub cache folders for
 # each account which may speeds things up even more:
 # ----------------------------------------------------------------------- #
+# CREATE THIS FOLDER. REMOVE IT IF IT IS A FILE AND CREATE AS FOLDER
 set header_cache = ~/.cache/mutt
 
 # --------------------------- Caching 2 --------------------------------- #
