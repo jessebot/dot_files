@@ -361,19 +361,23 @@ Below you'll find sections for each config file, organized by directory and appl
 <details>
   <summary>.gitignore</summary>
 
-   <blockquote>
+  <blockquote>
+   
   Git ignore file for all sorts of things in your home directory that should
   never get committed if this repo is used as your home directory dot files.
-    </blockquote>
+  
+  </blockquote>
 
 </details>
 
 <details>
   <summary>.hyper.js</summary>
 
-   <blockquote>
+  <blockquote>
+  
   Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
-    </blockquote>
+  
+  </blockquote>
 
 </details>
 
@@ -381,8 +385,10 @@ Below you'll find sections for each config file, organized by directory and appl
   <summary>.iterm2_shell_integration.bash</summary>
 
    <blockquote>
+   
   This is for installing the [iterm2] shell integration for macOS.
-    </blockquote>
+  
+   </blockquote>
 
 </details>
 
@@ -390,9 +396,11 @@ Below you'll find sections for each config file, organized by directory and appl
   <summary>.tmux.conf</summary>
 
 <blockquote>
+
 Config file for [tmux]. Currently, it will:
 - Sets 256 colors
 - enable the [powerline] tmux status line
+
 </blockquote>
 
 </details>
@@ -401,6 +409,7 @@ Config file for [tmux]. Currently, it will:
   <summary>.zshrc</summary>
 
   <blockquote>
+  
   Config files for zsh that a friend wrote for me once, and I never removed :)
   Who knows what lives there. :shrug:
 
