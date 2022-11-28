@@ -66,10 +66,10 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
-# python packages' default location when you do pip3 install --user package
+# python packages' default location when you do pip3.11 install --user package
 export PATH=$PATH:$HOME/.local/bin
 # this is for non-M1 macs
-export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:$HOME/Library/Python/3.11/bin
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
