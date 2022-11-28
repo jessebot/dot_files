@@ -1,6 +1,22 @@
 # thank you to stephane for giving out a super easy to understand base config:
 # https://cheatsheets.stephane.plus/productivity/neomutt/
 
+# automatically view text/html of any file :) saves key presses
+# auto_view text/html
+
+# --------------------------- Char encoding --------------------------- #
+# Character set on sent messages:
+set send_charset = "utf-8"
+
+# If there is no charset given on incoming msg, its probably windows:
+set assumed_charset = "iso-8859-1"
+
+# --------------------------- Themeing --------------------------- #
+# extremely neon color theme
+source ~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc
+# powerline theme
+source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
+
 # ----------------- Email address, Password, and Name ------------------ #
 # sources secret variables from a file that looks like (without the comments):
 #
@@ -11,16 +27,6 @@
 #
 source ~/.config/neomutt/keys
 
-# --------------------------- Char encoding --------------------------- #
-# Character set on sent messages:
-set send_charset="utf-8"
-
-# If there is no charset given on incoming msg, its probably windows:
-set assumed_charset="iso-8859-1"
-
-# --------------------------- Colors --------------------------- #
-# extremely neon color theme
-source ~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc
 
 # --------------------------- IMAP settings --------------------------- #
 # Local protonmail-bridge host server: 127.0.0.1
