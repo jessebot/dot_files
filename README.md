@@ -1,6 +1,6 @@
 # Dot Files for `onboardme`
 
-These started as my personal dot files, but then they became the sensible defaults for 
+These started as my personal dot files, but then they became the sensible defaults for
 [`onboardme`](https://github.com/jessebot/onboardme), which started out as a script
 to manage my dot files. Funny how these things work. :shrug:
 
@@ -138,6 +138,35 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
+    <summary>neomutt</summary>
+
+  <blockquote>
+
+  Files:
+  - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
+  - [`~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc`](.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc)
+
+  Config file for [neomutt], a terminal based email client. Config includes:
+  - sets [neonwolf colorscheme]
+  - sets character set to be utf-8 (emojis :))
+  - sets basic IMAP and SMTP settings
+  - sets tls by default
+  - sets header_cache and message_cachedir to be "~/.cache/mutt"
+
+  You'll still need to create `~/.config/neomutt/keys` with the following info:
+
+  ```neomutt
+  set my_user=you@youremail.com
+  set my_name="Your Name"
+  # if you're using protonmail this is the password from protonmail-bridge
+  set my_pass="areallycoolpasswordfordogs"
+  ```
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary>nvim</summary>
 
   <blockquote>
@@ -218,8 +247,8 @@ to manage my dot files. Funny how these things work. :shrug:
 
   <blockquote>
 
-  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a 
-  [space-chalk] color theme, as well as laptop battery information, git status 
+  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a
+  [space-chalk] color theme, as well as laptop battery information, git status
   information, and local IP address.
 
   Files for colors:
@@ -362,10 +391,10 @@ to manage my dot files. Funny how these things work. :shrug:
   <summary>.gitignore</summary>
 
   <blockquote>
-   
+
   Git ignore file for all sorts of things in your home directory that should
   never get committed if this repo is used as your home directory dot files.
-  
+
   </blockquote>
 
 </details>
@@ -374,9 +403,9 @@ to manage my dot files. Funny how these things work. :shrug:
   <summary>.hyper.js</summary>
 
   <blockquote>
-  
+
   Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
-  
+
   </blockquote>
 
 </details>
@@ -385,9 +414,9 @@ to manage my dot files. Funny how these things work. :shrug:
   <summary>.iterm2_shell_integration.bash</summary>
 
    <blockquote>
-   
+
   This is for installing the [iterm2] shell integration for macOS.
-  
+
    </blockquote>
 
 </details>
@@ -409,7 +438,7 @@ Config file for [tmux]. Currently, it will:
   <summary>.zshrc</summary>
 
   <blockquote>
-  
+
   Config files for zsh that a friend wrote for me once, and I never removed :)
   Who knows what lives there. :shrug:
 
@@ -418,7 +447,9 @@ Config file for [tmux]. Currently, it will:
 </details>
 
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
+<!-- ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
+
+<!-- general -->
 [asciinema]: https://asciinema.org/ "asciinema"
 [BASH]: https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer) "BASH"
 [github-cli]: https://cli.github.com/ "github cli"
@@ -427,26 +458,30 @@ Config file for [tmux]. Currently, it will:
 [rich-cli]: https://github.com/Textualize/rich-cli "rich cli"
 [tmux]: https://github.com/tmux/tmux "tmux"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Fonts and Colors ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
 [powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
 [space-chalk]: https://github.com/jessebot/space-chalk "space-chalk colorscheme"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Kubernetes ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
+<!-- ------------------------------- Kubernetes --------------------------- -->
 [krew]: https://krew.sigs.k8s.io/ "krew, plugin manager for kubectl"
 [kubectl]: https://kubernetes.io/docs/reference/kubectl/kubectl/ "cli for kubernetes"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Terminal emulators ♡  ♡  ♡  ♡  ♡  ♡ ♡  ♡  -->
+<!-- ---------------------- Terminal emulators ---------------------- -->
 [iterm2]: https://iterm2.com/ "iterm2"
 [kitty]: https://sw.kovidgoyal.net/kitty/ "kitty, a terminal emulator"
 [DinkDonk]: https://github.com/DinkDonk/kitty-icon "kitty-icon"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  File browsers/listers  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
+<!-- ---------------------- File browsers/listers ---------------------- -->
 [ls]: https://linux.die.net/man/1/ls "gnu tool: ls"
 [lsd]: https://github.com/Peltoche/lsd "lsd, ls alternative"
 [ranger]: https://github.com/ranger/ranger "ranger file manager"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Vim and Neovim ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
+<!-- ---------------------------- Email -------------------------------- -->
+[neomutt]: https://neomutt.org "neomutt"
+[neonwolf colorscheme]: https://gitlab.com/h3xx/mutt-colors-neonwolf "neonwolf neomutt colorscheme"
+
+<!-- ------------------------- Vim and Neovim ---------------------------- -->
 [airline]: https://github.com/vim-airline/vim-airline "airline"
 [ale]: https://github.com/dense-analysis/ale "ale: asynchonous linting engine"
 [dashboard]: https://github.com/glepnir/dashboard-nvim "dashboard.nvim"

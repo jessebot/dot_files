@@ -1,0 +1,2 @@
+image/*; (clear && img2sixel %s); needsterminal
+text/html; w3m -sixel -o auto_image=TRUE -o display_image=1 -o display_link_number=1 -F -T text/html %s; edit=vim; compose=vim; nametemplate=%s.html; copiousoutput; needsterminal

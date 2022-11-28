@@ -1,18 +1,33 @@
-# thank you to: https://cheatsheets.stephane.plus/productivity/neomutt/
+# thank you to stephane for giving out a super easy to understand base config:
+# https://cheatsheets.stephane.plus/productivity/neomutt/
 
-# sources secret variables: $my_user, $my_pass, and $my_name
+# ----------------- Email address, Password, and Name ------------------ #
+# sources secret variables from a file that looks like (without the comments):
+#
+# $my_user="You@yourprovider.tld"
+# if using protonmail, this should be the password from protonmail-bridge
+# $my_pass="Your Password"
+# $my_name="Your Name"
+#
 source ~/.config/neomutt/keys
 
 # --------------------------- Char encoding --------------------------- #
-
 # Character set on sent messages:
 set send_charset="utf-8"
 
 # If there is no charset given on incoming msg, its probably windows:
 set assumed_charset="iso-8859-1"
 
+# --------------------------- Colors --------------------------- #
+# extremely neon color theme
+source ~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc
 
 # --------------------------- IMAP settings --------------------------- #
+# Local protonmail-bridge host server: 127.0.0.1
+# Protonmail-bridge imap port: 1143
+# --------------------------------------------------------------------- #
+set imap_user = $my_user
+set imap_pass = $my_pass
 
 # ("+" substitutes for `folder`)
 set mbox_type     = Maildir
@@ -23,11 +38,6 @@ set trash         = +Trash
 set spoolfile     = +INBOX
 mailboxes         = +INBOX
 set mail_check    = 5 # seconds
-
-# Local protonmail-bridge host server: 127.0.0.1
-# Protonmail-bridge imap port: 1143
-set imap_user = $my_user
-set imap_pass = $my_pass
 
 # Store message headers locally to speed things up.
 # If hcache is a folder, Mutt will create sub cache folders for each account
@@ -53,14 +63,14 @@ set mail_check = 360
 
 
 # --------------------------- SMTP settings --------------------------- #
-
+# Local protonmail-bridge host server: 127.0.0.1
+# Protonmail-bridge smtp port: 1025
+# --------------------------------------------------------------------- #
 set smtp_pass = $my_pass
-set realname  = #my_name
+set realname  = $my_name
 set from      = $my_user
 set use_from  = yes
 
-# Local protonmail-bridge host server: 127.0.0.1
-# Protonmail-bridge smtp port: 1025
 set smtp_url = smtp://$my_user:$smtp_pass@127.0.0.1:1025
 set ssl_force_tls = yes
 set ssl_starttls = yes
