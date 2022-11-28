@@ -6,7 +6,6 @@ Funny how these things work. :shrug:
 
 Below you'll find sections for each config file, organized by directory and application.
 
-
 <details>
   <summary>.config</summary>
 
@@ -39,8 +38,8 @@ Below you'll find sections for each config file, organized by directory and appl
   File: [`~/.config/gh/config.yml`](.config/gh/config.yml)
 
   Config file for [`gh`][github-cli], the GitHub CLI. There's not a ton in there,
-  but it uses [`rich-cli`][rich-cli] as a prettier pager, and firefox as a browser,
-  and setting [vim][vim] as an editor. The rest is stock, and subject to change.
+  but it uses [rich-cli] as a prettier pager, and firefox as a browser,
+  and setting [vim] as an editor. The rest is stock, and subject to change.
 
   </blockquote>
 
@@ -55,7 +54,7 @@ Below you'll find sections for each config file, organized by directory and appl
 
   Config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool.
   There's not a ton in there, but it uses a dark theme, firefox as a browser,
-  and [vim][vim] as an editor. The rest is stock, and subject to change.
+  and [vim] as an editor. The rest is stock, and subject to change.
 
   </blockquote>
 
@@ -85,9 +84,9 @@ Below you'll find sections for each config file, organized by directory and appl
   - [`~/.config/kitty/kitty.conf`](.config/kitty/kitty.conf)
   - [`~/.config/kitty/kitty-dark.png`](.config/kitty/kitty-dark.png)
 
-  Config files related to [kitty][kitty], a terminal emulator. Cute open source
-  kitty icon image by [DinkDonk][DinkDonk], as well as a basic `kitty.conf` to
-  use some [nerdfonts][nerdfonts], and set up look and feel on macOS.
+  Config files related to [kitty], a terminal emulator. Cute open source
+  kitty icon image by [DinkDonk], as well as a basic `kitty.conf` to
+  use some [nerdfonts], and set up look and feel on macOS.
 
   </blockquote>
 
@@ -102,7 +101,7 @@ Below you'll find sections for each config file, organized by directory and appl
 
   Config file for [`lsd`][lsd], an [`ls`][ls] alternative with icons and
   pretty colors. There's an intension to write and release a
-  [space-chalk][space-chalk] theme for lsd eventually.
+  [space-chalk] theme for lsd eventually.
 
   </blockquote>
 
@@ -117,7 +116,7 @@ Below you'll find sections for each config file, organized by directory and appl
 
   This is a local project that I'm working on to rewrite a bash script in python,
   to do basic checking of images in the terminal. I might remove it though,
-  because after discovering [ranger][ranger], it might not be really needed :shrug:
+  because after discovering [ranger], it might not be really needed :shrug:
 
   </blockquote>
 
@@ -130,7 +129,7 @@ Below you'll find sections for each config file, organized by directory and appl
 
   File: [`~/.config/neofetch/config.conf`](.config/neofetch/config.conf)
 
-  Config file for [neofetch][neofetch], A command-line system information tool
+  Config file for [neofetch], a command-line system information tool
   written in bash 3.2+. The intension is to pair down information to only
   what's needed, and maybe have a cute image :)
 
@@ -143,10 +142,10 @@ Below you'll find sections for each config file, organized by directory and appl
 
   <blockquote>
 
-  Config files for [neovim][neovim] is a hyperextensible Vim-based text editor,
-  which is in some ways a sucessor to [vim][vim]. It's a lot faster, for one,
+  Config files for [neovim] is a hyperextensible Vim-based text editor,
+  which is in some ways a sucessor to [vim]. It's a lot faster, for one,
   and there's more support for more languages, which means more plugins.
-  Uses [packer][packer] to manager neovim plugins.
+  Uses [packer] to manager neovim plugins.
 
   Each file explained below:
 
@@ -157,9 +156,9 @@ Below you'll find sections for each config file, organized by directory and appl
   - adding a cursorline
   - setting column 80 to be a different color for tidy code
   - enabling gui colors so you aren't limited to like 8 colors
-  - uses the [space-chalk][space-chalk] colorscheme
+  - uses the [space-chalk] colorscheme
   - sources all the files in [~/.config/nvim/lua](.config/nvim/lua),
-    including [packer][packer], plugins, and local plugin configs.
+    including [packer], plugins, and local plugin configs.
 
   ### [`~/.config/nvim/packerinit.vim`](.config/nvim/packerinit.vim)
   This is a quick and dirty lua function to print " ♥ ♥ ♥ " if neovim is running
@@ -174,10 +173,10 @@ Below you'll find sections for each config file, organized by directory and appl
   ### [`~/.config/nvim/lua/user/airline.lua`](.config/nvim/lua/user/airline.lua)
   This local config file sets defaults for [airline][airline], a status line for
   vim and neovim. The configurations are:
-  - use [space-chalk][space-chalk] theme
+  - use [space-chalk] theme
   - enables [powerline fonts][powerline fonts] (fun icons)
   - disables empty sections of the status line
-  - enables the [ale][ale] extension to work with airline for linting
+  - enables the [ale] extension to work with airline for linting
   - changes the default dividers to be   and '
   - sets a line number percentage function for a slimmer ln segment
 
@@ -191,9 +190,9 @@ Below you'll find sections for each config file, organized by directory and appl
   - move between errors
 
   ### [`~/.config/nvim/lua/user/dashboard.lua`](.config/nvim/lua/user/dashboard.lua)
-  local config for a starting screen [dashboard][dashboard] for neovim. You
+  local config for a starting screen [dashboard] for neovim. You
   should just check out the file to see what's being done. It's cute ascii art,
-  and utilizes [telescope][telescope] to check out your files and previously
+  and utilizes [telescope] to check out your files and previously
   opened files.
 
   ### [`~/.config/nvim/lua/user/folding.lua`](.config/nvim/lua/user/folding.lua)
@@ -201,14 +200,12 @@ Below you'll find sections for each config file, organized by directory and appl
   blocks of code. Sets some defaults.
 
   ### [`~/.config/nvim/lua/user/nvim-tree.lua`](.config/nvim/lua/user/nvim-tree.lua)
-  local config file for [nvim-tree][nvim-tree], a neovim file explorer written
-  in lua, with icons.
+  local config file for [nvim-tree], a neovim file explorer written in lua, with icons.
 
   Opens on opening of any file, and auto-adjusts its window size.
 
   ### [`~/.config/nvim/lua/user/tree-sitter.lua`](.config/nvim/lua/user/tree-sitter.lua)
-  local config file for the nvim [tree-sitter][treesitter] plugin, which helps
-  with syntax highlighting of various things.
+  config file for the nvim [tree-sitter] plugin, which helps with syntax highlighting of various languages.
 
   currently installing syntax for: "lua", "yaml", "bash", "hcl"
 
@@ -221,9 +218,9 @@ Below you'll find sections for each config file, organized by directory and appl
 
   <blockquote>
 
-  Configuration files for [powerline][powerline], a status line for BASH and
-  tmux. We enable a [space-chalk][space-chalk] color theme, as well as laptop
-  battery information, git status information, and local IP address.
+  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a 
+  [space-chalk] color theme, as well as laptop battery information, git status 
+  information, and local IP address.
 
   Files for colors:
   - [`~/.config/powerline/colors.json`](.config/powerline/colors.json)
@@ -236,7 +233,7 @@ Below you'll find sections for each config file, organized by directory and appl
   - [`~/.config/powerline/themes/powerline_terminus.json`](.config/powerline/themes/powerline_terminus.json)
   - [`~/.config/powerline/themes/unicode_terminus.json`](.config/powerline/themes/unicode_terminus.json)
 
-  File for configuring [tmux][tmux] status line:
+  File for configuring [tmux] status line:
   - [`~/.config/powerline/themes/tmux/default.json`](.config/powerline/)
 
   </blockquote>
@@ -253,7 +250,7 @@ Below you'll find sections for each config file, organized by directory and appl
   - [`~/.config/ranger/rc.conf`](.config/ranger/rc.conf)
 
   [ranger][ranger] is a TUI file manager. Current configurations:
-  - enable file previews using [iterm2][iterm2]
+  - enable file previews using [iterm2]
   - enable video previews using ffmpegthumbnailer
   - enable svg previews.
 
@@ -277,7 +274,7 @@ Below you'll find sections for each config file, organized by directory and appl
 
   <blockquote>
   This is just where we throw a few really simple scripts like:
-  imgcat, and it2setkeylabel for [iterm2][iterm2] to cat images in the terminal,
+  imgcat, and it2setkeylabel for [iterm2] to cat images in the terminal,
   and use the touchbar on macOS with iterm2.
   There's also a `utc` command there, for ease of use printing the time in UTC.
 
@@ -290,8 +287,8 @@ Below you'll find sections for each config file, organized by directory and appl
 
    <blockquote>
 
-  Configuration for [vim][vim], a text editor, and it's plugins, installed via
-  [vim-plug][vim-plug].
+  Configuration for [vim], a text editor, and it's plugins, installed via
+  [vim-plug].
 
   [`~/.vimrc`](.vimrc) is the main file for the global vim configuration.
   We set a lot of defaults, including:
@@ -301,7 +298,7 @@ Below you'll find sections for each config file, organized by directory and appl
   - add a colored column on column 80 for tidy python
   - sets a nerd font for vim
   - enable syntax highlighting
-  - use [space-chalk][space-chalk] colorscheme
+  - use [space-chalk] colorscheme
   - configure icons for VimDevicons, and NERDTree
   - ale icons changed, ale linters and fixers set for python
   - gitgutter icons
@@ -334,13 +331,13 @@ Below you'll find sections for each config file, organized by directory and appl
 
    <blockquote>
 
-  Configuration files for [BASH][BASH].
+  Configuration files for [BASH].
   The `.bash_profile` just sources the `.bashrc`, since macOS default looks for
   `.bash_profile` instead of `.bashrc`.
 
   The `.bashrc` sets the following defaults:
   - turns off bells
-  - sets [vim][vim] as your text editor
+  - sets [vim] as your text editor
   - enables 256 colors
   - fix how less handles non-text input files
   - change the default colors for less used in man pages
@@ -350,7 +347,7 @@ Below you'll find sections for each config file, organized by directory and appl
   - aliases away MANY typos
   - aliases a bunch of shorter commands to longer commands
   - changes default pagers used when file is too long for catting
-  - runs [neofetch][neofetch] when you source it
+  - runs [neofetch] when you source it
   - sources any other files called `.bashrc*`
 
   The `.bashrc_k8s` is for kubernetes defaults:
@@ -384,7 +381,7 @@ Below you'll find sections for each config file, organized by directory and appl
   <summary>.iterm2_shell_integration.bash</summary>
 
    <blockquote>
-  This is for installing the [iterm2][iterm2] shell integration for macOS.
+  This is for installing the [iterm2] shell integration for macOS.
     </blockquote>
 
 </details>
@@ -393,9 +390,9 @@ Below you'll find sections for each config file, organized by directory and appl
   <summary>.tmux.conf</summary>
 
 <blockquote>
-Config file for [tmux][tmux]. Currently, it will:
+Config file for [tmux]. Currently, it will:
 - Sets 256 colors
-- enable the [powerline][powerline] tmux status line
+- enable the [powerline] tmux status line
 </blockquote>
 
 </details>
@@ -412,7 +409,7 @@ Config file for [tmux][tmux]. Currently, it will:
 </details>
 
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 [asciinema]: https://asciinema.org/ "asciinema"
 [BASH]: https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer) "BASH"
 [github-cli]: https://cli.github.com/ "github cli"
@@ -421,26 +418,26 @@ Config file for [tmux][tmux]. Currently, it will:
 [rich-cli]: https://github.com/Textualize/rich-cli "rich cli"
 [tmux]: https://github.com/tmux/tmux "tmux"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Fonts and Colors ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Fonts and Colors ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
 [powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
 [space-chalk]: https://github.com/jessebot/space-chalk "space-chalk colorscheme"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Kubernetes ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Kubernetes ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 [krew]: https://krew.sigs.k8s.io/ "krew, plugin manager for kubectl"
 [kubectl]: https://kubernetes.io/docs/reference/kubectl/kubectl/ "cli for kubernetes"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Terminal emulators ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Terminal emulators ♡  ♡  ♡  ♡  ♡  ♡ ♡  ♡  -->
 [iterm2]: https://iterm2.com/ "iterm2"
 [kitty]: https://sw.kovidgoyal.net/kitty/ "kitty, a terminal emulator"
 [DinkDonk]: https://github.com/DinkDonk/kitty-icon "kitty-icon"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  File browsers/listers ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  File browsers/listers  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 [ls]: https://linux.die.net/man/1/ls "gnu tool: ls"
 [lsd]: https://github.com/Peltoche/lsd "lsd, ls alternative"
 [ranger]: https://github.com/ranger/ranger "ranger file manager"
 
-<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Vim and Neovim ♡  ♡  ♡  ♡  ♡  ♡  ♡  -->
+<!--  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ Vim and Neovim ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 [airline]: https://github.com/vim-airline/vim-airline "airline"
 [ale]: https://github.com/dense-analysis/ale "ale: asynchonous linting engine"
 [dashboard]: https://github.com/glepnir/dashboard-nvim "dashboard.nvim"
