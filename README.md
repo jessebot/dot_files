@@ -4,7 +4,7 @@ These started as my personal dot files, but then they became the sensible
  defaults for `onboardme`, what started out as a script to manage my dot files.
  Funny how these things work. :shrug:
 
- Below you'll find sections for each config file, organized by how they show up in github.
+ Below you'll find sections for each config file, organized by directory and application.
 
 
 <details>
@@ -109,7 +109,7 @@ These started as my personal dot files, but then they became the sensible
 
   This is a local project that I'm working on to rewrite a bash script in python,
   to do basic checking of images in the terminal. I might remove it though,
-  because after discovering [ranger](https://github.com/ranger/ranger), it might not be really needed :shrug:
+  because after discovering [ranger][ranger], it might not be really needed :shrug:
   
   </blockquote>
 
@@ -156,7 +156,7 @@ These started as my personal dot files, but then they became the sensible
   ### [`~/.config/nvim/lua/user/airline.lua`](.config/nvim/lua/user/airline.lua)
   This local config file sets defaults for [airline](https://github.com/vim-airline/vim-airline), a status line for vim and neovim. The configurations are:
   - use space_chalk theme
-  - enables powerline fonts (fun icons)
+  - enables [powerline fonts][powerline fonts] (fun icons)
   - disables empty sections of the status line
   - enables the ale extension to work with airline for linting
   - changes the default dividers to be   and '
@@ -196,7 +196,7 @@ These started as my personal dot files, but then they became the sensible
     
   <blockquote>
     
-  Configuration files for [powerline](https://github.com/powerline/powerline), a status line for BASH and tmux. We enable a space_chalk color theme, as well as battery information, git information, and local IP address.
+  Configuration files for [powerline][powerline], a status line for BASH and tmux. We enable a space_chalk color theme, as well as battery information, git information, and local IP address.
 
   Files for colors:
   - [`~/.config/powerline/colors.json`](.config/powerline/colors.json)
@@ -209,7 +209,7 @@ These started as my personal dot files, but then they became the sensible
   - [`~/.config/powerline/themes/powerline_terminus.json`](.config/powerline/themes/powerline_terminus.json)
   - [`~/.config/powerline/themes/unicode_terminus.json`](.config/powerline/themes/unicode_terminus.json)
 
-  File for configuring tmux status line:
+  File for configuring [tmux][tmux] status line:
   - [`~/.config/powerline/themes/tmux/default.json`](.config/powerline/)
   
   </blockquote>
@@ -225,7 +225,7 @@ These started as my personal dot files, but then they became the sensible
   - [`~/.config/ranger/scope.sh`](.config/ranger/scope.sh)
   - [`~/.config/ranger/rc.conf`](.config/ranger/rc.conf)
 
-  [ranger](https://github.com/ranger/ranger) is a TUI file manager. We enable file previews using iterm2 and video previews using ffmpegthumbnailer. We also enable svg previews.
+  [ranger][ranger] is a TUI file manager. We enable file previews using iterm2 and video previews using ffmpegthumbnailer. We also enable svg previews.
   
   </blockquote>
   
@@ -259,7 +259,7 @@ These started as my personal dot files, but then they became the sensible
   
    <blockquote>
  
-  Configuration for [vim](https://www.vim.org/), a text editor, and it's plugins, installed via vim-plug.
+  Configuration for [vim][vim], a text editor, and it's plugins, installed via vim-plug.
 
   [`~/.vimrc`](.vimrc) is the main file for the global vim configuration. We set a
   lot of defaults, including:
@@ -357,9 +357,11 @@ These started as my personal dot files, but then they became the sensible
 <details>
   <summary>.tmux.conf</summary>
   
-   <blockquote>
-  Sets 256 colors for tmux and enables the powerline tmux status line.
-    </blockquote>
+<blockquote>
+Config file for tmux. Currently, it will:
+- Sets 256 colors
+- enable the [powerline][powerline] tmux status line
+</blockquote>
 
 </details>
 
@@ -373,3 +375,9 @@ These started as my personal dot files, but then they became the sensible
   </blockquote>
 
 </details>
+
+[powerline]: https://github.com/powerline/powerline "powerline"
+[powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
+[ranger]: https://github.com/ranger/ranger "ranger file manager"
+[tmux]: https://github.com/tmux/tmux "tmux"
+[vim]: https://www.vim.org/ "vim, a text editor"
