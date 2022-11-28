@@ -1,10 +1,10 @@
 # Dot Files for `onboardme`
 
-These started as my personal dot files, but then they became the sensible
-defaults for `onboardme`, which started out as a script to manage my dot files.
-Funny how these things work. :shrug:
+These started as my personal dot files, but then they became the sensible defaults for 
+[`onboardme`](https://github.com/jessebot/onboardme), which started out as a script
+to manage my dot files. Funny how these things work. :shrug:
 
-Below you'll find sections for each config file, organized by directory and application.
+### Sections for each config file, organized by directory and application:
 
 <details>
   <summary>.config</summary>
