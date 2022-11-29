@@ -2,13 +2,74 @@
 # Powerline / nerdfont theme for NeoMutt
 # This is a bit "hackish" due to neomutt limitations
 #
-#           Original Author: Sheoak <contact [at] sheoak.fr>
-# With edits and changes by: JesseBot <https://github.com/jessebot>
+#            Original Author: Sheoak <contact [at] sheoak.fr>
+# With edits and comments by: JesseBot <https://github.com/jessebot>
+#
+# Check these links for help:
+# https://neomutt.org/guide/reference.html#index-format
+# https://neomutt.org/guide/reference.html#status-format
+# https://neomutt.org/guide/reference.html#folder-format
+# https://neomutt.org/guide/reference.html#attach_format
+# ----------------------------------------------------------------------------
+
+# Index format will be, in the following order:
+#
+# Message status flags
+# Message crypto flags
+# Message tag flags
+# Date field
+# Filename of the original message folder (think mailbox)
+# ???
+# Number of hidden messages if the thread is collapsed
+# Number of MIME attachments
+# Subject of the message
 # ----------------------------------------------------------------------------
 set index_format=" %zs %zc %zt %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %?X?&·? %s"
+
+# Pager format (uses index_format) will be, in the following order:
+#
+# Author's real name (or address if missing)
+# Message crypto flags
+# The appropriate character from the $to_chars string
+# Subject of the message
+# Date field
+# Filename of the original message folder (think mailbox)
+# Time in Hours:Minutes
+# Number of MIME attachments
+# Progress indicator for the built-in pager (how much of the file has been displayed)
+# ----------------------------------------------------------------------------
 set pager_format=" %n %zc  %T %s%*  %{!%d %b · %H:%M}  %?X?  %X ?  %P  "
-set status_format = " %f%?r? %r?   %m %?n?  %n ?  %?d?  %d ?%?t?  %t ?%?F?  %F? %>  %?p?   %p ?"
+
+# status format will be, in the following order:
+#
+# The full pathname of the current mailbox
+# Modified/read-only/won't-write/attach-message indicator, According to $status_chars
+# The number of messages in the mailbox
+# Number of new messages in the mailbox (unread, unseen)
+# Number of deleted messages
+# Number of tagged messages in the mailbox
+# Number of flagged messages
+# Number of postponed (Draft) messages
+# ----------------------------------------------------------------------------
+set status_format = " %f%?r? %r?   %m %?n?  %n ?  %?d?  %d ?%?t?  %t ?%?F?  %F? %>  %?p?  %p ?"
+
+# folder format will be, in the following order:
+#
+# "N" if mailbox has new mail, " " (space) otherwise
+# Number of unread messages in the mailbox
+# Number of messages in the mailbox
+# Filename ("/" is appended to directory names, "@" to symbolic links and "*" to executable files)
+# ----------------------------------------------------------------------------
 set vfolder_format = " %N %?n?%3n&   ?  %8m  · %f"
+
+# attach format will be, in the following order:
+#
+# Unlink (=to delete) flag
+# Deleted flag
+# Graphic tree characters
+# Size (see formatstrings-size)
+# Major MIME type/MIME subtype
+# ----------------------------------------------------------------------------
 set attach_format = "%u%D  %T%-75.75d %?T?%&   ? %5s · %m/%M"
 
 # no addressed to me, to me, group, cc, sent by me, mailing list
@@ -39,7 +100,7 @@ color status yellow black ''
 color status magenta black ''
 color status black blue '(.*) ' 1
 color status blue black '.*( )' 1
-color status black blue '\s* [0-9]+\s*'
+color status black blue '\s*  [0-9]+ \s*'
 color status blue black '( ).*$' 1
 color status yellow black '( )\s*\s*[0-9]+\s*' 1
 color status black yellow '\s*\s*[0-9]+\s*'
