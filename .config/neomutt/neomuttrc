@@ -30,7 +30,7 @@ source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
 source ~/.config/neomutt/keys
 
 
-# VI bindings for moving around, so that neomutt feels like vim
+# VI key bindings for moving around, so that neomutt feels like vim
 bind attach,browser,index       G   last-entry
 bind attach,browser,index       g   noop
 bind attach,browser,index       gg  first-entry
@@ -41,6 +41,9 @@ bind pager                      g   noop
 bind pager                      gg  top
 bind pager                      j   next-line
 bind pager                      k   previous-line
+
+# set meta_key = yes
+# set abort_key = "<Esc>"
 
 
 # --------------------------- IMAP settings --------------------------- #
