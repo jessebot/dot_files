@@ -144,14 +144,16 @@ to manage my dot files. Funny how these things work. :shrug:
 
   Files:
   - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
-  - [`~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc`](.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc)
+  - [`~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc`](.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc)
 
   Config file for [NeoMutt], a terminal based email client. Config includes:
-  - sets [neonwolf colorscheme]
-  - sets character set to be utf-8 (emojis :))
+  - sets space-chalk colorscheme, based on the [neonwolf colorscheme]
+  - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
   - sets tls by default
   - sets header_cache and message_cachedir to be "~/.cache/mutt"
+  - sets a powerline like status bar using nerdfonts
+  - sets navigation keys similar to vim
 
   You'll still need to create `~/.config/neomutt/keys` with the following info:
 
@@ -304,8 +306,7 @@ to manage my dot files. Funny how these things work. :shrug:
 
   <blockquote>
   This is just where we throw a few really simple scripts like:
-  imgcat, and it2setkeylabel for [iterm2] to cat images in the terminal,
-  and use the touchbar on macOS with iterm2.
+  it2setkeylabel for [iterm2] use the touchbar on macOS with iterm2.
   There's also a `utc` command there, for ease of use printing the time in UTC.
 
   </blockquote>
@@ -353,6 +354,22 @@ to manage my dot files. Funny how these things work. :shrug:
   - [`~/.vim/templates/template.py`](.vim/templates/template.py)
 
 </blockquote>
+
+</details>
+
+<details>
+  <summary>.w3m</summary>
+
+  <blockquote>
+  Files:
+  - [`~/.w3m/keymap`](.w3m/keymap)
+  - [`~/.w3m/config`](.w3m/config)
+
+  Files for the [w3m] terminal based web browser. This config sets:
+  - always display images
+  - use vim like key bindings
+
+  </blockquote>
 
 </details>
 
