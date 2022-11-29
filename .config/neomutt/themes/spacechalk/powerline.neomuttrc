@@ -95,18 +95,18 @@ tag-formats "replied" "GR" \
 # color69 is cornflower_blue
 
 # I think its first color as the background and second color as the foreground
-color status white black
+color status white color235
 # powerline status bar hack
-color status green black ''
-color status yellow black ''
-color status magenta black ''
-color status black color69 '(.*) ' 1
-color status color69 black '.*( )' 1
-color status black color69 '\s*  [0-9]+ \s*'
-color status color69 black '( ).*$' 1
-color status yellow black '( )\s*\s*[0-9]+\s*' 1
-color status black yellow '\s*\s*[0-9]+\s*'
+color status green color235 ''
+color status yellow color235 ''
+color status magenta color235 ''
+color status color235 color69 '(.*) ' 1
+color status color69 color235 '.*( )' 1
+color status color235 color69 '\s*  [0-9]+ \s*'
+color status color69 color235 '( ).*$' 1
+color status yellow color235 '( )\s*\s*[0-9]+\s*' 1
+color status color235 yellow '\s*\s*[0-9]+\s*'
 color status color69 yellow '( ) ([0-9]+%|all|end) \s*' 1
-color status black color69 ' ([0-9]+%|all|end) \s*'
-color status yellow black '( )\s* ' 1
-color status default black ''
+color status color235 color69 ' ([0-9]+%|all|end) \s*'
+color status yellow color235 '( )\s* ' 1
+color status default color235 ''
