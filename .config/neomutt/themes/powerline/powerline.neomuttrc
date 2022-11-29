@@ -92,6 +92,8 @@ tag-formats "replied" "GR" \
             "signed" "GS" \
             "attachment" "GA" \
 
+# color69 is cornflower_blue
+
 # I think its first color as the background and second color as the foreground
 color status white black
 # powerline status bar hack

@@ -12,8 +12,8 @@ set send_charset = "utf-8"
 set assumed_charset = "iso-8859-1"
 
 # --------------------------- Themeing --------------------------- #
-# extremely neon color theme
-source ~/.config/neomutt/themes/neonwolf/mutt-colors-neonwolf-256.muttrc
+# basic space_chalk color theme
+source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
 
 # powerline theme
 source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
