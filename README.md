@@ -145,14 +145,14 @@ to manage my dot files. Funny how these things work. :shrug:
   Files:
   - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
   - [`~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc`](.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc)
+  - [`~/.config/neomutt/themes/spacechalk/powerline.neomuttrc`](.config/neomutt/themes/spacechalk/powerline.neomuttrc)
 
   Config file for [NeoMutt], a terminal based email client. Config includes:
-  - sets space-chalk colorscheme, based on the [neonwolf colorscheme]
+  - sets space-chalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
   - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
   - sets tls by default
   - sets header_cache and message_cachedir to be "~/.cache/mutt"
-  - sets a powerline like status bar using nerdfonts
   - sets navigation keys similar to vim
 
   You'll still need to create `~/.config/neomutt/keys` with the following info:
@@ -519,6 +519,7 @@ Config file for [tmux]. Currently, it will:
 [NeoMutt's MIME Support]: https://neomutt.org/guide/mimesupport "neomutt MIME support"
 [NeoMutt]: https://neomutt.org "neomutt"
 [neonwolf colorscheme]: https://gitlab.com/h3xx/mutt-colors-neonwolf "neonwolf neomutt colorscheme"
+[neomutt powerline]: https://github.com/sheoak/neomutt-powerline-nerdfonts "neomutt-powerline-nerdfonts"
 
 <!-- ------------------------- Vim and Neovim ---------------------------- -->
 [airline]: https://github.com/vim-airline/vim-airline "airline"
