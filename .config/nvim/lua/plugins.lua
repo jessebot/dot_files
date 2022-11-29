@@ -51,6 +51,10 @@ return require('packer').startup(function(use)
          requires = {'nvim-tree/nvim-web-devicons'},
          tag = 'nightly'}
 
+    -- ------- a mini map of where you are in your code -----------------
+    -- not working for some reason
+    -- use { 'echasnovski/mini.map', branch = 'main' }
+
     -- -------------------- Language Specific Stuff ------------------------
 
     -- general linter - will use common linters and highlight broken code
