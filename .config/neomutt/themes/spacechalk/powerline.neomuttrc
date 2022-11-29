@@ -1,28 +1,25 @@
 # ----------------------------------------------------------------------------
-# Powerline / nerdfont theme for NeoMutt
-# This is a bit "hackish" due to neomutt limitations
+# Powerline theme for NeoMutt using NerdFonts
+# loose fork of https://github.com/sheoak/neomutt-powerline-nerdfonts
 #
-#            Original Author: Sheoak <contact [at] sheoak.fr>
-# With edits and comments by: JesseBot <https://github.com/jessebot>
-#
-# Check these links for help:
-# https://neomutt.org/guide/reference.html#index-format
-# https://neomutt.org/guide/reference.html#status-format
-# https://neomutt.org/guide/reference.html#folder-format
-# https://neomutt.org/guide/reference.html#attach_format
+# Works best with space-chalk theme
 # ----------------------------------------------------------------------------
 
+# REF: https://neomutt.org/guide/reference.html#index-format
 # Index format will be, in the following order:
-#
-# Message status, crypto, and tag flag symbols
-# Date and time of message using date_format and sender's timezone with $date_format
-# Filename of the original message folder (think mailbox)
-# ???
+# %{%d %b} example: "26 Sep" is the same as: set date_format="%d %b" [sender's timezone]
+# %zc 	Message crypto flags "    "
+# %zs 	Message status flags "   "
+# %zt 	Message tag flags "     " and "     "
+# %Z    all of the above %zc,%zs,%zt
+# Sender name or email addresss (16 characters)
 # Number of hidden messages if the thread is collapsed
 # Number of MIME attachments
 # Subject of the message
+# not sure how to make this work only only show star or delete: %?X?%zt&·
 # ----------------------------------------------------------------------------
-set index_format="%2C %Z %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %?X?&·? %s"
+set index_format=" %{%d %b} ·%Z %-16.16L %?M?(%1M)& ? %?X?&·? %s"
+
 
 # Pager format (uses index_format) will be, in the following order:
 #
@@ -38,6 +35,8 @@ set index_format="%2C %Z %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %?X?&·? %s"
 # ----------------------------------------------------------------------------
 set pager_format=" %n %zc  %T %s%*  %{!%d %b · %H:%M}  %?X?  %X ?  %P  "
 
+
+# REF: https://neomutt.org/guide/reference.html#status-format
 # status format will be, in the following order:
 #
 # The full pathname of the current mailbox
@@ -51,6 +50,7 @@ set pager_format=" %n %zc  %T %s%*  %{!%d %b · %H:%M}  %?X?  %X ?�
 # ----------------------------------------------------------------------------
 set status_format = " %f%?r? %r?   %m %?n?  %n ?  %?d?  %d ?%?t?  %t ?%?F?  %F? %>  %?p?  %p ?"
 
+# REF: https://neomutt.org/guide/reference.html#folder-format
 # folder format will be, in the following order:
 #
 # "N" if mailbox has new mail, " " (space) otherwise
@@ -60,6 +60,7 @@ set status_format = " %f%?r? %r?   %m %?n?  %n ?  %?d?  %d ?%?t? 
 # ----------------------------------------------------------------------------
 set vfolder_format = " %N %?n?%3n&   ?  %8m  · %f"
 
+# REF: https://neomutt.org/guide/reference.html#attach_format
 # attach format will be, in the following order:
 #
 # Unlink (=to delete) flag
@@ -70,11 +71,18 @@ set vfolder_format = " %N %?n?%3n&   ?  %8m  · %f"
 # ----------------------------------------------------------------------------
 set attach_format = "%u%D  %T%-75.75d %?T?%&   ? %5s · %m/%M"
 
-# no addressed to me, to me, group, cc, sent by me, mailing list
-set to_chars=""
+# not addressed to me, to me, group, cc, sent by me, mailing list
+set to_chars=""
 
 # unchanged mailbox, changed, read only, attach mode
 set status_chars = " "
+
+# Symbol      Description
+#    	      mail is signed, & the signature is successfully verified
+#    	      mail is PGP encrypted
+#    	      mail is signed, but not verified
+#    	      mail contains a PGP public key?
+# <space> 	mail has no crypto info
 ifdef crypt_chars set crypt_chars = " "
 set flag_chars = "      "
 
