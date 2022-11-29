@@ -152,10 +152,10 @@ if [[ $(uname) == *"Darwin"* ]]; then
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On M1/M2: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
-        pip_packages="/opt/homebrew/lib/$pip_path"
+        pip_packages="/opt/homebrew/$pip_path"
     else
         # For older macs before the M1, pre-2020
-        pip_packages="/usr/local/lib/$pip_path"
+        pip_packages="/usr/local/$pip_path"
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
@@ -304,7 +304,7 @@ for bash_file in `ls -1 $HOME/.bashrc_*`; do
     . $bash_file
 done
 
-# This is for powerline, a fancy extensible prompt: https://powerline.readthedocs.io
+# for powerline, a fancy extensible prompt: https://powerline.readthedocs.io
 if [ -f $pip_packages/powerline/bindings/bash/powerline.sh ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
