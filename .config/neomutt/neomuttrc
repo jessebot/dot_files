@@ -2,7 +2,8 @@
 # https://cheatsheets.stephane.plus/productivity/neomutt/
 
 # automatically view text/html of any file :) saves key presses
-# auto_view text/html
+auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 # --------------------------- Char encoding --------------------------- #
 # Character set on sent messages:
@@ -13,7 +14,7 @@ set assumed_charset = "iso-8859-1"
 
 # --------------------------- Themeing --------------------------- #
 # basic space_chalk color theme
-source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
+# source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
 
 # powerline theme
 source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
@@ -27,6 +28,19 @@ source ~/.config/neomutt/themes/powerline/powerline.neomuttrc
 # $my_name="Your Name"
 
 source ~/.config/neomutt/keys
+
+
+# VI bindings for moving around, so that neomutt feels like vim
+bind attach,browser,index       G   last-entry
+bind attach,browser,index       g   noop
+bind attach,browser,index       gg  first-entry
+bind index                      j   next-entry
+bind index                      k   previous-entry
+bind pager                      G   bottom
+bind pager                      g   noop
+bind pager                      gg  top
+bind pager                      j   next-line
+bind pager                      k   previous-line
 
 
 # --------------------------- IMAP settings --------------------------- #
