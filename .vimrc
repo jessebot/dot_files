@@ -467,6 +467,9 @@ if !has('nvim')
     " this is a modern fuzzy searcher
     Plug 'liuchengxu/vim-clap'
 
+    " underlines your current work you're on
+    Plug 'itchyny/vim-cursorword'
+
     " ------------------------------ NerdTree --------------------------------
     "         Tree explorer plugin - use :NERDTreeToggle to try it out
     "             after nerdtree is on visible, use ? for help
