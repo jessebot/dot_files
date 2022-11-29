@@ -2,4 +2,6 @@ image/*; (clear && img2sixel %s); needsterminal
 
 # for displaying html files
 # text/html; w3m -sixel -I %{charset} -o auto_image=TRUE -o display_image=1 -T text/html %s; nametemplate=%s.html; copiousoutput; needsterminal
-text/html; w3m -sixel -T text/html %s; nametemplate=%s.html; copiousoutput; needsterminal
+text/html; W3M_IMG2SIXEL=/usr/local/bin/img2sixel w3m -sixel -o auto_image=TRUE -o display_image=1 -T text/html %s; nametemplate=%s.html; copiousoutput; needsterminal
+
+application/pdf; open %s
