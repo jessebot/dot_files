@@ -14,17 +14,15 @@
 
 # Index format will be, in the following order:
 #
-# Message status flags
-# Message crypto flags
-# Message tag flags
-# Date field
+# Message status, crypto, and tag flag symbols
+# Date and time of message using date_format and sender's timezone with $date_format
 # Filename of the original message folder (think mailbox)
 # ???
 # Number of hidden messages if the thread is collapsed
 # Number of MIME attachments
 # Subject of the message
 # ----------------------------------------------------------------------------
-set index_format=" %zs %zc %zt %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %?X?&·? %s"
+set index_format="%2C %Z %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %?X?&·? %s"
 
 # Pager format (uses index_format) will be, in the following order:
 #
