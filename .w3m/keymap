@@ -1,0 +1,24 @@
+# Make w3m feel like vim
+keymap  G   END
+keymap  J   UP
+keymap  K   DOWN
+keymap  H   PREV
+keymap  L   NEXT
+keymap  /   SEARCH
+keymap  N   SEARCH_PREV
+keymap  R   RELOAD
+keymap  S   SAVE_SCREEN
+keymap  T   TAB_LINK
+keymap  W   PREV_WORD
+keymap  a   SAVE_LINK
+keymap  b   BACK
+keymap  g   BEGIN
+keymap  j   MOVE_DOWN
+keymap  k   MOVE_UP
+keymap  l   MOVE_RIGHT
+keymap  n   SEARCH_NEXT
+keymap  s   SELECT_MENU
+keymap  t   TAB_LINK
+keymap  u   PEEK_LINK
+keymap  v   VIEW
+keymap  w   NEXT_WORD
