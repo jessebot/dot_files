@@ -143,11 +143,12 @@ to manage my dot files. Funny how these things work. :shrug:
   <blockquote>
 
   Files:
+  - [`~/.config/neomutt/mailcap`](.config/neomutt/mailcap)
   - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
   - [`~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc`](.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc)
   - [`~/.config/neomutt/themes/spacechalk/powerline.neomuttrc`](.config/neomutt/themes/spacechalk/powerline.neomuttrc)
 
-  Config file for [NeoMutt], a terminal based email client. Config includes:
+  Config files for [NeoMutt], a terminal based email client. Config includes:
   - sets space-chalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
   - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
@@ -164,6 +165,17 @@ to manage my dot files. Funny how these things work. :shrug:
   # after you login, not your actual email password
   set my_pass="areallycoolpasswordfordogs"
   ```
+
+  Config file for [NeoMutt's MIME Support], which is how [NeoMutt], a [TUI]
+  email client, handles attachments e.g. html in an email body, PDFs, images...
+
+  We currently open these applications for these file types:
+
+  | file type | application   |
+  |:---------:|---------------|
+  |    html   | [w3m]         |
+  |    PDFs   | macOS preview |
+  |   images  | img2[sixel]   |
 
   </blockquote>
 
@@ -434,23 +446,6 @@ to manage my dot files. Funny how these things work. :shrug:
    <blockquote>
 
   This is for installing the [iterm2] shell integration for macOS.
-
-   </blockquote>
-
-</details>
-
-<details>
-  <summary>.mailcap</summary>
-
-   <blockquote>
-
-   Config file for [NeoMutt's MIME Support], which is how [NeoMutt],
-   a [TUI] email client, handles attachments such as html in an email body,
-   or an in-line image.
-
-   We currently set the following:
-   - [w3m] for html in the terminal
-   - img2[sixel] for images in the terminal
 
    </blockquote>
 
