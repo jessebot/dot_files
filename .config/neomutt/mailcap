@@ -1,8 +1,11 @@
+# This file tells neomutt what program to open for what file type
+# Read more here: https://neomutt.org/guide/mimesupport
+
 # any image should be handled by sixel right now
-# image/*; (clear && img2sixel %s); needsterminal; copiousoutput
-image/*; (clear && img2sixel %s); needsterminal
+image/*; img2sixel %s; needsterminal
 
 # for displaying html files
 text/html; w3m -sixel -o auto_image=TRUE -o display_image=1 -T text/html %s; nametemplate=%s.html; needsterminal
 
+# pdf files currently only work on macOS, using open (which defaults to preview)
 application/pdf; open %s
