@@ -1,9 +1,42 @@
-# thank you to stephane for giving out a super easy to understand base config:
+# thank you to these people for their help:
 # https://cheatsheets.stephane.plus/productivity/neomutt/
+# https://gideonwolfe.com/posts/workflow/neomutt/intro/
 
-# automatically view text/html of any file :) saves key presses
-auto_view text/html
-alternative_order text/plain text/enriched text/html
+
+# ----------------------- general --------------------------
+# bell on new mails - even though I normally hate bells
+set beep_new
+
+# ------------- index, your default mailbox view -------------
+# No help bar at the top of index
+unset help
+# set arrow_cursor = yes
+# set arrow_string = ""
+
+# --------------- handing MIME types (html, pdf, jpg, gif, etc)
+set mailcap_path = ~/.config/neomutt/mailcap
+
+# ----------------- viewing email attachments -------------------
+# automatically view text/html of any file (otherwise you have to press v)
+auto_view text/html text/calendar application/ics
+alternative_order text/plain text/enriched text/html text/*
+
+# -------------------- composing email ------------------------
+# use neovim by default
+set editor = "nvim"
+# show headers when composing
+set edit_headers
+# format of subject when forwarding
+set forward_format = "Fwd: %s"
+# reply to Reply to: field
+set reply_to
+# reply to person's name
+set reverse_name
+# include message in replies
+set include
+# include message in forwards
+set forward_quote
+
 
 # --------------------------- Char encoding --------------------------- #
 # Character set on sent messages:
