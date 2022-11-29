@@ -89,23 +89,29 @@ color index         brightcolor227  color235        "~T~N"          # tagged, ne
 color index         brightcolor227  color235        "~T~U"          # tagged, unread messages
 
 # message headers ------------------------------------------------------
-
-color hdrdefault    brightcolor227  color237
-color header        brightcolor69   color237        "^(From|To|Cc|Bcc)"
-color header        brightcolor207  color237        "^(Subject|Date)"
-
-# body -----------------------------------------------------------------
 # color69  - cornflower blue
 # color81  - SteelBlue1
+# color156 - GreenYellow, softer neon green
+# color160 - Red3 - a darker red - too dark
 # color207 - MediumOrchid1 - soft magenta
+# color204 - IndianRed1 like a softer pinkish
 # color214 - Orange1 - slightly light orange
 # color227 - LightGoldenrod1 - slightly pale yellow
-#
+# color232 - blackest gray
 # color235 - extremely dark gray
 # color237 - dark gray
 # color241 - Grey39 - medium gray
 # color244 - Grey50 - lighter medium gray
 # color255 - Grey93 - lightest gray before write
+
+color hdrdefault    brightcolor227  color237
+color header        brightcolor214  color236        "^Date"
+color header        color207        color237        "^From"
+color header        brightcolor69   color236        "^To"
+color header        brightcolor81   color236        "^(Cc|Bcc)"
+color header        brightcolor156  color237        "^Subject"
+
+# body -----------------------------------------------------------------
 
 color quoted        color69         color237
 color quoted1       color207        color237
