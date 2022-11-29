@@ -6,13 +6,7 @@
 #                                 General                                    #
 # -------------------------------------------------------------------------- #
 #
-export W3M_IMG2SIXEL=/usr/local/bin/img2sixel
-
-# this is for my specific locale, so that perl is chill about everything
-export LC_ALL=en_US.UTF-8
-
-# I hate bells a lot
-set bell-style none
+# export W3M_IMG2SIXEL=/usr/local/bin/img2sixel
 
 # fixes "scp: Received message too long 169564991" error
 # If not running interactively, don't do anything, no outputs
@@ -21,27 +15,12 @@ case $- in
       *) return;;
 esac
 
-# default editor
-export EDITOR=vim
+# I hate bells a lot
+set bell-style none
 
-# make all colors work by default
-export TERM=xterm-256color
+# python version is subject to change
+PYTHON_VERSION="3.11"
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# colors for less when displaying man pages
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;35m'
 
 # -------------------------------------------------------------------------- #
 #                                 History                                    #
@@ -58,125 +37,42 @@ HISTFILESIZE=20000
 HISTTIMEFORMAT="%d/%m/%y %T "
 
 
-# -------------------------------------------------------------------------- #
-#                                 Pathing                                    #
-# -------------------------------------------------------------------------- #
-
-# go
-GOROOT=$HOME
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-
-# python packages' default location when you do pip3.11 install --user package
-export PATH=$PATH:$HOME/.local/bin
-# this is for non-M1 macs
-export PATH=$PATH:/usr/local/bin:$HOME/Library/Python/3.11/bin
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-if [[ $(uname) == *"Linux"* ]]; then
-    # this is for iptables on debian, which is elusive
-    export PATH=$PATH:/usr/sbin:/usr/share
-    # for snap package manager packages
-    export PATH=$PATH:/snap/bin
-    # ~ HomeBrew on Linux ~ #
-    export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-    export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
-    export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
-    export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
-    export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
-    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
-    pip_packages="/home/linuxbrew/.linuxbrew/lib/python3.11/site-packages"
+# ------------------------------------------------------------------------- #
+#                              TEXT EDITOR                                  #
+# Default, in order of preference (subject to availability): nvim, vim, vi
+# ------------------------------------------------------------------------- #
+if [ -z "$(which nvim)" ]; then
+    export EDITOR=vim
+else
+    export EDITOR=nvim
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-if [[ $(uname) == *"Darwin"* ]]; then
-    # don't warn me that BASH is deprecated, becasuse it is already upgraded
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-    # bash completion on macOS
-    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && \
-        . "/usr/local/etc/profile.d/bash_completion.sh"
+# always use nvim (or vim) instead of vi
+alias vi=$EDITOR
 
-    # check if this an M1/M2 mac
-    if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
-        # On M1/M2: brew default installs here
-        export PATH=/opt/homebrew/bin:$PATH
-        pip_packages="/opt/homebrew/lib/python3.11/site-packages"
-    else
-        # For older macs before the M1, pre-2020
-        pip_packages="/usr/local/lib/python3.11/site-packages"
-    fi
+# make all colors work by default
+export TERM=xterm-256color
 
-    # Load GNU sed, called gsed, instead of MacOS's POSIX sed
-    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-    # Always use GNU sed
-    alias sed='gsed'
-fi
+# -- This is for making some basic resizing working with various cli tools --
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 
-# -------------------------------------------------------------------------- #
-#                                 ALIASES                                    #
-# -------------------------------------------------------------------------- #
+# ------------------------------------------------------------------------- #
+#                              TEXT VIEWING                                 #
+# ------------------------------------------------------------------------- #
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-alias pign='ping'
-alias gtop='gotop'
-# can never spell clear
-alias celar='clear'
-alias clar='clear'
-# clear, but in dutch
-alias leegmaken='clear'
-alias gti='git'
-alias gtt='git'
-# can't spell tree
-alias ter='tree'
-alias tre='tree'
-alias tere='tree'
-# can't spell python
-alias pthyon='python3.11'
-alias ptyhon='python3.11'
-alias pythong='python3.11'
-# alias because versions lower than python3.11 still in some places
-alias python='python3.11'
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-
-# colordiff - diff, but with colors for accessibility
-alias diff='colordiff -uw'
-
-# always use vim instead of vi, TODO: check if vim installed?
-alias vi='vim'
-
-# we love a good tracer t
-alias tracert='traceroute'
-# whoami, whereami, whoareyou?
-alias whereami='hostname'
-alias whoareyou='echo "Your friend :)"'
-# scrncpy installs adb for you, but it's awkward to use, so we just alias it
-alias adb='scrcpy.adb'
-# quick to do
-alias todo='vim ~/todo.md'
-# I never remember what the img2sixel command is called
-alias sixel='img2sixel'
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-# lsd instead of ls for colors/icons
-alias ls='lsd -a'
-# lsd and list long, human readable file sizes, show hidden files
-alias ll='lsd -hal'
-# sort by most recent and reversed, so the most recent file is the last
-# helpful for directories with lots of files
-alias lt='lsd -atr'
-# same as above, but long
-alias llt='lsd -haltr'
-# lsd already has a fancier tree command with icons
-alias tree='lsd --tree --depth=2'
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ grep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-# always use colors
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias grpe='grep'
-alias gerp='grep'
+# colors for less when displaying man pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;35m'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
@@ -206,6 +102,138 @@ function dog {
 
 alias cat='dog'
 
+
+# -------------------------------------------------------------------------- #
+#                                 Pathing                                    #
+# -------------------------------------------------------------------------- #
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GENERAL PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# golang requires this
+GOROOT=$HOME
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+if [[ $(uname) == *"Linux"* ]]; then
+
+    # iptables on debian is here
+    export PATH=$PATH:/usr/sbin:/usr/share
+
+    # snap package manager installs commands here
+    export PATH=$PATH:/snap/bin
+
+    # HomeBrew on Linux needs all of this to work
+    export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+    export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
+    export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
+    export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
+    export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
+    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
+    # pip packages installed via linuxbrew will be here
+    pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+fi
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# python default install location when you do: pip$PYTHON_VERSION install --user package
+export PATH=$PATH:$HOME/.local/bin
+# this is for macs without apple silicon, e.g. before M1
+export PATH=$PATH:/usr/local/bin:$HOME/Library/Python/$PYTHON_VERSION/bin
+
+if [[ $(uname) == *"Darwin"* ]]; then
+    # don't warn me that BASH is deprecated, becasuse it is already upgraded
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    # bash completion on macOS
+    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && \
+        # sources bash completion
+        . "/usr/local/etc/profile.d/bash_completion.sh"
+
+    pip_path="lib/python$PYTHON_VERSION/site-packages"
+
+    # check if this apple silicon
+    if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
+        # On M1/M2: brew default installs here
+        export PATH=/opt/homebrew/bin:$PATH
+        pip_packages="/opt/homebrew/lib/$pip_path"
+    else
+        # For older macs before the M1, pre-2020
+        pip_packages="/usr/local/lib/$pip_path"
+    fi
+
+    # Load GNU sed, called gsed, instead of MacOS's POSIX sed
+    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+    # Always use GNU sed
+    alias sed='gsed'
+fi
+
+
+# -------------------------------------------------------------------------- #
+#                                 ALIASES                                    #
+# -------------------------------------------------------------------------- #
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+alias pign='ping'
+alias gtop='gotop'
+# can never spell clear
+alias celar='clear'
+alias clar='clear'
+# clear, but in dutch
+alias leegmaken='clear'
+alias gti='git'
+alias gtt='git'
+# can't spell tree
+alias ter='tree'
+alias tre='tree'
+alias tere='tree'
+
+# can't spell python
+alias pthyon="python$PYTHON_VERSION"
+alias ptyhon="python$PYTHON_VERSION"
+alias pythong="python$PYTHON_VERSION"
+# alias because versions lower than python$PYTHON_VERSION still in some places
+alias python="python$PYTHON_VERSION"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# colordiff - diff, but with colors for accessibility
+alias diff='colordiff -uw'
+
+# we love a good tracer t
+alias tracert='traceroute'
+
+# whoami, whereami, whoareyou?
+alias whereami='hostname'
+alias whoareyou='echo "Your friend :)"'
+
+# scrncpy installs adb for you, but it's awkward to use, so we just alias it
+alias adb='scrcpy.adb'
+
+# I never remember what the img2sixel command is called
+alias sixel='img2sixel'
+
+# quick to do
+alias todo="$EDITOR ~/todo.md"
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# lsd instead of ls for colors/icons
+alias ls='lsd -a'
+# lsd and list long, human readable file sizes, show hidden files
+alias ll='lsd -hal'
+# sort by most recent and reversed, so the most recent file is the last
+# helpful for directories with lots of files
+alias lt='lsd -atr'
+# same as above, but long
+alias llt='lsd -haltr'
+# lsd already has a fancier tree command with icons
+alias tree='lsd --tree --depth=2'
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ grep ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# always use colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias grpe='grep'
+alias gerp='grep'
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ git ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 alias gc='git commit -m'
 alias gs='git status'
@@ -232,7 +260,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nvm ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ nvm for node.js ~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 export NVM_DIR="$HOME/.nvm"
 # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
