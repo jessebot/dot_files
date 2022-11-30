@@ -153,14 +153,15 @@ to manage my dot files. Funny how these things work. :shrug:
   - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
   - sets tls by default
-  - sets header_cache and message_cachedir to be "~/.cache/mutt"
+  - sets header_cache and message_cachedir to be `~/.cache/mutt` (must be a directory, NOT a file)
   - sets navigation keys similar to vim
 
   You'll still need to create `~/.config/neomutt/keys` with the following info:
 
-  ```neomutt
+  ```ini
   set my_user=you@youremail.com
   set my_name="Your Name"
+
   # if you're using protonmail this is the password from protonmail-bridge,
   # after you login, not your actual email password
   set my_pass="areallycoolpasswordfordogs"
