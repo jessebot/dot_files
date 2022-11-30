@@ -28,7 +28,7 @@
 # %{%d %b} example: "26 Sep" is the same as: set date_format="%d %b" [sender's timezone]
 # %zc 	Message crypto flags "    "
 # %zs 	Message status flags "   "
-# %zt 	Message tag flags "     " and "    ﴥ "
+# %zt 	Message tag flags "     " and "    ﴥ "
 # %Z    all of the above %zc,%zs,%zt
 # Sender name or email addresss (16 characters)
 # Number of hidden messages if the thread is collapsed
@@ -72,7 +72,7 @@ set pager_format=" %n %zc  %T %s%*  %{!%d %b · %H:%M}  %?X?  %X ?�
 # Removed because it wasn't working
 # | %?r?%r? |  Modified/read-only/attach-msg indicator w/ $status_chars
 # --------------------------------------------------------------------------- #
-set status_format = "  %f   %?F? %F ?  %n   %R %?p?  %p? %?d?  %d ? %?t?  %t? %>    %s "
+set status_format = "  %f   %?F? %F ?  %n   %R %?d?  %d?%?p?  %p?  %?t?  %t? %>    %s "
 
 # REF: https://neomutt.org/guide/reference.html#folder-format
 # folder format will be, in the following order:
@@ -115,7 +115,7 @@ ifdef crypt_chars set crypt_chars = " "
 
 #     	      The mail is tagged.
 #     	      The mail is flagged as important.
-#     	      The mail is marked for deletion.
+#     	      The mail is marked for deletion.
 #     	      The mail has attachments marked for deletion.
 #     	      The mail has been replied to.
 #  <space>    The mail is Old (Unread but seen).
@@ -124,7 +124,7 @@ ifdef crypt_chars set crypt_chars = " "
 #  <space>    The mail thread is New (Unread but not seen).
 #  <space>    The mail is read - %S expando.
 #  <space>    The mail is read - %Z expando.
-set flag_chars = "      "
+set flag_chars = "      "
 
 set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
 tag-transforms "replied" "↻ "  \
@@ -145,8 +145,6 @@ tag-formats "replied" "GR" \
 # default
 color status color239 color235
 
-# powerline status bar hacks
-
 # this is for the mailbox, first segment
 color status color235 color69  '(  [^ ]+ )' 1
 
@@ -159,11 +157,11 @@ color status color156 color240 '\s*  [0-9]+ \s*'
 # read messages
 color status color69  color239 '\s*  [0-9]+ \s*'
 
+# deleted messages
+color status color204 color238 '\s*  [0-9]+\s*'
+
 # postponed (draft) messages
 color status color213 color238 '\s*  [0-9]+ \s*'
-
-# deleted messages
-color status magenta  color235 ''
 
 # dividers for left side
 color status color238   black    ''
@@ -175,11 +173,11 @@ color status color239   color238    ''
 color status color214 color237  '(   [^ ]+ )' 1
 
 # dividers for the right side
-color status color238 color235 '().*$' 1
+color status color237 color235 '().*$' 1
 
 # I haven't tested any of this at all :shrug:
-color status yellow   color235 '( )\s*\s*[0-9]+\s*' 1
-color status color235 yellow   '\s*\s*[0-9]+\s*'
-color status color69  yellow   '( ) ([0-9]+%|all|end) \s*' 1
-color status color235 color69  ' ([0-9]+%|all|end) \s*'
-color status yellow   color235 '( )\s* ' 1
+# color status yellow   color235 '( )\s*\s*[0-9]+\s*' 1
+# color status color235 yellow   '\s*\s*[0-9]+\s*'
+# color status color69  yellow   '( ) ([0-9]+%|all|end) \s*' 1
+# color status color235 color69  ' ([0-9]+%|all|end) \s*'
+# color status yellow   color235 '( )\s* ' 1
