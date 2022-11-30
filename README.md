@@ -7,14 +7,14 @@ to manage my dot files. Funny how these things work. :shrug:
 ### Sections for each config file, organized by directory and application:
 
 <details>
-  <summary>.config</summary>
+  <summary><code>.config</code></summary>
 
   <blockquote>
 
   Below are directories that would be located in your home directory, under `.config`:
 
   <details>
-    <summary>asciinema</summary>
+    <summary><code>asciinema</code></summary>
 
   <blockquote>
 
@@ -31,7 +31,7 @@ to manage my dot files. Funny how these things work. :shrug:
 
 
   <details>
-    <summary>gh</summary>
+    <summary><code>gh</code></summary>
 
   <blockquote>
 
@@ -46,7 +46,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>glab-cli</summary>
+    <summary><code>glab-cli</code></summary>
 
   <blockquote>
 
@@ -61,7 +61,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>karabiner</summary>
+    <summary><code>karabiner</code></summary>
 
   <blockquote>
 
@@ -76,7 +76,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>kitty</summary>
+    <summary><code>kitty</code></summary>
 
   <blockquote>
 
@@ -93,7 +93,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>lsd</summary>
+    <summary><code>lsd</code></summary>
 
   <blockquote>
 
@@ -108,7 +108,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>lsimg</summary>
+    <summary><code>lsimg</code></summary>
 
   <blockquote>
 
@@ -123,7 +123,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>neofetch</summary>
+    <summary><code>neofetch</code></summary>
 
   <blockquote>
 
@@ -138,7 +138,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>neomutt</summary>
+    <summary><code>neomutt</code></summary>
 
   <blockquote>
 
@@ -183,7 +183,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>nvim</summary>
+    <summary><code>nvim</code></summary>
 
   <blockquote>
 
@@ -259,7 +259,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>Powerline</summary>
+    <summary><code>Powerline</code></summary>
 
   <blockquote>
 
@@ -286,7 +286,7 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
-    <summary>Ranger</summary>
+    <summary><code>Ranger</code></summary>
 
   <blockquote>
 
@@ -306,7 +306,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.cron</summary>
+  <summary><code>.cron</code></summary>
 
    <blockquote>
   local cron jobs for alarms, and package manager updates
@@ -315,7 +315,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.local/bin</summary>
+  <summary><code>.local/bin</code></summary>
 
   <blockquote>
   This is just where we throw a few really simple scripts like:
@@ -327,7 +327,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.vim*</summary>
+  <summary><code>.vim*</code></summary>
 
    <blockquote>
 
@@ -371,7 +371,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.w3m</summary>
+  <summary><code>.w3m</code></summary>
 
   <blockquote>
   Files:
@@ -387,7 +387,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.bash_profile, .bashrc, .bashrc_k8s</summary>
+  <summary><code>.bash_profile, .bashrc, .bashrc_k8s</code></summary>
 
    <blockquote>
 
@@ -419,7 +419,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.gitignore</summary>
+  <summary><code>.gitignore</code></summary>
 
   <blockquote>
 
@@ -431,7 +431,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.hyper.js</summary>
+  <summary><code>.hyper.js</code></summary>
 
   <blockquote>
 
@@ -442,7 +442,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.iterm2_shell_integration.bash</summary>
+  <summary><code>.iterm2_shell_integration.bash</code></summary>
 
    <blockquote>
 
@@ -453,7 +453,7 @@ to manage my dot files. Funny how these things work. :shrug:
 </details>
 
 <details>
-  <summary>.tmux.conf</summary>
+  <summary><code>.tmux.conf</code></summary>
 
 <blockquote>
 
@@ -466,7 +466,7 @@ Config file for [tmux]. Currently, it will:
 </details>
 
 <details>
-  <summary>.zshrc</summary>
+  <summary><code>.zshrc</code></summary>
 
   <blockquote>
 
