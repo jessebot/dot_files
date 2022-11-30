@@ -7,11 +7,14 @@
 # bell on new mails - even though I normally hate bells
 set beep_new
 
+# signature, this gets appended to your emails, you have to create this file
+set signature= "~/.config/neomutt/signature"
+
 # ------------- index, your default mailbox view -------------
 # No help bar at the top of index
 unset help
-# set arrow_cursor = yes
-# set arrow_string = ""
+# sort the inbox by newest first
+set sort = reverse-threads
 
 # --------------- handing MIME types (html, pdf, jpg, gif, etc)
 set mailcap_path = ~/.config/neomutt/mailcap
@@ -55,10 +58,10 @@ source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
 # ----------------- Email address, Password, and Name ------------------ #
 # sources secret variables from a file that looks like (without the comments):
 #
+# $my_name="Your Name"
 # $my_user="You@yourprovider.tld"
 # if using protonmail, this should be the password from protonmail-bridge
 # $my_pass="Your Password"
-# $my_name="Your Name"
 
 source ~/.config/neomutt/keys
 
@@ -76,7 +79,8 @@ bind pager                      j   next-line
 bind pager                      k   previous-line
 
 # set meta_key = yes
-# set abort_key = "<Esc>"
+# current use of Esc as a meta key is nonsense
+set abort_key = "<Esc>"
 
 
 # --------------------------- IMAP settings --------------------------- #
@@ -95,7 +99,8 @@ set postponed     = +Drafts
 # set postponed = +[Protonmail]/Drafts
 set trash         = +Trash
 set spoolfile     = +INBOX
-mailboxes         = +INBOX
+mailboxes         = +INBOX +Drafts +Sent +Trash
+
 
 # ----------------------------- Caching --------------------------------- #
 # Store message headers locally to speed things up.
