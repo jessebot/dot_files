@@ -173,7 +173,7 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 " enable folding for markdown?
 let g:markdown_folding = 1
-# in config files, allow user to fold comment blocks
+" in config files, allow user to fold comment blocks
 autocmd FileType conf setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
 
 
