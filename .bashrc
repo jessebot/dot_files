@@ -100,6 +100,8 @@ function dog {
     fi
 }
 
+
+alias raw='env cat'
 alias cat='dog'
 
 
