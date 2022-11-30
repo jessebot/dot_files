@@ -100,6 +100,14 @@ function dog {
     fi
 }
 
+if [[ $(uname) == *"Darwin"* ]]; then
+   alias raw='/bin/cat'
+fi
+
+if [[ $(uname) == *"Linux"* ]]; then
+   alias raw='/usr/bin/cat'
+fi
+
 alias cat='dog'
 
 
