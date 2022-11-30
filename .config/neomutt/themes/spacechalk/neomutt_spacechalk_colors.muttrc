@@ -16,7 +16,7 @@
 # color156 - GreenYellow, softer neon green
 # color160 - Red3 - a darker red - too dark
 # color207 - MediumOrchid1 - soft magenta
-# color204 - IndianRed1 like a softer pinkish
+# color204 - IndianRed1 like a softer pinkish red
 # color214 - Orange1 - slightly light orange
 # color227 - LightGoldenrod1 - slightly pale yellow
 # color232 - blackest gray
@@ -45,7 +45,7 @@ mono bold           bold
 mono underline      underline
 mono indicator      reverse
 mono error          bold
-mono header         bold                            "^(From|Subject|Date|To|Cc|Bcc):"
+mono header         bold           "^(From|Subject|Date|To|Cc|Bcc):"
 mono quoted         bold
 
 # index ----------------------------------------------------------------
@@ -65,6 +65,8 @@ color index         color227        color235        "~P"            # messages f
 #color index         color69         color235        "~U~p!~F"      # unread messages to me
 #color index         color244        color235        "~R~p!~F"      # messages to me
 color index         brightcolor207  color235        "~F"            # flagged messages
+color index_flags   color227        color235           "~F" # jesse test
+# Entire index line
 color index         brightcolor207  color235        "~F~p"          # flagged messages to me
 color index         brightcolor207  color235        "~N~F"          # new flagged messages
 color index         brightcolor207  color235        "~N~F~p"        # new flagged messages to me
@@ -88,22 +90,8 @@ color index         brightcolor227  color235        "~T~F"          # tagged, fl
 color index         brightcolor227  color235        "~T~N"          # tagged, new messages
 color index         brightcolor227  color235        "~T~U"          # tagged, unread messages
 
-# message headers ------------------------------------------------------
-# color69  - cornflower blue
-# color81  - SteelBlue1
-# color156 - GreenYellow, softer neon green
-# color160 - Red3 - a darker red - too dark
-# color207 - MediumOrchid1 - soft magenta
-# color204 - IndianRed1 like a softer pinkish
-# color214 - Orange1 - slightly light orange
-# color227 - LightGoldenrod1 - slightly pale yellow
-# color232 - blackest gray
-# color235 - extremely dark gray
-# color237 - dark gray
-# color241 - Grey39 - medium gray
-# color244 - Grey50 - lighter medium gray
-# color255 - Grey93 - lightest gray before write
 
+# message headers ------------------------------------------------------
 color hdrdefault    brightcolor227  color237
 color header        brightcolor214  color236        "^Date"
 color header        color207        color237        "^From"
@@ -142,5 +130,3 @@ color body          brightcolor69   color235        "((@(([0-9a-z-]+\\.)*[0-9a-z
 # simplified regex for URL & email
 #color body		magenta		default	"(ftp|https?|gopher|news|telnet|finger)://[^ \"\t\r\n]+"
 #color body		magenta		default	"[-a-z_0-9.]+@[-a-z_0-9.]+"
-
-# vi: ft=muttrc ts=4 sw=4 sts=4 et

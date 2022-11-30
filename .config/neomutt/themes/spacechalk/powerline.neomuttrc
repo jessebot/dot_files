@@ -3,6 +3,24 @@
 # loose fork of https://github.com/sheoak/neomutt-powerline-nerdfonts
 #
 # Works best with space-chalk theme
+#
+# color syntax is: color [field to color] [text color] [background color]    #
+#                                                                            #
+# color69  - cornflower blue
+# color81  - SteelBlue1
+# color156 - GreenYellow, softer neon green
+# color160 - Red3 - a darker red - too dark
+# color207 - MediumOrchid1 - soft magenta
+# color213 - Orchid - softest magenta
+# color204 - IndianRed1 like a softer pinkish red
+# color214 - Orange1 - slightly light orange
+# color227 - LightGoldenrod1 - slightly pale yellow
+# color232 - blackest gray
+# color235 - extremely dark gray
+# color237 - dark gray
+# color241 - Grey39 - medium gray
+# color244 - Grey50 - lighter medium gray
+# color255 - Grey93 - lightest gray before write
 # ----------------------------------------------------------------------------
 
 # REF: https://neomutt.org/guide/reference.html#index-format
@@ -10,7 +28,7 @@
 # %{%d %b} example: "26 Sep" is the same as: set date_format="%d %b" [sender's timezone]
 # %zc 	Message crypto flags "    "
 # %zs 	Message status flags "   "
-# %zt 	Message tag flags "     " and "     "
+# %zt 	Message tag flags "     " and "    ﴥ "
 # %Z    all of the above %zc,%zs,%zt
 # Sender name or email addresss (16 characters)
 # Number of hidden messages if the thread is collapsed
@@ -36,19 +54,25 @@ set index_format=" %{%d %b} ·%Z %-16.16L %?M?(%1M)& ? %?X?&·? %s"
 set pager_format=" %n %zc  %T %s%*  %{!%d %b · %H:%M}  %?X?  %X ?  %P  "
 
 
-# REF: https://neomutt.org/guide/reference.html#status-format
-# status format will be, in the following order:
+# ---------------------------- STATUS BAR ----------------------------------- #
 #
-# The full pathname of the current mailbox
-# Modified/read-only/won't-write/attach-message indicator, According to $status_chars
-# The number of messages in the mailbox
-# Number of new messages in the mailbox (unread, unseen)
-# Number of deleted messages
-# Number of tagged messages in the mailbox
-# Number of flagged messages
-# Number of postponed (Draft) messages
-# ----------------------------------------------------------------------------
-set status_format = " %f%?r? %r?   %m %?n?  %n ?  %?d?  %d ?%?t?  %t ?%?F?  %F? %>  %?p?  %p ?"
+# REF: https://neomutt.org/guide/reference.html#status-format
+#
+# |   Symbol    |                     Description                        |
+# | ---------------------------------------------------------------------|
+# |  %f        | The full pathname of the current mailbox (folder)      |
+# |  %s        | Current sorting mode ($sort) e.g. date recieved        |
+# |  %n        | Number of new messages in the mailbox (unread, unseen) |
+# |  %R        | Number of read messages in the mailbox                 |
+# | %?d?  %d ? | Number of deleted messages                             |
+# |  %t ?%?F?  | Number of tagged messages in the mailbox               |
+# | ?%?F? %F?  | Number of flagged messages                             |
+# | ?p?  %p ?  | Number of postponed (Draft) messages                   |
+# ------------------------------------------------------------------------
+# Removed because it wasn't working
+# | %?r?%r? |  Modified/read-only/attach-msg indicator w/ $status_chars
+# --------------------------------------------------------------------------- #
+set status_format = "  %f   %?F? %F ?  %n   %R %?p?  %p? %?d?  %d ? %?t?  %t? %>    %s "
 
 # REF: https://neomutt.org/guide/reference.html#folder-format
 # folder format will be, in the following order:
@@ -71,19 +95,35 @@ set vfolder_format = " %N %?n?%3n&   ?  %8m  · %f"
 # ----------------------------------------------------------------------------
 set attach_format = "%u%D  %T%-75.75d %?T?%&   ? %5s · %m/%M"
 
-# not addressed to me, to me, group, cc, sent by me, mailing list
-set to_chars=""
+#      not addressed to me
+#      to me
+#      group
+#      CC
+#   ﴥ   Sent by me
+#      mailing list
+set to_chars="ﴥ"
 
 # unchanged mailbox, changed, read only, attach mode
 set status_chars = " "
 
-# Symbol      Description
 #    	      mail is signed, & the signature is successfully verified
 #    	      mail is PGP encrypted
 #    	      mail is signed, but not verified
 #    	      mail contains a PGP public key?
-# <space> 	mail has no crypto info
+# <space>     mail has no crypto info
 ifdef crypt_chars set crypt_chars = " "
+
+#     	      The mail is tagged.
+#     	      The mail is flagged as important.
+#     	      The mail is marked for deletion.
+#     	      The mail has attachments marked for deletion.
+#     	      The mail has been replied to.
+#  <space>    The mail is Old (Unread but seen).
+#            The mail is New (Unread but not seen).
+#  <space>    The mail thread is Old (Unread but seen).
+#  <space>    The mail thread is New (Unread but not seen).
+#  <space>    The mail is read - %S expando.
+#  <space>    The mail is read - %Z expando.
 set flag_chars = "      "
 
 set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
@@ -98,21 +138,48 @@ tag-formats "replied" "GR" \
             "signed" "GS" \
             "attachment" "GA" \
 
-# color69 is cornflower_blue
+# -------------------------------------------------------------------------- #
+# ------------ coloring the status bar to look like powerline -------------- #
+# -------------------------------------------------------------------------- #
 
-# I think its first color as the background and second color as the foreground
-color status white color235
-# powerline status bar hack
-color status green color235 ''
-color status yellow color235 ''
-color status magenta color235 ''
-color status color235 color69 '(.*) ' 1
-color status color69 color235 '.*( )' 1
-color status color235 color69 '\s*  [0-9]+ \s*'
-color status color69 color235 '( ).*$' 1
-color status yellow color235 '( )\s*\s*[0-9]+\s*' 1
-color status color235 yellow '\s*\s*[0-9]+\s*'
-color status color69 yellow '( ) ([0-9]+%|all|end) \s*' 1
-color status color235 color69 ' ([0-9]+%|all|end) \s*'
-color status yellow color235 '( )\s* ' 1
-color status default color235 ''
+# default
+color status color239 color235
+
+# powerline status bar hacks
+
+# this is for the mailbox, first segment
+color status color235 color69  '(  [^ ]+ )' 1
+
+# flagged/tagged messages
+color status yellow   color241 '\s*  [0-9]+ \s*'
+
+# unread messages
+color status color156 color240 '\s*  [0-9]+ \s*'
+
+# read messages
+color status color69  color239 '\s*  [0-9]+ \s*'
+
+# postponed (draft) messages
+color status color213 color238 '\s*  [0-9]+ \s*'
+
+# deleted messages
+color status magenta  color235 ''
+
+# dividers for left side
+color status color238   black    ''
+color status color69    color241    '( ).*' 1
+color status color239   color238    ''
+
+# -------------------- Right side of status bar ----------------------
+# Sorting method
+color status color214 color237  '(   [^ ]+ )' 1
+
+# dividers for the right side
+color status color238 color235 '().*$' 1
+
+# I haven't tested any of this at all :shrug:
+color status yellow   color235 '( )\s*\s*[0-9]+\s*' 1
+color status color235 yellow   '\s*\s*[0-9]+\s*'
+color status color69  yellow   '( ) ([0-9]+%|all|end) \s*' 1
+color status color235 color69  ' ([0-9]+%|all|end) \s*'
+color status yellow   color235 '( )\s* ' 1
