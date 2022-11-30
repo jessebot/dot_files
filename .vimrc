@@ -6,6 +6,7 @@
 "                       "line numbers, cursorline, etc,"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 " this just loads .bashrc (.bash_profile on macOS) like a regular login shell
 " but only in vim, this breaks in neovim for some reason :shrug:
 if !has('nvim')
@@ -172,6 +173,8 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 " enable folding for markdown?
 let g:markdown_folding = 1
+# in config files, allow user to fold comment blocks
+autocmd FileType conf setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
 
 
 "                                 BACKUPS:
