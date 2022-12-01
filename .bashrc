@@ -5,8 +5,6 @@
 # -------------------------------------------------------------------------- #
 #                                 General                                    #
 # -------------------------------------------------------------------------- #
-#
-# export W3M_IMG2SIXEL=/usr/local/bin/img2sixel
 
 # fixes "scp: Received message too long 169564991" error
 # If not running interactively, don't do anything, no outputs
@@ -19,8 +17,10 @@ esac
 set bell-style none
 
 # python version is subject to change
-PYTHON_VERSION="3.11"
+export PYTHON_VERSION="3.11"
 
+# this just makes howdoi use colors
+export HOWDOI_COLORIZE=1
 
 # -------------------------------------------------------------------------- #
 #                                 History                                    #
@@ -100,7 +100,6 @@ function dog {
     fi
 }
 
-
 alias raw='env cat'
 alias cat='dog'
 
@@ -144,9 +143,10 @@ if [[ $(uname) == *"Darwin"* ]]; then
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
     # bash completion on macOS
-    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && \
+    if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
         # sources bash completion
         . "/usr/local/etc/profile.d/bash_completion.sh"
+    fi
 
     pip_path="lib/python$PYTHON_VERSION/site-packages"
 
