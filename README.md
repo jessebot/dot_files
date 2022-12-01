@@ -216,7 +216,7 @@ to manage my dot files. Funny how these things work. :shrug:
   plugins that are installed, or called from vim plugins starting on line 15.
 
   ### [`~/.config/nvim/lua/user/airline.lua`](.config/nvim/lua/user/airline.lua)
-  This local config file sets defaults for [airline][airline], a status line for
+  sets defaults for [airline][airline], a status line for
   vim and neovim. The configurations are:
   - use [space-chalk] theme
   - enables [powerline fonts][powerline fonts] (fun icons)
@@ -226,7 +226,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - sets a line number percentage function for a slimmer ln segment
 
   ### [`~/.config/nvim/lua/user/ale.lua`](.config/nvim/lua/user/ale.lua)
-  local config sets defaults for [ale][ale] such as:
+  sets defaults for [ale][ale] such as:
   - enable ale by default
   - error icons are now  and warn icons are now 
   - don't lint on text changes, only on mode changes
@@ -235,17 +235,17 @@ to manage my dot files. Funny how these things work. :shrug:
   - move between errors
 
   ### [`~/.config/nvim/lua/user/dashboard.lua`](.config/nvim/lua/user/dashboard.lua)
-  local config for a starting screen [dashboard] for neovim. You
+  config for a starting screen [dashboard] for neovim. You
   should just check out the file to see what's being done. It's cute ascii art,
   and utilizes [telescope] to check out your files and previously
   opened files.
 
   ### [`~/.config/nvim/lua/user/folding.lua`](.config/nvim/lua/user/folding.lua)
-  local config file to enable folding, which is just vim speak for collapsing
+  config file to enable folding, which is just vim speak for collapsing
   blocks of code. Sets some defaults.
 
   ### [`~/.config/nvim/lua/user/nvim-tree.lua`](.config/nvim/lua/user/nvim-tree.lua)
-  local config file for [nvim-tree], a neovim file explorer written in lua, with icons.
+  config file for [nvim-tree], a neovim file explorer written in lua, with icons.
 
   Opens on opening of any file, and auto-adjusts its window size.
 
@@ -318,10 +318,23 @@ to manage my dot files. Funny how these things work. :shrug:
   <summary><code>.local/bin</code></summary>
 
   <blockquote>
-  This is just where we throw a few really simple scripts like:
-  it2setkeylabel for [iterm2] use the touchbar on macOS with iterm2.
-  There's also a `utc` command there, for ease of use printing the time in UTC.
 
+  Files:
+  - [`~/.local/bin/utc`](.local/bin/utc)
+  - [`~/.local/bin/splits`](.local/bin/splits)
+  - [`~/.local/bin/w3msplits`](.local/bin/w3m-splits)
+
+  This is just where we throw a few really simple scripts like:
+
+  | Command      | Description                                                 |
+  |--------------|-------------------------------------------------------------|
+  | `utc`        | for ease of use printing the time in UTC                    |
+  | `splits`     | open split in iterm2 and send a command to it               |
+  | `w3m-splits` | open split in iterm2 and send a website or HTML file to w3m |
+
+  `w3m-splits` is mostly useful for [NeoMutt] but anything is possible
+
+  file `it2setkeylabel` for [iterm2] to use the touchbar on macOS with iterm2 is maybe not in use and will be removed.
   </blockquote>
 
 </details>
@@ -379,7 +392,9 @@ to manage my dot files. Funny how these things work. :shrug:
   - [`~/.w3m/config`](.w3m/config)
 
   Files for the [w3m] terminal based web browser. This config sets:
+  - set default mailcap for MIME types
   - always display images
+  - quit without asking if we hit `qq`
   - use vim like key bindings
 
   </blockquote>
