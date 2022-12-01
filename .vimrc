@@ -550,6 +550,9 @@ if !has('nvim')
     " -------------------------- log files --------------------------------
     Plug 'mtdl9/vim-log-highlighting', {'for': 'log'}
 
+    " -------------------------- tmux -----------------------------
+    Plug 'tmux-plugins/vim-tmux'
+
     call plug#end()
 endif
 
