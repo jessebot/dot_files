@@ -326,11 +326,11 @@ to manage my dot files. Funny how these things work. :shrug:
 
   This is just where we throw a few really simple scripts like:
 
-  | Command      | Description                                                 |
-  |--------------|-------------------------------------------------------------|
-  | `utc`        | for ease of use printing the time in UTC                    |
-  | `splits`     | open split in iterm2 and send a command to it               |
-  | `w3m-splits` | open split in iterm2 and send a website or HTML file to w3m |
+  | Command         | Description                                                 |
+  |-----------------|-------------------------------------------------------------|
+  | `utc`           | for ease of use printing the time in UTC                    |
+  | `iterm2-splits` | open split in iterm2 and send a command to it               |
+  | `w3m-splits`    | open split in iterm2 and send a website or HTML file to w3m |
 
   `w3m-splits` is mostly useful for [NeoMutt] but anything is possible
 

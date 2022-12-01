@@ -2,27 +2,34 @@
 # https://cheatsheets.stephane.plus/productivity/neomutt/
 # https://gideonwolfe.com/posts/workflow/neomutt/intro/
 
-
 # ----------------------- general --------------------------
 # bell on new mails - even though I normally hate bells
 set beep_new
 
-# signature, this gets appended to your emails, you have to create this file
-set signature= "~/.config/neomutt/signature"
 
 # ------------- index, your default mailbox view -------------
+
 # No help bar at the top of index
 unset help
+
 # sort the inbox by newest first
 set sort = reverse-threads
 
-# --------------- handing MIME types (html, pdf, jpg, gif, etc)
-set mailcap_path = ~/.config/neomutt/mailcap
 
 # ----------------- viewing email attachments -------------------
+#
+# handing MIME types (html, pdf, jpg, gif, etc)
+set mailcap_path = ~/.config/neomutt/mailcap
+
 # automatically view text/html of any file (otherwise you have to press v)
-auto_view text/html text/calendar application/ics
-alternative_order text/plain text/enriched text/html text/*
+auto_view text/html
+# alternative_order text/plain text/enriched text/html text/*
+
+# Controls whether NeoMutt will ask you to press a key after an external command has been invoked by these functions: <shell-escape> , <pipe-message> , <pipe-entry> , <print-message> , and <print-entry> commands.
+# It is also used when viewing attachments with "auto_view", provided that the corresponding mailcap entry has a needsterminal flag, and the external program is interactive.
+# When set , NeoMutt will always ask for a key. When unset , NeoMutt will wait for a key only if the external command returned a non-zero status.
+unset wait_key
+
 
 # -------------------- composing email ------------------------
 # use neovim by default
@@ -39,7 +46,8 @@ set reverse_name
 set include
 # include message in forwards
 set forward_quote
-
+# signature, this gets appended to your emails, you have to create this file
+set signature= "~/.config/neomutt/signature"
 
 # --------------------------- Char encoding --------------------------- #
 # Character set on sent messages:
@@ -65,13 +73,16 @@ source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
 
 source ~/.config/neomutt/keys
 
+# -------------------------- Key Bindings ------------------------------
 
 # VI key bindings for moving around, so that neomutt feels like vim
 bind attach,browser,index       G   last-entry
 bind attach,browser,index       g   noop
 bind attach,browser,index       gg  first-entry
+
 bind index                      j   next-entry
 bind index                      k   previous-entry
+
 bind pager                      G   bottom
 bind pager                      g   noop
 bind pager                      gg  top
@@ -81,6 +92,11 @@ bind pager                      k   previous-line
 # set meta_key = yes
 # current use of Esc as a meta key is nonsense
 set abort_key = "<Esc>"
+
+## Unbinds V from version
+bind index,pager V  noop
+## Make quick html view macro
+macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
 
 
 # --------------------------- IMAP settings --------------------------- #
