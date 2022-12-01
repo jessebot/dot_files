@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     -- adds a pretty status line -- 'vim-airline/vim-airline'
     use '~/.vim/plugged/vim-airline'
 
-    -- my preferred colorscheme right now -- use 'jessebot/space-chalk'
+    -- my preferred colorscheme right now -- use 'jessebot/spacechalk'
     use '~/.vim/plugged/spacechalk'
 
     -- startup screen for neovim

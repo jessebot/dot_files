@@ -459,7 +459,7 @@ if !has('nvim')
     Plug 'vim-airline/vim-airline'
 
     " my preferred colorscheme right now
-    Plug 'jessebot/space-chalk', { 'as': 'spacechalk', 'do': ':colorscheme spacechalk' }
+    Plug 'jessebot/spacechalk', { 'do': ':colorscheme spacechalk' }
 
     " allow collapsing of functions for python and other supported languages
     Plug 'tmhedberg/SimpylFold'
@@ -559,5 +559,5 @@ endif
 " this has to be at the end of the file because it is a plugin I guess.
 " custom colorscheme to be more pastel and pretty
 colorscheme spacechalk
-" use custome space_chalk theme :)
-let g:airline_theme='space_chalk'
+" use custome space chalk theme :)
+let g:airline_theme='spacechalk'
