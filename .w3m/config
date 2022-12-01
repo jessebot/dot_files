@@ -1,3 +1,4 @@
 mailcap ~/.w3m/mailcap
 auto_image TRUE
 display_image 1
+confirm_qq false
