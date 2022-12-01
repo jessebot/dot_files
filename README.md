@@ -155,6 +155,8 @@ to manage my dot files. Funny how these things work. :shrug:
   - sets tls by default
   - sets header_cache and message_cachedir to be `~/.cache/mutt` (must be a directory, NOT a file)
   - sets navigation keys similar to vim
+  - set a key binding for `V` to be opening html attachments
+  - removes the prompt of hitting enter after viewing an attachment
 
   You'll still need to create `~/.config/neomutt/keys` with the following info:
 
