@@ -63,21 +63,19 @@ set pager_format="%T %n %zc  %s%*  %{!%d %b · %H:%M}  %?X?  %X ?
 #
 # REF: https://neomutt.org/guide/reference.html#status-format
 #
-# |   Symbol    |                     Description                        |
-# | ---------------------------------------------------------------------|
-# |  %f        | The full pathname of the current mailbox (folder)      |
-# | ?%?F? %F?  | Number of flagged messages                             |
-# |  %n        | Number of new messages in the mailbox (unread, unseen) |
-# |  %R        | Number of read messages in the mailbox                 |
-# | %?d?  %d ? | Number of deleted messages                             |
-# | ?p?  %p ?  | Number of postponed (Draft) messages                   |
-# |  %t ?%?F?  | Number of tagged messages in the mailbox               |
-# |  %s        | Current sorting mode ($sort) e.g. date recieved        |
+# |    Symbol    |                     Description                        |
+# | ----------------------------------------------------------------------|
+# |  %f         | The full pathname of the current mailbox (folder)      |
+# | %?F? %F?    | Number of flagged messages                             |
+# |  %n         | Number of new messages in the mailbox (unread, unseen) |
+# |  %R         | Number of read messages in the mailbox                 |
+# | %?d?  %d ?  | Number of deleted messages                             |
+# | %?p?  %p?   | Number of postponed (Draft) messages                   |
+# |  %t ?%?F?   | Number of tagged messages in the mailbox               |
+# | %?V?  %V ? | Currently active limit pattern, if any                 |
+# |  %S         | Current sorting mode ($sort) e.g. date recieved        |
 # ------------------------------------------------------------------------
-# Removed because it wasn't working
-# | %?r?%r? |  Modified/read-only/attach-msg indicator w/ $status_chars
-# --------------------------------------------------------------------------- #
-set status_format = "  %f   %?F? %F ?  %n   %R %?d?  %d?%?p?  %p?  %?t?  %t? %>    %s "
+set status_format = "  %f   %?F? %F ?  %n   %R %?d?  %d?%?p?  %p?  %?t? %t? %>   %?V?  \"%V\" %M  ?  %S "
 
 # ----------------------- VFOLDER LINE ------------------------------------
 # REF: https://neomutt.org/guide/reference.html#folder-format
@@ -154,7 +152,7 @@ tag-formats "replied" "GR" \
 color status color239 color235
 
 # this is for the mailbox, first segment
-color status color235 color69  '(  [^ ]+ )' 1
+color status color238 color69  '(  [^ ]+ )' 1
 
 # flagged/tagged messages
 color status yellow   color241 '\s*  [0-9]+ \s*'
@@ -163,25 +161,36 @@ color status yellow   color241 '\s*  [0-9]+ \s*'
 color status color156 color240 '\s*  [0-9]+ \s*'
 
 # read messages
-color status color69  color239 '\s*  [0-9]+ \s*'
+color status color75  color239 '\s*  [0-9]+ \s*'
 
 # deleted messages
 color status color204 color238 '\s*  [0-9]+\s*'
 
-# postponed (draft) messages
+# postponed messages (drafts)
 color status color213 color238 '\s*  [0-9]+ \s*'
 
 # dividers for left side
-color status color238   black    ''
+color status color238   color235    ''
 color status color69    color241    '( ).*' 1
-color status color239   color238    ''
 
 # -------------------- Right side of status bar ----------------------
-# Sorting method
-color status color214 color237  '(   [^ ]+ )' 1
 
-# dividers for the right side
-color status color237 color235 '().*$' 1
+# divider for the left edge of right side if search is being done
+color status color239 color235 ''
+
+color status color241 color239 ' '
+# Current limit term (the current string being searched for)
+color status color251 color241 '(  .*")' 1
+
+# I've always wanted to watch cats
+color status  green color241 '( [0-9]+ )' 1
+
+# these are the edges of the search box
+color status color241 color239 ''
+
+# Sorting method
+color status color214 color239  '(   [^ ]+ )' 1
+
 
 # I haven't tested any of this at all :shrug:
 # color status yellow   color235 '( )\s*\s*[0-9]+\s*' 1
