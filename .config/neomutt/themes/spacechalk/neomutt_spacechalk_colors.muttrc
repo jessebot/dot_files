@@ -2,15 +2,7 @@
 #
 # Based on Neonwolf Color Scheme for Mutt:
 # https://gitlab.com/h3xx/mutt-colors-neonwolf
-
-# ------------------- custom index highlights --------------------------------
-# for background in 16 color terminal, valid background colors include:
-# base03, bg, black, any of the non brights
-
-# style notes:
-# when bg=237, that's a highlighted message
-# normal bg=235
-
+#
 # color69  - cornflower blue
 # color81  - SteelBlue1
 # color156 - GreenYellow, softer neon green
@@ -25,11 +17,11 @@
 # color241 - Grey39 - medium gray
 # color244 - Grey50 - lighter medium gray
 # color255 - Grey93 - lightest gray before write
+#
+# Syntax: color <key> <foreground_color> <background_color> e.g.
+# color error white red (white text on red background for errors)
 
-# Color syntax example for: Make error messages white text on a red background
-# color error white red
-
-# basic colors ---------------------------------------------------------
+# ----------------------- basic colors --------------------------
 color error         color204        color237  # message line error text
 color tilde         color81         color235  # vi-like tildes marking blank lines
 color message       color156        color237
@@ -41,15 +33,14 @@ color indicator     brightcolor214  color237  # selected email in index
 color tree          brightcolor207  color235  # arrow in threads (`-->')
 
 # basic monochrome screen
-mono bold           bold
-mono underline      underline
-mono indicator      reverse
-mono error          bold
-mono header         bold           "^(From|Subject|Date|To|Cc|Bcc):"
-mono quoted         bold
+mono bold          bold
+mono underline     underline
+mono indicator     reverse
+mono error         bold
+mono header        bold        "^(From|Subject|Date|To|Cc|Bcc):"
+mono quoted        bold
 
-# index ----------------------------------------------------------------
-
+# ----------------- custom index highlights ---------------------
 color index         color160        color235        "~A"            # all messages
 color index         color214        color235        "~E"            # expired messages
 color index         brightcolor156  color235        "~N"            # new messages
@@ -91,7 +82,7 @@ color index         brightcolor227  color235        "~T~N"          # tagged, ne
 color index         brightcolor227  color235        "~T~U"          # tagged, unread messages
 
 
-# message headers ------------------------------------------------------
+# message headers ----------------------------------------------
 color hdrdefault    brightcolor227  color237
 color header        brightcolor214  color236        "^Date"
 color header        color207        color237        "^From"
@@ -99,7 +90,7 @@ color header        brightcolor69   color236        "^To"
 color header        brightcolor81   color236        "^(Cc|Bcc)"
 color header        brightcolor156  color237        "^Subject"
 
-# body -----------------------------------------------------------------
+# body ---------------------------------------------------------
 
 color quoted        color69         color237
 color quoted1       color207        color237
