@@ -1,6 +1,8 @@
+# this file needs maintanence and has not been truly updated in years. There may be 🐛
+
 # locale asshattery
-export LANG=en_US.UTF-8
-export LC_CTYPE=$LANG
+# export LANG=en_US.UTF-8
+# export LC_CTYPE=$LANG
 
 # make noise stop
 unsetopt beep
