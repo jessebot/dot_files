@@ -39,4 +39,4 @@ set abort_key = "<Esc>"
 bind index,pager V  noop
 
 # Make quick html view macro
-macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit><toggle-read>"
+macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit><clear-flag>N"
