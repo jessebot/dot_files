@@ -3,7 +3,7 @@
 -- ------------------------------------------------------------------------
 
 -- use custome space_chalk theme :)
-vim.g.airline_theme = 'space_chalk'
+vim.g.airline_theme = 'spacechalk'
 
 -- use powerline fonts
 vim.g.airline_powerline_fonts = 1
