@@ -130,6 +130,8 @@ set use_from  = yes
 
 set smtp_url = smtp://$my_user:$smtp_pass@127.0.0.1:1025
 
-# security :shrug:
+# ----------------------- security :shrug: ----------------------------
 set ssl_force_tls = yes
 set ssl_starttls = yes
+# When set , postponed messages that are marked for encryption will be self-encrypted. NeoMutt will first try to encrypt using the value specified in $pgp_default_key or $smime_default_key. If those are not set, it will try the deprecated $postpone_encrypt_as. (Crypto only) Default: no
+# set postpone_encrypt = yes
