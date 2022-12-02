@@ -1,0 +1,41 @@
+# ----------------------------------------------------------------------------
+# -                   Neomutt Key Bindings/Remapping                         -
+# ----------------------------------------------------------------------------
+
+
+#   ❤  VI key bindings for moving around, so that neomutt feels like vim ❤
+# ----------------------------------------------------------------------------
+
+# G to get to the last attachment, entry, or email and gg to get to the first
+bind attach,browser,index       G   last-entry
+bind attach,browser,index       g   noop
+bind attach,browser,index       gg  first-entry
+
+# index page, where you view the list of emails, uses j to go down, k to go up
+bind index                      j   next-entry
+bind index                      k   previous-entry
+
+# same as above, but for pagers (viewing emails)
+bind pager                      G   bottom
+bind pager                      g   noop
+bind pager                      gg  top
+bind pager                      j   next-line
+bind pager                      k   previous-line
+
+
+# ----------------------------------------------------------------------------
+# don't know what this does, but trying to use anything other than Esc...
+# set meta_key = yes
+
+# current use of Esc is nonsense. Change it to abort
+set abort_key = "<Esc>"
+
+
+#           Viewing html emails quickly, but with an external viewer
+# ----------------------------------------------------------------------------
+
+# Unbinds V from version (which just printed the version of neomutt)
+bind index,pager V  noop
+
+# Make quick html view macro
+macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"

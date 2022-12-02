@@ -1,14 +1,19 @@
-# thank you to these people for their help:
-# https://cheatsheets.stephane.plus/productivity/neomutt/
-# https://gideonwolfe.com/posts/workflow/neomutt/intro/
+# A first attempt at using neomutt as a primary desktop email client
 
-# ----------------------- general --------------------------
+# ----------------------- general -------------------------------
 # bell on new mails - even though I normally hate bells
 set beep_new
 
+# -------------------------- Themeing ---------------------------
+# basic space_chalk color scheme
+source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
 
-# ------------- index, your default mailbox view -------------
+# powerline for status lines and pager lines
+source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
 
+
+# ------------- index settings, your list of emails -------------
+#
 # No help bar at the top of index
 unset help
 
@@ -17,89 +22,63 @@ set sort = reverse-threads
 
 
 # ----------------- viewing email attachments -------------------
-#
+
 # handing MIME types (html, pdf, jpg, gif, etc)
 set mailcap_path = ~/.config/neomutt/mailcap
 
-# automatically view text/html of any file (otherwise you have to press v)
-auto_view text/html
-# alternative_order text/plain text/enriched text/html text/*
+# view other kinds of plain(ish) text before html
+alternative_order text/plain text/enriched text/html text/*
 
-# Controls whether NeoMutt will ask you to press a key after an external command has been invoked by these functions: <shell-escape> , <pipe-message> , <pipe-entry> , <print-message> , and <print-entry> commands.
-# It is also used when viewing attachments with "auto_view", provided that the corresponding mailcap entry has a needsterminal flag, and the external program is interactive.
-# When set , NeoMutt will always ask for a key. When unset , NeoMutt will wait for a key only if the external command returned a non-zero status.
+# set   - will always ask for a key after an external command
+# unset - wait for key only if the external command returned a non-zero status
 unset wait_key
 
 
-# -------------------- composing email ------------------------
+# --------- composing email: new messages, replies, and forwards -------------
 # use neovim by default
 set editor = "nvim"
+
 # show headers when composing
 set edit_headers
+
 # format of subject when forwarding
 set forward_format = "Fwd: %s"
+
 # reply to Reply to: field
 set reply_to
+
 # reply to person's name
 set reverse_name
+
 # include message in replies
 set include
+
 # include message in forwards
 set forward_quote
+
 # signature, this gets appended to your emails, you have to create this file
 set signature= "~/.config/neomutt/signature"
 
-# --------------------------- Char encoding --------------------------- #
 # Character set on sent messages:
 set send_charset = "utf-8"
 
 # If there is no charset given on incoming msg, its probably windows:
-set assumed_charset = "iso-8859-1"
+# set assumed_charset = "iso-8859-1"
 
-# --------------------------- Themeing --------------------------- #
-# basic space_chalk color scheme
-source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
-
-# powerline theme
-source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
-
-# ----------------- Email address, Password, and Name ------------------ #
-# sources secret variables from a file that looks like (without the comments):
-#
+# ----------------- Email address, Password, and Name ---------------------
+# sources secret variables from a file that looks like (without comments):
 # $my_name="Your Name"
 # $my_user="You@yourprovider.tld"
-# if using protonmail, this should be the password from protonmail-bridge
+## if protonmail, $my_pass should be the password from protonmail-bridge
 # $my_pass="Your Password"
-
 source ~/.config/neomutt/keys
 
-# -------------------------- Key Bindings ------------------------------
-
-# VI key bindings for moving around, so that neomutt feels like vim
-bind attach,browser,index       G   last-entry
-bind attach,browser,index       g   noop
-bind attach,browser,index       gg  first-entry
-
-bind index                      j   next-entry
-bind index                      k   previous-entry
-
-bind pager                      G   bottom
-bind pager                      g   noop
-bind pager                      gg  top
-bind pager                      j   next-line
-bind pager                      k   previous-line
-
-# set meta_key = yes
-# current use of Esc as a meta key is nonsense
-set abort_key = "<Esc>"
-
-## Unbinds V from version
-bind index,pager V  noop
-## Make quick html view macro
-macro index,pager V "<view-attachments><search>html<enter><view-mailcap><exit>"
-
+# --------------------- Key binding and remapping ---------------------------
+# In it's own file for organization sake
+source ~/.config/neomutt/key_bindings.neomuttrc
 
 # --------------------------- IMAP settings --------------------------- #
+# recieving mail
 # Local protonmail-bridge host server: 127.0.0.1
 # Protonmail-bridge imap port: 1143
 # --------------------------------------------------------------------- #
@@ -117,20 +96,17 @@ set trash         = +Trash
 set spoolfile     = +INBOX
 mailboxes         = +INBOX +Drafts +Sent +Trash
 
-
-# ----------------------------- Caching --------------------------------- #
-# Store message headers locally to speed things up.
-# If header_cache is a folder, Mutt will create sub cache folders for
-# each account which may speeds things up even more:
-# ----------------------------------------------------------------------- #
+# ----------------------------- Caching ---------------------------------
+# Store message headers locally to speed things up. If header_cache is a folder,
+# Mutt will create sub cache folders for each account which speeds things up more
+# -----------------------------------------------------------------------
 # CREATE THIS FOLDER. REMOVE IT IF IT IS A FILE AND CREATE AS FOLDER
 set header_cache = ~/.cache/mutt
 
-# --------------------------- Caching 2 --------------------------------- #
-# Store messages locally to speed things up, like searching message bodies.
-# Can be the same folder as header_cache.
-# This will cost important disk usage according to your e-mail amount.
-# ----------------------------------------------------------------------- #
+# --------------------------- Caching 2 ---------------------------------
+# Store mail locally to speed things up, like searching message bodies. Can be
+# same folder as header_cache. Will cost disk usage according to your e-mail amount
+# -----------------------------------------------------------------------
 set message_cachedir = "~/.cache/mutt"
 
 # Allow Mutt to open a new IMAP connection automatically.
@@ -142,10 +118,11 @@ set imap_keepalive = 300
 # How often to check for new mail (time in seconds).
 set mail_check = 360
 
-# --------------------------- SMTP settings --------------------------- #
+# ------------ SMTP (Simple Mail Transfer Protocol) settings ----------
+# sending mail
 # Local protonmail-bridge host server: 127.0.0.1
 # Protonmail-bridge smtp port: 1025
-# --------------------------------------------------------------------- #
+# ---------------------------------------------------------------------
 set smtp_pass = $my_pass
 set realname  = $my_name
 set from      = $my_user
@@ -153,5 +130,6 @@ set use_from  = yes
 
 set smtp_url = smtp://$my_user:$smtp_pass@127.0.0.1:1025
 
+# security :shrug:
 set ssl_force_tls = yes
 set ssl_starttls = yes
