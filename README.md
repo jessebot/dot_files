@@ -61,6 +61,20 @@ to manage my dot files. Funny how these things work. :shrug:
   </details>
 
   <details>
+    <summary><code>iterm2</code></summary>
+
+  <blockquote>
+
+  Symlinked File:  [`~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json`](Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json)
+
+  [iterm2] default profile with spacechalk colorscheme,
+  and then a minimal profile with basically nothing special and a plain `.bash_profile`.
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>karabiner</code></summary>
 
   <blockquote>
@@ -101,7 +115,7 @@ to manage my dot files. Funny how these things work. :shrug:
 
   Config file for [`lsd`][lsd], an [`ls`][ls] alternative with icons and
   pretty colors. There's an intension to write and release a
-  [space-chalk] theme for lsd eventually.
+  [spacechalk] theme for lsd eventually.
 
   </blockquote>
 
@@ -149,7 +163,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - [`~/.config/neomutt/themes/spacechalk/powerline.neomuttrc`](.config/neomutt/themes/spacechalk/powerline.neomuttrc)
 
   Config files for [NeoMutt], a terminal based email client. Config includes:
-  - sets space-chalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
+  - sets spacechalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
   - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
   - sets tls by default
@@ -203,7 +217,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - adding a cursorline
   - setting column 80 to be a different color for tidy code
   - enabling gui colors so you aren't limited to like 8 colors
-  - uses the [space-chalk] colorscheme
+  - uses the [spacechalk] colorscheme
   - sources all the files in [~/.config/nvim/lua](.config/nvim/lua),
     including [packer], plugins, and local plugin configs.
 
@@ -220,7 +234,7 @@ to manage my dot files. Funny how these things work. :shrug:
   ### [`~/.config/nvim/lua/user/airline.lua`](.config/nvim/lua/user/airline.lua)
   sets defaults for [airline][airline], a status line for
   vim and neovim. The configurations are:
-  - use [space-chalk] theme
+  - use [spacechalk] theme
   - enables [powerline fonts][powerline fonts] (fun icons)
   - disables empty sections of the status line
   - enables the [ale] extension to work with airline for linting
@@ -266,7 +280,7 @@ to manage my dot files. Funny how these things work. :shrug:
   <blockquote>
 
   Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a
-  [space-chalk] color theme, as well as laptop battery information, git status
+  [spacechalk] color theme, as well as laptop battery information, git status
   information, and local IP address.
 
   Files for colors:
@@ -357,7 +371,7 @@ to manage my dot files. Funny how these things work. :shrug:
   - add a colored column on column 80 for tidy python
   - sets a nerd font for vim
   - enable syntax highlighting
-  - use [space-chalk] colorscheme
+  - use [spacechalk] colorscheme
   - configure icons for VimDevicons, and NERDTree
   - ale icons changed, ale linters and fixers set for python
   - gitgutter icons
@@ -512,7 +526,7 @@ Config file for [tmux]. Currently, it will:
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
 [powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
-[space-chalk]: https://github.com/jessebot/space-chalk "space-chalk colorscheme"
+[spacechalk]: https://github.com/jessebot/spacechalk "spacechalk colorscheme"
 
 <!-- ------------------------------- Kubernetes --------------------------- -->
 [krew]: https://krew.sigs.k8s.io/ "krew, plugin manager for kubectl"
