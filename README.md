@@ -348,9 +348,8 @@ to manage my dot files. Funny how these things work. :shrug:
   | `iterm2-splits` | open split in iterm2 and send a command to it               |
   | `w3m-splits`    | open split in iterm2 and send a website or HTML file to w3m |
 
-  `w3m-splits` is mostly useful for [NeoMutt] but anything is possible
+  `w3m-splits` is mostly useful for [NeoMutt], but anything is possible :shrug:
 
-  file `it2setkeylabel` for [iterm2] to use the touchbar on macOS with iterm2 is maybe not in use and will be removed.
   </blockquote>
 
 </details>
