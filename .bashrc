@@ -113,6 +113,9 @@ alias cat='dog'
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
+# this makes iterm2 stuff work better
+export PATH=$PATH:$HOME/.iterm2
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
 

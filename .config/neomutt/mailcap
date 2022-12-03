@@ -7,5 +7,7 @@ image/*; img2sixel %s; needsterminal
 # for displaying html files in a new split in iterm2 with w3m and sixel
 text/html; (clear && w3m-splits %s); nametemplate=%s.html
 
-# pdf files currently only work on macOS, using open (which defaults to preview)
+# use default program (preview in macOS)
 application/pdf; open %s
+# pdf files open in zathura, a hackable document viewer with hotkeys
+# application/pdf; zathura %s
