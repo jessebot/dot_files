@@ -1,6 +1,8 @@
 [global_config]
+  window_state = maximise
   borderless = True
   title_hide_sizetext = True
+  enabled_plugins = TerminalShot, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
 [keybindings]
 [profiles]
   [[default]]
@@ -13,6 +15,7 @@
     show_titlebar = False
     scrollback_infinite = True
     use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[window0]]]
