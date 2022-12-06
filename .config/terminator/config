@@ -1,0 +1,24 @@
+[global_config]
+  borderless = True
+  title_hide_sizetext = True
+[keybindings]
+[profiles]
+  [[default]]
+    visible_bell = True
+    icon_bell = False
+    background_darkness = 0.66
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = mononoki Nerd Font Mono 17
+    show_titlebar = False
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
