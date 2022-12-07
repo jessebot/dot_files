@@ -4,14 +4,14 @@ These started as my personal dot files, but then they became the sensible defaul
 [`onboardme`](https://github.com/jessebot/onboardme), which started out as a script
 to manage my dot files. Funny how these things work. :shrug:
 
-### Sections for each config file, organized by directory and application:
+These directories/files are installed to your home directory.
+
+### Sections for each config directory/file
 
 <details>
   <summary><code>.config</code></summary>
 
   <blockquote>
-
-  Below are directories that would be located in your home directory, under `.config`:
 
   <details>
     <summary><code>asciinema</code></summary>
