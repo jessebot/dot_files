@@ -29,6 +29,22 @@ to manage my dot files. Funny how these things work. :shrug:
 
   </details>
 
+  <details>
+    <summary><code>bat</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/bat/config`](.config/bat/config)
+
+  Config file for `bat`[bat], a `cat` replacement with sytax highlighting and
+  git support. Currently the config file just sets a default theme. The goal is
+  to have a spacechalk-like theme soon :)
+
+
+  </blockquote>
+
+  </details>
+
 
   <details>
     <summary><code>gh</code></summary>
@@ -319,6 +335,20 @@ to manage my dot files. Funny how these things work. :shrug:
 
   </details>
 
+  <details>
+    <summary><code>terminator</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/terminator`](.config/terminator)
+
+  Default config for my favorite terminal from my starting days in tech, [terminator].
+  We set some basic [spacechalk]-esk colors, transparency, and mononoki fonts.
+
+  </blockquote>
+
+  </details>
+
 </details>
 
 <details>
@@ -512,6 +542,7 @@ Config file for [tmux]. Currently, it will:
 
 <!-- general -->
 [asciinema]: https://asciinema.org/ "asciinema"
+[bat]: https://github.com/sharkdp/bat#configuration-file "bat - cat with wings"
 [BASH]: https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer) "BASH"
 [github-cli]: https://cli.github.com/ "github cli"
 [neofetch]: https://github.com/dylanaraps/neofetch "neofetch"
