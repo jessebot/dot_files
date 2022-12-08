@@ -61,12 +61,6 @@
                         }
                     },
                     {
-                        "function": "powerline.segments.common.time.date",
-                        "args": {
-                            "format": " %H:%M"
-                        }
-                    },
-                    {
                         "function": "powerline.segments.common.bat.battery",
                         "args": {
                             "gamify": true,
@@ -76,6 +70,12 @@
                             "offline": " "
                         }
 
+                    },
+                    {
+                        "function": "powerline.segments.common.time.date",
+                        "args": {
+                            "format": " %H:%M"
+                        }
                     }
                 ]
             }],
