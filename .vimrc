@@ -71,7 +71,7 @@ let g:ale_lint_on_text_changed = 'never'
 
 " only enable these fixers by default
 let g:ale_fixers = {
-\   'python': ['ruff', 'autoimport'],
+\   'python': ['ruff'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 " this will run the above fixers
