@@ -37,14 +37,16 @@ These directories/files are installed to your home directory.
   File: [`~/.config/bat/config`](.config/bat/config)
 
   Config file for `bat`[bat], a `cat` replacement with sytax highlighting and
-  git support. Currently the config file just sets a default theme. The goal is
-  to have a spacechalk-like theme soon :)
+  git support. Currently the config file:
+  - sets a default theme
+  - enable italic text
+  - maps Chart.lock files to YAML syntax (this is for the helm charts for k8s)
 
+  The goal is to have a spacechalk-like theme soon :)
 
   </blockquote>
 
   </details>
-
 
   <details>
     <summary><code>gh</code></summary>
@@ -295,9 +297,17 @@ These directories/files are installed to your home directory.
 
   <blockquote>
 
-  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a
-  [spacechalk] color theme, as well as laptop battery information, git status
-  information, and local IP address.
+  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a [spacechalk] color theme as well as:
+  - local IP address
+  - hostname
+  - current working directory
+  - git status info
+  - kubernetes info
+  - laptop battery information
+  - the time
+  - status of last run command (only appears if exit code is not 0)
+
+  Currently working on getting mail notifications working.
 
   Files for colors:
   - [`~/.config/powerline/colors.json`](.config/powerline/colors.json)
@@ -473,6 +483,39 @@ These directories/files are installed to your home directory.
   The `.bashrc_k8s` is for kubernetes defaults:
   - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
   - helpful sensible aliases such as: `kg` for `kubectl get`
+
+  </blockquote>
+
+</details>
+
+<details>
+  <summary><code>.gitconfig</code></summary>
+
+  <blockquote>
+
+  Default git config file. We set the following parameters:
+  - Default branch for new repos is `main`
+  - Push up to remote automatically if it's a new branch
+  - color is always on
+  - set specific terminal colors for:
+    - `git branch`
+    - `git status`
+    - `git diff`
+
+  We also include this block, which allows you to have a personal gitconfig file:
+
+  ```toml
+  [includeIf "gitdit:~/"]
+      path = .gitconfig-personal
+  ```
+
+  You can create a `~/.gitconfig-personal` file and store info such as:
+
+  ```toml
+  [user]
+      email = fido@coolemailproviderfordogs.com
+      name = Fido Gooddog
+  ```
 
   </blockquote>
 
