@@ -22,4 +22,6 @@
 #   Example 1: use the C++ syntax for Arduino .ino files
 #   Example 2: Use ".gitignore"-style highlighting for ".ignore" files
 #--map-syntax "*.ino:C++"
+
+# Map k8s helm Chart.lock to YAML syntax
 --map-syntax "Chart.lock:YAML"
