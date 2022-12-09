@@ -442,6 +442,7 @@ These directories/files are installed to your home directory.
   <summary><code>.w3m</code></summary>
 
   <blockquote>
+
   Files:
   - [`~/.w3m/keymap`](.w3m/keymap)
   - [`~/.w3m/config`](.w3m/config)
@@ -572,9 +573,10 @@ Config file for [tmux]. Currently, it will:
   <summary><code>.zshrc</code></summary>
 
   <blockquote>
-
-  Config files for zsh that a friend wrote for me once, and I never removed :)
-  Who knows what lives there. :shrug:
+  
+  Recently started giving this some TLC, but still in it's infancy to be match the .bash configs. Currently we:
+  - set some useful aliases
+  - set the same powerline prompt as bash
 
   </blockquote>
 
