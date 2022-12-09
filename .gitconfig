@@ -1,0 +1,25 @@
+[init]
+    defaultBranch = main
+[push]
+    autoSetupRemote = true
+[pull]
+    rebase = true
+
+[color]
+    ui = auto
+[color "branch"]
+    current = green bold
+    local = green dim
+    remote = blue
+[color "diff"]
+    meta = yellow bold
+    frag = magenta ul
+    old = magenta bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = magenta
+
+[includeIf "gitdir:~/"]
+    path = .gitconfig-personal
