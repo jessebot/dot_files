@@ -12,11 +12,11 @@
 .config/glab-cli/aliases.yml
 .config/gh/hosts.yml
 .docker
+.gitconfig-personal
 .gem
 .gnupg
 .gnupg_pre_2.1
 .gradle
-.gitconfig
 .hyper_plugins/**
 .ipython
 .krew
