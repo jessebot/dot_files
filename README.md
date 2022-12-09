@@ -504,14 +504,14 @@ These directories/files are installed to your home directory.
 
   We also include this block, which allows you to have a personal gitconfig file:
 
-  ```toml
+  ```gitconfig
   [includeIf "gitdit:~/"]
       path = .gitconfig-personal
   ```
 
   You can create a `~/.gitconfig-personal` file and store info such as:
 
-  ```toml
+  ```gitconfig
   [user]
       email = fido@coolemailproviderfordogs.com
       name = Fido Gooddog
