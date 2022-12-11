@@ -314,6 +314,11 @@ if [ -f $pip_packages/powerline/bindings/bash/powerline.sh ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
+    # if [ -f $HOME/.bash_powerline_personal ]; then
+    #    . $HOME/.bash_powerline_personal
+    #fi
+    # POWERLINE_THEME_OVERRIDES="default.segment_data.email_imap_alert=true"
+    POWERLINE_THEME_OVERRIDES="default.segment_data.cwd.display=false"
     . $pip_packages/powerline/bindings/bash/powerline.sh
 fi
 

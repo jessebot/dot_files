@@ -61,6 +61,18 @@
                         }
                     },
                     {
+                        "function": "powerline.segments.common.mail.email_imap_alert",
+                        "display": false,
+                        "args": {
+                            "username": "youruser@domain.tld, but as a shell variable",
+                            "password": "but as a shell variable though",
+                            "interval": 60,
+                            "port": "1143",
+                            "server": "127.0.0.1"
+                        }
+
+                    },
+                    {
                         "function": "powerline.segments.common.bat.battery",
                         "args": {
                             "gamify": true,
