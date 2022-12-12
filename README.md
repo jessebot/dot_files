@@ -583,6 +583,16 @@ Config file for [tmux]. Currently, it will:
 </details>
 
 
+Please feel free to fork this repo and make it your own.
+You can still use `onboardme`, but you'll want to pass in _your_ git URL and branch. Example:
+
+```bash
+# this uses your personal git URL and makes sure to always pull from main
+# if you want to overwrite your existing dot files, you can also add --overwrite to this command
+onboardme --git_url https://github.com/your_username/dot_files --git_branch main 
+```
+
+
 <!-- ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 
 <!-- general -->
