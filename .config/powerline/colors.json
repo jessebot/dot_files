@@ -4,6 +4,7 @@
 		"white": 231,
 
 		"green": 2,
+                "greenyellow": [119, "6dff7c"],
 		"darkestgreen": 22,
 		"darkgreen": 28,
 		"mediumgreen": 70,
@@ -11,6 +12,7 @@
 
 		"skyblue1": 117,
 		"steelblue": 67,
+		"steelblue1": 75,
 		"brightcyan": 159,
 		"mediumcyan": 117,
 		"darkestcyan": 23,

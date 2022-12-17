@@ -1,19 +1,16 @@
-{
-    "segments": {
+{ "segments": {
         "above": [{
                 "left": [
                     {
-                        "function": "powerline.segments.common.net.internal_ip",
-                        "priority": 10
+                        "function": "powerline.segments.common.net.hostname"
                     },
                     {
-                        "function": "powerline.segments.common.net.hostname",
-                        "priority": 20
+                        "function": "powerline.segments.common.net.internal_ip",
+                        "priority": 30
                     },
                     {
                         "function": "powerline.segments.common.env.cwd",
                         "before": "  ",
-                        "priority": 30,
                         "args": {
                             "use_shortened_path": true
                         }
@@ -22,11 +19,11 @@
                         "function": "powerline_gitstatus.gitstatus",
                         "draw_soft_divider": false,
                         "draw_hard_divider": true,
-                        "priority": 40,
+                        "priority": 20,
                         "args": {
                             "show_tag": "exact",
                             "formats": {
-                                "branch": "  {}",
+                                "branch": " {}",
                                 "tag": " ﮉ {}",
                                 "untracked": "  {}",
                                 "changed": "  {}",
@@ -39,13 +36,11 @@
                     },
                     {
                         "function": "powerline.segments.common.env.virtualenv",
-                        "before": " ",
-                        "priority": 50
+                        "before": " "
                     },
                     {
                         "type": "string",
                         "highlight_groups": ["background"],
-                        "draw_soft_divider": false,
                         "draw_hard_divider": true,
                         "width": "auto"
                     },
@@ -54,10 +49,9 @@
                         "priority": 60,
                         "args": {
                             "show_kube_logo": true,
-                            "show_cluster": false,
+                            "show_cluster": true,
                             "show_namespace": true,
-                            "show_default_namespace": false,
-                            "alerts": ["live", "cluster:live"]
+                            "show_default_namespace": true
                         }
                     },
                     {
@@ -74,6 +68,8 @@
                     },
                     {
                         "function": "powerline.segments.common.bat.battery",
+                        "priority": 70,
+                        "draw_soft_divider": false,
                         "args": {
                             "gamify": true,
                             "full_heart": "♥ ",
@@ -85,23 +81,27 @@
                     },
                     {
                         "function": "powerline.segments.common.time.date",
+                        "draw_soft_divider": false,
                         "args": {
                             "format": " %H:%M"
                         }
                     }
                 ]
-            }],
-
+        }
+        ],
         "left": [
             {
                 "function": "powerline.segments.shell.last_pipe_status",
+                "draw_soft_divider": false,
                 "priority": 20
             },
             {
                 "type": "string",
                 "name": "newline_prompt",
-                "contents": " ",
+                "contents": "﬌",
                 "highlight_groups": ["newline_prompt"],
+                "draw_soft_divider": false,
+                "draw_hard_divider": true,
                 "priority": 30
             }
         ]
