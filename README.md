@@ -592,6 +592,14 @@ You can still use `onboardme`, but you'll want to pass in _your_ git URL and bra
 onboardme --git_url https://github.com/your_username/dot_files --git_branch main 
 ```
 
+### RoadMap
+
+- Get screenshots
+- Sort out neovim idiosyncrasies to start using neovim full time (remove plugins that don't work with neovim)
+- tidy vim and remove neovim references
+- migrate some of the themeing to a spacechalk org to unify it all
+
+* more in the GitHub Issues
 
 <!-- ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  Link References ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡  ♡ -->
 
