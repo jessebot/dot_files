@@ -57,6 +57,7 @@
                     },
                     {
                         "function": "powerline.segments.common.mail.email_imap_alert",
+                        "display": false,
                         "args": {
                             "username_variable": "MAIL_USER",
                             "password_variable": "MAIL_PASS",
