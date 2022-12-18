@@ -75,7 +75,7 @@ set pager_format="%T %n %zc  %s%*  %{!%d %b · %H:%M}  %?X?  %X ?
 # | %?V?  %V ? | Currently active limit pattern, if any                 |
 # |  %S         | Current sorting mode ($sort) e.g. date recieved        |
 # ------------------------------------------------------------------------
-set status_format = "  %f   %?F? %F ?  %n   %R %?d?  %d?%?p?  %p?  %?t? %t? %>   %?V?  \"%V\" %M  ?  %S "
+set status_format = "  %f  %?F? %F ?  %n   %R %?d?  %d?%?p?  %p? %?t? %t? %> %?V?  \"%V\" %M  ?  %S "
 
 # ----------------------- VFOLDER LINE ------------------------------------
 # REF: https://neomutt.org/guide/reference.html#folder-format
@@ -155,7 +155,7 @@ color status color239 color235
 color status color238 color69  '(  [^ ]+ )' 1
 
 # flagged/tagged messages
-color status yellow   color241 '\s*  [0-9]+ \s*'
+color status yellow   color241 '\s* [0-9]+ \s*'
 
 # unread messages
 color status color156 color240 '\s*  [0-9]+ \s*'
@@ -170,15 +170,14 @@ color status color204 color238 '\s*  [0-9]+\s*'
 color status color213 color238 '\s*  [0-9]+ \s*'
 
 # dividers for left side
-color status color238   color235    ''
-color status color69    color241    '( ).*' 1
+color status color69    color241    '( ).*' 1
+color status color238   color235    ' '
 
 # -------------------- Right side of status bar ----------------------
 
 # divider for the left edge of right side if search is being done
-color status color239 color235 ''
+color status color239 color235 ''
 
-color status color241 color239 ' '
 # Current limit term (the current string being searched for)
 color status color251 color241 '(  .*")' 1
 
@@ -189,7 +188,7 @@ color status  green color241 '( [0-9]+ )' 1
 color status color241 color239 ''
 
 # Sorting method
-color status color214 color239  '(   [^ ]+ )' 1
+color status color214 color239  '(  [^ ]+ )' 1
 
 
 # I haven't tested any of this at all :shrug:
