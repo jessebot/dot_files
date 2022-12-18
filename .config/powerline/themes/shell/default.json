@@ -19,7 +19,6 @@
                         "function": "powerline_gitstatus.gitstatus",
                         "draw_soft_divider": false,
                         "draw_hard_divider": true,
-                        "priority": 20,
                         "args": {
                             "show_tag": "exact",
                             "formats": {
@@ -40,6 +39,7 @@
                     },
                     {
                         "type": "string",
+                        "priority": 30,
                         "highlight_groups": ["background"],
                         "draw_hard_divider": true,
                         "width": "auto"
@@ -57,7 +57,7 @@
                     },
                     {
                         "function": "powerline.segments.common.mail.email_imap_alert",
-                        "display": false,
+                        "display": true,
                         "args": {
                             "username_variable": "MAIL_USER",
                             "password_variable": "MAIL_PASS",
