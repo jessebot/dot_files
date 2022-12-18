@@ -10,7 +10,7 @@
                     },
                     {
                         "function": "powerline.segments.common.env.cwd",
-                        "before": "  ",
+                        "before": " ",
                         "args": {
                             "use_shortened_path": true
                         }
@@ -47,6 +47,7 @@
                     {
                         "function": "powerline_kubernetes.kubernetes",
                         "priority": 60,
+                        "display": false,
                         "args": {
                             "show_kube_logo": true,
                             "show_cluster": true,
@@ -57,11 +58,12 @@
                     {
                         "function": "powerline.segments.common.mail.email_imap_alert",
                         "args": {
-                            "username": "$MAILNAME",
-                            "password": "$MAILPASS",
-                            "interval": 60,
-                            "port": "1143",
-                            "server": "127.0.0.1"
+                            "username_variable": "MAIL_USER",
+                            "password_variable": "MAIL_PASS",
+                            "server_variable": "MAIL_SERVER",
+                            "port_variable": "MAIL_PORT",
+                            "use_ssl": false,
+                            "interval": 60
                         }
 
                     },
@@ -71,10 +73,10 @@
                         "draw_soft_divider": false,
                         "args": {
                             "gamify": true,
-                            "full_heart": "♥ ",
-                            "empty_heart": " ",
-                            "online": " ",
-                            "offline": " "
+                            "full_heart": " ♥",
+                            "empty_heart": " ",
+                            "online": "",
+                            "offline": ""
                         }
 
                     },
