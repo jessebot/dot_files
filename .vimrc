@@ -526,7 +526,7 @@ if !has('nvim')
     " Plug 'MicahElliott/vim-cterm-highlight', { 'for': 'vim' }
 
     " CSS color, multi-syntax context-sensitive color name highlighter, for HEX
-    Plug 'ap/vim-css-color', { 'for': ['vim', 'html', 'css', 'scss'] }
+    Plug 'jessebot/vim-css-color', { 'for': ['vim', 'html', 'css', 'scss'] }
 
 
     " make jinja templates prettier
