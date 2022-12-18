@@ -56,7 +56,7 @@ set index_format=" %{%d %b} ·%Z %-16.16L %?M?(%1M)& ? %?X?&·? %s"
 # Number of MIME attachments
 # Progress indicator for the built-in pager (how much of the file has been displayed)
 # ----------------------------------------------------------------------------
-set pager_format="%T %n %zc  %s%*  %{!%d %b · %H:%M}  %?X?  %X ?  %P  "
+set pager_format="%T %n %zc%s%*  %{!%d %b · %H:%M} %?X?  %X ? %P  "
 
 
 # ---------------------------- STATUS BAR ----------------------------------- #
@@ -72,7 +72,7 @@ set pager_format="%T %n %zc  %s%*  %{!%d %b · %H:%M}  %?X?  %X ?
 # | %?d?  %d ?  | Number of deleted messages                             |
 # | %?p?  %p?   | Number of postponed (Draft) messages                   |
 # |  %t ?%?F?   | Number of tagged messages in the mailbox               |
-# | %?V?  %V ? | Currently active limit pattern, if any                 |
+# | %?V? %V ? | Currently active limit pattern, if any                 |
 # |  %S         | Current sorting mode ($sort) e.g. date recieved        |
 # ------------------------------------------------------------------------
 set status_format = "  %f  %?F? %F ?  %n   %R %?d?  %d?%?p?  %p? %?t? %t? %> %?V?  \"%V\" %M ?  %S "
@@ -152,7 +152,7 @@ tag-formats "replied" "GR" \
 color status color239 color235
 
 # this is for the mailbox, first segment
-color status color238 color69  '(  [^ ]+ )' 1
+color status color237 color69  '(  [^ ]+ )' 1
 
 # flagged/tagged messages
 color status yellow   color241 '\s* [0-9]+ \s*'
@@ -192,15 +192,5 @@ color status  color251 color241 '(  )' 1
 
 # number of how many times we found the search term is green
 color status  color213 color241 '("[^ ]+" )' 1
-
-
-
-
-# I haven't tested any of this at all :shrug:
-# color status yellow   color235 '( )\s*\s*[0-9]+\s*' 1
-# color status color235 yellow   '\s*\s*[0-9]+\s*'
-# color status color69  yellow   '( ) ([0-9]+%|all|end) \s*' 1
-# color status color235 color69  ' ([0-9]+%|all|end) \s*'
-# color status yellow   color235 '( )\s* ' 1
 
 # ------------------ PAGER COLORFORMATTING -------------------
