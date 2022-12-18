@@ -75,7 +75,7 @@ set pager_format="%T %n %zc  %s%*  %{!%d %b · %H:%M}  %?X?  %X ?
 # | %?V?  %V ? | Currently active limit pattern, if any                 |
 # |  %S         | Current sorting mode ($sort) e.g. date recieved        |
 # ------------------------------------------------------------------------
-set status_format = "  %f  %?F? %F ?  %n   %R %?d?  %d?%?p?  %p? %?t? %t? %> %?V?  \"%V\" %M  ?  %S "
+set status_format = "  %f  %?F? %F ?  %n   %R %?d?  %d?%?p?  %p? %?t? %t? %> %?V?  \"%V\" %M ?  %S "
 
 # ----------------------- VFOLDER LINE ------------------------------------
 # REF: https://neomutt.org/guide/reference.html#folder-format
@@ -178,17 +178,22 @@ color status color238   color235    ' '
 # divider for the left edge of right side if search is being done
 color status color239 color235 ''
 
-# Current limit term (the current string being searched for)
-color status color251 color241 '(  .*")' 1
-
-# I've always wanted to watch cats
-color status  green color241 '( [0-9]+ )' 1
-
-# these are the edges of the search box
-color status color241 color239 ''
-
-# Sorting method
+# Sorting method, e.g. sorted by date (oldest to newest)
 color status color214 color239  '(  [^ ]+ )' 1
+
+# the ending quote for the search term is white
+color status  color251 color241 '(" )[0-9]+' 1
+
+# number of how many times we found the search term is green
+color status  green color241 '([0-9]+ ) ' 1
+
+# number of how many times we found the search term is green
+color status  color251 color241 '(  )' 1
+
+# number of how many times we found the search term is green
+color status  color213 color241 '("[^ ]+" )' 1
+
+
 
 
 # I haven't tested any of this at all :shrug:
