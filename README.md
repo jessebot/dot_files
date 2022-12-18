@@ -174,13 +174,11 @@ These directories/files are installed to your home directory.
 
   <blockquote>
 
-  Files:
-  - [`~/.config/neomutt/mailcap`](.config/neomutt/mailcap)
-  - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
-  - [`~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc`](.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc)
-  - [`~/.config/neomutt/themes/spacechalk/powerline.neomuttrc`](.config/neomutt/themes/spacechalk/powerline.neomuttrc)
+  Config files for [NeoMutt], a terminal based email client.
+  
+  <img src="https://github.com/jessebot/jessebot/blob/main/pics/neomutt.png?raw=true" alt="screenshot of neomutt showing different colors for inbox" width=600>
 
-  Config files for [NeoMutt], a terminal based email client. Config includes:
+  Config includes:
   - sets spacechalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
   - sets character set to be utf-8 (emojis 🧑‍💻)
   - sets basic IMAP and SMTP settings
@@ -189,6 +187,12 @@ These directories/files are installed to your home directory.
   - sets navigation keys similar to vim
   - set a key binding for `V` to be opening html attachments
   - removes the prompt of hitting enter after viewing an attachment
+  
+  Files:
+  - [`~/.config/neomutt/mailcap`](.config/neomutt/mailcap)
+  - [`~/.config/neomutt/neomuttrc`](.config/neomutt/neomuttrc)
+  - [`~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc`](.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc)
+  - [`~/.config/neomutt/themes/spacechalk/powerline.neomuttrc`](.config/neomutt/themes/spacechalk/powerline.neomuttrc)
 
   You'll still need to create `~/.config/neomutt/keys` with the following info:
 
@@ -211,6 +215,7 @@ These directories/files are installed to your home directory.
   |    html   | [w3m]         |
   |    PDFs   | macOS preview |
   |   images  | img2[sixel]   |
+ 
 
   </blockquote>
 
