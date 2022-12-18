@@ -17,6 +17,7 @@
                     },
                     {
                         "function": "powerline_gitstatus.gitstatus",
+                        "priority": 40,
                         "draw_soft_divider": false,
                         "draw_hard_divider": true,
                         "args": {
@@ -58,6 +59,7 @@
                     {
                         "function": "powerline.segments.common.mail.email_imap_alert",
                         "display": true,
+                        "priority": 80,
                         "args": {
                             "username_variable": "MAIL_USER",
                             "password_variable": "MAIL_PASS",
@@ -103,8 +105,7 @@
                 "contents": "﬌",
                 "highlight_groups": ["newline_prompt"],
                 "draw_soft_divider": false,
-                "draw_hard_divider": true,
-                "priority": 30
+                "draw_hard_divider": true
             }
         ]
     }
