@@ -434,8 +434,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
 " changing separators to match personal powerline for shell
-let g:airline_left_sep=' '
-let g:airline_right_sep=''
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " this is a smaller more consise final airline segment
 function! LinePercent()
