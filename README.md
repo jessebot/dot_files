@@ -302,6 +302,7 @@ These directories/files are installed to your home directory.
   - hostname
   - current working directory
   - git status info
+  - unread mail count
   - kubernetes info
   - laptop battery information
   - the time
@@ -573,7 +574,7 @@ Config file for [tmux]. Currently, it will:
   <summary><code>.zshrc</code></summary>
 
   <blockquote>
-  
+
   Recently started giving this some TLC, but still in it's infancy to be match the .bash configs. Currently we:
   - set some useful aliases
   - set the same powerline prompt as bash
@@ -589,7 +590,7 @@ You can still use `onboardme`, but you'll want to pass in _your_ git URL and bra
 ```bash
 # this uses your personal git URL and makes sure to always pull from main
 # if you want to overwrite your existing dot files, you can also add --overwrite to this command
-onboardme --git_url https://github.com/your_username/dot_files --git_branch main 
+onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 ```
 
 ### RoadMap
