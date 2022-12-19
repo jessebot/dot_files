@@ -10,6 +10,7 @@
                     },
                     {
                         "function": "powerline.segments.common.env.cwd",
+                        "priority": 20,
                         "before": " ",
                         "args": {
                             "use_shortened_path": true
@@ -40,7 +41,7 @@
                     },
                     {
                         "type": "string",
-                        "priority": 30,
+                        "priority": 50,
                         "highlight_groups": ["background"],
                         "draw_hard_divider": true,
                         "width": "auto"
@@ -96,8 +97,7 @@
         "left": [
             {
                 "function": "powerline.segments.shell.last_pipe_status",
-                "draw_soft_divider": false,
-                "priority": 20
+                "draw_soft_divider": false
             },
             {
                 "type": "string",
@@ -106,6 +106,12 @@
                 "highlight_groups": ["newline_prompt"],
                 "draw_soft_divider": false,
                 "draw_hard_divider": true
+            }
+        ],
+        "right": [
+            {
+                "function": "powerline.segments.common.vcs.branch",
+                "display": false
             }
         ]
     }
