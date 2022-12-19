@@ -10,7 +10,13 @@ export RPROMPT='${vcs_info_msg_0_} %(1j.%B%j%b.)%(2L.%U%L%u.)'
 export HOSTNAME=`hostname`
 export CORRECT_IGNORE="_*"
 
-# Set a more permissive history
+# make zsh cache to the XDG location
+mkdir -p ~/.cache/zsh/zcompdump-$ZSH_VERSION
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+# -----------------------------------------------------------------
+#                          HISTORY
+# -----------------------------------------------------------------
 export HISTSIZE=2000
 export HISTFILE=~/.local/state/zsh/history
 export SAVEHIST=2000

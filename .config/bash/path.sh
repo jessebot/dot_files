@@ -1,0 +1,45 @@
+# --------------------------------------------------------------------------
+#                                 Pathing
+#          Adhereing as closely as possible to XDG Base Directory Spec:
+#            https://wiki.archlinux.org/title/XDG_Base_Directory
+# --------------------------------------------------------------------------
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+if [[ $(uname) == *"Linux"* ]]; then
+
+    # iptables on debian is here
+    export PATH=$PATH:/usr/sbin:/usr/share
+
+    # snap package manager installs commands here
+    export PATH=$PATH:/snap/bin
+
+    # HomeBrew on Linux needs all of this to work
+    export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+    export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
+    export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
+    export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
+    export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
+    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
+    # pip packages installed via linuxbrew will be here
+    pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+fi
+
+# python default install location when you do: pip$PYTHON_VERSION install --user package
+export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
+
+# ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+# also for js stuff
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ golang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GOROOT=$HOME
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+# Make grade use XDG
+export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
