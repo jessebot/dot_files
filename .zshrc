@@ -12,7 +12,7 @@ export CORRECT_IGNORE="_*"
 
 # Set a more permissive history
 export HISTSIZE=2000
-export HISTFILE=~/.zsh_history
+export HISTFILE=~/.local/state/zsh/history
 export SAVEHIST=2000
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY

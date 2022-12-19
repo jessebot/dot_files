@@ -1,0 +1,32 @@
+# set better default colors
+[color]
+    ui = auto
+[color "branch"]
+    current = green bold
+    local = green dim
+    remote = blue
+[color "diff"]
+    meta = yellow bold
+    frag = magenta ul
+    old = magenta bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = magenta
+
+# set the default branch to main
+[init]
+    defaultBranch = main
+
+# always push up local branches to the remote origin
+[push]
+    autoSetupRemote = true
+
+# default rebase commits to avoid merge issues
+[pull]
+    rebase = true
+
+# personal stuff like gpg config, username, etc
+[includeIf "gitdir:~/"]
+    path = ~/.config/git/personal
