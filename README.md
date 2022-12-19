@@ -99,6 +99,44 @@ These directories/files are installed to your home directory.
   </details>
 
   <details>
+    <summary><code>git</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/git/config`](.config/git/config)
+
+  Default git config file. We set the following parameters:
+  - Default branch for new repos is `main`
+  - Push up to remote automatically if it's a new branch
+  - color is always on
+  - set specific terminal colors for:
+    - `git branch`
+    - `git status`
+    - `git diff`
+
+  We also include this block, which allows you to have a personal gitconfig file:
+
+  ```gitconfig
+  [includeIf "gitdit:~/"]
+      path = ~/.config/git/personal
+  ```
+
+  You can create a `~/.config/git/personal` file and store info such as:
+
+  ```gitconfig
+  [user]
+      email = fido@coolemailproviderfordogs.com
+      name = Fido Good-dog
+      signingkey = gooddoggpgsigningkey
+  [commit]
+      gpgsign = true
+  ```
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>iterm2</code></summary>
 
   <blockquote>
@@ -385,6 +423,22 @@ These directories/files are installed to your home directory.
   </blockquote>
 
   </details>
+  
+  
+  <details>
+    <summary><code>tmux</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/tmux/tmux.conf`](.config/tmux/tmux.conf)
+
+  Config file for [tmux]. Currently, it will:
+  - Sets 256 colors
+  - enable the [powerline] tmux status line
+
+  </blockquote>
+
+  </details>
 
 </details>
 
@@ -502,7 +556,7 @@ These directories/files are installed to your home directory.
 </details>
 
 <details>
-  <summary><code>.bash_profile, .bashrc, .bashrc_k8s</code></summary>
+  <summary><code>.bash_profile, .bashrc</code></summary>
 
    <blockquote>
 
@@ -511,6 +565,7 @@ These directories/files are installed to your home directory.
   `.bash_profile` instead of `.bashrc`.
 
   The `.bashrc` sets the following defaults:
+  - sets history to be in `~/.local/state/bash/history`
   - turns off bells
   - sets [vim] as your text editor
   - enables 256 colors
@@ -523,40 +578,7 @@ These directories/files are installed to your home directory.
   - aliases a bunch of shorter commands to longer commands
   - changes default pagers used when file is too long for catting
   - runs [neofetch] when you source it
-  - sources any other files in `~/.config/bash`
-
-  </blockquote>
-
-</details>
-
-<details>
-  <summary><code>.gitconfig</code></summary>
-
-  <blockquote>
-
-  Default git config file. We set the following parameters:
-  - Default branch for new repos is `main`
-  - Push up to remote automatically if it's a new branch
-  - color is always on
-  - set specific terminal colors for:
-    - `git branch`
-    - `git status`
-    - `git diff`
-
-  We also include this block, which allows you to have a personal gitconfig file:
-
-  ```gitconfig
-  [includeIf "gitdit:~/"]
-      path = .gitconfig-personal
-  ```
-
-  You can create a `~/.gitconfig-personal` file and store info such as:
-
-  ```gitconfig
-  [user]
-      email = fido@coolemailproviderfordogs.com
-      name = Fido Gooddog
-  ```
+  - sources any other files in `~/.config/bash/`
 
   </blockquote>
 
@@ -582,19 +604,6 @@ These directories/files are installed to your home directory.
   Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
 
   </blockquote>
-
-</details>
-
-<details>
-  <summary><code>.tmux.conf</code></summary>
-
-<blockquote>
-
-Config file for [tmux]. Currently, it will:
-- Sets 256 colors
-- enable the [powerline] tmux status line
-
-</blockquote>
 
 </details>
 
