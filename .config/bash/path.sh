@@ -31,6 +31,10 @@ fi
 # python default install location when you do: pip$PYTHON_VERSION install --user package
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
+# make python do it's cache in ~/.cache/python
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
+
 # ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 # also for js stuff
