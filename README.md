@@ -49,6 +49,26 @@ These directories/files are installed to your home directory.
   </details>
 
   <details>
+    <summary><code>bash</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/bash/k8s`](.config/bash/k8s)
+  File: [`iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.bash)
+
+  The `k8s` is for kubernetes defaults:
+  - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
+  - helpful sensible aliases such as: `kg` for `kubectl get`
+
+  The `iterm2_shell_integration.bash` sets up iterm2 shell stuff.
+
+  This is for installing the [iterm2] shell integration for macOS.
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>gh</code></summary>
 
   <blockquote>
@@ -83,10 +103,16 @@ These directories/files are installed to your home directory.
 
   <blockquote>
 
-  Symlinked File:  [`~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json`](Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json)
+  [iterm2] is a terminal emulator for macOS.
 
-  [iterm2] default profile with spacechalk colorscheme,
-  and then a minimal profile with basically nothing special and a plain `.bash_profile`.
+  Symlinked File:  [`~/.config/iterm2/Profiles.json -> ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json`](Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json)
+
+  ### Profiles.json
+  Sets some basic profiles:
+  - default - profile with spacechalk colorscheme,
+  - minimal - profile with basically nothing special and a plain `.bash_profile`.
+
+  ###
 
   </blockquote>
 
@@ -378,7 +404,6 @@ These directories/files are installed to your home directory.
 
   Files:
   - [`~/.local/bin/utc`](.local/bin/utc)
-  - [`~/.local/bin/splits`](.local/bin/splits)
   - [`~/.local/bin/w3msplits`](.local/bin/w3m-splits)
 
   This is just where we throw a few really simple scripts like:
@@ -386,12 +411,30 @@ These directories/files are installed to your home directory.
   | Command         | Description                                                 |
   |-----------------|-------------------------------------------------------------|
   | `utc`           | for ease of use printing the time in UTC                    |
-  | `iterm2-splits` | open split in iterm2 and send a command to it               |
   | `w3m-splits`    | open split in iterm2 and send a website or HTML file to w3m |
 
   `w3m-splits` is mostly useful for [NeoMutt], but anything is possible :shrug:
 
+  Directories:
+
+  <details>
+  <summary><code>iterm2</code></summary>
+
+  Directory:
+  - [`~/.local/bin/iterm2`](.local/bin/iterm2)
+
+  <blockquote>
+
+  Everything in there are files written and provided by iTerm2 for integrating iterm2 magic into your terminal. The only custom one is the following:
+
+  | Command         | Description                                                 |
+  |-----------------|-------------------------------------------------------------|
+  | `it2split`      | open split in iterm2 with your default profile              |
+
+
   </blockquote>
+
+  </details>
 
 </details>
 
@@ -480,11 +523,7 @@ These directories/files are installed to your home directory.
   - aliases a bunch of shorter commands to longer commands
   - changes default pagers used when file is too long for catting
   - runs [neofetch] when you source it
-  - sources any other files called `.bashrc*`
-
-  The `.bashrc_k8s` is for kubernetes defaults:
-  - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
-  - helpful sensible aliases such as: `kg` for `kubectl get`
+  - sources any other files in `~/.config/bash`
 
   </blockquote>
 
@@ -543,17 +582,6 @@ These directories/files are installed to your home directory.
   Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
 
   </blockquote>
-
-</details>
-
-<details>
-  <summary><code>.iterm2_shell_integration.bash</code></summary>
-
-   <blockquote>
-
-  This is for installing the [iterm2] shell integration for macOS.
-
-   </blockquote>
 
 </details>
 
