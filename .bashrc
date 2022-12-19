@@ -48,7 +48,7 @@ export GPG_TTY=$(tty)
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # include external rc files in ~/.config/bash/personal if they exist
-personal_rc_file="$XDG_CONFIG_HOME/bash/personal/$bash_file"
+personal_rc_file="$XDG_CONFIG_HOME/bash/personal/bashrc"
 if [ -f $personal_rc_file ]; then
     . $personal_rc_file
 fi
