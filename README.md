@@ -166,6 +166,19 @@ These directories/files are installed to your home directory.
   </blockquote>
 
   </details>
+  
+  <details>
+  <summary><code>hyper</code></summary>
+
+  <blockquote>
+  
+  File: [`~/.config/hyper/.hyper.js`](.config/hyper/.hyper.js)
+
+  Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
+
+  </blockquote>
+
+  </details>
 
   <details>
     <summary><code>iterm2</code></summary>
@@ -614,17 +627,6 @@ These directories/files are installed to your home directory.
 
   Git ignore file for all sorts of things in your home directory that should
   never get committed if this repo is used as your home directory dot files.
-
-  </blockquote>
-
-</details>
-
-<details>
-  <summary><code>.hyper.js</code></summary>
-
-  <blockquote>
-
-  Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
 
   </blockquote>
 
