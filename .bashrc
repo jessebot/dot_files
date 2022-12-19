@@ -47,11 +47,11 @@ export GPG_TTY=$(tty)
 # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-
 # include external rc files in ~/.config/bash/personal if they exist
-for bash_file in `ls -1 $XDG_CONFIG_HOME/bash/personal`; do
-    . $bash_file
-done
+personal_rc_file="$XDG_CONFIG_HOME/bash/personal/$bash_file"
+if [ -f $personal_rc_file ]; then
+    . $personal_rc_file
+fi
 
 # for powerline, a fancy extensible prompt: https://powerline.readthedocs.io
 if [ -f $pip_packages/powerline/bindings/bash/powerline.sh ]; then

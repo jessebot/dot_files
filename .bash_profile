@@ -1,5 +1,5 @@
 # this is the iterm2 shell integration stuff, making it use XDG_CONFIG_HOME
-source "$HOME/.config/bash/iterm2_integration.sh"
+source $HOME/.config/bash/iterm2_integration.sh
 
 # iterm2 specific commands and functions
 export PATH=$PATH:$HOME/.local/bin/iterm2
