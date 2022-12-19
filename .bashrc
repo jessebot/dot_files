@@ -22,29 +22,41 @@ export PYTHON_VERSION="3.11"
 # this just makes howdoi use colors
 export HOWDOI_COLORIZE=1
 
-# -------------------------------------------------------------------------- #
-#                                 History                                    #
-# -------------------------------------------------------------------------- #
+# makes gpg prompt for passphrase in the terminal for git commit -S
+export GPG_TTY=$(tty)
+
+# --------------------------------------------------------------------------
+#                                 History
+# --------------------------------------------------------------------------
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# name of the history file to create and log to
+HISTFILE="$HOME/.local/state/bash/.history"
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
-# append to the history file, don't overwrite it
-shopt -s histappend
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
+
 # for setting time stamps on history
 HISTTIMEFORMAT="%d/%m/%y %T "
 
 
 # ------------------------------------------------------------------------- #
-#                              TEXT EDITOR                                  #
+#                              Text Editor
 # Default, in order of preference (subject to availability): nvim, vim, vi
 # ------------------------------------------------------------------------- #
-if [ -z "$(which nvim)" ]; then
-    export EDITOR=vim
-else
+
+# Default EDITOR is nvim
+if [ -n "$(which nvim)" ]; then
     export EDITOR=nvim
+# if nvim is not available, set EDITOR to vim
+else
+    export EDITOR=vim
 fi
 
 # always use nvim (or vim) instead of vi
@@ -113,9 +125,6 @@ alias cat='dog'
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
-# this makes iterm2 stuff work better
-export PATH=$PATH:$HOME/.iterm2
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
 
@@ -136,12 +145,12 @@ if [[ $(uname) == *"Linux"* ]]; then
     pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # python default install location when you do: pip$PYTHON_VERSION install --user package
 export PATH=$PATH:$HOME/.local/bin
 # this is for macs without apple silicon, e.g. before M1
 export PATH=$PATH:/usr/local/bin:$HOME/Library/Python/$PYTHON_VERSION/bin
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -281,10 +290,14 @@ complete -C /usr/local/bin/terraform terraform
 # -------------------------------------------------------------------------- #
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ base64 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+#
 function b64 {
     echo -n $1 | base64
 }
-function b64d {
+
+# set decode to be
+function decode {
     echo -n $1 | base64 --decode
 }
 
@@ -295,7 +308,6 @@ function agr {
             cd $REPOS/$repo && git pull
         done
     fi
-
     ag $1 $REPOS
 }
 
@@ -303,9 +315,9 @@ function agr {
 #                            Other Load on start                             #
 # -------------------------------------------------------------------------- #
 
-# include external .bashrc_$application if it exists
+# include external ~/.config/bash/$application if it exists
 # example: if there's a .bashrc_k8s, source that as well
-for bash_file in `ls -1 $HOME/.bashrc_*`; do
+for bash_file in `ls -1 $HOME/.config/bash`; do
     . $bash_file
 done
 
