@@ -53,16 +53,47 @@ These directories/files are installed to your home directory.
 
   <blockquote>
 
-  File: [`~/.config/bash/k8s`](.config/bash/k8s)
-  File: [`iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.bash)
+  Files
+  - [`~/.config/bash/alias.sh`](.config/bash/alias.sh)
+  - [`~/.config/bash/completion.sh`](.config/bash/completion.sh)
+  - [`~/.config/bash/history.sh`](.config/bash/history.sh)
+  - [`~/.config/bash/iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.sh)
+  - [`~/.config/bash/k8s.sh`](.config/bash/k8s.sh)
+  - [`~/.config/bash/path.sh`](.config/bash/path.sh)
+  - [`~/.config/bash/minimal.sh`](.config/bash/minimal.sh)
+  - [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
+        
+  ## [`~/.config/bash/alias.sh`](.config/bash/alias.sh)
+  a config file to organize all our BASH aliases
+  
+  ## [`~/.config/bash/completion.sh`](.config/bash/completion.sh)
+  enable tab completion
+  
+  ## [`~/.config/bash/history.sh`](.config/bash/history.sh)
+  - sets history to be in `~/.local/state/bash/history`
+  - sets default history size
+  - don't log duplicate history lines
+  
+  ## [`iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.sh)
+  sets up [iterm2] shell stuff
+  
+  ## [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
+  sets either [neovim] or [vim] as your text editor
 
-  The `k8s` is for kubernetes defaults:
+  ## [`~/.config/bash/k8s.sh`](.config/bash/k8s.sh)
+  kubernetes defaults:
   - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
   - helpful sensible aliases such as: `kg` for `kubectl get`
-
-  The `iterm2_shell_integration.bash` sets up iterm2 shell stuff.
-
-  This is for installing the [iterm2] shell integration for macOS.
+  
+  ## [`~/.config/bash/path.sh`](.config/bash/path.sh)
+  - set [XDG base directory spec]
+  - set pathing for golang and python
+  - set pathing for home brew
+  
+  ## [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
+  - fix how less handles non-text input files
+  - change the default colors for less used in man pages
+  - changes default pagers used when file is too long for catting
 
   </blockquote>
 
@@ -565,20 +596,11 @@ These directories/files are installed to your home directory.
   `.bash_profile` instead of `.bashrc`.
 
   The `.bashrc` sets the following defaults:
-  - sets history to be in `~/.local/state/bash/history`
+
   - turns off bells
-  - sets [vim] as your text editor
   - enables 256 colors
-  - fix how less handles non-text input files
-  - change the default colors for less used in man pages
-  - set history sizes
-  - set pathing for golang and python
-  - enable tab completion
-  - aliases away MANY typos
-  - aliases a bunch of shorter commands to longer commands
-  - changes default pagers used when file is too long for catting
+  - sources person file in `~/.config/bash/path/bashrc`
   - runs [neofetch] when you source it
-  - sources any other files in `~/.config/bash/`
 
   </blockquote>
 
@@ -653,6 +675,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [tmux]: https://github.com/tmux/tmux "tmux"
 [w3m]: https://w3m.org "w3m"
 [TUI]: https://en.wikipedia.org/wiki/Text-based_user_interface "TUI"
+[XDG base directory spec]: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
 
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
