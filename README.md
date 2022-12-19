@@ -599,6 +599,7 @@ These directories/files are installed to your home directory.
 
   - turns off bells
   - enables 256 colors
+  - sources all the files in `~/.config/bash` (see above under config > bash )
   - sources person file in `~/.config/bash/path/bashrc`
   - runs [neofetch] when you source it
 
