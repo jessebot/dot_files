@@ -28,6 +28,7 @@ if [[ $(uname) == *"Linux"* ]]; then
     pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
 fi
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # python default install location when you do: pip$PYTHON_VERSION install --user package
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
@@ -45,5 +46,10 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~ other ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # Make grade use XDG
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
+
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"

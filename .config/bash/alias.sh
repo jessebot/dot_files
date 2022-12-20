@@ -43,6 +43,9 @@ alias sixel='img2sixel'
 # quick to do
 alias todo="$EDITOR ~/todo.md"
 
+# this is so that w3m uses the correct XDG config location
+alias w3m="w3m -config ~/.config/w3m/config"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # lsd instead of ls for colors/icons
 alias ls='lsd -a'
@@ -74,7 +77,10 @@ alias gd='git diff'
 alias ga='git add .'
 alias gph='git push && git push --tags'
 alias gpl='git pull'
-# can't spell git
+
+# typos
+alias gitcommit='git commit'
+alias gitadd='git add'
 alias gti='git'
 alias gtt='git'
 

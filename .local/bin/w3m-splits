@@ -32,7 +32,7 @@ async def main(connection):
 
     # send the command to the newly created split
     w3m = ("w3m -sixel -o auto_image=TRUE -o display_image=1 -T text/html"
-           f" -F {args.html_file} && exit \n")
+           f" -o confirm_qq=false -F {args.html_file} && exit \n")
     await right_pane.async_send_text(w3m)
 
 
