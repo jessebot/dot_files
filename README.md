@@ -486,25 +486,26 @@ These directories/files are installed to your home directory.
   <details>
     <summary><code>.w3m</code></summary>
 
-    <blockquote>
+  <blockquote>
+  
+  Files:
+  - [`~/.w3m/config`](.w3m/config)
+  - [`~/.w3m/keymap`](.w3m/keymap)
+  - [`~/.w3m/mailcap`](.w3m/mailcap)
+  
+  Files for the [w3m] terminal based web browser.
 
-    Files:
-    - [`~/.w3m/config`](.w3m/config)
-    - [`~/.w3m/keymap`](.w3m/keymap)
-    - [`~/.w3m/mailcap`](.w3m/mailcap)
+  [`~/.w3m/config`](.w3m/config) sets:
+  - set default mailcap file for MIME types
+  - always display images
+  - set the default keymap file (for mapping keys)
+  - quit without asking
 
-    Files for the [w3m] terminal based web browser.
+  [`~/.w3m/keymap`](.w3m/keymap) sets vim key bindings.
 
-    [`~/.w3m/config`](.w3m/config) sets:
-    - set default mailcap file for MIME types
-    - always display images
-    - set the default keymap file (for mapping keys)
-    - quit without asking
-
-    [`~/.w3m/keymap`](.w3m/keymap) sets key bindings.
-
-    [`~/.w3m/mailcap`](.w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
-    </blockquote>
+  [`~/.w3m/mailcap`](.w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
+  
+  </blockquote>
 
   </details>
 
