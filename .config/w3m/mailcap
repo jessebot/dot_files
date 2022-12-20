@@ -1,0 +1,4 @@
+image/jpg; /usr/local/bin/img2sixel '%s'
+image/jpeg; /usr/local/bin/img2sixel '%s'
+image/gif; /usr/local/bin/img2sixel '%s'
+image/png; /usr/local/bin/img2sixel '%s';  nametemplate=%s.png

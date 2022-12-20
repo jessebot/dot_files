@@ -44,7 +44,7 @@ alias sixel='img2sixel'
 alias todo="$EDITOR ~/todo.md"
 
 # this is so that w3m uses the correct XDG config location
-alias w3m="w3m -config ~/.config/w3m/config"
+alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # lsd instead of ls for colors/icons

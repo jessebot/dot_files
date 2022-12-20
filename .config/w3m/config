@@ -1,5 +1,7 @@
-mailcap ~/.w3m/mailcap
-auto_image TRUE
+keymap_file ~/.config/w3m/keymap
+mailcap ~/.config/w3m/mailcap
 display_image 1
-confirm_qq false
+auto_image true
+ext_image_viewer
 display_link 1
+confirm_qq false

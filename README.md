@@ -62,21 +62,21 @@ These directories/files are installed to your home directory.
   - [`~/.config/bash/path.sh`](.config/bash/path.sh)
   - [`~/.config/bash/minimal.sh`](.config/bash/minimal.sh)
   - [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
-        
+
   ## [`~/.config/bash/alias.sh`](.config/bash/alias.sh)
   a config file to organize all our BASH aliases
-  
+
   ## [`~/.config/bash/completion.sh`](.config/bash/completion.sh)
   enable tab completion
-  
+
   ## [`~/.config/bash/history.sh`](.config/bash/history.sh)
   - sets history to be in `~/.local/state/bash/history`
   - sets default history size
   - don't log duplicate history lines
-  
+
   ## [`iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.sh)
   sets up [iterm2] shell stuff
-  
+
   ## [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
   sets either [neovim] or [vim] as your text editor
 
@@ -84,12 +84,12 @@ These directories/files are installed to your home directory.
   kubernetes defaults:
   - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
   - helpful sensible aliases such as: `kg` for `kubectl get`
-  
+
   ## [`~/.config/bash/path.sh`](.config/bash/path.sh)
   - set [XDG base directory spec]
   - set pathing for golang and python
   - set pathing for home brew
-  
+
   ## [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
   - fix how less handles non-text input files
   - change the default colors for less used in man pages
@@ -166,12 +166,12 @@ These directories/files are installed to your home directory.
   </blockquote>
 
   </details>
-  
+
   <details>
   <summary><code>hyper</code></summary>
 
   <blockquote>
-  
+
   File: [`~/.config/hyper/.hyper.js`](.config/hyper/.hyper.js)
 
   Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
@@ -467,8 +467,8 @@ These directories/files are installed to your home directory.
   </blockquote>
 
   </details>
-  
-  
+
+
   <details>
     <summary><code>tmux</code></summary>
 
@@ -481,6 +481,30 @@ These directories/files are installed to your home directory.
   - enable the [powerline] tmux status line
 
   </blockquote>
+
+  </details>
+  <details>
+    <summary><code>.w3m</code></summary>
+
+    <blockquote>
+
+    Files:
+    - [`~/.w3m/config`](.w3m/config)
+    - [`~/.w3m/keymap`](.w3m/keymap)
+    - [`~/.w3m/mailcap`](.w3m/mailcap)
+
+    Files for the [w3m] terminal based web browser.
+
+    [`~/.w3m/config`](.w3m/config) sets:
+    - set default mailcap file for MIME types
+    - always display images
+    - set the default keymap file (for mapping keys)
+    - quit without asking
+
+    [`~/.w3m/keymap`](.w3m/keymap) sets key bindings.
+
+    [`~/.w3m/mailcap`](.w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
+    </blockquote>
 
   </details>
 
@@ -577,25 +601,6 @@ These directories/files are installed to your home directory.
   - [`~/.vim/templates/template.py`](.vim/templates/template.py)
 
 </blockquote>
-
-</details>
-
-<details>
-  <summary><code>.w3m</code></summary>
-
-  <blockquote>
-
-  Files:
-  - [`~/.w3m/keymap`](.w3m/keymap)
-  - [`~/.w3m/config`](.w3m/config)
-
-  Files for the [w3m] terminal based web browser. This config sets:
-  - set default mailcap for MIME types
-  - always display images
-  - quit without asking if we hit `qq`
-  - use vim like key bindings
-
-  </blockquote>
 
 </details>
 
