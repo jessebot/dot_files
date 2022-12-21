@@ -401,7 +401,7 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
-    <summary><code>Powerline</code></summary>
+    <summary><code>powerline</code></summary>
 
   <blockquote>
 
@@ -432,6 +432,26 @@ These directories/files are installed to your home directory and follow the [XDG
   File for configuring [tmux] status line:
   - [`~/.config/powerline/themes/tmux/default.json`](.config/powerline/)
 
+  </blockquote>
+
+  </details>
+  
+  
+  <details>
+    <summary><code>python</code></summary>
+
+  <blockquote>
+  
+  File:
+  - [`~/.config/python/interactive_startup.py`](.config/python/interactive_startup.py)
+
+  This file sets the default history location to `$XDG_STATE_HOME` (`~/.local/state/python/history`)
+  It requires the following in your bash config:
+
+  ```bash
+  export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py 
+  ```
+  
   </blockquote>
 
   </details>
