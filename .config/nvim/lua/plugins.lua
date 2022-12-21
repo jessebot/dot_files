@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require('plugins')` from your init.config/vim
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -18,20 +18,20 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- adds a pretty status line -- 'vim-airline/vim-airline'
-    use '~/.vim/plugged/vim-airline'
+    use 'vim-airline/vim-airline'
 
-    -- my preferred colorscheme right now -- use 'jessebot/spacechalk'
-    use '~/.vim/plugged/spacechalk'
+    -- preferred colorscheme right now
+    use {'jessebot/spacechalk'}
 
     -- startup screen for neovim
-    use 'glepnir/dashboard-nvim'
+    use {'glepnir/dashboard-nvim'}
 
     -- cute halloween dashboard for neovim start screen :3
     -- not sure why this doesn't work, so it's commented out
     -- use 'folke/drop.nvim'
 
     -- this is a modern fuzzy searcher
-    use '~/.vim/plugged/vim-clap'
+    use 'liuchengxu/vim-clap'
 
     -- ------------ telescope: extendable fuzzy finder over lists ------------
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -40,11 +40,11 @@ return require('packer').startup(function(use)
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
-    use '~/.vim/plugged/vim-fugitive'
+    use 'tpope/vim-fugitive'
 
     -- puts a git + or - in side line to show git changes in file
     -- 'airblade/vim-gitgutter'
-    use '~/.vim/plugged/vim-gitgutter'
+    use 'airblade/vim-gitgutter'
 
     -- ----------- nvim new nerdtree replacement needs this :) ---------------
     use {'nvim-tree/nvim-tree.lua',
@@ -59,28 +59,28 @@ return require('packer').startup(function(use)
 
     -- general linter - will use common linters and highlight broken code
     -- 'dense-analysis/ale'
-    use '~/.vim/plugged/ale'
+    use {'dense-analysis/ale'}
 
     -- syntax highlighting for neovim
     use {'nvim-treesitter/nvim-treesitter'}
 
     -- terraform linter -- 'hashivim/vim-terraform'
-    use '~/.vim/plugged/vim-terraform'
+    use {'hashivim/vim-terraform'}
 
     -- bash tab completion -- 'WolfgangMehner/bash-support'
-    use '~/.vim/plugged/bash-support'
+    use {'WolfgangMehner/bash-support'}
 
     -- yaml syntax highlighting better -- 'stephpy/vim-yaml'
-    use '~/.vim/plugged/vim-yaml'
+    use {'stephpy/vim-yaml'}
 
     -- this is helpful for python highlighting
     use {'numirias/semshi',  run = ':UpdateRemoteuseins'}
 
-    -- This is helpful for markdown -- 'junegunn/limelight.vim'
-    use '~/.vim/plugged/limelight.vim'
+    -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
+    use {'junegunn/limelight.vim'}
 
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
-    use '~/.vim/plugged/vim-log-highlighting'
+    use {'mtdl9/vim-log-highlighting'}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

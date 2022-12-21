@@ -3,6 +3,9 @@
 # Default, in order of preference (subject to availability): nvim, vim, vi
 # ------------------------------------------------------------------------- #
 
+# make vim use the XDG Base Dir Spec (store in ~/.config/vim/vimrc)
+alias vim="VIMINIT='source "$XDG_CONFIG_HOME/vim/vimrc"' vim"
+
 # Default EDITOR is nvim
 if [ -n "$(which nvim)" ]; then
     export EDITOR=nvim

@@ -3,8 +3,13 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- set XDG viminfo location
+-- vim.cmd [[set viminfofile=~/.local/state/nvim/viminfo]]
+vim.opt.viminfofile = '~/.local/state/nvim/viminfo'
+
 -- turn off the mouse scrolling because it is confusing
-vim.cmd [[set mousescroll=ver:0,hor:0]]
+-- vim.cmd [[set mousescroll=ver:0,hor:0]]
+vim.opt.mousescroll = 'ver:0,hor:0'
 
 -- line numbers for debugging and screen sharing, takes up 4 columns
 vim.opt.number = true
@@ -19,14 +24,16 @@ vim.opt.colorcolumn = '80'
 -- vim.opt.termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+-- do not try to indent the starting dashboard
 vim.g.indentLine_fileTypeExclude = [['dashboard']]
 
--- both of these are required to make packer, our plugin manager work
+-- both of these are required to make packer, our plugin manager, work
 require('plugins')
-vim.cmd [[source ~/.config/nvim/packerinit.vim]]
+vim.cmd.source("~/.config/nvim/packerinit.vim")
 
 -- Colors need to be enabled after the plugins, because the colors are a plugin
-vim.cmd [[colorscheme spacechalk]]
+vim.cmd.colorscheme('spacechalk')
+vim.g.colors_name = 'spacechalk'
 
 -- --------- these are plugin configs for plugins imported by packer ---------
 require('user.nvim-tree')

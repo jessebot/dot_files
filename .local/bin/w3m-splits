@@ -13,7 +13,9 @@ import argparse
 # parse args
 parser = argparse.ArgumentParser()
 parser.add_argument("html_file",
-                    help="html or website to view in w3m in an iterm2 split")
+                    help="html file or URL to view in w3m in an iTerm2 split")
+parser.add_argument("--profile", "-p", type=str, default="Minimal",
+                    help="iTerm2 profile you'd like to use in the new split.")
 args = parser.parse_args()
 
 
@@ -28,7 +30,7 @@ async def main(connection):
     # Create split pane to the right and make the right one active
     left_pane = app.current_terminal_window.current_tab.current_session
     right_pane = await left_pane.async_split_pane(vertical=True,
-                                                  profile="Minimal Profile")
+                                                  profile=args.profile)
 
     # send the command to the newly created split
     w3m = ("w3m -sixel -o auto_image=TRUE -o display_image=1 -T text/html"

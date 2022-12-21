@@ -11,6 +11,9 @@ source ~/.config/neomutt/themes/spacechalk/neomutt_spacechalk_colors.muttrc
 # powerline for status lines and pager lines
 source ~/.config/neomutt/themes/spacechalk/powerline.neomuttrc
 
+# ------------------------- Temp files ---------------------------
+set certificate_file=~/.local/state/neomutt/certificates
+
 
 # ------------- index settings, your list of emails -------------
 #

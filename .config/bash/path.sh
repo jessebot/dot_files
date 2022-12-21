@@ -46,10 +46,9 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~ other ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Make grade use XDG
+# Make gradle use XDG
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"

@@ -3,7 +3,9 @@
 # this is for the kubernetes plugin manager, krew
 export PATH="${PATH}:${HOME}/.krew/bin"
 
-export KUBECONFIG=~/.kube/kubeconfig
+
+export KUBECONFIG=~/.config/kube/config
+
 
 export DOMAIN="example.com"
 
