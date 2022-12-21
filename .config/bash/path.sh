@@ -54,6 +54,8 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~ other ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+
 # Make gradle use XDG
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 
