@@ -86,7 +86,7 @@ These directories/files are installed to your home directory.
   - helpful sensible aliases such as: `kg` for `kubectl get`
 
   ## [`~/.config/bash/path.sh`](.config/bash/path.sh)
-  - set [XDG base directory spec]
+  - set [XDG Base Directory Spec]
   - set pathing for golang and python
   - set pathing for home brew
 
@@ -483,16 +483,62 @@ These directories/files are installed to your home directory.
   </blockquote>
 
   </details>
+
+  <details>
+    <summary><code>vim</code></summary>
+
+  <blockquote>
+
+  Configuration for [vim], a text editor, and it's plugins, installed via
+  [vim-plug].
+
+  [`~/.vimrc`](.vimrc) is the main file for the global vim configuration.
+  We set a lot of defaults, including:
+  - making vim use the [XDG Base Directory Spec]
+  - setting window width to 82 characters
+  - enabling line numbers
+  - enabling highlighting of column cursor is on
+  - add a colored column on column 80 for tidy python
+  - sets a nerd font for vim
+  - enable syntax highlighting
+  - use [spacechalk] colorscheme
+  - configure icons for VimDevicons, and NERDTree
+  - ale icons changed, ale linters and fixers set for python
+  - gitgutter icons
+  - folding defaults
+  - sets backups
+  - allow backspace in insert mode
+  - default tabbing
+  - set search history
+  - installs all the plugins [here](https://github.com/jessebot/dot_files/blob/main/.vimrc#L452)
+  - uses template files below
+
+  Auto-install vim-plug:
+  - [`~/.vim/autoload/plug.vim`](.vim/autoload/plug.vim)
+
+  Files for syntax highlighting for python, ssh_known_hosts, and .toml files:
+  - [`~/.vim/syntax/python.vim`](.vim/syntax/python.vim)
+  - [`~/.vim/syntax/ssh_known_hosts.vim`](.vim/syntax/ssh_known_hosts.vim)
+  - [`~/.vim/syntax/toml.vim`](.vim/syntax/toml.vim)
+
+  Files for default values in a python or markdown file:
+  - [`~/.vim/templates/template.md`](.vim/templates/template.md)
+  - [`~/.vim/templates/template.py`](.vim/templates/template.py)
+
+  </blockquote>
+
+  </details>
+
   <details>
     <summary><code>.w3m</code></summary>
 
   <blockquote>
-  
+
   Files:
   - [`~/.w3m/config`](.w3m/config)
   - [`~/.w3m/keymap`](.w3m/keymap)
   - [`~/.w3m/mailcap`](.w3m/mailcap)
-  
+
   Files for the [w3m] terminal based web browser.
 
   [`~/.w3m/config`](.w3m/config) sets:
@@ -504,7 +550,7 @@ These directories/files are installed to your home directory.
   [`~/.w3m/keymap`](.w3m/keymap) sets vim key bindings.
 
   [`~/.w3m/mailcap`](.w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
-  
+
   </blockquote>
 
   </details>
@@ -562,50 +608,6 @@ These directories/files are installed to your home directory.
 </details>
 
 <details>
-  <summary><code>.vim*</code></summary>
-
-   <blockquote>
-
-  Configuration for [vim], a text editor, and it's plugins, installed via
-  [vim-plug].
-
-  [`~/.vimrc`](.vimrc) is the main file for the global vim configuration.
-  We set a lot of defaults, including:
-  - setting window width to 82 characters
-  - enabling line numbers
-  - enabling highlighting of column cursor is on
-  - add a colored column on column 80 for tidy python
-  - sets a nerd font for vim
-  - enable syntax highlighting
-  - use [spacechalk] colorscheme
-  - configure icons for VimDevicons, and NERDTree
-  - ale icons changed, ale linters and fixers set for python
-  - gitgutter icons
-  - folding defaults
-  - sets backups
-  - allow backspace in insert mode
-  - default tabbing
-  - set search history
-  - installs all the plugins [here](https://github.com/jessebot/dot_files/blob/main/.vimrc#L452)
-  - uses template files below
-
-  Auto-install vim-plug:
-  - [`~/.vim/autoload/plug.vim`](.vim/autoload/plug.vim)
-
-  Files for syntax highlighting for python, ssh_known_hosts, and .toml files:
-  - [`~/.vim/syntax/python.vim`](.vim/syntax/python.vim)
-  - [`~/.vim/syntax/ssh_known_hosts.vim`](.vim/syntax/ssh_known_hosts.vim)
-  - [`~/.vim/syntax/toml.vim`](.vim/syntax/toml.vim)
-
-  Files for default values in a python or markdown file:
-  - [`~/.vim/templates/template.md`](.vim/templates/template.md)
-  - [`~/.vim/templates/template.py`](.vim/templates/template.py)
-
-</blockquote>
-
-</details>
-
-<details>
   <summary><code>.bash_profile, .bashrc</code></summary>
 
    <blockquote>
@@ -619,7 +621,7 @@ These directories/files are installed to your home directory.
   - turns off bells
   - enables 256 colors
   - sources all the files in `~/.config/bash` (see above under config > bash )
-  - sources person file in `~/.config/bash/path/bashrc`
+  - sources personal file in `~/.config/bash/personal/bashrc`
   - runs [neofetch] when you source it
 
   </blockquote>
@@ -684,7 +686,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [tmux]: https://github.com/tmux/tmux "tmux"
 [w3m]: https://w3m.org "w3m"
 [TUI]: https://en.wikipedia.org/wiki/Text-based_user_interface "TUI"
-[XDG base directory spec]: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
+[XDG Base Directory Spec]: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
 
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
