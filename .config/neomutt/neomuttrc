@@ -104,21 +104,24 @@ mailboxes         = +INBOX +Drafts +Sent +Trash
 # Mutt will create sub cache folders for each account which speeds things up more
 # -----------------------------------------------------------------------
 # CREATE THIS FOLDER. REMOVE IT IF IT IS A FILE AND CREATE AS FOLDER
-set header_cache = ~/.cache/mutt
+set header_cache = ~/.local/state/neomutt
 
 # --------------------------- Caching 2 ---------------------------------
 # Store mail locally to speed things up, like searching message bodies. Can be
-# same folder as header_cache. Will cost disk usage according to your e-mail amount
+# same folder as header_cache. Costs disk space if you have a lot of email
 # -----------------------------------------------------------------------
-set message_cachedir = "~/.cache/mutt"
+# I'm using this folder because it's more XDG spec
+set message_cachedir = ~/.local/state/neomutt
 
 # Allow Mutt to open a new IMAP connection automatically.
 unset imap_passive
 
-# Keep the IMAP connection alive by polling intermittently (time in seconds).
+# Keep the IMAP connection alive by polling intermittently (time in seconds)
+# this is 5 minutes
 set imap_keepalive = 300
 
 # How often to check for new mail (time in seconds).
+# this is six minutes
 set mail_check = 360
 
 # ------------ SMTP (Simple Mail Transfer Protocol) settings ----------

@@ -1,62 +1,59 @@
+# never check in a brew lock file
 **/.Brewfile.lock.json
-.CFUserTextEncoding
-.android
-.ansible
-.bash_history
-.bash_sessions
-.bashrc_locahost
-.cache
-.cups
+
+# this is all private info
 .config/asciinema/install-id
-.config/configstore/update-notifier-npm.json
 .config/glab-cli/aliases.yml
 .config/gh/hosts.yml
-.docker
-.gitconfig-personal
-.gem
+.config/git/personal
+.config/neomutt/keys
+# unsure if I can make this one go anywhere
+.ssh
+
+#------- cache and other temp files ------------
+# standard don't check in cache or trash
+.cache
+.Trash
+
+# this is just logs and pid, so we don't need to index it
+.local/share/**
+.local/state/**
+logs
+
+# working on making these go away
+.android
+.cups
 .gnupg
 .gnupg_pre_2.1
-.gradle
-.hyper_plugins/**
 .ipython
-.krew
-.kube
-.lesshst
-# this is just logs and pid, so we don't need to index it
-.local/share/karabiner/**
-.local/share/wezterm/**
-.local/state/**
 .matplotlib
 .mongorc.js
-.npm
-.nvm
-.omnisharp
-.python_history
-.ssh
-.swiftpm
 .terraform.d
-.thumbnails
 .tldr
 .tldrc
-.Trash
-.vimfuzzyfinder
-.vim/plugged/**
-.vim/.netrwhist
-.viminfo
-.vnc
-.wget-hsts
+go
+cron
+
+# --------- I do not know what this is ------------------
+.CFUserTextEncoding
+.config/configstore/update-notifier-npm.json
+.omnisharp
+.swiftpm
+.thumbnails
 ApkProjects
+Public
+
+# this is just where I keep git cloned repos for things
+repos
+
+# standard desktop folders we should generally be ignoring
+Movies
+Music
+Pictures
 Applications
 Desktop
 Documents
 Downloads
 Library
+# iterm2 is weird 🤦
 !Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
-Movies
-Music
-Pictures
-Public
-cron
-go
-logs
-repos
