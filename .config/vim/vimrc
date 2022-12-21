@@ -175,6 +175,7 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1
 " highlights the folder name
 let g:NERDTreeHighlightFoldersFullName = 1
+let g:NERDTreeBookmarksFile = '~/.local/state/nerdtree/bookmarks'
 
 
 "                               Gitgutter:
