@@ -38,6 +38,9 @@ export PYTHONUSERBASE=$XDG_DATA_HOME/python
 # Run py cmds in this file b4 the 1st prompt is displayed in interactive mode
 export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py
 
+# this is for python virtualenvs
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+
 # ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 # also for js stuff
@@ -45,6 +48,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ golang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# TODO: probably should look into this one, to make it more XDG compliant
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
