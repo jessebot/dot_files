@@ -3,12 +3,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set XDG viminfo location
--- vim.cmd [[set viminfofile=~/.local/state/nvim/viminfo]]
-vim.opt.viminfofile = '~/.local/state/nvim/viminfo'
-
 -- turn off the mouse scrolling because it is confusing
--- vim.cmd [[set mousescroll=ver:0,hor:0]]
 vim.opt.mousescroll = 'ver:0,hor:0'
 
 -- line numbers for debugging and screen sharing, takes up 4 columns
