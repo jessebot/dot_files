@@ -6,7 +6,7 @@
 shopt -s histappend
 
 # name of the history file to create and log to
-HISTFILE="$HOME/.local/state/bash/.history"
+HISTFILE="$HOME/.local/state/bash/history"
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
