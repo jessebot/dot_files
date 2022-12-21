@@ -35,6 +35,8 @@ export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 # make python do it's cache in ~/.cache/python
 export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 export PYTHONUSERBASE=$XDG_DATA_HOME/python
+# Run py cmds in this file b4 the 1st prompt is displayed in interactive mode
+export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py
 
 # ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
 export NVM_DIR="$XDG_DATA_HOME"/nvm
