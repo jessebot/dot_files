@@ -1,13 +1,11 @@
 # Jessebot's Kubernetes helpful exports and aliases for BASH
 
+# Make kubeconfig XDG base directory spec compliant
+export KUBECONFIG=$XDG_CONFIG_HOME/kube/config
+
 # this is for the kubernetes plugin manager, krew
-export PATH="${PATH}:${HOME}/.krew/bin"
-
-
-export KUBECONFIG=~/.config/kube/config
-
-
-export DOMAIN="example.com"
+export KREW_ROOT=$XDG_CONFIG_HOME/krew
+export PATH="${PATH}:$XDG_CONFIG_HOME/krew/bin"
 
 # change this to what ever search tool you'd like,
 # e.g. "grep -i"
