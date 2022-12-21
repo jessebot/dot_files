@@ -51,4 +51,8 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 # Make gradle use XDG
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 
+# make wget use XDG
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+
+# make w3m use XDG
+export W3M_DIR="~/.local/state/w3m"

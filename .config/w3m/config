@@ -1,5 +1,6 @@
 keymap_file ~/.config/w3m/keymap
 mailcap ~/.config/w3m/mailcap
+tmp_dir /Users/jhitch/.local/state/w3m
 display_image 1
 auto_image true
 ext_image_viewer
