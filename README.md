@@ -587,10 +587,17 @@ These directories/files are installed to your home directory and follow the [XDG
 </details>
 
 <details>
-  <summary><code>.local/bin</code></summary>
-
+  <summary><code>.local</code></summary>
+  
   <blockquote>
+  
+  Directories:
 
+  <details>
+    <summary><code>bin</code></summary>
+    
+  <blockquote>
+    
   Files:
   - [`~/.local/bin/utc`](.local/bin/utc)
   - [`~/.local/bin/w3msplits`](.local/bin/w3m-splits)
@@ -607,12 +614,12 @@ These directories/files are installed to your home directory and follow the [XDG
   Directories:
 
   <details>
-  <summary><code>iterm2</code></summary>
+    <summary><code>iterm2</code></summary>
+    
+  <blockquote>
 
   Directory:
   - [`~/.local/bin/iterm2`](.local/bin/iterm2)
-
-  <blockquote>
 
   Everything in there are files written and provided by iTerm2 for integrating iterm2 magic into your terminal. The only custom one is the following:
 
@@ -620,9 +627,24 @@ These directories/files are installed to your home directory and follow the [XDG
   |-----------------|-------------------------------------------------------------|
   | `it2split`      | open split in iterm2 with your default profile              |
 
-
   </blockquote>
 
+  </details>
+  
+  </blockquote>
+  
+  </details>
+  
+  <details>
+    <summary><code>state</code></summary>
+    
+  <blockquote>
+    
+  This directory and the director[y/ies]/file(s) within it are specifically to auto-generate directory structure so that XDG spec is enforced with tools that only loosely enforce it.
+  
+  </blockquote>
+
+  
   </details>
 
 </details>
