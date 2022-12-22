@@ -402,8 +402,8 @@ if has("autocmd")
   augroup templates
       autocmd!
       " Remove all auto-commands from the group AutoIndent
-        autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
-        autocmd BufNewFile *.md 0r ~/.vim/templates/template.md
+        autocmd BufNewFile *.py 0r ~/.config/vim/templates/template.py
+        autocmd BufNewFile *.md 0r ~/.config/vim/templates/template.md
   augroup END
 endif
 
