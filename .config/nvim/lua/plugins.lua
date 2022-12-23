@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
     use 'vim-airline/vim-airline'
 
     -- preferred colorscheme right now
-    use {'jessebot/spacechalk'}
+    use {'space-chalk/spacechalk.vim'}
 
     -- startup screen for neovim
     use {'glepnir/dashboard-nvim'}

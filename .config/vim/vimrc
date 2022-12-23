@@ -476,7 +476,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 
 " my preferred colorscheme right now
-Plug 'jessebot/spacechalk', { 'do': ':colorscheme spacechalk' }
+Plug 'space-chalk/spacechalk.vim', { 'do': ':colorscheme spacechalk' }
 
 " allow collapsing of functions for python and other supported languages
 Plug 'tmhedberg/SimpylFold'
