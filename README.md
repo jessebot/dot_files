@@ -489,14 +489,18 @@ These directories/files are installed to your home directory and follow the [XDG
   aliases and docs soon :)
 
   For Linux, this still requires a premium account, but then you can follow
-  these instructions to set up your app:
+  these instructions to set up your spotify api:
   https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api
+
+  (You also need to change your cache in spotifyd.conf to be your username)
 
   After that, just make sure you have your spotify credentials in bitwarden,
   and that you are logged into bitwarden via the [bw] cli. DON'T FORGET TO
-  EXPORT YOUR SESSION ID!
+  EXPORT YOUR SESSION ID! Then you HAVE TO RESTART SPOTIFYD!
 
-  (You also need to change your cache in the config file to be your username)
+  ```bash
+  brew services restart spotifyd
+  ```
 
   **Linux Note:** If you did a `brew install spotifyd`, then you might have to
   `brew edit spotifyd`, and then fix the hardcoded macOS backend to be `alsa`.
