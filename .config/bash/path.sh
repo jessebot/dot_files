@@ -55,7 +55,7 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-. "$XDG_DATA_HOME/cargo/env"
+export PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~ other ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
