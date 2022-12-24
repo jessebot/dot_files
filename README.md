@@ -488,6 +488,20 @@ These directories/files are installed to your home directory and follow the [XDG
   Current settings are for Linux only. I will add a macOS file and appropriate
   aliases and docs soon :)
 
+  For Linux, this still requires a premium account, but then you can follow
+  these instructions to set up your app:
+  https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api
+
+  After that, just make sure you have your spotify credentials in bitwarden,
+  and that you are logged into bitwarden via the [bw] cli. DON'T FORGET TO
+  EXPORT YOUR SESSION ID!
+
+  (You also need to change your cache in the config file to be your username)
+
+  **Linux Note:** If you did a `brew install spotifyd`, then you might have to
+  `brew edit spotifyd`, and then fix the hardcoded macOS backend to be `alsa`.
+  Then you need to do a `brew reinstall --build-from-source spotifyd`.
+
   </blockquote>
 
   </details>
@@ -736,14 +750,17 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [asciinema]: https://asciinema.org/ "asciinema"
 [bat]: https://github.com/sharkdp/bat#configuration-file "bat - cat with wings"
 [BASH]: https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer) "BASH"
+[bw]: https://bitwarden.com/help/cli "bitwarden CLI"
 [github-cli]: https://cli.github.com/ "github cli"
 [neofetch]: https://github.com/dylanaraps/neofetch "neofetch"
 [powerline]: https://github.com/powerline/powerline "powerline"
 [rich-cli]: https://github.com/Textualize/rich-cli "rich cli"
 [sixel]: https://en.wikipedia.org/wiki/Sixel "sixel"
+[spotifyd]: https://github.com/Spotifyd/spotifyd "spotifyd"
+[spotifytui]: https://github.com/Rigellute/spotify-tui "spotify-tui"
 [tmux]: https://github.com/tmux/tmux "tmux"
-[w3m]: https://w3m.org "w3m"
 [TUI]: https://en.wikipedia.org/wiki/Text-based_user_interface "TUI"
+[w3m]: https://w3m.org "w3m"
 [XDG Base Directory Spec]: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
 
 <!-- ------------------------ Fonts and Colors -------------------------- -->
