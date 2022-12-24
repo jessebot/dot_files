@@ -435,13 +435,13 @@ These directories/files are installed to your home directory and follow the [XDG
   </blockquote>
 
   </details>
-  
-  
+
+
   <details>
     <summary><code>python</code></summary>
 
   <blockquote>
-  
+
   File:
   - [`~/.config/python/interactive_startup.py`](.config/python/interactive_startup.py)
 
@@ -449,15 +449,15 @@ These directories/files are installed to your home directory and follow the [XDG
   It requires the following in your bash config:
 
   ```bash
-  export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py 
+  export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py
   ```
-  
+
   </blockquote>
 
   </details>
 
   <details>
-    <summary><code>Ranger</code></summary>
+    <summary><code>ranger</code></summary>
 
   <blockquote>
 
@@ -469,6 +469,24 @@ These directories/files are installed to your home directory and follow the [XDG
   - enable file previews using [iterm2]
   - enable video previews using ffmpegthumbnailer
   - enable svg previews.
+
+  </blockquote>
+
+  </details>
+
+  <details>
+    <summary><code>spotifyd</code></summary>
+
+  <blockquote>
+
+  Files:
+  - [`~/.config/spotifyd/spotifyd.conf`](.config/spotifyd/spotifyd.conf)
+
+  [spotifyd] is a spotify daemon used in combination with [spotify-tui] or
+  other alternative spotify frontends.
+
+  Current settings are for Linux only. I will add a macOS file and appropriate
+  aliases and docs soon :)
 
   </blockquote>
 
@@ -588,16 +606,16 @@ These directories/files are installed to your home directory and follow the [XDG
 
 <details>
   <summary><code>.local</code></summary>
-  
+
   <blockquote>
-  
+
   Directories:
 
   <details>
     <summary><code>bin</code></summary>
-    
+
   <blockquote>
-    
+
   Files:
   - [`~/.local/bin/utc`](.local/bin/utc)
   - [`~/.local/bin/w3msplits`](.local/bin/w3m-splits)
@@ -615,7 +633,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   <details>
     <summary><code>iterm2</code></summary>
-    
+
   <blockquote>
 
   Directory:
@@ -630,21 +648,20 @@ These directories/files are installed to your home directory and follow the [XDG
   </blockquote>
 
   </details>
-  
-  </blockquote>
-  
-  </details>
-  
-  <details>
-    <summary><code>state</code></summary>
-    
-  <blockquote>
-    
-  This directory and the director[y/ies]/file(s) within it are specifically to auto-generate directory structure so that XDG spec is enforced with tools that only loosely enforce it.
-  
+
   </blockquote>
 
-  
+  </details>
+
+  <details>
+    <summary><code>state</code></summary>
+
+  <blockquote>
+
+  This directory and the director[y/ies]/file(s) within it are specifically to auto-generate directory structure so that XDG spec is enforced with tools that only loosely enforce it.
+
+  </blockquote>
+
   </details>
 
 </details>
