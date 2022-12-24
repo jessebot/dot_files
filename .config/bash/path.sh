@@ -52,6 +52,11 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 GOROOT=$HOME
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+. "$XDG_DATA_HOME/cargo/env"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~ other ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
