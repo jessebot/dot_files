@@ -522,6 +522,9 @@ Plug 'hashivim/vim-terraform', {'for': 'tf'}
 " bash tab completion
 Plug 'WolfgangMehner/bash-support', {'for': 'sh'}
 
+" adding KDL (document language for zellij, a tmux replacement) support
+Plug 'imsnif/kdl.vim'
+
 " yaml syntax highlighting better
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 
