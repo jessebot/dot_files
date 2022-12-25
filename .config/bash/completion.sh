@@ -11,6 +11,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# bash completion on macOS
+if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
+    # sources bash completion
+    . "/usr/local/etc/profile.d/bash_completion.sh"
+fi
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Terraform ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 complete -C /usr/local/bin/terraform terraform
 

@@ -42,10 +42,11 @@ export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 
 # ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
-export NVM_DIR="$XDG_DATA_HOME"/nvm
-# also for js stuff
+# for npm to use XDG stuff
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-
+# This loads nvm
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ golang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # TODO: probably should look into this one, to make it more XDG compliant

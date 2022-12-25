@@ -1,21 +1,16 @@
-# this is the iterm2 shell integration stuff, making it use XDG_CONFIG_HOME
-source $HOME/.config/bash/iterm2_integration.sh
-
-# iterm2 specific commands and functions
-export PATH=$PATH:$HOME/.local/bin/iterm2
-
-# this is for macs without apple silicon, e.g. before M1
-export PATH=$PATH:$HOME/Library/Python/3.11/bin
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
+    # this is the iterm2 shell integration stuff, making it use XDG_CONFIG_HOME
+    source $HOME/.config/bash/iterm2_integration.sh
+
+    # iterm2 specific commands and functions
+    export PATH=$PATH:$HOME/.local/bin/iterm2
+
+    # this is for macs without apple silicon, e.g. before M1
+    export PATH=$PATH:$HOME/Library/Python/3.11/bin
+
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
-    # bash completion on macOS
-    if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
-        # sources bash completion
-        . "/usr/local/etc/profile.d/bash_completion.sh"
-    fi
 
     pip_path="lib/python3.11/site-packages"
 
