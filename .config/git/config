@@ -17,11 +17,11 @@
 
 # set the default branch to main
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 # always push up local branches to the remote origin
 [push]
-    autoSetupRemote = true
+	autoSetupRemote = true
 
 # default rebase commits to avoid merge issues
 [pull]
