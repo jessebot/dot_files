@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 
 return {
+       font_size = 15,
        hide_tab_bar_if_only_one_tab = true,
        window_decorations = "RESIZE",
        -- default terminal colors
