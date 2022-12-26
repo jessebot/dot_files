@@ -540,6 +540,9 @@ Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
 " Now you can type emojis :) like :dog: which should become a dog :dog
 Plug 'junegunn/vim-emoji', { 'for': 'markdown' }
 
+" for authorized keys
+Plug 'xevz/vim-sshauthkeys'
+
 " --------------------------- HTML / CSS ----------------------------
 " CSS color, multi-syntax context-sensitive color name highlighter, for HEX
 Plug 'jessebot/vim-css-color', { 'for': ['vim', 'html', 'css', 'scss'] }
