@@ -1,0 +1,39 @@
+# Offlineimap configuration file for protonmail
+#
+# examples on linux: /home/linuxbrew/.linuxbrew/etc/offlineimap.conf.minimal
+#                    /home/linuxbrew/.linuxbrew/etc/offlineimap.conf
+
+[general]
+accounts = protonmail
+# this just runs a line of python to env vars below: from os import environ
+pythonfile = ~/.config/offlineimap/offlineimap_account_setup.py
+metadata = ~/.cache/offlineimap
+
+[Account protonmail]
+remoterepository = protonmail-remote
+localrepository = protonmail-local
+
+[Repository protonmail-local]
+type = Maildir
+localfolders = ~/.local/share/offlineimap
+sync_deletes = no
+
+[Repository protonmail-remote]
+type = IMAP
+# These are just environment variables, and won't work without the python file
+remotehosteval = environ["MAIL_SERVER"]
+remoteporteval = int(environ["MAIL_PORT"])
+remoteusereval = environ["MAIL_USER"]
+remotepasseval = environ["MAIL_PASS"]
+
+# this part is important for protonmail
+starttls = yes
+ssl = no
+ssl_version = tls1_2
+sslcacertfile = ~/.config/protonmail/bridge/cert.pem
+# I don't know what this does
+expunge = yes
+
+# --------- section for what folders and labels you pull ------------
+nametrans = lambda foldername: re.sub ('^Folders.', '', foldername)
+folderfilter = lambda foldername: foldername not in ['All Mail']

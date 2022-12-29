@@ -401,6 +401,30 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
+    <summary><code>offlineimap</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/offlineimap/config`](.config/offlineimap/config)
+
+  This is to sync your email from whereever, but it's default configured for
+  protonmail right now :) You will need to export the following env variables:
+
+  (if using protonmail bridge, these should be the credentials from there)
+
+  - `MAIL_SERVER` - normally 127.0.0.1 for protonmail
+  - `MAIL_USER` - normally youruser@protonmail.com for protonmail
+  - `MAIL_PASS` - normally generated from the protonmail bridge app
+  - `MAIL_PORT` - typically 1143 for protonmail
+
+  Currently we import ALL folders except the "All Mail" folder, which is just
+  all the mail from all the other folders (including inbox, sent, trash, etc)
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>powerline</code></summary>
 
   <blockquote>
