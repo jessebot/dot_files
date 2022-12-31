@@ -30,6 +30,9 @@ alias python="python$PYTHON_VERSION"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
+# fastfetch gets system data, but we want it to have padding
+alias fastfetch='echo "" && fastfetch'
+
 # colordiff - diff, but with colors for accessibility
 alias diff='colordiff -uw'
 

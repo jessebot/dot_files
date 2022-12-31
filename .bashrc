@@ -1,7 +1,5 @@
-#                      @jessebot's personal .bashrc
-# -------------------------------------------------------------------------- #
-#                                 General                                    #
-# -------------------------------------------------------------------------- #
+# @jessebot's .bashrc: an ok BASH experience.
+# ------------------------------- General ---------------------------------- #
 
 # fixes "scp: Received message too long 169564991" error
 # If not running interactively, don't do anything, no outputs
@@ -9,7 +7,6 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
 
 # I hate bells a lot
 set bell-style none
@@ -32,7 +29,7 @@ export GPG_TTY=$(tty)
 # everything to do with things like less and editors is in here
 . $XDG_CONFIG_HOME/bash/text_editing.sh
 
-# aliases are all confined to this file
+# aliases are all confined to this file, except kubernetes below
 . $XDG_CONFIG_HOME/bash/alias.sh
 
 # k8s aliases and configuration
@@ -60,7 +57,14 @@ if [ -f $pip_packages/powerline/bindings/bash/powerline.sh ]; then
 fi
 
 # -------------------------------------------------------------------------- #
-#                            PERSONAL MOTD                                   #
+#                    Personal MOTD using fastfetch                           #
+#   We'll use an image if you add this your personal bashrc sourced above:   #
+#                                                                            #
+#   # FULL PATH, NO VARIABLES.                                               #
+#   export MOTD_IMG="/FULL/PATH/2/IMG.jpg"                                   #
 # -------------------------------------------------------------------------- #
-# run fastfetch, a system facts cli script, immediately when we login anywhere
-fastfetch
+if [ -f $MOTD_IMG ]; then
+    fastfetch --logo $MOTD_IMG
+else
+    fastfetch
+fi

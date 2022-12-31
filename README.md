@@ -740,6 +740,17 @@ These directories/files are installed to your home directory and follow the [XDG
 </details>
 
 <details>
+  <summary><code>.hushlogin</code></summary>
+
+  <blockquote>
+
+  This just silences the last login message of shells.
+
+  </blockquote>
+
+</details>
+
+<details>
   <summary><code>.zshrc</code></summary>
 
   <blockquote>

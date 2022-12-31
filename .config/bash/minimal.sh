@@ -1,7 +1,7 @@
 #             @jessebot's minimal browser focused rc file                    #
 ##############################################################################
 
-source ~/.config/bash/history
+source ~/.config/bash/history.sh
 
 # -------------------------------------------------------------------------- #
 #                                 Pathing                                    #
