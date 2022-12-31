@@ -13,6 +13,9 @@ metadata = ~/.cache/offlineimap
 remoterepository = protonmail-remote
 localrepository = protonmail-local
 
+# this is to make notmuch update tags
+# postsynchook = ~/.config/offlineimap/postsync.sh
+
 [Repository protonmail-local]
 type = Maildir
 localfolders = ~/.local/share/offlineimap
@@ -34,6 +37,15 @@ sslcacertfile = ~/.config/protonmail/bridge/cert.pem
 # I don't know what this does
 expunge = yes
 
-# --------- section for what folders and labels you pull ------------
+# section for what folders and labels you pull
 nametrans = lambda foldername: re.sub ('^Folders.', '', foldername)
 folderfilter = lambda foldername: foldername not in ['All Mail']
+
+# this generates a config for neomutt
+[mbnames]
+enabled = yes
+filename = ~/.config/neomutt/mailboxes
+header = "named-mailboxes \"\" "
+peritem = "+%(foldername)s"
+sep = "\nnamed-mailboxes \"\" "
+footer = "\n"
