@@ -100,6 +100,19 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
+    <summary><code>fastfetch</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/fastfetch/config.conf`](.config/fastfetch/config.conf)
+
+  Config file for [fastfetch], is a neofetch-like tool for fetching system information and displaying them in a pretty way. It is written in pure c, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, MacOS and Windows 7+ are supported.
+
+  </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>gh</code></summary>
 
   <blockquote>
@@ -257,21 +270,6 @@ These directories/files are installed to your home directory and follow the [XDG
   This is a local project that I'm working on to rewrite a bash script in python,
   to do basic checking of images in the terminal. I might remove it though,
   because after discovering [ranger], it might not be really needed :shrug:
-
-  </blockquote>
-
-  </details>
-
-  <details>
-    <summary><code>neofetch</code></summary>
-
-  <blockquote>
-
-  File: [`~/.config/neofetch/config.conf`](.config/neofetch/config.conf)
-
-  Config file for [neofetch], a command-line system information tool
-  written in bash 3.2+. The intension is to pair down information to only
-  what's needed, and maybe have a cute image :)
 
   </blockquote>
 
@@ -780,7 +778,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [BASH]: https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer) "BASH"
 [bw]: https://bitwarden.com/help/cli "bitwarden CLI"
 [github-cli]: https://cli.github.com/ "github cli"
-[neofetch]: https://github.com/dylanaraps/neofetch "neofetch"
+[fastfetch]: https://github.com/LinusDierheimer/fastfetch "fastfetch"
 [powerline]: https://github.com/powerline/powerline "powerline"
 [rich-cli]: https://github.com/Textualize/rich-cli "rich cli"
 [sixel]: https://en.wikipedia.org/wiki/Sixel "sixel"

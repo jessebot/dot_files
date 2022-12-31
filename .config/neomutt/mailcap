@@ -4,9 +4,9 @@
 # any image should be handled by sixel right now
 image/*; img2sixel %s; needsterminal
 
+# text/html; zellij action new-pane -c -- w3m -sixel -config ~/.config/w3m/config -T text/html -F %s; nametemplate=%s.html
 # for displaying html files in a new split in iterm2 with w3m and sixel
 text/html; (clear && w3m-splits %s); nametemplate=%s.html
-# text/html; zellij action new-pane -c -- w3m -sixel -config ~/.config/w3m/config -T text/html -F %s; nametemplate=%s.html
 
 # use default program (preview in macOS)
 application/pdf; open %s
