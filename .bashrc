@@ -10,6 +10,7 @@ case $- in
       *) return;;
 esac
 
+
 # I hate bells a lot
 set bell-style none
 
@@ -61,6 +62,5 @@ fi
 # -------------------------------------------------------------------------- #
 #                            PERSONAL MOTD                                   #
 # -------------------------------------------------------------------------- #
-# run neofetch, a system facts cli script, immediately when we login anywhere
-echo ""
-neofetch
+# run fastfetch, a system facts cli script, immediately when we login anywhere
+fastfetch
