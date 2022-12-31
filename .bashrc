@@ -64,7 +64,6 @@ fi
 #   export MOTD_IMG="/FULL/PATH/2/IMG.jpg"                                   #
 # -------------------------------------------------------------------------- #
 if [ -f $MOTD_IMG ]; then
-    fastfetch --logo $MOTD_IMG
-else
-    fastfetch
+    alias fastfetch="echo "" && fastfetch --logo $MOTD_IMG"
 fi
+fastfetch
