@@ -58,12 +58,12 @@ fi
 
 # -------------------------------------------------------------------------- #
 #                    Personal MOTD using fastfetch                           #
-#   We'll use an image if you add this your personal bashrc sourced above:   #
-#                                                                            #
-#   # FULL PATH, NO VARIABLES.                                               #
-#   export MOTD_IMG="/FULL/PATH/2/IMG.jpg"                                   #
+#  you can set $LOCALHOST_PRESET to a fastfetch preset you have locally in:  #
+#                  $XDG_DATA_HOME/fastfetch/presets/                         #
 # -------------------------------------------------------------------------- #
-if [ -f $MOTD_IMG ]; then
-    alias fastfetch="echo "" && fastfetch --logo $MOTD_IMG"
+if [ ! -z $LOCALHOST_PRESET ]; then
+    alias fastfetch="echo '' && fastfetch --load-config $LOCALHOST_PRESET"
+else
+    alias fastfetch="echo '' && fastfetch"
 fi
 fastfetch

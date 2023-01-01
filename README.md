@@ -108,6 +108,15 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config file for [fastfetch], is a neofetch-like tool for fetching system information and displaying them in a pretty way. It is written in pure c, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, MacOS and Windows 7+ are supported.
 
+  Our current configuration default prints a dog on a computer using the iterm2
+  image protocol, but you could also change that to be sixel if you wanted.
+
+  We also provide a couple of basic presets in this dir:
+  `$XDG_DATA_HOME/.local/share/fastfetch/presets`
+
+  You can also change the configuration to show more data or less on the right
+  side.
+
   </blockquote>
 
   </details>
