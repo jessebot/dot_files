@@ -11,10 +11,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# bash completion on macOS
-if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
-    # sources bash completion
-    . "/usr/local/etc/profile.d/bash_completion.sh"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS completion ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+if [[ $(uname) == *"Darwin"* ]]; then
+
+    if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
+        # bash completion on macOS (arm64)
+        if [ -f "/opt/homebrew/etc/profile.d/bash_completion.sh" ]; then
+            . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+        fi
+    else
+        # bash completion on macOS (x86)
+        if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
+            . "/usr/local/etc/profile.d/bash_completion.sh"
+        fi
+    fi
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Terraform ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
