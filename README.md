@@ -298,7 +298,7 @@ These directories/files are installed to your home directory and follow the [XDG
   Config files for [NeoMutt], a terminal based email client. Config includes:
   - sets spacechalk theme, based on the [neonwolf colorscheme] and [neomutt powerline]
   - sets character set to be utf-8 (emojis 🧑‍💻)
-  - sets basic IMAP and SMTP settings
+  - sets basic SMTP settings (but use [offlineimap] to pull the imap backup)
   - sets tls by default
   - sets header_cache and message_cachedir to be `~/.cache/mutt` (must be a directory, NOT a file)
   - sets navigation keys similar to vim
@@ -690,9 +690,9 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Everything in there are files written and provided by iTerm2 for integrating iterm2 magic into your terminal. The only custom one is the following:
 
-  | Command         | Description                                                 |
-  |-----------------|-------------------------------------------------------------|
-  | `it2split`      | open split in iterm2 with your default profile              |
+  | Command         | Description                                    |
+  |:---------------:|:-----------------------------------------------|
+  | `it2split`      | Open split in iterm2 with your default profile |
 
   </blockquote>
 
@@ -701,13 +701,13 @@ These directories/files are installed to your home directory and follow the [XDG
   </blockquote>
 
   </details>
-  
+
   <details>
     <summary><code>share</code></summary>
 
   <blockquote>
 
-  Mostly readmes to generate directory structure, but also some fastfetch preset configs.
+  Mostly READMEs to generate directory structure, but also some fastfetch preset configs.
 
   </blockquote>
 
