@@ -701,6 +701,17 @@ These directories/files are installed to your home directory and follow the [XDG
   </blockquote>
 
   </details>
+  
+  <details>
+    <summary><code>share</code></summary>
+
+  <blockquote>
+
+  Mostly readmes to generate directory structure, but also some fastfetch preset configs.
+
+  </blockquote>
+
+  </details>
 
   <details>
     <summary><code>state</code></summary>
