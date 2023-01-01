@@ -11,7 +11,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATHs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS completion ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
 
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
