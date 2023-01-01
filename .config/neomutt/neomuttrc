@@ -23,6 +23,8 @@ unset help
 # sort the inbox by newest first
 set sort = reverse-threads
 
+set sidebar_visible = yes
+
 
 # ----------------- viewing email attachments -------------------
 
@@ -85,20 +87,14 @@ source ~/.config/neomutt/key_bindings.neomuttrc
 # Local protonmail-bridge host server: 127.0.0.1
 # Protonmail-bridge imap port: 1143
 # --------------------------------------------------------------------- #
-set imap_user = $my_user
-set imap_pass = $my_pass
-
 # ("+" substitutes for `folder`)
 set mbox_type     = Maildir
-set folder        = imap://127.0.0.1:1143/
+set folder        = ~/.local/share/offlineimap
+source ~/.config/neomutt/mailboxes
 set record        = +Sent
 set postponed     = +Drafts
-# Specify where to save and/or look for postponed messages.
-# set postponed = +[Protonmail]/Drafts
 set trash         = +Trash
 set spoolfile     = +INBOX
-mailboxes         = +INBOX +Drafts +Sent +Trash
-
 # ----------------------------- Caching ---------------------------------
 # Store message headers locally to speed things up. If header_cache is a folder,
 # Mutt will create sub cache folders for each account which speeds things up more
