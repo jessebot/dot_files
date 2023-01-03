@@ -15,10 +15,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim'}
 
     -- adds a pretty status line -- 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline'
+    use {'vim-airline/vim-airline'}
 
     -- preferred colorscheme right now
     use {'space-chalk/spacechalk.vim'}
@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
     -- use 'folke/drop.nvim'
 
     -- this is a modern fuzzy searcher
-    use 'liuchengxu/vim-clap'
+    use {'liuchengxu/vim-clap'}
 
     -- ------------ telescope: extendable fuzzy finder over lists ------------
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -40,11 +40,11 @@ return require('packer').startup(function(use)
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
-    use 'tpope/vim-fugitive'
+    use {'tpope/vim-fugitive'}
 
     -- puts a git + or - in side line to show git changes in file
     -- 'airblade/vim-gitgutter'
-    use 'airblade/vim-gitgutter'
+    use {'airblade/vim-gitgutter'}
 
     -- ----------- nvim new nerdtree replacement needs this :) ---------------
     use {'nvim-tree/nvim-tree.lua',
@@ -52,8 +52,8 @@ return require('packer').startup(function(use)
          tag = 'nightly'}
 
     -- ------- a mini map of where you are in your code -----------------
-    -- not working for some reason
-    -- use { 'echasnovski/mini.map', branch = 'main' }
+    -- not working for some reason?
+    use { 'echasnovski/mini.map', branch = 'main' }
 
     -- -------------------- Language Specific Stuff ------------------------
 
@@ -73,8 +73,8 @@ return require('packer').startup(function(use)
     -- yaml syntax highlighting better -- 'stephpy/vim-yaml'
     use {'stephpy/vim-yaml'}
 
-    -- this is helpful for python highlighting
-    use {'numirias/semshi',  run = ':UpdateRemoteuseins'}
+    -- helpful for python highlighting, fork of numirias/semshi
+    use {'wookayin/semshi'}
 
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
