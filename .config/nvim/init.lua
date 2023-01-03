@@ -3,6 +3,12 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- sometimes neovim can't remember where python is
+if vim.loop.os_uname().sysname == 'Linux'
+	then
+    vim.g.python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3.11'
+end
+
 -- turn off the mouse scrolling because it is confusing
 vim.opt.mousescroll = 'ver:0,hor:0'
 
@@ -31,6 +37,7 @@ vim.cmd.colorscheme('spacechalk')
 vim.g.colors_name = 'spacechalk'
 
 -- --------- these are plugin configs for plugins imported by packer ---------
+-- require('semshi')
 require('user.nvim-tree')
 require('user.tree-sitter')
 require('user.ale')
