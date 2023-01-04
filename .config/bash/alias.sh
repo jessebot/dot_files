@@ -6,6 +6,9 @@
 if [[ $(uname) == *"Darwin"* ]]; then
     # Always use GNU sed
     alias sed='gsed'
+else
+    # wezterm requires this if it's installed via flatpak
+    alias wezterm='flatpak run org.wezfurlong.wezterm'
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
