@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 
 return {
+       audible_bell = "Disabled",
        font_size = 12,
        hide_tab_bar_if_only_one_tab = true,
        window_decorations = "RESIZE",
