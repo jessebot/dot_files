@@ -1,0 +1,5 @@
+layout {
+    pane command="bash" {
+        args "-c" "neomutt"
+    }
+}
