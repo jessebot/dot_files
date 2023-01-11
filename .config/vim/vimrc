@@ -3,9 +3,8 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     Support XDG Base Directory Spec
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Support XDG Base Directory Spec
+"""""""""""""""""""""""""""""""""""
 
 if empty($MYVIMRC) | let $MYVIMRC = expand('<sfile>:p') | endif
 
@@ -31,11 +30,13 @@ set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p', 0700)
 
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             GENERAL ALL MODES:
 "                       "line numbers, cursorline, etc,"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" don't try to be compatible with vi anymore
+set nocp
 
 " this just loads .bashrc (.bash_profile on macOS) like a regular login shell
 " but only in vim, this breaks in neovim for some reason :shrug:
@@ -96,10 +97,7 @@ let g:ale_linters = { 'python': ['ruff', 'flake8'], }
 let g:ale_lint_on_text_changed = 'never'
 
 " only enable these fixers by default
-let g:ale_fixers = {
-\   'python': ['ruff'],
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\}
+let g:ale_fixers = {'python': ['ruff'], '*': ['remove_trailing_lines', 'trim_whitespace'], }
 " this will run the above fixers
 let g:ale_fix_on_save = 1
 
@@ -155,24 +153,26 @@ let g:NERDTreeDirArrowCollapsible = 'ﲔ'
 " change the default git nerdtree plugin icons
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'',
-                \ 'Staged'    :'',
-                \ 'Untracked' :'',
-                \ 'Renamed'   :'',
-                \ 'Unmerged'  :'',
-                \ 'Deleted'   :'',
-                \ 'Dirty'     :'',
-                \ 'Ignored'   :'',
-                \ 'Clean'     :'',
-                \ 'Unknown'   :'',
-                \ }
+            \ 'Modified'  :'',
+            \ 'Staged'    :'',
+            \ 'Untracked' :'',
+            \ 'Renamed'   :'',
+            \ 'Unmerged'  :'',
+            \ 'Deleted'   :'',
+            \ 'Dirty'     :'',
+            \ 'Ignored'   :'',
+            \ 'Clean'     :'',
+            \ 'Unknown'   :'',
+            \}
 
 " add syntax highlighting for entire file name in nerdtree
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFolders = 1
+
 " highlights the folder name
 let g:NERDTreeHighlightFoldersFullName = 1
 let g:NERDTreeBookmarksFile = '~/.local/state/nerdtree/bookmarks'
@@ -186,34 +186,32 @@ let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 
+
 "                              FOLDING ZONE:
 "                 "collapse an entire block or function"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable folding on base indent
 set foldmethod=indent
 set foldlevel=99
+
 " let spacebar allow me to fold the code
 nnoremap <space> za
+
 " also allow me to see the doc strings
 let g:SimpylFold_docstring_preview=1
+
 " enable folding for markdown?
 let g:markdown_folding = 1
+
 " in config files, allow user to fold comment blocks
 autocmd FileType conf setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
-
-
-"                                 BACKUPS:
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Store temporary files in a central spot
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 
 "                              BUFFER_STUFF:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " don't know what this is
 set switchbuf=useopen
+
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 
@@ -358,6 +356,7 @@ command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line
 " Insert the current time
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        COMMANDS WE CALL ON START:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -464,117 +463,11 @@ let g:airline_section_z = ' %l (%{LinePercent()})  %v'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"                                "vim-plug"
-"        plugin manager for vim: https://github.com/junegunn/vim-plug
-"        plugin directory will be (on Linux/macOS): '~/.vim/plugged'
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-call plug#begin()
-
-" ------------------------- General IDE stuff ----------------------------
-" adds a pretty status line
-Plug 'vim-airline/vim-airline'
-
-" my preferred colorscheme right now
-Plug 'space-chalk/spacechalk.vim', { 'do': ':colorscheme spacechalk' }
-
-" allow collapsing of functions for python and other supported languages
-Plug 'tmhedberg/SimpylFold'
-
-" indents lines and adds a line to show blocks of code
-Plug 'Yggdroot/indentLine'
-
-" this is a modern fuzzy searcher
-Plug 'liuchengxu/vim-clap'
-
-" underlines your current work you're on
-Plug 'itchyny/vim-cursorword'
-
-" ------------------------------ NerdTree --------------------------------
-"         Tree explorer plugin - use :NERDTreeToggle to try it out
-"             after nerdtree is on visible, use ? for help
-
-" On-demand loading of nerdtree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" add tabs to nerdtree - experimental
-Plug 'jistr/vim-nerdtree-tabs'
-" puts little glyphs for different file types
-Plug 'ryanoasis/vim-devicons'
-" syntax highlighing for nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" add git awareness to see modified, merged, etc status of file in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" ------------------------------ git -------------------------------------
-" git plugin for running git commands with :git
-Plug 'tpope/vim-fugitive'
-
-" puts a git + or - in side line to show git changes in file
-Plug 'airblade/vim-gitgutter'
-
-" ---------- Language Specific/File type Specific Stuff -------------
-" general linter - will use common linters and highlight broken code
-Plug 'dense-analysis/ale'
-
-" terraform linter
-Plug 'hashivim/vim-terraform', {'for': 'tf'}
-
-" bash tab completion
-Plug 'WolfgangMehner/bash-support', {'for': 'sh'}
-
-" adding KDL (document language for zellij, a tmux replacement) support
-Plug 'imsnif/kdl.vim'
-
-" yaml syntax highlighting better
-Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-
-" Golang, for future proofing
-Plug 'fatih/vim-go', { 'for': 'go' }
-
-" This is helpful for markdown
-Plug 'junegunn/limelight.vim'
-
-" this is for pretty vim tables
-Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
-
-" Now you can type emojis :) like :dog: which should become a dog :dog
-Plug 'junegunn/vim-emoji', { 'for': 'markdown' }
-
-" for authorized keys
-Plug 'xevz/vim-sshauthkeys'
-
-" --------------------------- HTML / CSS ----------------------------
-" CSS color, multi-syntax context-sensitive color name highlighter, for HEX
-Plug 'jessebot/vim-css-color', { 'for': ['vim', 'html', 'css', 'scss'] }
-
-
-" make jinja templates prettier
-Plug 'lepture/vim-jinja', { 'for': ['html', 'tpl'] }
-
-" --------------------------- python --------------------------------
-" tab completion, docs, etc
-Plug 'ycm-core/YouCompleteMe'
-
-" requirements.text syntax highlighting
-Plug 'raimon49/requirements.txt.vim', { 'for': 'requirements' }
-
-" ---------------------------- k8s ----------------------------------
-" For the current buffer (including modifications not on disk)
-"   :KubeApply :KubeDelete :KubeCreate
-" And for the current directory (read from disk)
-"   :KubeApplyDir :KubeDeleteDir
-Plug 'andrewstuart/vim-kubernetes', {'for': 'yaml'}
-
-" -------------------------- log files --------------------------------
-Plug 'mtdl9/vim-log-highlighting', {'for': 'log'}
-
-" -------------------------- tmux -----------------------------
-Plug 'tmux-plugins/vim-tmux'
-
-call plug#end()
+" plugin manager
+source ~/.config/vim/plugins.vim
 
 " this has to be at the end of the file because it is a plugin I guess.
 " custom colorscheme to be more pastel and pretty
 colorscheme spacechalk
-" use custome space chalk theme :)
+" use custom space chalk theme :)
 let g:airline_theme='spacechalk'
