@@ -80,8 +80,8 @@ export GOROOT=$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin:$GOROOT
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ general ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
