@@ -22,7 +22,7 @@
 # always push up local branches to the remote origin
 [push]
 	autoSetupRemote = true
-    default = current
+        default = current
 
 # default rebase commits to avoid merge issues
 [pull]
