@@ -9,6 +9,10 @@ if [[ $(uname) == *"Darwin"* ]]; then
 else
     # wezterm requires this if it's installed via flatpak
     alias wezterm='flatpak run org.wezfurlong.wezterm'
+    # steam only seems to work through flatpak on debian
+    alias steam="flatpak run com.valvesoftware.Steam"
+    # freetube only seems to work through flatpak on debian
+    alias freetube="flatpak run io.freetubeapp.FreeTube"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -41,7 +45,7 @@ alias tracert='traceroute'
 
 # whoami, whereami, whoareyou?
 alias whereami='hostname'
-alias whoareyou='echo "Your friend :)"'
+alias whoareyou='echo "I am $HOSTNAME, your favorite computer 🥰"'
 
 # scrncpy installs adb for you, but it's awkward to use, so we just alias it
 alias adb='scrcpy.adb'
@@ -52,7 +56,7 @@ alias sixel='img2sixel'
 # quick to do
 alias todo="$EDITOR ~/todo.md"
 
-# this is so that w3m uses the correct XDG config location
+# so that w3m uses the correct XDG config location
 alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
