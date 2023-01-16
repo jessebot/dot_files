@@ -13,6 +13,8 @@ else
     alias steam="flatpak run com.valvesoftware.Steam"
     # freetube only seems to work through flatpak on debian
     alias freetube="flatpak run io.freetubeapp.FreeTube"
+    # lutris works better through flatpak
+    alias lutris="flatpak run net.lutris.Lutris"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -29,6 +31,7 @@ alias tre='tree'
 alias tere='tree'
 
 # can't spell python
+alias pip="pip3.11"
 alias pthyon="python$PYTHON_VERSION"
 alias ptyhon="python$PYTHON_VERSION"
 alias pythong="python$PYTHON_VERSION"
