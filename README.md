@@ -520,8 +520,8 @@ These directories/files are installed to your home directory and follow the [XDG
   aliases and docs soon :)
 
   For Linux, this still requires a premium account, but then you can follow
-  these instructions to set up your spotify api:
-  https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api
+  the potify-tui api connection instructions].
+  
 
   (You also need to change your cache in spotifyd.conf to be your username)
 
@@ -536,6 +536,8 @@ These directories/files are installed to your home directory and follow the [XDG
   **Linux Note:** If you did a `brew install spotifyd`, then you might have to
   `brew edit spotifyd`, and then fix the hardcoded macOS backend to be `alsa`.
   Then you need to do a `brew reinstall --build-from-source spotifyd`.
+  
+  After that, you can use programs such as `spt` (spotify-tui). You can follow their instructions above, but important part is going to be creating your own little spotify app which you can do after logging into the [developer spotify dashboard](https://developer.spotify.com/dashboard/).
 
   </blockquote>
 
@@ -815,6 +817,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [sixel]: https://en.wikipedia.org/wiki/Sixel "sixel"
 [spotifyd]: https://github.com/Spotifyd/spotifyd "spotifyd"
 [spotifytui]: https://github.com/Rigellute/spotify-tui "spotify-tui"
+[spotify-tui api connection instructions]: https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api
 [tmux]: https://github.com/tmux/tmux "tmux"
 [TUI]: https://en.wikipedia.org/wiki/Text-based_user_interface "TUI"
 [w3m]: https://w3m.org "w3m"
