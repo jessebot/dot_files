@@ -248,7 +248,9 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config files related to [kitty], a terminal emulator. Cute open source
   kitty icon image by [DinkDonk], as well as a basic `kitty.conf` to
-  use some [nerdfonts], and set up look and feel on macOS.
+  use some [nerdfonts], and set up look and feel on macOS. I don't use this 
+  terminal emulator much anymore so I'm not sure how well this still works 
+  accross different OSes.
 
   </blockquote>
 
@@ -537,7 +539,7 @@ These directories/files are installed to your home directory and follow the [XDG
   `brew edit spotifyd`, and then fix the hardcoded macOS backend to be `alsa`.
   Then you need to do a `brew reinstall --build-from-source spotifyd`.
   
-  After that, you can use programs such as `spt` (spotify-tui). You can follow their instructions above, but important part is going to be creating your own little spotify app which you can do after logging into the [developer spotify dashboard](https://developer.spotify.com/dashboard/).
+  After that, you can use commands such as `spt` (spotify-tui) to launch a lightweight terminal frontend. You can follow spotify-tui's instructions above, but the most important part is going to be creating your own little spotify app which you can do after logging into the [developer spotify dashboard](https://developer.spotify.com/dashboard/).
 
   </blockquote>
 
@@ -619,31 +621,50 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
-    <summary><code>.w3m</code></summary>
+    <summary><code>w3m</code></summary>
 
   <blockquote>
 
   Files:
-  - [`~/.w3m/config`](.w3m/config)
-  - [`~/.w3m/keymap`](.w3m/keymap)
-  - [`~/.w3m/mailcap`](.w3m/mailcap)
+  - [`~/.config/w3m`](.config/w3m/config)
+  - [`~/.config/w3m/keymap`](.config/w3m/keymap)
+  - [`~/.config/w3m/mailcap`](.config/w3m/mailcap)
 
   Files for the [w3m] terminal based web browser.
 
-  [`~/.w3m/config`](.w3m/config) sets:
+  [`~/.config/w3m/config`](.config/w3m/config) sets:
   - set default mailcap file for MIME types
   - always display images
   - set the default keymap file (for mapping keys)
   - quit without asking
 
-  [`~/.w3m/keymap`](.w3m/keymap) sets vim key bindings.
+  [`~/.config/w3m/keymap`](.config/w3m/keymap) sets vim key bindings.
 
-  [`~/.w3m/mailcap`](.w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
+  [`~/.config/w3m/mailcap`](.config/w3m/mailcap) is supposed to set default MIMEtypes for w3m but does not :shrug:
 
   </blockquote>
 
   </details>
+    
+  <details>
+    <summary><code>wezterm</code></summary>
 
+  <blockquote>
+
+  File: [`~/.config/wezterm/wezterm.lua`](.config/wezterm/wezterm.lua)
+  
+  This file is configuration for the terminal emulator [wezterm]:
+    
+  - disables bell noises
+  - sets font size to 12
+  - hides tab bar if only one tab
+  - remove top title bar
+  - set background opacity to 0.7
+  - change colors to a softer spacechalk aligned colorscheme
+
+  </blockquote>
+
+  </details>
 </details>
 
 <details>
