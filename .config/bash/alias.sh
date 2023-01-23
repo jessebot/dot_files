@@ -9,8 +9,6 @@ if [[ $(uname) == *"Darwin"* ]]; then
 else
     # wezterm requires this if it's installed via flatpak
     alias wezterm='flatpak run org.wezfurlong.wezterm'
-    # steam only seems to work through flatpak on debian
-    alias steam="flatpak run com.valvesoftware.Steam"
     # freetube only seems to work through flatpak on debian
     alias freetube="flatpak run io.freetubeapp.FreeTube"
     # lutris works better through flatpak
