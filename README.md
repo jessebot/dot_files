@@ -2,7 +2,7 @@
 
 These started as my personal dot files, but then they became the sensible defaults for
 [`onboardme`](https://github.com/jessebot/onboardme), which started out as a script
-to manage my dot files. Funny how these things work. :shrug:
+to manage my dot files :shrug:
 
 These directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible.
 
@@ -248,8 +248,8 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config files related to [kitty], a terminal emulator. Cute open source
   kitty icon image by [DinkDonk], as well as a basic `kitty.conf` to
-  use some [nerdfonts], and set up look and feel on macOS. I don't use this 
-  terminal emulator much anymore so I'm not sure how well this still works 
+  use some [nerdfonts], and set up look and feel on macOS. I don't use this
+  terminal emulator much anymore so I'm not sure how well this still works
   accross different OSes.
 
   </blockquote>
@@ -523,7 +523,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   For Linux, this still requires a premium account, but then you can follow
   the potify-tui api connection instructions].
-  
+
 
   (You also need to change your cache in spotifyd.conf to be your username)
 
@@ -538,7 +538,7 @@ These directories/files are installed to your home directory and follow the [XDG
   **Linux Note:** If you did a `brew install spotifyd`, then you might have to
   `brew edit spotifyd`, and then fix the hardcoded macOS backend to be `alsa`.
   Then you need to do a `brew reinstall --build-from-source spotifyd`.
-  
+
   After that, you can use commands such as `spt` (spotify-tui) to launch a lightweight terminal frontend. You can follow spotify-tui's instructions above, but the most important part is going to be creating your own little spotify app which you can do after logging into the [developer spotify dashboard](https://developer.spotify.com/dashboard/).
 
   </blockquote>
@@ -597,11 +597,12 @@ These directories/files are installed to your home directory and follow the [XDG
   - ale icons changed, ale linters and fixers set for python
   - gitgutter icons
   - folding defaults
-  - sets backups
+  - sets backups to XDG standard
   - allow backspace in insert mode
   - default tabbing
   - set search history
   - installs all the plugins [here](https://github.com/jessebot/dot_files/blob/main/.vimrc#L452)
+    - `:NERDTreeToggle` enables a directory tree of your current directory on the left hand side of your current vim window.
   - uses template files below
 
   Auto-install vim-plug:
@@ -615,6 +616,7 @@ These directories/files are installed to your home directory and follow the [XDG
   Files for default values in a python or markdown file:
   - [`~/.vim/templates/template.md`](.vim/templates/template.md)
   - [`~/.vim/templates/template.py`](.vim/templates/template.py)
+
 
   </blockquote>
 
@@ -645,16 +647,16 @@ These directories/files are installed to your home directory and follow the [XDG
   </blockquote>
 
   </details>
-    
+
   <details>
     <summary><code>wezterm</code></summary>
 
   <blockquote>
 
   File: [`~/.config/wezterm/wezterm.lua`](.config/wezterm/wezterm.lua)
-  
+
   This file is configuration for the terminal emulator [wezterm]:
-    
+
   - disables bell noises
   - sets font size to 12
   - hides tab bar if only one tab
