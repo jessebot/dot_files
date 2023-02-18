@@ -602,7 +602,6 @@ These directories/files are installed to your home directory and follow the [XDG
   - default tabbing
   - set search history
   - installs all the plugins [here](https://github.com/jessebot/dot_files/blob/main/.vimrc#L452)
-    - `:NERDTreeToggle` enables a directory tree of your current directory on the left hand side of your current vim window.
   - uses template files below
 
   Auto-install vim-plug:
@@ -618,6 +617,8 @@ These directories/files are installed to your home directory and follow the [XDG
   - [`~/.vim/templates/template.py`](.vim/templates/template.py)
 
 
+  Since we install the [NERDTree](https://github.com/preservim/nerdtree) plugin,
+  `:NERDTreeToggle` enables a directory tree of your current directory on the left hand side of your current vim window.
   </blockquote>
 
   </details>
