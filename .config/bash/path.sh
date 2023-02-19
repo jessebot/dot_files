@@ -7,6 +7,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# this relative is used for both macOS and Debian based distros
+pip_path_suffix="lib/python$PYTHON_VERSION/site-packages"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
 
@@ -25,12 +28,12 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
     # pip packages installed via linuxbrew will be here (if python is installed via linuxbrew)
-    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+    # pip_packages="/home/linuxbrew/.linuxbrew/$pip_path_suffix"
 
     # pip packages with command line tools install here by default with apt installed python
     export PATH=$PATH:$XDG_DATA_HOME/python/bin
     # apt installed location of pip installed python3.x packages
-    pip_packages="$XDG_DATA_HOME/python/lib/python$PYTHON_VERSION/site-packages"
+    pip_packages="$XDG_DATA_HOME/python/$pip_path_suffix"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -44,16 +47,15 @@ if [[ $(uname) == *"Darwin"* ]]; then
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
-    pip_path="lib/$PYTHON_VERSION/site-packages"
 
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
-        pip_packages="/opt/homebrew/$pip_path"
+        pip_packages="/opt/homebrew/$pip_path_suffix"
     else
         # For older macs before the M1, pre-2020, WITHOUT apple silicon
         export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
-        pip_packages="/usr/local/$pip_path"
+        pip_packages="/usr/local/$pip_path_suffix"
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
