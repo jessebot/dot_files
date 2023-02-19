@@ -23,6 +23,7 @@ if [[ $(uname) == *"Linux"* ]]; then
     export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
+
     # pip packages installed via linuxbrew will be here (if python is installed via linuxbrew)
     # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
 
