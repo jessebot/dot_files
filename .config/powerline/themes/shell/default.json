@@ -49,7 +49,7 @@
                     {
                         "function": "powerline_kubernetes.kubernetes",
                         "priority": 60,
-                        "display": false,
+                        "display": true,
                         "args": {
                             "show_kube_logo": true,
                             "show_cluster": true,
@@ -59,7 +59,7 @@
                     },
                     {
                         "function": "powerline.segments.common.mail.email_imap_alert",
-                        "display": true,
+                        "display": false,
                         "priority": 80,
                         "args": {
                             "username_variable": "MAIL_USER",
