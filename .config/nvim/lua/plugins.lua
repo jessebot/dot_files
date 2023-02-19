@@ -58,7 +58,6 @@ return require('packer').startup(function(use)
     -- -------------------- Language Specific Stuff ------------------------
 
     -- general linter - will use common linters and highlight broken code
-    -- 'dense-analysis/ale'
     use {'dense-analysis/ale'}
 
     -- syntax highlighting for neovim
@@ -74,7 +73,7 @@ return require('packer').startup(function(use)
     use {'stephpy/vim-yaml'}
 
     -- helpful for python highlighting, fork of numirias/semshi
-    use {'wookayin/semshi'}
+    -- use {'wookayin/semshi'}
 
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
