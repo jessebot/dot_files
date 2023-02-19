@@ -29,7 +29,8 @@ Plug 'itchyny/vim-cursorword'
 "             after nerdtree is on visible, use ? for help
 
 " On-demand loading of nerdtree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Can't remember why but was using this repo before: 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " add tabs to nerdtree - experimental
 Plug 'jistr/vim-nerdtree-tabs'
 " puts little glyphs for different file types
