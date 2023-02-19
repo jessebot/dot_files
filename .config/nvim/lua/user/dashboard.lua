@@ -35,52 +35,50 @@ db.setup({
         center = {
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "Find File                     f",
+                icon_hl = icon_color,
+                desc = "Find File                     ",
                 key = "f",
+
                 action = "Telescope find_files",
             },
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "Recents                       r",
+                icon_hl = icon_color,
+                desc = "Recents                       ",
                 key = "r",
                 action = "Telescope oldfiles",
             },
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "New File                      n",
+                icon_hl = icon_color,
+                desc = "New File                      ",
                 key = "n",
                 action = "DashboardNewFile",
             },
-
-            -- { key = "<leader>fm", icon = " ", desc = "Bookmark", action = "Telescope marks" },
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "Load Last Session             L",
+                icon_hl = icon_color,
+                desc = "Load Last Session             ",
                 key = "L",
                 action = "SessionLoad",
             },
-
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "Update Plugins                u",
+                icon_hl = icon_color,
+                desc = "Update Plugins                ",
                 key = "u",
                 action = "PackerUpdate",
             },
             {
                 icon = "  ",
-                icon_hl = { link = icon_color },
-                desc = "Exit                          q",
+                icon_hl = icon_color,
+                desc = "Exit                          ",
                 key = "q",
                 action = "exit",
             },
         },
         footer = {
-            "type  :help<Enter> on-line help"
+            "type  :help<Enter> or <F1> for on-line help"
         }
     }
 })
