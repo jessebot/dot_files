@@ -25,20 +25,21 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
     # pip packages installed via linuxbrew will be here
-    pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
-    # iterm2 shell integration stuff, and making it use $XDG_CONFIG_HOME
-    source $HOME/.config/bash/iterm2_integration.sh
+
+    # iterm2 shell integration stuff
+    source $XDG_CONFIG_HOME/bash/iterm2_integration.sh
     # iterm2 specific commands and functions
     export PATH=$PATH:$HOME/.local/bin/iterm2
 
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
-    pip_path="lib/python3.11/site-packages"
+    pip_path="lib/$PYTHON_VERSION/site-packages"
 
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On apple silicon: brew default installs here
