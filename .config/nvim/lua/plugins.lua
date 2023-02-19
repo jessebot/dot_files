@@ -26,6 +26,11 @@ return require('packer').startup(function(use)
     -- startup screen for neovim
     use {'glepnir/dashboard-nvim'}
 
+    -- quick session manager
+    use({'glepnir/dbsession.nvim', event = 'BufRead', 
+         config = function() require('dbsession').setup({}) end
+    })
+
     -- cute halloween dashboard for neovim start screen :3
     -- not sure why this doesn't work, so it's commented out
     -- use 'folke/drop.nvim'
