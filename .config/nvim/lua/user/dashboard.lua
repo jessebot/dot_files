@@ -1,9 +1,13 @@
 local db = require("dashboard")
+
+-- ⣿ ⣿  c o l o r s  ⣿ ⣿ --
+local icon_color = 'Number'
+local keymap_color = 'Function'
+local description_color = 'String'
+
+-- for printing the neovim version under the image
 local version = vim.version()
 
--- db.session_directory = vim.fn.stdpath("data") .. "/sessions"
-
-local icon_color = "Function"
 db.setup({
     theme = 'doom',
     config = {
@@ -29,6 +33,7 @@ db.setup({
           ' ⣿⣿⣿⣿⣿⣿⣿⣿⣫⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣵⣿⣿ ',
           ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢏⣴⣿⣿⣿⣿ ',
           ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢡⣿⣿⣿⣿⣿⣿ ',
+          '                                                  ',
           "N E O V I M - v " .. version.major .. "." .. version.minor,
           '                                                  ',
         },
@@ -37,43 +42,55 @@ db.setup({
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Find File                     ",
+                desc_hl = description_color,
                 key = "f",
-
+                key_hl = keymap_color,
                 action = "Telescope find_files",
             },
+
             {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Recents                       ",
+                desc_hl = description_color,
                 key = "r",
+                key_hl = keymap_color,
                 action = "Telescope oldfiles",
             },
             {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "New File                      ",
+                desc_hl = description_color,
                 key = "n",
+                key_hl = keymap_color,
                 action = "DashboardNewFile",
             },
             {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Load Last Session             ",
+                desc_hl = description_color,
                 key = "L",
+                key_hl = keymap_color,
                 action = "SessionLoad",
             },
             {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Update Plugins                ",
+                desc_hl = description_color,
                 key = "u",
+                key_hl = keymap_color,
                 action = "PackerUpdate",
             },
             {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Exit                          ",
+                desc_hl = description_color,
                 key = "q",
+                key_hl = keymap_color,
                 action = "exit",
             },
         },
@@ -88,7 +105,6 @@ vim.api.nvim_create_autocmd('Filetype', {
     group = vim.api.nvim_create_augroup('Dashboard_au', { clear = true }),
     callback = function()
         vim.cmd [[
-            hi! link DashboardFooter NonText
             setlocal buftype=nofile
             setlocal nonumber norelativenumber nocursorline noruler
             nnoremap <buffer> f <cmd>Telescope find_files<CR>
