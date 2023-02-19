@@ -10,7 +10,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
 
-    # TODO: iptables on debian is here, wonder if we can change that...
+    # iptables on debian is here
     export PATH=$PATH:/usr/sbin:/usr/share
 
     # snap package manager installs commands here
@@ -23,9 +23,13 @@ if [[ $(uname) == *"Linux"* ]]; then
     export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
-
-    # pip packages installed via linuxbrew will be here
+    # pip packages installed via linuxbrew will be here (if python is installed via linuxbrew)
     # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+
+    # pip packages with command line tools install here by default with apt installed python
+    export PATH=$PATH:$XDG_DATA_HOME/python/bin
+    # apt installed location of pip installed python3.x packages
+    pip_packages="$XDG_DATA_HOME/python/lib/python$PYTHON_VERSION/site-packages"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
