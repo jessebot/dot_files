@@ -13,6 +13,9 @@ db.setup({
     config = {
         header = {
           '                                                  ',
+          '                                                  ',
+          os.date("  %A, %d-%m-%Y  %H:%M"),
+          '                                                  ',
           ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
           ' ⣿⣿⣿⠿⢛⡛⣛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
           ' ⣶⣾⣷⣿⣿⣶⣶⣤⣌⣙⣛⡻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
@@ -65,15 +68,6 @@ db.setup({
                 key = "n",
                 key_hl = keymap_color,
                 action = "DashboardNewFile",
-            },
-            {
-                icon = "  ",
-                icon_hl = icon_color,
-                desc = "Load Last Session             ",
-                desc_hl = description_color,
-                key = "L",
-                key_hl = keymap_color,
-                action = "SessionLoad",
             },
             {
                 icon = "  ",
