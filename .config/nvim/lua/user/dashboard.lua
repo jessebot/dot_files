@@ -1,7 +1,7 @@
 local db = require("dashboard")
 
 -- ⣿ ⣿  c o l o r s  ⣿ ⣿ --
-local icon_color = 'Number'
+local icon_color = 'Keyword'
 local keymap_color = 'Function'
 local description_color = 'String'
 
@@ -39,6 +39,15 @@ db.setup({
         },
         center = {
             {
+                icon = "󱚉  ",
+                icon_hl = icon_color,
+                desc = "Recents                       ",
+                desc_hl = description_color,
+                key = "r",
+                key_hl = keymap_color,
+                action = "Telescope oldfiles",
+            },
+            {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Find File                     ",
@@ -48,15 +57,6 @@ db.setup({
                 action = "Telescope find_files",
             },
 
-            {
-                icon = "  ",
-                icon_hl = icon_color,
-                desc = "Recents                       ",
-                desc_hl = description_color,
-                key = "r",
-                key_hl = keymap_color,
-                action = "Telescope oldfiles",
-            },
             {
                 icon = "  ",
                 icon_hl = icon_color,
