@@ -26,14 +26,13 @@ return require('packer').startup(function(use)
     -- startup screen for neovim
     use {'glepnir/dashboard-nvim'}
 
-    -- quick session manager
-    use({'glepnir/dbsession.nvim', event = 'BufRead', 
+    -- quick session manager (requires :PackerCompile)
+    use({'glepnir/dbsession.nvim', event = 'BufRead',
          config = function() require('dbsession').setup({}) end
     })
 
     -- cute halloween dashboard for neovim start screen :3
-    -- not sure why this doesn't work, so it's commented out
-    -- use 'folke/drop.nvim'
+    -- use {'folke/drop.nvim'}
 
     -- this is a modern fuzzy searcher
     use {'liuchengxu/vim-clap'}
@@ -67,6 +66,9 @@ return require('packer').startup(function(use)
 
     -- syntax highlighting for neovim
     use {'nvim-treesitter/nvim-treesitter'}
+    -- I have this mostly for the :TSHighlightCapturesUnderCursor command
+    -- https://github.com/nvim-treesitter/playground/pull/9
+    use {'nvim-treesitter/playground'}
 
     -- terraform linter -- 'hashivim/vim-terraform'
     use {'hashivim/vim-terraform'}
