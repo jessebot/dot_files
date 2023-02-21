@@ -107,6 +107,11 @@ _G.packer_plugins = {
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/mini.map",
     url = "https://github.com/echasnovski/mini.map"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -126,6 +131,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,

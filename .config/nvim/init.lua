@@ -36,7 +36,8 @@ vim.cmd.source("~/.config/nvim/packerinit.vim")
 vim.cmd.colorscheme('spacechalk')
 vim.g.colors_name = 'spacechalk'
 
--- --------- these are plugin configs for plugins imported by packer ---------
+-- --- these are plugin configs for plugins imported by packer ---
+require('user.mini-map')
 require('user.nvim-colorizer')
 require('user.nvim-tree')
 require('user.tree-sitter')
