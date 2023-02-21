@@ -23,6 +23,9 @@ return require('packer').startup(function(use)
     -- preferred colorscheme right now
     use {'space-chalk/spacechalk.vim'}
 
+    -- this is for highlighting hex colors for colorscheme editing
+    use {'norcalli/nvim-colorizer.lua'}
+
     -- startup screen for neovim
     use {'glepnir/dashboard-nvim'}
 
