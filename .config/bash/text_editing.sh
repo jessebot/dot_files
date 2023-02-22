@@ -16,6 +16,8 @@ fi
 
 # always use nvim (or vim) instead of vi
 alias vi=$EDITOR
+# use nvim instead of vim when available
+alias vim=$EDITOR
 
 # make all colors work by default
 export TERM=xterm-256color
