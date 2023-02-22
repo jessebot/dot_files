@@ -15,8 +15,8 @@ vim.g.airline_skip_empty_sections = 1
 vim.cmd [[let g:airline#extensions#ale#enabled = 1]]
 
 -- changing separators to match personal powerline for shell
-vim.g.airline_left_sep = ' '
-vim.g.airline_right_sep = ''
+vim.g.airline_left_sep = ''
+vim.g.airline_right_sep = ''
 
 -- this is a smaller more consise final airline segment
 vim.cmd [[
