@@ -350,6 +350,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - turning off mouse scrolling
   - enabling line numbers
   - adding a cursorline
+  - case insensitive searches
   - setting column 80 to be a different color for tidy code
   - enabling gui colors so you aren't limited to like 8 colors
   - uses the [spacechalk] colorscheme
