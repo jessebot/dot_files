@@ -78,7 +78,7 @@ These directories/files are installed to your home directory and follow the [XDG
   sets up [iterm2] shell stuff
 
   #### [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
-  sets either [neovim] or [vim] as your text editor
+  sets [neovim] as default text editor, or [vim] if neovim is not present
 
   #### [`~/.config/bash/k8s.sh`](.config/bash/k8s.sh)
   kubernetes defaults:
@@ -583,7 +583,7 @@ These directories/files are installed to your home directory and follow the [XDG
   Configuration for [vim], a text editor, and it's plugins, installed via
   [vim-plug].
 
-  [`~/.vimrc`](.vimrc) is the main file for the global vim configuration.
+  [`~/.config/vim/vimrc`](.config/vim/vimrc) is the main file for the global vim configuration.
   We set a lot of defaults, including:
   - making vim use the [XDG Base Directory Spec]
   - setting window width to 82 characters
