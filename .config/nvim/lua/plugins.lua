@@ -14,6 +14,9 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 
+    -- floating windows
+    use {"numToStr/FTerm.nvim"}
+
     -- Packer can manage itself
     use {'wbthomason/packer.nvim'}
 
