@@ -80,7 +80,7 @@ return require('packer').startup(function(use)
     use {'hashivim/vim-terraform'}
 
     -- bash tab completion -- 'WolfgangMehner/bash-support'
-    use {'WolfgangMehner/bash-support'}
+    -- use {'WolfgangMehner/bash-support'}
 
     -- yaml syntax highlighting better -- 'stephpy/vim-yaml'
     use {'stephpy/vim-yaml'}

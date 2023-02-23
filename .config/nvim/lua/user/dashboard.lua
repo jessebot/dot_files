@@ -1,3 +1,6 @@
+-- do not try to indent the starting dashboard
+vim.g.indentLine_fileTypeExclude = [['dashboard']]
+
 local db = require("dashboard")
 
 -- ⣿ ⣿  c o l o r s  ⣿ ⣿ --

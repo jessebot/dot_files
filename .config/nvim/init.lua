@@ -25,8 +25,8 @@ vim.opt.colorcolumn = '80'
 -- vim.opt.termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- do not try to indent the starting dashboard
-vim.g.indentLine_fileTypeExclude = [['dashboard']]
+-- make searching case insensitive
+vim.opt.ignorecase = true
 
 -- both of these are required to make packer, our plugin manager, work
 require('plugins')
