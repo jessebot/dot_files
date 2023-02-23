@@ -38,11 +38,13 @@ vim.g.colors_name = 'spacechalk'
 
 -- --- these are plugin configs for plugins imported by packer ---
 require('user.fterm')
-require('user.mini-map')
-require('user.nvim-colorizer')
+-- require('user.mini-map')
+-- require('user.nvim-colorizer')
 require('user.nvim-tree')
 require('user.tree-sitter')
 require('user.ale')
 require('user.airline')
 require('user.dashboard')
 require('user.folding')
+-- tab completion for coc - conquer of completion
+vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")

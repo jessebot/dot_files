@@ -4,7 +4,8 @@ local ensure_packer = function()
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
+    -- I don't know why treesitter fails here :shrug:
+    vim.cmd("packadd packer.nvim")
     return true
   end
   return false
@@ -14,34 +15,37 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 
-    -- floating windows
-    use {"numToStr/FTerm.nvim"}
-
     -- Packer can manage itself
     use {'wbthomason/packer.nvim'}
-
-    -- adds a pretty status line -- 'vim-airline/vim-airline'
-    use {'vim-airline/vim-airline'}
 
     -- preferred colorscheme right now
     use {'space-chalk/spacechalk.vim'}
 
-    -- this is for highlighting hex colors for colorscheme editing
-    use {'norcalli/nvim-colorizer.lua'}
+    -- adds a pretty status line -- 'vim-airline/vim-airline'
+    use {'vim-airline/vim-airline'}
 
     -- startup screen for neovim
     use {'glepnir/dashboard-nvim'}
+
+    -- cute halloween dashboard for neovim start screen :3
+    -- use {'folke/drop.nvim'}
 
     -- quick session manager (requires :PackerCompile)
     use({'glepnir/dbsession.nvim', event = 'BufRead',
          config = function() require('dbsession').setup({}) end
     })
 
-    -- cute halloween dashboard for neovim start screen :3
-    -- use {'folke/drop.nvim'}
-
     -- this is a modern fuzzy searcher
     use {'liuchengxu/vim-clap'}
+
+    -- ------------------ floating window plugins --------------------------
+    -- terminal window
+    use {"numToStr/FTerm.nvim"}
+
+    -- floating window for k9s (k8s dashboard TUI)
+    use {'hsalem7/nvim-k8s',
+         commit = 'f216b1736e6fb41fdbca1af684d89551151b7e31'}
+
 
     -- ------------ telescope: extendable fuzzy finder over lists ------------
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -57,15 +61,20 @@ return require('packer').startup(function(use)
     use {'airblade/vim-gitgutter'}
 
     -- ----------- nvim new nerdtree replacement needs this :) ---------------
-    use {'nvim-tree/nvim-tree.lua',
-         requires = {'nvim-tree/nvim-web-devicons'},
-         tag = 'nightly'}
+    use {
+	    'nvim-tree/nvim-tree.lua',
+	    requires = {'nvim-tree/nvim-web-devicons'},
+	    tag = 'nightly'
+    }
 
     -- ------- a mini map of where you are in your code -----------------
     -- not working for some reason?
     use { 'echasnovski/mini.map', branch = 'main' }
 
     -- -------------------- Language Specific Stuff ------------------------
+
+    -- for highlighting hex colors for colorscheme editing
+    use {'norcalli/nvim-colorizer.lua'}
 
     -- general linter - will use common linters and highlight broken code
     use {'dense-analysis/ale'}
@@ -79,14 +88,14 @@ return require('packer').startup(function(use)
     -- terraform linter -- 'hashivim/vim-terraform'
     use {'hashivim/vim-terraform'}
 
-    -- bash tab completion -- 'WolfgangMehner/bash-support'
+    -- bash tab completion -- 'WolfgangMehner/bash-support' -- coc may replace?
     -- use {'WolfgangMehner/bash-support'}
 
-    -- yaml syntax highlighting better -- 'stephpy/vim-yaml'
-    use {'stephpy/vim-yaml'}
+    -- code completion
+    use {'neoclide/coc.nvim', branch = 'release'}
 
-    -- helpful for python highlighting, fork of numirias/semshi
-    -- use {'wookayin/semshi'}
+    -- yaml syntax highlighting better -- 'stephpy/vim-yaml' treesitter may replace?
+    -- use {'stephpy/vim-yaml'}
 
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
