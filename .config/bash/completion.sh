@@ -33,6 +33,15 @@ complete -C /usr/local/bin/terraform terraform
 # This loads nvm (for node.js) bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ gcloud ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# enables shell command completion for gcloud.
+if [ -f '/Users/jesse/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then
+	. '/Users/jesse/.local/bin/google-cloud-sdk/completion.bash.inc'
+fi
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ jump ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # https://github.com/gsamokovarov/jump
-# jump remembers directories overtime and helps with auto-completion
+# remembers directories overtime and helps with auto-completion
 eval "$(jump shell bash)"
