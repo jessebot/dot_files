@@ -46,6 +46,8 @@ return require('packer').startup(function(use)
     use {'hsalem7/nvim-k8s',
          commit = 'f216b1736e6fb41fdbca1af684d89551151b7e31'}
 
+    -- this is more stuff for floating windows
+    use {'MunifTanjim/nui.nvim'}
 
     -- ------------ telescope: extendable fuzzy finder over lists ------------
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',

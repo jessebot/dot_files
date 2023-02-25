@@ -70,7 +70,7 @@ db.setup({
                 desc_hl = description_color,
                 key = "n",
                 key_hl = keymap_color,
-                action = "DashboardNewFile",
+                action = "lua dashNewFile()",
             },
             {
                 icon = "  ",
@@ -97,20 +97,38 @@ db.setup({
     }
 })
 
-vim.api.nvim_create_autocmd('Filetype', {
-    pattern = 'dashboard',
-    group = vim.api.nvim_create_augroup('Dashboard_au', { clear = true }),
-    callback = function()
-        vim.cmd [[
-            setlocal buftype=nofile
-            setlocal nonumber norelativenumber nocursorline noruler
-            nnoremap <buffer> f <cmd>Telescope find_files<CR>
-            nnoremap <buffer> r <cmd>Telescope oldfiles<CR>
-            nnoremap <buffer> n <cmd>DashboardNewFile<CR>
-            nnoremap <buffer> <leader>en <cmd>DashboardNewFile<CR>
-            nnoremap <buffer> L <cmd>SessionLoad<CR>
-            nnoremap <buffer> u <cmd>PackerUpdate<CR>
-            nnoremap <buffer> q <cmd>exit<CR>
-        ]]
-    end
-})
+-- this is for a floating window prompt for a new file
+local Input = require('nui.input')
+local event = require('nui.utils.autocmd').event
+
+_G.dashNewFile = function()
+   local input= Input({
+    position = '50%',
+    size = {
+      width = 40,
+    },
+    border = {
+      style = 'rounded',
+      text = {
+        top = ' Create a new file ',
+        top_align = 'center',
+      },
+      padding = { 0, 1 },
+    },
+    relative = 'editor',
+    win_options = {
+      winhighlight = 'Normal:String,FloatBorder:VertSplit',
+    },
+  }, {
+    prompt = '',
+    default_value = '',
+    on_close = function()
+      require('notify').notify('New file was not created!', 'error')
+    end,
+    on_submit = function(value)
+      vim.fn.execute('edit ' .. value)
+    end,
+  })
+  input:on(event.BufLeave, function() input:unmount() end)
+  input:mount()
+end
