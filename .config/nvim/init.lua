@@ -36,15 +36,26 @@ vim.cmd.source("~/.config/nvim/packerinit.vim")
 vim.cmd.colorscheme('spacechalk')
 vim.g.colors_name = 'spacechalk'
 
+-- tab completion for coc - conquer of completion
+vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")
+
 -- --- these are plugin configs for plugins imported by packer ---
 require('user.fterm')
--- require('user.mini-map')
--- require('user.nvim-colorizer')
+-- require('mini.map').setup()
+require('user.nvim-colorizer')
 require('user.nvim-tree')
 require('user.tree-sitter')
 require('user.ale')
+require("scrollbar").setup({
+	set_highlights = false,
+	handlers = {
+	    cursor = true,
+	    diagnostic = true,
+	    handle = true,
+	    -- search = false, -- Requires hlslens
+	    ale = true,
+        },
+})
 require('user.airline')
 require('user.dashboard')
 require('user.folding')
--- tab completion for coc - conquer of completion
-vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")

@@ -4,7 +4,6 @@ local ensure_packer = function()
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    -- I don't know why treesitter fails here :shrug:
     vim.cmd("packadd packer.nvim")
     return true
   end
@@ -15,30 +14,27 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 
-    -- Packer can manage itself
+    -- Packer, our neovim plugin manager, can manage itself
     use {'wbthomason/packer.nvim'}
 
-    -- preferred colorscheme right now
-    use {'space-chalk/spacechalk.vim'}
-
-    -- adds a pretty status line -- 'vim-airline/vim-airline'
-    use {'vim-airline/vim-airline'}
-
-    -- startup screen for neovim
+    -- -------------------- startup screen for neovim ------------------------
     use {'glepnir/dashboard-nvim'}
-
-    -- cute halloween dashboard for neovim start screen :3
-    -- use {'folke/drop.nvim'}
 
     -- quick session manager (requires :PackerCompile)
     use({'glepnir/dbsession.nvim', event = 'BufRead',
          config = function() require('dbsession').setup({}) end
     })
 
-    -- this is a modern fuzzy searcher
-    use {'liuchengxu/vim-clap'}
+    -- cute halloween dashboard for neovim start screen :3
+    -- use {'folke/drop.nvim'}
 
-    -- ------------------ floating window plugins --------------------------
+
+    -- -------------------------- status line --------------------------------
+    -- may replace soon, because it is very crowded
+    use {'vim-airline/vim-airline'}
+
+
+    -- -------------------- floating window plugins --------------------------
     -- terminal window
     use {"numToStr/FTerm.nvim"}
 
@@ -49,10 +45,17 @@ return require('packer').startup(function(use)
     -- this is more stuff for floating windows
     use {'MunifTanjim/nui.nvim'}
 
-    -- ------------ telescope: extendable fuzzy finder over lists ------------
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
-         requires = {{'nvim-lua/plenary.nvim'} }
+
+    -- ------------------------- file directory tree -------------------------
+    -- nvim new nerdtree replacement
+    use {
+	    'nvim-tree/nvim-tree.lua',
+	    requires = {'nvim-tree/nvim-web-devicons'},
+	    tag = 'nightly'
     }
+
+    -- ---------------- scroll bar for the right hand side -------------------
+    use {"petertriho/nvim-scrollbar"}
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
@@ -62,48 +65,57 @@ return require('packer').startup(function(use)
     -- 'airblade/vim-gitgutter'
     use {'airblade/vim-gitgutter'}
 
-    -- ----------- nvim new nerdtree replacement needs this :) ---------------
-    use {
-	    'nvim-tree/nvim-tree.lua',
-	    requires = {'nvim-tree/nvim-web-devicons'},
-	    tag = 'nightly'
-    }
+    -- ---------------- syntax highlighting installer ------------------------
+    -- preferred colorscheme right now
+    use {'space-chalk/spacechalk.vim'}
 
-    -- ------- a mini map of where you are in your code -----------------
-    -- not working for some reason?
-    use { 'echasnovski/mini.map', branch = 'main' }
-
-    -- -------------------- Language Specific Stuff ------------------------
-
-    -- for highlighting hex colors for colorscheme editing
-    use {'norcalli/nvim-colorizer.lua'}
-
-    -- general linter - will use common linters and highlight broken code
-    use {'dense-analysis/ale'}
-
-    -- syntax highlighting for neovim
     use {'nvim-treesitter/nvim-treesitter'}
     -- I have this mostly for the :TSHighlightCapturesUnderCursor command
     -- https://github.com/nvim-treesitter/playground/pull/9
     use {'nvim-treesitter/playground'}
 
-    -- terraform linter -- 'hashivim/vim-terraform'
-    use {'hashivim/vim-terraform'}
+    -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
+    use {'junegunn/limelight.vim'}
 
-    -- bash tab completion -- 'WolfgangMehner/bash-support' -- coc may replace?
-    -- use {'WolfgangMehner/bash-support'}
+    -- ------------------------- general linter ------------------------------
+    -- will use common linters and highlight broken code
+    use {'dense-analysis/ale'}
+
+    -- --------------------- completion and searching ------------------------
+    -- telescope: extendable fuzzy finder over lists
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
+         requires = {{'nvim-lua/plenary.nvim'} }
+    }
+
+    -- this is a modern fuzzy searcher; not sure if it's really useful in neovim
+    use {'liuchengxu/vim-clap'}
 
     -- code completion
     use {'neoclide/coc.nvim', branch = 'release'}
 
-    -- yaml syntax highlighting better -- 'stephpy/vim-yaml' treesitter may replace?
-    -- use {'stephpy/vim-yaml'}
+    -- --------------------- Language Specific Stuff -------------------------
 
-    -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
-    use {'junegunn/limelight.vim'}
+    -- for highlighting hex colors (in vim, CSS, JS, HTML)
+    use {'norcalli/nvim-colorizer.lua'}
+
+    -- bash tab completion -- 'WolfgangMehner/bash-support' -- coc may replace?
+    -- use {'WolfgangMehner/bash-support'}
 
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
     use {'mtdl9/vim-log-highlighting'}
+
+    -- lua folding
+    use{'anuvyklack/pretty-fold.nvim',
+	config = function()
+		require('pretty-fold').setup()
+	end
+    }
+
+    -- terraform commands for neovim :)
+    use {'hashivim/vim-terraform'}
+
+    -- yaml syntax highlighting better -- 'stephpy/vim-yaml' treesitter may replace?
+    -- use {'stephpy/vim-yaml'}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

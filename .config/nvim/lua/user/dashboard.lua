@@ -125,7 +125,7 @@ _G.dashNewFile = function()
     },
     relative = 'editor',
     win_options = {
-      winhighlight = 'Normal:String,FloatBorder:VertSplit',
+      winhighlight = 'Normal:Normal,FloatBorder:LineNr',
     },
   },
   -- prompt for user
