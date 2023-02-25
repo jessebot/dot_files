@@ -44,13 +44,21 @@ db.setup({
           '                                                  ',
         },
         center = {
+	    -- list of configurable dashboard entries
             {
+		-- the icon for the list entry
                 icon = "󱚉  ",
+		-- the highlight group to use for the icon
                 icon_hl = icon_color,
+		-- the description of the entry to the right of the icon
                 desc = "Recents                       ",
+		-- the highlight group to use for the desctiption text
                 desc_hl = description_color,
+		-- the shortcut key you can press to run this entry
                 key = "r",
+		-- the highlight group to use for the shortcut key help text
                 key_hl = keymap_color,
+		-- the command to run for this entry
                 action = "Telescope oldfiles",
             },
             {
@@ -62,7 +70,6 @@ db.setup({
                 key_hl = keymap_color,
                 action = "Telescope find_files",
             },
-
             {
                 icon = "  ",
                 icon_hl = icon_color,
@@ -79,7 +86,7 @@ db.setup({
                 desc_hl = description_color,
                 key = "u",
                 key_hl = keymap_color,
-                action = "PackerUpdate",
+                action = "PackerSync",
             },
             {
                 icon = "  ",
@@ -107,10 +114,11 @@ _G.dashNewFile = function()
     size = {
       width = 40,
     },
+    -- border map
     border = {
       style = 'rounded',
       text = {
-        top = ' Create a new file ',
+        top = ' Enter name of new file to create ',
         top_align = 'center',
       },
       padding = { 0, 1 },
@@ -119,7 +127,9 @@ _G.dashNewFile = function()
     win_options = {
       winhighlight = 'Normal:String,FloatBorder:VertSplit',
     },
-  }, {
+  },
+  -- prompt for user
+  {
     prompt = '',
     default_value = '',
     on_close = function()
