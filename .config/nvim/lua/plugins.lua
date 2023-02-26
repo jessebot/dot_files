@@ -63,8 +63,8 @@ return require('packer').startup(function(use)
     use {'tpope/vim-fugitive'}
 
     -- puts a git + or - in side line to show git changes in file
-    -- 'airblade/vim-gitgutter'
-    use {'airblade/vim-gitgutter'}
+    -- use {'airblade/vim-gitgutter'}
+    use {'lewis6991/gitsigns.nvim'}
 
     -- ---------------- syntax highlighting installer ------------------------
 

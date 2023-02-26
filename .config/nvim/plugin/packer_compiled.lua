@@ -133,6 +133,11 @@ _G.packer_plugins = {
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/opt/dbsession.nvim",
     url = "https://github.com/glepnir/dbsession.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["limelight.vim"] = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/limelight.vim",
@@ -203,6 +208,11 @@ _G.packer_plugins = {
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["nvim-yati"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-yati",
+    url = "https://github.com/yioneko/nvim-yati"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -237,11 +247,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-log-highlighting"] = {
     loaded = true,

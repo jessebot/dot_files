@@ -10,6 +10,7 @@ require("scrollbar").setup({
         cursor = true,
         diagnostic = true,
         handle = true,
+        gitsigns = true,
         -- search = false, -- Requires hlslens
     },
     marks = {
@@ -30,6 +31,33 @@ require("scrollbar").setup({
             cterm=nil,
             color_nr = nil, -- cterm
             highlight = "DiagnosticVirtualTextWarn",
+        },
+        GitAdd = {
+            text = "┆",
+            priority = 7,
+            gui=nil,
+            color = nil,
+            cterm=nil,
+            color_nr = nil, -- cterm
+            highlight = "GitSignsAdd",
+        },
+        GitChange = {
+            text = "┆",
+            priority = 7,
+            gui=nil,
+            color = nil,
+            cterm=nil,
+            color_nr = nil, -- cterm
+            highlight = "GitSignsChange",
+        },
+        GitDelete = {
+            text = "▁",
+            priority = 7,
+            gui=nil,
+            color = nil,
+            cterm=nil,
+            color_nr = nil, -- cterm
+            highlight = "GitSignsDelete",
         },
     }
 })

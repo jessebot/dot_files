@@ -63,6 +63,7 @@ require('user.airline')
 require('user.nvim-tree')
 
 -- scrollbar on the right side of the screen that also shows errors
+require("user.gitsigns")
 require("user.scrollbar")
 
 -- floating windows
