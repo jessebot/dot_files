@@ -21,7 +21,8 @@ return require('packer').startup(function(use)
     use {'glepnir/dashboard-nvim'}
 
     -- quick session manager (requires :PackerCompile)
-    use({'glepnir/dbsession.nvim', event = 'BufRead',
+    use({'glepnir/dbsession.nvim',
+         event = 'BufRead',
          config = function() require('dbsession').setup({}) end
     })
 
@@ -49,26 +50,13 @@ return require('packer').startup(function(use)
     -- ------------------------- file directory tree -------------------------
     -- nvim new nerdtree replacement
     use {
-	    'nvim-tree/nvim-tree.lua',
-	    requires = {'nvim-tree/nvim-web-devicons'},
-	    tag = 'nightly'
-    }
+        'nvim-tree/nvim-tree.lua',
+        requires = {'nvim-tree/nvim-web-devicons'},
+        tag = 'nightly'
+        }
 
     -- ---------------- scroll bar for the right hand side -------------------
     use {"petertriho/nvim-scrollbar"}
-
-    -- code location at top of window
-    use({
-      "utilyre/barbecue.nvim",
-      tag = "*",
-      requires = {
-        "SmiteshP/nvim-navic",
-      },
-      after = "nvim-web-devicons", -- keep this if you're using NvChad
-      config = function()
-        require("barbecue").setup()
-      end,
-    })
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
@@ -113,36 +101,39 @@ return require('packer').startup(function(use)
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
-         requires = {{'nvim-lua/plenary.nvim'} }
+         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     -- ------------------------- general linter ------------------------------
     -- will use common linters and highlight broken code
-    use {'dense-analysis/ale'}
+    -- being replaced by native lsp 
+    -- use {'dense-analysis/ale'}
 
     -- --------------------- Language Specific Stuff -------------------------
 
     -- for highlighting hex colors (in vim, CSS, JS, HTML)
     use {'norcalli/nvim-colorizer.lua'}
 
-    -- bash tab completion -- 'WolfgangMehner/bash-support' -- coc may replace?
-    -- use {'WolfgangMehner/bash-support'}
-
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
     use {'mtdl9/vim-log-highlighting'}
-
-    -- lua folding
-    -- use{'anuvyklack/pretty-fold.nvim',
-    -- config = function()
-    --	require('pretty-fold').setup()
-    -- end
-    -- }
 
     -- terraform commands for neovim :)
     use {'hashivim/vim-terraform'}
 
-    -- yaml syntax highlighting better -- 'stephpy/vim-yaml' treesitter may replace?
-    -- use {'stephpy/vim-yaml'}
+    -- code location at top of window
+    use({
+      "utilyre/barbecue.nvim",
+      tag = "*",
+      requires = {
+        "SmiteshP/nvim-navic",
+      },
+      config = function()
+        require("barbecue").setup({
+                show_dirname = false,
+                context_follow_icon_color = true
+                })
+      end
+    })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

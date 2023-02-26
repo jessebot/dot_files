@@ -53,9 +53,6 @@ require('user.completion')
 -- folding
 require('user.folding')
 
--- linter/fixer
-require('user.ale')
-
 -- syntax highlgihting for hex codes
 require('user.nvim-colorizer')
 
@@ -66,16 +63,7 @@ require('user.airline')
 require('user.nvim-tree')
 
 -- scrollbar on the right side of the screen that also shows errors
-require("scrollbar").setup({
-    set_highlights = false,
-    handlers = {
-        cursor = true,
-        diagnostic = true,
-        handle = true,
-        -- search = false, -- Requires hlslens
-        ale = true,
-    },
-})
+require("user.scrollbar")
 
 -- floating windows
 require('user.fterm')

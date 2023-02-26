@@ -110,6 +110,9 @@ local event = require('nui.utils.autocmd').event
 
 _G.dashNewFile = function()
    local input= Input({
+   buf_options = {
+    filetype = "dashboardPrompt",
+    },
     position = '50%',
     size = {
       width = 40,
