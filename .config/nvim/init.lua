@@ -16,7 +16,7 @@ vim.opt.mousescroll = 'ver:0,hor:0'
 vim.opt.number = true
 vim.opt.numberwidth = 4
 
--- highlight current line - very useful, shouldn't turn off, you will be lost
+-- highlight current line
 vim.opt.cursorline = true
 
 -- highlighted column 80, only on python files, to keep lines shorter
@@ -28,34 +28,54 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
+-- indentation
+require('user.indent')
+
 -- both of these are required to make packer, our plugin manager, work
 require('plugins')
 vim.cmd.source("~/.config/nvim/packerinit.vim")
 
+-- --------- Plugin configs that have to be called after packer --------------
 -- Colors need to be enabled after the plugins, because the colors are a plugin
 vim.cmd.colorscheme('spacechalk')
 vim.g.colors_name = 'spacechalk'
 
--- tab completion for coc - conquer of completion
-vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")
-
--- --- these are plugin configs for plugins imported by packer ---
-require('user.fterm')
--- require('mini.map').setup()
-require('user.nvim-colorizer')
-require('user.nvim-tree')
-require('user.tree-sitter')
-require('user.ale')
-require("scrollbar").setup({
-	set_highlights = false,
-	handlers = {
-	    cursor = true,
-	    diagnostic = true,
-	    handle = true,
-	    -- search = false, -- Requires hlslens
-	    ale = true,
-        },
-})
-require('user.airline')
+-- starting page for neovim
 require('user.dashboard')
+
+-- Language Server configs and other syntax checking and highlight tools
+require('user.lsp-configs')
+require('user.tree-sitter')
+
+-- tab completion for coc - conquer of completion; might not need this after lsp-configs...
+-- vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")
+
+-- folding
 require('user.folding')
+
+-- linter/fixer
+require('user.ale')
+
+-- syntax highlgihting for hex codes
+require('user.nvim-colorizer')
+
+-- status line for vim; may change to galazyline or lualine; need to latest airline features
+require('user.airline')
+
+-- directory tree for neovim; can option with :NvimTreeToggle
+require('user.nvim-tree')
+
+-- scrollbar on the right side of the screen that also shows errors
+require("scrollbar").setup({
+    set_highlights = false,
+    handlers = {
+        cursor = true,
+        diagnostic = true,
+        handle = true,
+        -- search = false, -- Requires hlslens
+        ale = true,
+    },
+})
+
+-- floating windows
+require('user.fterm')

@@ -42,6 +42,7 @@ cron
 .thumbnails
 ApkProjects
 Public
+.config/nvim/lua/.luarc.json
 
 # this is just where I keep git cloned repos for things
 repos

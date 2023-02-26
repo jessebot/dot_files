@@ -57,6 +57,19 @@ return require('packer').startup(function(use)
     -- ---------------- scroll bar for the right hand side -------------------
     use {"petertriho/nvim-scrollbar"}
 
+    -- code location at top of window
+    use({
+      "utilyre/barbecue.nvim",
+      tag = "*",
+      requires = {
+        "SmiteshP/nvim-navic",
+      },
+      after = "nvim-web-devicons", -- keep this if you're using NvChad
+      config = function()
+        require("barbecue").setup()
+      end,
+    })
+
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
     use {'tpope/vim-fugitive'}
@@ -77,21 +90,28 @@ return require('packer').startup(function(use)
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
 
-    -- ------------------------- general linter ------------------------------
-    -- will use common linters and highlight broken code
-    use {'dense-analysis/ale'}
+    -- ---------------- Language Server Protocol Plugins ---------------------
 
-    -- --------------------- completion and searching ------------------------
+    -- this helps to configure the built-in language server protocol for nvim
+    use {'neovim/nvim-lspconfig'}
+    use {'williamboman/mason.nvim'}
+    use {'williamboman/mason-lspconfig.nvim'}
+
+    -- code completion
+    -- use {'neoclide/coc.nvim', branch = 'release'}
+
+    -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
          requires = {{'nvim-lua/plenary.nvim'} }
     }
 
-    -- this is a modern fuzzy searcher; not sure if it's really useful in neovim
+    -- modern fuzzy searcher; not sure if it's really useful in neovim 🤷
     use {'liuchengxu/vim-clap'}
 
-    -- code completion
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- ------------------------- general linter ------------------------------
+    -- will use common linters and highlight broken code
+    use {'dense-analysis/ale'}
 
     -- --------------------- Language Specific Stuff -------------------------
 
@@ -105,11 +125,11 @@ return require('packer').startup(function(use)
     use {'mtdl9/vim-log-highlighting'}
 
     -- lua folding
-    use{'anuvyklack/pretty-fold.nvim',
-	config = function()
-		require('pretty-fold').setup()
-	end
-    }
+    -- use{'anuvyklack/pretty-fold.nvim',
+    -- config = function()
+    --	require('pretty-fold').setup()
+    -- end
+    -- }
 
     -- terraform commands for neovim :)
     use {'hashivim/vim-terraform'}
