@@ -92,6 +92,41 @@ _G.packer_plugins = {
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-emoji"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-emoji",
+    url = "https://github.com/hrsh7th/cmp-emoji"
+  },
+  ["cmp-nerdfont"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-nerdfont",
+    url = "https://github.com/chrisgrieser/cmp-nerdfont"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -124,6 +159,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -180,12 +220,6 @@ _G.packer_plugins = {
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["pretty-fold.nvim"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16pretty-fold\frequire\0" },
-    loaded = true,
-    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/anuvyklack/pretty-fold.nvim"
-  },
   ["spacechalk.vim"] = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/spacechalk.vim",
@@ -200,11 +234,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-clap"] = {
-    loaded = true,
-    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/vim-clap",
-    url = "https://github.com/liuchengxu/vim-clap"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -229,10 +258,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: pretty-fold.nvim
-time([[Config for pretty-fold.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
-time([[Config for pretty-fold.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-web-devicons ]]

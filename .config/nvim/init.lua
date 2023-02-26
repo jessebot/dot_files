@@ -47,8 +47,8 @@ require('user.dashboard')
 require('user.lsp-configs')
 require('user.tree-sitter')
 
--- tab completion for coc - conquer of completion; might not need this after lsp-configs...
--- vim.cmd.source("~/.config/nvim/vim/coc-nvim.vim")
+-- completion from nvim-cmp
+require('user.completion')
 
 -- folding
 require('user.folding')

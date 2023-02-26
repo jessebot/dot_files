@@ -97,17 +97,24 @@ return require('packer').startup(function(use)
     use {'williamboman/mason.nvim'}
     use {'williamboman/mason-lspconfig.nvim'}
 
-    -- code completion
-    -- use {'neoclide/coc.nvim', branch = 'release'}
+    -- --------- completion for the above language servers and more ----------
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-buffer'}
+    use {'hrsh7th/cmp-path'}
+    use {'hrsh7th/cmp-cmdline'}
+    -- emojis and nerfont icon completions
+    use {'hrsh7th/cmp-emoji'}
+    use {'chrisgrieser/cmp-nerdfont'}
+    -- nvim lua api completion
+    use {'hrsh7th/cmp-nvim-lua'}
+    -- our preferred neovim autocompletion plugin
+    use {'hrsh7th/nvim-cmp'}
 
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
          requires = {{'nvim-lua/plenary.nvim'} }
     }
-
-    -- modern fuzzy searcher; not sure if it's really useful in neovim 🤷
-    use {'liuchengxu/vim-clap'}
 
     -- ------------------------- general linter ------------------------------
     -- will use common linters and highlight broken code
