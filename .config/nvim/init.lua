@@ -43,12 +43,12 @@ vim.g.colors_name = 'spacechalk'
 -- starting page for neovim
 require('user.dashboard')
 
+-- completion from nvim-cmp
+require('user.completion')
+
 -- Language Server configs and other syntax checking and highlight tools
 require('user.lsp-configs')
 require('user.tree-sitter')
-
--- completion from nvim-cmp
-require('user.completion')
 
 -- folding
 require('user.folding')

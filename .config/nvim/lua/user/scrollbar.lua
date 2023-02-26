@@ -14,7 +14,7 @@ require("scrollbar").setup({
     },
     marks = {
         Error = {
-            text = { "", "" },
+            text = { "!", "!" },
             priority = 2,
             gui=nil,
             color = nil,
@@ -23,7 +23,7 @@ require("scrollbar").setup({
             highlight = "DiagnosticVirtualTextError",
         },
         Warn = {
-            text = { "裂", "" },
+            text = { "", "" },
             priority = 3,
             gui=nil,
             color = nil,

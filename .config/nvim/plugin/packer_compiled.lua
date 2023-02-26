@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/numToStr/FTerm.nvim"
   },
   ["barbecue.nvim"] = {
-    config = { "\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\17show_dirname\1\30context_follow_icon_color\2\nsetup\rbarbecue\frequire\0" },
+    config = { "\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\30context_follow_icon_color\2\17show_dirname\1\nsetup\rbarbecue\frequire\0" },
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
@@ -152,6 +152,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/Users/jhitch/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -253,7 +258,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: barbecue.nvim
 time([[Config for barbecue.nvim]], true)
-try_loadstring("\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\17show_dirname\1\30context_follow_icon_color\2\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
+try_loadstring("\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\30context_follow_icon_color\2\17show_dirname\1\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
 time([[Config for barbecue.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

@@ -67,29 +67,36 @@ return require('packer').startup(function(use)
     use {'airblade/vim-gitgutter'}
 
     -- ---------------- syntax highlighting installer ------------------------
+
     -- preferred colorscheme right now
     use {'space-chalk/spacechalk.vim'}
+    -- backup colorscheme in case everything is broken
+    -- use {'folke/tokyonight.nvim'}
 
     use {'nvim-treesitter/nvim-treesitter'}
     -- I have this mostly for the :TSHighlightCapturesUnderCursor command
     -- https://github.com/nvim-treesitter/playground/pull/9
     use {'nvim-treesitter/playground'}
 
+    -- because indenting is still broken in treesitter for python
+    -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
+    use({"yioneko/nvim-yati",
+         tag = "*",
+         requires = "nvim-treesitter/nvim-treesitter"
+         })
+
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
 
     -- ---------------- Language Server Protocol Plugins ---------------------
-
-    -- this helps to configure the built-in language server protocol for nvim
-    use {'neovim/nvim-lspconfig'}
-    use {'williamboman/mason.nvim'}
-    use {'williamboman/mason-lspconfig.nvim'}
-
+    --
     -- --------- completion for the above language servers and more ----------
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
     use {'hrsh7th/cmp-cmdline'}
+    -- automatically type the closing }]"
+    use {'windwp/nvim-autopairs'}
     -- emojis and nerfont icon completions
     use {'hrsh7th/cmp-emoji'}
     use {'chrisgrieser/cmp-nerdfont'}
@@ -98,16 +105,16 @@ return require('packer').startup(function(use)
     -- our preferred neovim autocompletion plugin
     use {'hrsh7th/nvim-cmp'}
 
+    -- this helps to configure the built-in language server protocol for nvim
+    use {'neovim/nvim-lspconfig'}
+    use {'williamboman/mason.nvim'}
+    use {'williamboman/mason-lspconfig.nvim'}
+
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
          requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    -- ------------------------- general linter ------------------------------
-    -- will use common linters and highlight broken code
-    -- being replaced by native lsp 
-    -- use {'dense-analysis/ale'}
 
     -- --------------------- Language Specific Stuff -------------------------
 
