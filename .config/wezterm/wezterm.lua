@@ -9,6 +9,14 @@ return {
        hide_tab_bar_if_only_one_tab = true,
        window_decorations = "RESIZE",
        window_background_opacity = 0.95,
+       keys = {
+        -- This will create a new split and run your default program inside it
+         {
+           key = 's',
+           mods = 'CTRL',
+           action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+         },
+       },
        -- default terminal colors
        colors = {
            background = '#232336',
@@ -33,7 +41,7 @@ return {
            scrollbar_thumb = '#222222',
 
            -- The color of the split lines between panes
-           split = '#444444',
+           split = '#6eb3ec',
            ansi = {
                '#282727',
                '#fe8ea2',
