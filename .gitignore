@@ -7,6 +7,9 @@
 .config/gh/hosts.yml
 .config/git/personal
 .config/neomutt/keys
+# neovim packer generates this HERE for some reason
+.config/nvim/plugin/packer_compiled.lua
+
 # unsure if I can make this one go anywhere
 .ssh
 
@@ -56,5 +59,7 @@ Desktop
 Documents
 Downloads
 Library
+
 # iterm2 is weird 🤦
 !Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json
+
