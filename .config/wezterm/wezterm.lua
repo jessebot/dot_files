@@ -8,8 +8,10 @@ return {
        initial_cols = 162,
        initial_rows = 50,
 
+       -- font stuff
        -- don't complain if an icon or character is missing
        warn_about_missing_glyphs = false,
+       font = wezterm.font_with_fallback { 'mononoki', 'Hack Nerd Font' },
        font_size = 15,
 
        -- window look and feel
