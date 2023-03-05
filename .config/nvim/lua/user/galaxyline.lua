@@ -1,29 +1,13 @@
+-- ------------------- from airline ---------------------------
+-- changing separators to match personal powerline for shell
+-- vim.g.airline_left_sep = ''
+-- vim.g.airline_right_sep = ''
+-- vim.g.airline_section_z = ' %l (%{LinePercent()})  %v'
+
+
 local gl = require('galaxyline')
 local gls = gl.section
 gl.short_line_list = {'LuaTree','vista','dbui'}
-
---  #E8FBFF bright white
---  #bdd8ff off blueish white
---  #ffaff9 light pink
---  #f289f9 neon magenta
---  #f2748a pale dark red
---  #ff8d87 soft redish orange
---  #fdcd36 light orange
---  #f7fb53 bright yellow
---  #f6f76a soft yellow
---  #C1FF87 soft green
---  #a8fd57 lime green
---  #5ac4b9 dark teal? (this color feels weird, maybe change it)
---  #6DF2E5 cyan
---  #5cc9fd blue
---  #5f87ff cornflower blue
---  #a3a8f8 medium cornflowerblue
---  #232336 blueish black
---  #1d2652 navy blue
---  #2569aa darker blue
---  #585858 gray
---  #3E3E3E darker gray
---  #323232 grayish black
 
 local colors = {
   bg = '#232336',
@@ -63,15 +47,16 @@ end
 --   "r?": "CNFIRM",
 --   "!":  "!SHELL",
 --   "t":  "TERM  "
+
 -- these are the colors for the first mode segment
 local mode_colors = {n = colors.cornflowerblue,
-		   i = colors.green,
-		   c = colors.blue,
-		   v = colors.magenta,
-		   V = colors.pink,
-                   R = colors.orange,
-                   ['!'] = colors.orange,
-		   [''] = colors.magenta}
+      		     i = colors.green,
+		     c = colors.blue,
+		     v = colors.magenta,
+		     V = colors.pink,
+                     R = colors.orange,
+                     ['!'] = colors.orange,
+		     [''] = colors.magenta}
 
 gls.left[1] = {
   ViMode = {

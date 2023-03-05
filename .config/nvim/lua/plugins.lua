@@ -20,20 +20,20 @@ return require('packer').startup(function(use)
     -- -------------------- startup screen for neovim ------------------------
     use {'glepnir/dashboard-nvim'}
 
-    -- quick session manager (requires :PackerCompile)
-    use({'glepnir/dbsession.nvim',
-         event = 'BufRead',
-         config = function() require('dbsession').setup({}) end
-    })
+    -- quick session manager (requires :PackerCompile) I don't use this a lot
+    --use({'glepnir/dbsession.nvim',
+    --     event = 'BufRead',
+    --     config = function() require('dbsession').setup({}) end
+    --})
 
     -- cute halloween dashboard for neovim start screen :3
     -- use {'folke/drop.nvim'}
 
-
     -- -------------------------- status line --------------------------------
     -- may replace soon, because it is very crowded
-    use {'vim-airline/vim-airline'}
-
+    use {'nvim-lualine/lualine.nvim',
+         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     -- -------------------- floating window plugins --------------------------
     -- terminal window
@@ -43,17 +43,15 @@ return require('packer').startup(function(use)
     use {'hsalem7/nvim-k8s',
          commit = 'f216b1736e6fb41fdbca1af684d89551151b7e31'}
 
-    -- this is more stuff for floating windows
+    -- NeoVim UI toolkit that supports floating windows 
     use {'MunifTanjim/nui.nvim'}
-
 
     -- ------------------------- file directory tree -------------------------
     -- nvim new nerdtree replacement
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {'nvim-tree/nvim-web-devicons'},
-        tag = 'nightly'
-        }
+    use {'nvim-tree/nvim-tree.lua',
+         requires = {'nvim-tree/nvim-web-devicons'},
+         tag = 'nightly'
+    }
 
     -- ---------------- scroll bar for the right hand side -------------------
     use {"petertriho/nvim-scrollbar"}
@@ -63,7 +61,6 @@ return require('packer').startup(function(use)
     use {'tpope/vim-fugitive'}
 
     -- puts a git + or - in side line to show git changes in file
-    -- use {'airblade/vim-gitgutter'}
     use {'lewis6991/gitsigns.nvim'}
 
     -- ---------------- syntax highlighting installer ------------------------
@@ -83,7 +80,7 @@ return require('packer').startup(function(use)
     use({"yioneko/nvim-yati",
          tag = "*",
          requires = "nvim-treesitter/nvim-treesitter"
-         })
+    })
 
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}

@@ -56,8 +56,8 @@ require('user.folding')
 -- syntax highlgihting for hex codes
 require('user.nvim-colorizer')
 
--- status line for vim; may change to galazyline or lualine; need to latest airline features
-require('user.airline')
+-- status line at bottom of window for cool file facts 
+require('user.lualine')
 
 -- directory tree for neovim; can option with :NvimTreeToggle
 require('user.nvim-tree')
