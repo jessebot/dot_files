@@ -33,11 +33,11 @@ require("bufferline").setup({
   },
 
   -- Excludes buffers from the tabline
-  -- exclude_ft = {'javascript'},
+  exclude_ft = {'dashboard', 'TelescopePrompt', 'nvimtree'},
   -- exclude_name = {'package.json'},
 
   -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-  hide = {extensions = true, inactive = true},
+  hide = {extensions = true, inactive = false},
 
   -- Disable highlighting alternate buffers
   highlight_alternate = false,
@@ -62,8 +62,8 @@ require("bufferline").setup({
   -- Configure icons on the bufferline.
   icon_separator_active = '▎',
   icon_separator_inactive = '▎',
-  icon_close_tab = '',
-  icon_close_tab_modified = '●',
+  icon_close_tab = '󰅗',
+  icon_close_tab_modified = '󰽃',
   icon_pinned = '',
 
   -- If true, new buffers will be inserted at the start/end of the list.
