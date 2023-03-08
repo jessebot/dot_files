@@ -11,8 +11,8 @@ return {
        -- font stuff
        -- don't complain if an icon or character is missing
        warn_about_missing_glyphs = false,
-       font = wezterm.font_with_fallback { 'mononoki', 'Hack Nerd Font' },
-       font_size = 15,
+       font = wezterm.font_with_fallback { 'mononoki', 'Symbols Nerd Font Mono' },
+       font_size = 16,
 
        -- window look and feel
        hide_tab_bar_if_only_one_tab = true,
