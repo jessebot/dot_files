@@ -56,6 +56,9 @@ require('user.folding')
 -- syntax highlgihting for hex codes
 require('user.nvim-colorizer')
 
+-- tab line at top of window for tabs when there's more than one tab :)
+require('user.barbar')
+
 -- status line at bottom of window for cool file facts 
 require('user.lualine')
 

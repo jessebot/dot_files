@@ -17,22 +17,18 @@ return require('packer').startup(function(use)
     -- Packer, our neovim plugin manager, can manage itself
     use {'wbthomason/packer.nvim'}
 
+    -- ------------ makes sure the nerdfont icons are available --------------
+    use { 'nvim-tree/nvim-web-devicons' }
+
     -- -------------------- startup screen for neovim ------------------------
     use {'glepnir/dashboard-nvim'}
-
-    -- quick session manager (requires :PackerCompile) I don't use this a lot
-    --use({'glepnir/dbsession.nvim',
-    --     event = 'BufRead',
-    --     config = function() require('dbsession').setup({}) end
-    --})
 
     -- cute halloween dashboard for neovim start screen :3
     -- use {'folke/drop.nvim'}
 
     -- -------------------------- status line --------------------------------
-    -- may replace soon, because it is very crowded
     use {'nvim-lualine/lualine.nvim',
-         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
     -- -------------------- floating window plugins --------------------------
@@ -40,8 +36,7 @@ return require('packer').startup(function(use)
     use {"numToStr/FTerm.nvim"}
 
     -- floating window for k9s (k8s dashboard TUI)
-    use {'hsalem7/nvim-k8s',
-         commit = 'f216b1736e6fb41fdbca1af684d89551151b7e31'}
+    use {'hsalem7/nvim-k8s'}
 
     -- NeoVim UI toolkit that supports floating windows 
     use {'MunifTanjim/nui.nvim'}
@@ -55,6 +50,9 @@ return require('packer').startup(function(use)
 
     -- ---------------- scroll bar for the right hand side -------------------
     use {"petertriho/nvim-scrollbar"}
+
+    -- ------------------------------ tab line -------------------------------
+    use {'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons'}
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
@@ -134,8 +132,37 @@ return require('packer').startup(function(use)
       config = function()
         require("barbecue").setup({
                 show_dirname = false,
-                context_follow_icon_color = true
-                })
+                show_basename = false,
+                context_follow_icon_color = true,
+                kinds = {
+                        File = "",
+                        Module = "",
+                        Namespace = "",
+                        Package = "",
+                        Class = "",
+                        Method = "",
+                        Property = "󰀭",
+                        Field = "🌾",
+                        Constructor = "󰬢",
+                        Enum = "",
+                        Interface = "",
+                        Function = "󰊕",
+                        Variable = "󰫧",
+                        Constant = "",
+                        String = "",
+                        Number = "",
+                        Boolean = "",
+                        Array = "",
+                        Object = "",
+                        Key = "",
+                        Null = "",
+                        EnumMember = "",
+                        Struct = "",
+                        Event = "",
+                        Operator = "",
+                        TypeParameter = "",
+                },
+            })
       end
     })
 
