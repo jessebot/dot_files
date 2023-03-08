@@ -50,11 +50,8 @@ require('user.completion')
 require('user.lsp-configs')
 require('user.tree-sitter')
 
--- folding
+-- folding parameters
 require('user.folding')
-
--- syntax highlgihting for hex codes
-require('user.nvim-colorizer')
 
 -- tab line at top of window for tabs when there's more than one tab :)
 require('user.barbar')
@@ -71,3 +68,6 @@ require("user.scrollbar")
 
 -- floating windows
 require('user.fterm')
+
+-- syntax highlighting for hex codes
+require('user.nvim-colorizer')
