@@ -83,8 +83,13 @@ nvim_lsp.terraformls.setup{
 -- Installation ref: https://github.com/terraform-linters/tflint#installation
 -- nvim_lsp.tflint.setup{}
 
--- toml ( may require cargo install --features lsp --locked taplo-cli)
+-- toml ( may require cargo install --features lsp --locked taplo-cli )
 nvim_lsp.taplo.setup{
+   capabilities = capabilities
+}
+
+-- vim ( may require npm install -g vim-language-server )
+nvim_lsp.vimls.setup{
    capabilities = capabilities
 }
 
