@@ -66,6 +66,11 @@ nvim_lsp.jedi_language_server.setup{
    capabilities = capabilities
 }
 
+-- json
+nvim_lsp.jsonls.setup {
+  capabilities = capabilities,
+}
+
 -- python - ruff linting
 nvim_lsp.ruff_lsp.setup{}
 
@@ -90,6 +95,8 @@ nvim_lsp.yamlls.setup {
     yaml = {
       schemas = {
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.23.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+        ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/*/.github/workflows/*.yml",
+        ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/*/.github/workflows/*.yaml",
             },
     }},
     capabilities = capabilities
