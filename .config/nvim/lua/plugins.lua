@@ -83,6 +83,9 @@ return require('packer').startup(function(use)
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     use {'junegunn/limelight.vim'}
 
+    -- for markdown tables
+    use {'dhruvasagar/vim-table-mode'}
+
     -- ---------------- Language Server Protocol Plugins ---------------------
     --
     -- --------- completion for the above language servers and more ----------
