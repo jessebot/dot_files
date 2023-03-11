@@ -2,7 +2,8 @@
 
 local fterm = require("FTerm")
 
--- --------------- open gitui (must be installed beforehand) -----------------
+-- ---------------------------- open gitui -----------------------------------
+-- gitui must be installed beforehand with brew install gitui
 local gitui = fterm:new({
     ft = 'fterm_gitui',
     cmd = "gitui",
@@ -20,8 +21,9 @@ vim.keymap.set('n', '<A-g>', function()
 end)
 
 
--- --------------- open k9s (must be installed beforehand) -----------------
+-- ------------------------------ open k9s -----------------------------------
 
+-- install k9s beforehand: https://k9scli.io/topics/install/
 local k9s = fterm:new({
     ft = 'fterm_k9s',
     cmd = "k9s",
@@ -31,9 +33,9 @@ local k9s = fterm:new({
     }
 })
 
--- Use this to toggle gitui in a floating terminal
+-- Use this to toggle k9s in a floating terminal
 -- firt arg of 'n' is for normal mode
--- <A-k> are keys: Alt + k (alt is option on macOS)
-vim.keymap.set('n', '<A-k>', function()
+-- <A-b> are keys: Alt + b (alt is option on macOS)
+vim.keymap.set('n', '<A-b>', function()
     k9s:toggle()
 end)
