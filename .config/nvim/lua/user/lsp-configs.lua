@@ -27,6 +27,17 @@ nvim_lsp.bashls.setup{
    capabilities = capabilities
 }
 
+-- docker (may require npm install -g dockerfile-language-server-nodejs)
+nvim_lsp.dockerls.setup{
+   capabilities = capabilities
+}
+
+-- json
+nvim_lsp.jsonls.setup {
+  capabilities = capabilities,
+}
+
+
 -- lua (may require brew install lua-language-server)
 nvim_lsp.lua_ls.setup{
     settings = {
@@ -51,11 +62,6 @@ nvim_lsp.lua_ls.setup{
     },
 }
 
--- docker (may require npm install -g dockerfile-language-server-nodejs)
-nvim_lsp.dockerls.setup{
-   capabilities = capabilities
-}
-
 -- markdown (may require brew install marksman)
 nvim_lsp.marksman.setup{
    capabilities = capabilities
@@ -64,11 +70,6 @@ nvim_lsp.marksman.setup{
 -- python
 nvim_lsp.jedi_language_server.setup{
    capabilities = capabilities
-}
-
--- json
-nvim_lsp.jsonls.setup {
-  capabilities = capabilities,
 }
 
 -- python - ruff linting
@@ -101,7 +102,6 @@ nvim_lsp.yamlls.setup {
       schemas = {
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.23.0-standalone-strict/all.json"] = "/*.k8s.yaml",
         ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/*/.github/workflows/*.yml",
-        ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/*/.github/workflows/*.yaml",
             },
     }},
     capabilities = capabilities
