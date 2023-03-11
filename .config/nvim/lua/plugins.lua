@@ -32,11 +32,8 @@ return require('packer').startup(function(use)
     }
 
     -- -------------------- floating window plugins --------------------------
-    -- terminal window
+    -- configurable floating terminal window, replaces 'hsalem7/nvim-k8s'
     use {"numToStr/FTerm.nvim"}
-
-    -- floating window for k9s (k8s dashboard TUI)
-    use {'hsalem7/nvim-k8s'}
 
     -- NeoVim UI toolkit that supports floating windows 
     use {'MunifTanjim/nui.nvim'}
