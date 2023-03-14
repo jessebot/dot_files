@@ -698,7 +698,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 
   <blockquote>
 
-  I've been moving all the configurations for apps I no longer use to [jessebot/old_dotfiles](https://github.com/jessebot/old_dotfiles). Feel free to grab anything you need there :)
+  I've been moving all the configurations for apps I no longer use to [jessebot/old_dotfiles](https://github.com/jessebot/old_dotfiles).
 
   </blockquote>
 
