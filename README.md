@@ -42,7 +42,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - enable italic text
   - maps Chart.lock files to YAML syntax (this is for the helm charts for k8s)
 
-  The goal is to have a spacechalk-like theme soon :)
+  The goal is to have a [spacechalk.nvim]-like theme soon :)
 
   </blockquote>
 
@@ -200,7 +200,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   ### Profiles.json
   Sets some basic profiles:
-  - default - profile with spacechalk colorscheme,
+  - default - profile with [spacechalk.nvim]-like colorscheme,
   - minimal - profile with basically nothing special and a plain `.bash_profile`.
 
   ###
@@ -218,7 +218,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config file for [`lsd`][lsd], an [`ls`][ls] alternative with icons and
   pretty colors. There's an intension to write and release a
-  [spacechalk] theme for lsd eventually.
+  [spacechalk.nvim]-like theme for lsd eventually.
 
   </blockquote>
 
@@ -373,7 +373,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   <blockquote>
 
-  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a [spacechalk] color theme as well as:
+  Configuration files for [powerline], a status line for [BASH] and [tmux]. We enable a [spacechalk.nvim]-like color theme as well as:
   - local IP address
   - hostname
   - current working directory
@@ -535,7 +535,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - hides tab bar if only one tab
   - remove top title bar
   - set background opacity to 0.7
-  - change colors to a softer spacechalk aligned colorscheme
+  - change colors to a softer [spacechalk.nvim] aligned colorscheme
 
   </blockquote>
 
@@ -691,7 +691,20 @@ You can still use `onboardme`, but you'll want to pass in _your_ git URL and bra
 onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 ```
 
-### RoadMap
+### FAQ
+
+<details>
+  <summary>Where are the config files for vim, terminator, etc?</summary>
+
+  <blockquote>
+
+  I've been moving all the configurations for apps I no longer use to [jessebot/old_dotfiles](https://github.com/jessebot/old_dotfiles). Feel free to grab anything you need there :)
+
+  </blockquote>
+
+</details>
+
+#### RoadMap
 
 - Get screenshots
 - migrate some more of the themeing to the space-chalk org to unify it all
@@ -721,7 +734,6 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
 [powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
-[spacechalk]: https://github.com/space-chalk/spacechalk.vim "spacechalk colorscheme for vim"
 [spacechalk.nvim]: https://github.com/space-chalk/spacechalk.nvim "spacechalk colorscheme for neovim"
 
 
