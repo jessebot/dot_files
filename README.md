@@ -353,7 +353,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - case insensitive searches
   - setting column 80 to be a different color for tidy code
   - enabling gui colors so you aren't limited to like 8 colors
-  - uses the [spacechalk] colorscheme
+  - uses the [spacechalk.nvim] colorscheme
   - sources all the files in [~/.config/nvim/lua](.config/nvim/lua),
     including [packer], plugins, and local plugin configs.
 
@@ -366,25 +366,6 @@ These directories/files are installed to your home directory and follow the [XDG
   This is the configuration for packer, our plugin manager for neovim. It
   installs packer, and then all of our plugins. You can check out all the
   plugins that are installed, or called from vim plugins starting on line 15.
-
-  ### [`~/.config/nvim/lua/user/airline.lua`](.config/nvim/lua/user/airline.lua)
-  sets defaults for [airline][airline], a status line for
-  vim and neovim. The configurations are:
-  - use [spacechalk] theme
-  - enables [powerline fonts][powerline fonts] (fun icons)
-  - disables empty sections of the status line
-  - enables the [ale] extension to work with airline for linting
-  - changes the default dividers to be   and '
-  - sets a line number percentage function for a slimmer ln segment
-
-  ### [`~/.config/nvim/lua/user/ale.lua`](.config/nvim/lua/user/ale.lua)
-  sets defaults for [ale][ale] such as:
-  - enable ale by default
-  - error icons are now  and warn icons are now 
-  - don't lint on text changes, only on mode changes
-  - use lints for python such as ruff and flake8
-  - run autofixers on save
-  - move between errors
 
   ### [`~/.config/nvim/lua/user/dashboard.lua`](.config/nvim/lua/user/dashboard.lua)
   config for a starting screen [dashboard] for neovim. You
@@ -582,7 +563,7 @@ These directories/files are installed to your home directory and follow the [XDG
   <blockquote>
 
   Configuration for [vim], a text editor, and it's plugins, installed via
-  [vim-plug].
+  [vim-plug]. I am no longer actively using this vim configuration, and it will likely be archived soonish.
 
   [`~/.config/vim/vimrc`](.config/vim/vimrc) is the main file for the global vim configuration.
   We set a lot of defaults, including:
@@ -851,7 +832,9 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 <!-- ------------------------ Fonts and Colors -------------------------- -->
 [nerdfonts]: https://www.nerdfonts.com/ "nerdfonts"
 [powerline fonts]: https://github.com/powerline/fonts "powerline fonts"
-[spacechalk]: https://github.com/jessebot/spacechalk "spacechalk colorscheme"
+[spacechalk]: https://github.com/space-chalk/spacechalk.vim "spacechalk colorscheme for vim"
+[spacechalk.nvim]: https://github.com/space-chalk/spacechalk.nvim "spacechalk colorscheme for neovim"
+
 
 <!-- ------------------------------- Kubernetes --------------------------- -->
 [krew]: https://krew.sigs.k8s.io/ "krew, plugin manager for kubectl"
