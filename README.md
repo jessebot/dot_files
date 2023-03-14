@@ -694,8 +694,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 ### RoadMap
 
 - Get screenshots
-- Sort out neovim idiosyncrasies to start using neovim full time
-- migrate some of the themeing to a spacechalk org to unify it all
+- migrate some more of the themeing to the space-chalk org to unify it all
 
 * more in the GitHub Issues
 
