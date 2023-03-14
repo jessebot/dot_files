@@ -130,7 +130,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config file for [`gh`][github-cli], the GitHub CLI. There's not a ton in there,
   but it uses [rich-cli] as a prettier pager, and firefox as a browser,
-  and setting [vim] as an editor. The rest is stock, and subject to change.
+  and setting [neovim] as an editor. The rest is stock, and subject to change.
 
   </blockquote>
 
@@ -145,7 +145,7 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Config file for [`glab`](https://glab-cli.io/), an open source GitLab CLI tool.
   There's not a ton in there, but it uses a dark theme, firefox as a browser,
-  and [vim] as an editor. The rest is stock, and subject to change.
+  and [neovim] as an editor. The rest is stock, and subject to change.
 
   </blockquote>
 
@@ -190,19 +190,6 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
-  <summary><code>hyper</code></summary>
-
-  <blockquote>
-
-  File: [`~/.config/hyper/.hyper.js`](.config/hyper/.hyper.js)
-
-  Sensible defaults for the [hyper](https://hyper.is) terminal emulator.
-
-  </blockquote>
-
-  </details>
-
-  <details>
     <summary><code>iterm2</code></summary>
 
   <blockquote>
@@ -217,40 +204,6 @@ These directories/files are installed to your home directory and follow the [XDG
   - minimal - profile with basically nothing special and a plain `.bash_profile`.
 
   ###
-
-  </blockquote>
-
-  </details>
-
-  <details>
-    <summary><code>karabiner</code></summary>
-
-  <blockquote>
-
-  File: [`~/.config/karabiner/karabiner.json`](.config/karabiner/karabiner.json)
-
-  Config file for [karabiner](https://karabiner-elements.pqrs.org/),
-  which is used to map capslock to control on macOS and other key remapping that
-  can be really useful.
-
-  </blockquote>
-
-  </details>
-
-  <details>
-    <summary><code>kitty</code></summary>
-
-  <blockquote>
-
-  Files:
-  - [`~/.config/kitty/kitty.conf`](.config/kitty/kitty.conf)
-  - [`~/.config/kitty/kitty-dark.png`](.config/kitty/kitty-dark.png)
-
-  Config files related to [kitty], a terminal emulator. Cute open source
-  kitty icon image by [DinkDonk], as well as a basic `kitty.conf` to
-  use some [nerdfonts], and set up look and feel on macOS. I don't use this
-  terminal emulator much anymore so I'm not sure how well this still works
-  accross different OSes.
 
   </blockquote>
 
@@ -528,21 +481,6 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
-    <summary><code>terminator</code></summary>
-
-  <blockquote>
-
-  File: [`~/.config/terminator`](.config/terminator)
-
-  Default config for my favorite terminal from my starting days in tech, [terminator].
-  We set some basic [spacechalk]-esk colors, transparency, and mononoki fonts.
-
-  </blockquote>
-
-  </details>
-
-
-  <details>
     <summary><code>tmux</code></summary>
 
   <blockquote>
@@ -553,54 +491,6 @@ These directories/files are installed to your home directory and follow the [XDG
   - Sets 256 colors
   - enable the [powerline] tmux status line
 
-  </blockquote>
-
-  </details>
-
-  <details>
-    <summary><code>vim</code></summary>
-
-  <blockquote>
-
-  Configuration for [vim], a text editor, and it's plugins, installed via
-  [vim-plug]. I am no longer actively using this vim configuration, and it will likely be archived soonish.
-
-  [`~/.config/vim/vimrc`](.config/vim/vimrc) is the main file for the global vim configuration.
-  We set a lot of defaults, including:
-  - making vim use the [XDG Base Directory Spec]
-  - setting window width to 82 characters
-  - enabling line numbers
-  - enabling highlighting of column cursor is on
-  - add a colored column on column 80 for tidy python
-  - sets a nerd font for vim
-  - enable syntax highlighting
-  - use [spacechalk] colorscheme
-  - configure icons for VimDevicons, and NERDTree
-  - ale icons changed, ale linters and fixers set for python
-  - gitgutter icons
-  - folding defaults
-  - sets backups to XDG standard
-  - allow backspace in insert mode
-  - default tabbing
-  - set search history
-  - installs all the plugins [here](https://github.com/jessebot/dot_files/blob/main/.vimrc#L452)
-  - uses template files below
-
-  Auto-install vim-plug:
-  - [`~/.vim/autoload/plug.vim`](.vim/autoload/plug.vim)
-
-  Files for syntax highlighting for python, ssh_known_hosts, and .toml files:
-  - [`~/.vim/syntax/python.vim`](.vim/syntax/python.vim)
-  - [`~/.vim/syntax/ssh_known_hosts.vim`](.vim/syntax/ssh_known_hosts.vim)
-  - [`~/.vim/syntax/toml.vim`](.vim/syntax/toml.vim)
-
-  Files for default values in a python or markdown file:
-  - [`~/.vim/templates/template.md`](.vim/templates/template.md)
-  - [`~/.vim/templates/template.py`](.vim/templates/template.py)
-
-
-  Since we install the [NERDTree](https://github.com/preservim/nerdtree) plugin,
-  `:NERDTreeToggle` enables a directory tree of your current directory on the left hand side of your current vim window.
   </blockquote>
 
   </details>
@@ -842,8 +732,6 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 
 <!-- ---------------------- Terminal emulators ---------------------- -->
 [iterm2]: https://iterm2.com/ "iterm2"
-[kitty]: https://sw.kovidgoyal.net/kitty/ "kitty, a terminal emulator"
-[DinkDonk]: https://github.com/DinkDonk/kitty-icon "kitty-icon"
 
 <!-- ---------------------- File browsers/listers ---------------------- -->
 [ls]: https://linux.die.net/man/1/ls "gnu tool: ls"
@@ -856,9 +744,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [neonwolf colorscheme]: https://gitlab.com/h3xx/mutt-colors-neonwolf "neonwolf neomutt colorscheme"
 [neomutt powerline]: https://github.com/sheoak/neomutt-powerline-nerdfonts "neomutt-powerline-nerdfonts"
 
-<!-- ------------------------- Vim and Neovim ---------------------------- -->
-[airline]: https://github.com/vim-airline/vim-airline "airline"
-[ale]: https://github.com/dense-analysis/ale "ale: asynchonous linting engine"
+<!-- ------------------------- Neovim ---------------------------- -->
 [dashboard]: https://github.com/glepnir/dashboard-nvim "dashboard.nvim"
 [packer]: https://github.com/wbthomason/packer.nvim "neovim packer"
 [neovim]: https://neovim.io/ "neovim, vim based text editor"
@@ -866,4 +752,3 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [telescope]: https://github.com/nvim-telescope/telescope.nvim "telescope.nvim"
 [tree-sitter]: https://github.com/nvim-treesitter/nvim-treesitter "nvim-treesitter"
 [vim]: https://www.vim.org/ "vim, a text editor"
-[vim-plug]: https://github.com/junegunn/vim-plug "plugin manager for vim"
