@@ -28,6 +28,11 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 25
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 -- indentation
 require('user.indent')
 
