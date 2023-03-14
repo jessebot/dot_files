@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
     -- ---------------- syntax highlighting installer ------------------------
 
     -- preferred colorscheme right now
-    use {'space-chalk/spacechalk.vim'}
+    use {'space-chalk/spacechalk.nvim'}
     -- backup colorscheme in case everything is broken
     -- use {'folke/tokyonight.nvim'}
 
