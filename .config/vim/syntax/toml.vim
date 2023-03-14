@@ -1,6 +1,0 @@
-syn match tomlBracket " \["
-syn match tomlBracket "\]"
-syn match tomlCurly "{"
-syn match tomlCurly "}"
-syn match tomlComma "\,"
-syn match tomlOperator " ="
