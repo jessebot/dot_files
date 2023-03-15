@@ -2,6 +2,30 @@
 
 local fterm = require("FTerm")
 
+-- Example keybindings
+vim.keymap.set('n', '<A-f>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-f>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- -------------------------- open normal terminal ----------------------------
+-- gitui must be installed beforehand with brew install cmatrix
+local cmatrix = fterm:new({
+    ft = 'fterm_cmatrix',
+    cmd = "cmatrix",
+    dimensions = {
+        height = 0.9,
+        width = 0.9
+    }
+})
+
+-- Use this to toggle gitui in a floating terminal
+-- firt arg of 'n' is for normal mode
+-- <A-g> are keys: Alt + m (alt is option on macOS)
+vim.keymap.set('n', '<A-m>', function()
+    cmatrix:toggle()
+end)
+
+
+
 -- ---------------------------- open gitui -----------------------------------
 -- gitui must be installed beforehand with brew install gitui
 local gitui = fterm:new({
