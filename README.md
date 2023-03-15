@@ -190,6 +190,18 @@ These directories/files are installed to your home directory and follow the [XDG
   </details>
 
   <details>
+    <summary><code>gitui</code></summary>
+
+  <blockquote>
+
+  File: [`~/.config/gitui/theme.ron`](.config/gitui/theme.ron)
+
+  This just sets a basic colorscheme for gitui so it's readable with [spacechalk.nvim]-like colors :)
+
+  </blockquote>
+
+  </details>
+  <details>
     <summary><code>iterm2</code></summary>
 
   <blockquote>
