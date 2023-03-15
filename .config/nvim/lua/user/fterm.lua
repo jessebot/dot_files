@@ -2,12 +2,16 @@
 
 local fterm = require("FTerm")
 
--- Example keybindings
-vim.keymap.set('n', '<A-f>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-f>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+-- CTRL+t keybindings to toggle terminal
+vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+
+-- create a vim command for FTermOpen
+vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
 
 -- -------------------------- open normal terminal ----------------------------
--- gitui must be installed beforehand with brew install cmatrix
+-- cmatrix must be installed beforehand with brew install cmatrix
 local cmatrix = fterm:new({
     ft = 'fterm_cmatrix',
     cmd = "cmatrix",
@@ -46,7 +50,6 @@ end)
 
 
 -- ------------------------------ open k9s -----------------------------------
-
 -- install k9s beforehand: https://k9scli.io/topics/install/
 local k9s = fterm:new({
     ft = 'fterm_k9s',
