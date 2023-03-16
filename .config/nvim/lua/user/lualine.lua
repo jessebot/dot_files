@@ -46,13 +46,14 @@
 
 -- stylua: ignore
 local colors = {
+  black  = '#232336',
   blue   = '#5F87FF',
   cyan   = '#79dac8',
-  black  = '#232336',
-  white  = '#c6c6c6',
+  green  = '#a8fd57',
+  grey   = '#303030',
   red    = '#ff5189',
   violet = '#d183e8',
-  grey   = '#303030',
+  white  = '#c6c6c6',
 }
 
 local bubbles_theme = {
@@ -62,7 +63,7 @@ local bubbles_theme = {
     c = { fg = colors.black, bg = colors.black },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
+  insert = { a = { fg = colors.black, bg = colors.green } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.red } },
 
@@ -83,10 +84,10 @@ require('lualine').setup {
     lualine_a = {
       { 'mode', separator = { left = '' }, right_padding = 2 },
     },
-    lualine_b = { 'filename', 'branch' },
+    lualine_b = { 'filename', 'branch', 'diff' },
     lualine_c = { 'fileformat' },
     lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_y = { 'diagnostics', 'progress' },
     lualine_z = {
       { 'location', separator = { right = '' }, left_padding = 2 },
     },
