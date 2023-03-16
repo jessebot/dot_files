@@ -651,7 +651,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - enables 256 colors
   - sources all the files in `~/.config/bash` (see above under config > bash )
   - sources personal file in `~/.config/bash/personal/bashrc`
-  - runs [neofetch] when you source it
+  - runs [fastfetch] when you source it
 
   </blockquote>
 
