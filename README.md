@@ -9,6 +9,18 @@ These directories/files are installed to your home directory and follow the [XDG
 ### Sections for each config directory/file
 
 <details>
+  <summary><code>.cache</code></summary>
+
+  <blockquote>
+
+  File: [`~/.cache/wget/wget-hsts`](.cache/wget/wget-hsts)
+
+  File to auto-generate location for wget cache to match [XDG Base Directory Spec]
+  </blockquote>
+
+</details>
+
+<details>
   <summary><code>.config</code></summary>
 
   <blockquote>
