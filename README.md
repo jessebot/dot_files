@@ -57,7 +57,6 @@ These directories/files are installed to your home directory and follow the [XDG
   - [`~/.config/bash/alias.sh`](.config/bash/alias.sh)
   - [`~/.config/bash/completion.sh`](.config/bash/completion.sh)
   - [`~/.config/bash/history.sh`](.config/bash/history.sh)
-  - [`~/.config/bash/iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.sh)
   - [`~/.config/bash/k8s.sh`](.config/bash/k8s.sh)
   - [`~/.config/bash/path.sh`](.config/bash/path.sh)
   - [`~/.config/bash/minimal.sh`](.config/bash/minimal.sh)
@@ -73,9 +72,6 @@ These directories/files are installed to your home directory and follow the [XDG
   - sets history to be in `~/.local/state/bash/history`
   - sets default history size
   - don't log duplicate history lines
-
-  #### [`iterm2_shell_integration.sh`](.config/bash/iterm2_shell_integration.sh)
-  sets up [iterm2] shell stuff
 
   #### [`~/.config/bash/text_editing.sh`](.config/bash/text_editing.sh)
   sets [neovim] as default text editor, or [vim] if neovim is not present
@@ -197,25 +193,6 @@ These directories/files are installed to your home directory and follow the [XDG
   File: [`~/.config/gitui/theme.ron`](.config/gitui/theme.ron)
 
   This just sets a basic colorscheme for gitui so it's readable with [spacechalk.nvim]-like colors :)
-
-  </blockquote>
-
-  </details>
-  <details>
-    <summary><code>iterm2</code></summary>
-
-  <blockquote>
-
-  [iterm2] is a terminal emulator for macOS.
-
-  Symlinked File:  [`~/.config/iterm2/Profiles.json -> ~/Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json`](Library/Application\ Support/iTerm2/DynamicProfiles/Profiles.json)
-
-  ### Profiles.json
-  Sets some basic profiles:
-  - default - profile with [spacechalk.nvim]-like colorscheme,
-  - minimal - profile with basically nothing special and a plain `.bash_profile`.
-
-  ###
 
   </blockquote>
 
@@ -446,7 +423,7 @@ These directories/files are installed to your home directory and follow the [XDG
   - [`~/.config/ranger/rc.conf`](.config/ranger/rc.conf)
 
   [ranger][ranger] is a [TUI] file manager. Current configurations:
-  - enable file previews using [iterm2]
+  - enable file previews using [iterm2] image protocol
   - enable video previews using ffmpegthumbnailer
   - enable svg previews.
 
@@ -598,11 +575,8 @@ These directories/files are installed to your home directory and follow the [XDG
   Directory:
   - [`~/.local/bin/iterm2`](.local/bin/iterm2)
 
-  Everything in there are files written and provided by iTerm2 for integrating iterm2 magic into your terminal. The only custom one is the following:
+  This is just for `imgcat`, for printing images in iterm2/wezterm.
 
-  | Command         | Description                                    |
-  |:---------------:|:-----------------------------------------------|
-  | `it2split`      | Open split in iterm2 with your default profile |
 
   </blockquote>
 
@@ -706,7 +680,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 ### FAQ
 
 <details>
-  <summary>Where are the config files for vim, terminator, etc?</summary>
+  <summary>Where are the config files for vim, iterm2, terminator, etc?</summary>
 
   <blockquote>
 
