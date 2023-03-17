@@ -39,8 +39,6 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
 
-    # iterm2 shell integration stuff
-    source $XDG_CONFIG_HOME/bash/iterm2_integration.sh
     # iterm2 specific commands and functions
     export PATH=$PATH:$HOME/.local/bin/iterm2
 
