@@ -76,3 +76,6 @@ require('user.fterm')
 
 -- syntax highlighting for hex codes
 require('user.nvim-colorizer')
+
+-- dim inactive windows
+require("tint").setup()

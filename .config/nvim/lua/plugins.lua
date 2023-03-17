@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
     -- ------------------------------ tab line -------------------------------
     use {'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons'}
 
+    -- ------------------ dimming inactive windows ---------------------------
+    use {'levouh/tint.nvim'}
+
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
     use {'tpope/vim-fugitive'}
