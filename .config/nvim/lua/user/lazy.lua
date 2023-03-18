@@ -33,12 +33,15 @@ local plugins = {
 
     -- -------------------------- status line --------------------------------
     {'nvim-lualine/lualine.nvim',
+         lazy = false,
          dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     },
 
     -- -------------------- floating window plugins --------------------------
     -- configurable floating terminal window, replaces 'hsalem7/nvim-k8s'
-    {"numToStr/FTerm.nvim"},
+    {"numToStr/FTerm.nvim",
+        lazy = true,
+    },
 
     -- NeoVim UI toolkit that supports floating windows 
     {'MunifTanjim/nui.nvim'},
@@ -61,7 +64,9 @@ local plugins = {
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
-    {'tpope/vim-fugitive'},
+    {'tpope/vim-fugitive',
+        lazy = true,
+    },
 
     -- puts a git + or - in side line to show git changes in file
     {'lewis6991/gitsigns.nvim'},
@@ -71,7 +76,9 @@ local plugins = {
     {'nvim-treesitter/nvim-treesitter'},
     -- I have this mostly for the :TSHighlightCapturesUnderCursor command
     -- https://github.com/nvim-treesitter/playground/pull/9
-    {'nvim-treesitter/playground'},
+    {'nvim-treesitter/playground',
+        lazy = true,
+    },
 
     -- because indenting is still broken in treesitter for python
     -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
@@ -125,47 +132,44 @@ local plugins = {
     {'hashivim/vim-terraform'},
 
     -- code location at top of window
-    {
-      "utilyre/barbecue.nvim",
-      dependencies = {
-        "SmiteshP/nvim-navic",
-      },
-      config = function()
-        require("barbecue").setup({
-                show_dirname = false,
-                show_basename = false,
-                context_follow_icon_color = true,
-                kinds = {
-                        File = "",
-                        Module = "",
-                        Namespace = "",
-                        Package = "",
-                        Class = "",
-                        Method = "",
-                        Property = "󰀭",
-                        Field = "🌾",
-                        Constructor = "󰬢",
-                        Enum = "",
-                        Interface = "",
-                        Function = "󰊕",
-                        Variable = "󰫧",
-                        Constant = "",
-                        String = "",
-                        Number = "",
-                        Boolean = "",
-                        Array = "",
-                        Object = "",
-                        Key = "",
-                        Null = "",
-                        EnumMember = "",
-                        Struct = "",
-                        Event = "",
-                        Operator = "",
-                        TypeParameter = "",
-                },
-            })
-      end
-    },
+    {"utilyre/barbecue.nvim",
+      name = "barbecue",
+      version = "*",
+      dependencies = {"SmiteshP/nvim-navic",
+                      "nvim-tree/nvim-web-devicons"},
+      opts = {show_dirname = false,
+              show_basename = false,
+              context_follow_icon_color = true,
+              kinds = {
+                    File = "",
+                    Module = "",
+                    Namespace = "",
+                    Package = "",
+                    Class = "",
+                    Method = "",
+                    Property = "󰀭",
+                    Field = "🌾",
+                    Constructor = "󰬢",
+                    Enum = "",
+                    Interface = "",
+                    Function = "󰊕",
+                    Variable = "󰫧",
+                    Constant = "",
+                    String = "",
+                    Number = "",
+                    Boolean = "",
+                    Array = "",
+                    Object = "",
+                    Key = "",
+                    Null = "",
+                    EnumMember = "",
+                    Struct = "",
+                    Event = "",
+                    Operator = "",
+                    TypeParameter = "",
+            },
+        },
+    }
 }
 
 require("lazy").setup(plugins)
