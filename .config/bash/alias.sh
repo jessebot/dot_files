@@ -17,7 +17,9 @@ fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Typos <3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 alias pign='ping'
-alias gtop='gotop'
+alias gtop='btm'
+alias top='btm'
+alias gotop='btm'
 # can never spell clear
 alias celar='clear'
 alias clar='clear'
