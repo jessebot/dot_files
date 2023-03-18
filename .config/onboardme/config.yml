@@ -13,8 +13,8 @@
 log:
   # Full path to a file you'd like to log to. Creates file if it doesn't exist
   file: ""
-  # what level of logs to output (DEBUG, INFO, WARN, ERROR)
-  level: "INFO"
+  # what level of logs to output (debug, info, warn, error)
+  level: "info"
   # don't output anything to the console, if set and log file passed in, still
   # creates a log file. unstable.
   # quiet: false
