@@ -1,8 +1,6 @@
 # Dot Files for `onboardme`
 
-These started as my personal dot files, but then they became the sensible defaults for
-[`onboardme`](https://github.com/jessebot/onboardme), which started out as a script
-to manage my dot files :shrug:
+These are the sensible defaults for [`onboardme`](https://github.com/jessebot/onboardme), which started out as a script to manage my dot files :shrug:
 
 These directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible.
 
@@ -354,6 +352,21 @@ These directories/files are installed to your home directory and follow the [XDG
 
   Currently we import ALL folders except the "All Mail" folder, which is just
   all the mail from all the other folders (including inbox, sent, trash, etc)
+
+  </blockquote>
+
+  </details>
+
+  <details>
+    <summary><code>onboardme</code></summary>
+
+  <blockquote>
+
+  Files:
+  - [`~/.config/onboardme/config.yml`](.config/onboardme/config.yml)
+  - [`~/.config/onboardme/packages.yml`](.config/onboardme/packages.yml)
+
+  These are config files for [onboardme], a tool to install dot files, packages, and setup neovim.
 
   </blockquote>
 
