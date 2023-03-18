@@ -55,6 +55,7 @@ alias adb='scrcpy.adb'
 
 # I never remember what the img2sixel command is called
 alias sixel='img2sixel'
+alias imgcat='wezterm imgcat'
 
 # quick to do
 alias todo="$EDITOR ~/todo.md"
