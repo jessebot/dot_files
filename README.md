@@ -745,7 +745,7 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 
 <!-- ------------------------- Neovim ---------------------------- -->
 [dashboard]: https://github.com/glepnir/dashboard-nvim "dashboard.nvim"
-[packer]: https://github.com/wbthomason/packer.nvim "neovim packer"
+[lazy.nvim]: https://github.com/folke/lazy.nvim "lazy.nvim, a plugin manager for neovim"
 [neovim]: https://neovim.io/ "neovim, vim based text editor"
 [nvim-tree]: https://github.com/nvim-tree/ "nvim-tree"
 [telescope]: https://github.com/nvim-telescope/telescope.nvim "telescope.nvim"
