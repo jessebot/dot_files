@@ -32,21 +32,9 @@ vim.opt.ignorecase = true
 require('user.indent')
 
 -- load plugins
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
 require('user.lazy')
 
--- --------- Plugin configs that have to be called after packer --------------
+-- --------- Plugin configs that have to be called after lazy --------------
 -- Colors need to be enabled after the plugins, because the colors are a plugin
 vim.cmd.colorscheme('spacechalk')
 vim.g.colors_name = 'spacechalk'

@@ -86,7 +86,7 @@ db.setup({
                 desc_hl = description_color,
                 key = "u",
                 key_hl = keymap_color,
-                action = "PackerSync",
+                action = "Lazy sync",
             },
             {
                 icon = "  ",

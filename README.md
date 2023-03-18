@@ -292,40 +292,30 @@ These directories/files are installed to your home directory and follow the [XDG
 
   <blockquote>
 
-  Config files for [neovim] is a hyperextensible Vim-based text editor,
-  which is in some ways a sucessor to [vim]. It's a lot faster, for one,
-  and there's more support for more languages, which means more plugins.
-  Uses [packer] to manager neovim plugins.
+  [neovim] is a hyperextensible Vim-based text editor, which is in some ways a sucessor to [vim]. It's a lot faster, for one, and there's more support for more languages, which means more plugins. Uses [lazy.nvim] to manage neovim plugins.
 
   Each file explained below:
 
   ### [`init.lua`](.config/nvim/init.lua)
   The main global configuration changes are:
-  - turning off mouse scrolling
+  - turning off mouse scrolling (might re-enable this 🤔)
   - enabling line numbers
   - adding a cursorline
-  - case insensitive searches
   - setting column 80 to be a different color for tidy code
+  - searches are case insensitive
   - enabling gui colors so you aren't limited to like 8 colors
   - uses the [spacechalk.nvim] colorscheme
-  - sources all the files in [~/.config/nvim/lua](.config/nvim/lua),
-    including [packer], plugins, and local plugin configs.
+  - sources all the files in [`~/.config/nvim/lua`](.config/nvim/lua),
+    including all our [plugin configs](.config/nvim/lua/user/lazy.lua).
 
-  ### [`~/.config/nvim/packerinit.vim`](.config/nvim/packerinit.vim)
-  This is a quick and dirty lua function to print " ♥ ♥ ♥ " if neovim is running
-  in an interactive session and packer completes an action, and to exit if we're
-  running headless, meaning we're running in a script.
 
   ### [`~/.config/nvim/lua/plugins.lua`](.config/nvim/lua/plugins.lua)
-  This is the configuration for packer, our plugin manager for neovim. It
-  installs packer, and then all of our plugins. You can check out all the
-  plugins that are installed, or called from vim plugins starting on line 15.
+  This is the configuration for [`lazy.nvim`], our plugin manager for neovim. It
+  installs lazy, and then all of our plugins.
 
   ### [`~/.config/nvim/lua/user/dashboard.lua`](.config/nvim/lua/user/dashboard.lua)
-  config for a starting screen [dashboard] for neovim. You
-  should just check out the file to see what's being done. It's cute ascii art,
-  and utilizes [telescope] to check out your files and previously
-  opened files.
+  config for a starting screen [dashboard] for neovim. You should just check out the file to see what's being done. It's cute ascii art, and utilizes [telescope] to open your recent files or search your files. 
+
 
   ### [`~/.config/nvim/lua/user/folding.lua`](.config/nvim/lua/user/folding.lua)
   config file to enable folding, which is just vim speak for collapsing
