@@ -7,8 +7,9 @@
 .config/gh/hosts.yml
 .config/git/personal
 .config/neomutt/keys
-# neovim packer generates this HERE for some reason
-.config/nvim/plugin/packer_compiled.lua
+
+# neovim plugin manager called lazy generates this lock file each run
+.config/nvim/lazy-lock.json
 
 # unsure if I can make this one go anywhere
 .ssh

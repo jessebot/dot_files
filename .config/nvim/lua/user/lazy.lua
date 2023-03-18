@@ -1,135 +1,118 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.config/vim
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd("packadd packer.nvim")
-    return true
-  end
-  return false
-end
+local plugins = {
+    -- ------------ makes sure the nerdfont icons and colorscheme ------------
+    -- preferred colorscheme right now
+    {'space-chalk/spacechalk.nvim', lazy = false },
+    -- backup colorscheme in case everything is broken
+    -- {'folke/tokyonight.nvim'},
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-
-    -- Packer, our neovim plugin manager, can manage itself
-    use {'wbthomason/packer.nvim'}
-
-    -- ------------ makes sure the nerdfont icons are available --------------
-    use { 'nvim-tree/nvim-web-devicons' }
+    { 'nvim-tree/nvim-web-devicons', lazy = true },
 
     -- -------------------- startup screen for neovim ------------------------
-    use {'glepnir/dashboard-nvim'}
+    {'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    },
 
     -- cute halloween dashboard for neovim start screen :3
-    -- use {'folke/drop.nvim'}
+    -- {'folke/drop.nvim'},
 
     -- -------------------------- status line --------------------------------
-    use {'nvim-lualine/lualine.nvim',
-         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    {'nvim-lualine/lualine.nvim',
+         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    },
 
     -- -------------------- floating window plugins --------------------------
     -- configurable floating terminal window, replaces 'hsalem7/nvim-k8s'
-    use {"numToStr/FTerm.nvim"}
+    {"numToStr/FTerm.nvim"},
 
     -- NeoVim UI toolkit that supports floating windows 
-    use {'MunifTanjim/nui.nvim'}
+    {'MunifTanjim/nui.nvim'},
 
     -- ------------------------- file directory tree -------------------------
     -- nvim new nerdtree replacement
-    use {'nvim-tree/nvim-tree.lua',
-         requires = {'nvim-tree/nvim-web-devicons'},
+    {'nvim-tree/nvim-tree.lua',
+         dependencies = {'nvim-tree/nvim-web-devicons'},
          tag = 'nightly'
-    }
+    },
 
     -- ---------------- scroll bar for the right hand side -------------------
-    use {"petertriho/nvim-scrollbar"}
+    {"petertriho/nvim-scrollbar"},
 
     -- ------------------------------ tab line -------------------------------
-    use {'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons'}
+    {'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
 
     -- ------------------ dimming inactive windows ---------------------------
-    use {'levouh/tint.nvim'}
+    {'levouh/tint.nvim'},
 
     -- ------------------------------ git ------------------------------------
     -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
-    use {'tpope/vim-fugitive'}
+    {'tpope/vim-fugitive'},
 
     -- puts a git + or - in side line to show git changes in file
-    use {'lewis6991/gitsigns.nvim'}
+    {'lewis6991/gitsigns.nvim'},
 
     -- ---------------- syntax highlighting installer ------------------------
 
-    -- preferred colorscheme right now
-    use {'space-chalk/spacechalk.nvim'}
-    -- backup colorscheme in case everything is broken
-    -- use {'folke/tokyonight.nvim'}
-
-    use {'nvim-treesitter/nvim-treesitter'}
+    {'nvim-treesitter/nvim-treesitter'},
     -- I have this mostly for the :TSHighlightCapturesUnderCursor command
     -- https://github.com/nvim-treesitter/playground/pull/9
-    use {'nvim-treesitter/playground'}
+    {'nvim-treesitter/playground'},
 
     -- because indenting is still broken in treesitter for python
     -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
-    use({"yioneko/nvim-yati",
-         tag = "*",
-         requires = "nvim-treesitter/nvim-treesitter"
-    })
+    {"yioneko/nvim-yati",
+         dependencies = "nvim-treesitter/nvim-treesitter"
+    },
 
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
-    use {'junegunn/limelight.vim'}
+    {'junegunn/limelight.vim'},
 
     -- for markdown tables
-    use {'dhruvasagar/vim-table-mode'}
+    {'dhruvasagar/vim-table-mode'},
 
     -- ---------------- Language Server Protocol Plugins ---------------------
     --
     -- --------- completion for the above language servers and more ----------
-    use {'hrsh7th/cmp-nvim-lsp'}
-    use {'hrsh7th/cmp-buffer'}
-    use {'hrsh7th/cmp-path'}
-    use {'hrsh7th/cmp-cmdline'}
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-cmdline'},
     -- automatically type the closing }]"
-    use {'windwp/nvim-autopairs'}
+    {'windwp/nvim-autopairs'},
     -- emojis and nerfont icon completions
-    use {'hrsh7th/cmp-emoji'}
-    use {'chrisgrieser/cmp-nerdfont'}
+    {'hrsh7th/cmp-emoji'},
+    {'chrisgrieser/cmp-nerdfont'},
     -- nvim lua api completion
-    use {'hrsh7th/cmp-nvim-lua'}
+    {'hrsh7th/cmp-nvim-lua'},
     -- our preferred neovim autocompletion plugin
-    use {'hrsh7th/nvim-cmp'}
+    {'hrsh7th/nvim-cmp'},
 
     -- this helps to configure the built-in language server protocol for nvim
-    use {'neovim/nvim-lspconfig'}
-    use {'williamboman/mason.nvim'}
-    use {'williamboman/mason-lspconfig.nvim'}
+    {'neovim/nvim-lspconfig'},
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
 
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
-         requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    {'nvim-telescope/telescope.nvim', tag = '0.1.0',
+         dependencies = { {'nvim-lua/plenary.nvim'} },
+    },
 
     -- --------------------- Language Specific Stuff -------------------------
 
     -- for highlighting hex colors (in vim, CSS, JS, HTML)
-    use {'norcalli/nvim-colorizer.lua'}
+    {'norcalli/nvim-colorizer.lua'},
 
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
-    use {'mtdl9/vim-log-highlighting'}
+    {'mtdl9/vim-log-highlighting'},
 
     -- terraform commands for neovim :)
-    use {'hashivim/vim-terraform'}
+    {'hashivim/vim-terraform'},
 
     -- code location at top of window
-    use({
+    {
       "utilyre/barbecue.nvim",
-      tag = "*",
-      requires = {
+      dependencies = {
         "SmiteshP/nvim-navic",
       },
       config = function()
@@ -167,11 +150,7 @@ return require('packer').startup(function(use)
                 },
             })
       end
-    })
+    },
+}
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+require("lazy").setup(plugins)
