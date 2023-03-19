@@ -28,17 +28,10 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
--- indentation
-require('user.indent')
-
 -- load plugins
 require('user.lazy')
 
 -- --------- Plugin configs that have to be called after lazy --------------
--- Colors need to be enabled after the plugins, because the colors are a plugin
-vim.cmd.colorscheme('spacechalk')
-vim.g.colors_name = 'spacechalk'
-
 -- starting page for neovim
 require('user.dashboard')
 
@@ -51,6 +44,8 @@ require('user.tree-sitter')
 
 -- folding parameters
 require('user.folding')
+-- indentation
+require('user.indent')
 
 -- tab line at top of window for tabs when there's more than one tab :)
 require('user.barbar')

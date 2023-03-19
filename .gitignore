@@ -1,3 +1,6 @@
+# mac generates this all over the place. messy
+**.DS_Store
+
 # never check in a brew lock file
 **/.Brewfile.lock.json
 
@@ -7,6 +10,11 @@
 .config/gh/hosts.yml
 .config/git/personal
 .config/neomutt/keys
+.config/bash/personal/bashrc
+.confg/jump
+.config/helm/repositories.lock
+.confg/kube
+.config/krew/**
 
 # neovim plugin manager called lazy generates this lock file each run
 .config/nvim/lazy-lock.json

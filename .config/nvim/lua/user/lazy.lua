@@ -16,7 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- ------------ makes sure the nerdfont icons and colorscheme ------------
     -- preferred colorscheme right now
-    {'space-chalk/spacechalk.nvim', lazy = false },
+    {'space-chalk/spacechalk.nvim',
+        lazy = false, -- loaded during startup since it's the main colorscheme
+        priority = 1000, -- load this before all other start plugins
+        config = function()
+            -- load the colorscheme here
+            vim.cmd.colorscheme('spacechalk')
+            vim.g.colors_name = 'spacechalk'
+        end,
+    },
     -- backup colorscheme in case everything is broken
     -- {'folke/tokyonight.nvim'},
 
@@ -44,7 +52,9 @@ local plugins = {
     },
 
     -- NeoVim UI toolkit that supports floating windows 
-    {'MunifTanjim/nui.nvim'},
+    {'MunifTanjim/nui.nvim',
+        lazy = true,
+    },
 
     -- ------------------------- file directory tree -------------------------
     -- nvim new nerdtree replacement
@@ -57,81 +67,12 @@ local plugins = {
     {"petertriho/nvim-scrollbar"},
 
     -- ------------------------------ tab line -------------------------------
-    {'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
-
-    -- ------------------ dimming inactive windows ---------------------------
-    {'levouh/tint.nvim'},
-
-    -- ------------------------------ git ------------------------------------
-    -- git plugin for running git commands with :git -- 'tpope/vim-fugitive'
-    {'tpope/vim-fugitive',
+    {'romgrk/barbar.nvim',
+        dependencies = {'nvim-tree/nvim-web-devicons'},
         lazy = true,
     },
 
-    -- puts a git + or - in side line to show git changes in file
-    {'lewis6991/gitsigns.nvim'},
-
-    -- ---------------- syntax highlighting installer ------------------------
-
-    {'nvim-treesitter/nvim-treesitter'},
-    -- I have this mostly for the :TSHighlightCapturesUnderCursor command
-    -- https://github.com/nvim-treesitter/playground/pull/9
-    {'nvim-treesitter/playground',
-        lazy = true,
-    },
-
-    -- because indenting is still broken in treesitter for python
-    -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
-    {"yioneko/nvim-yati",
-         dependencies = "nvim-treesitter/nvim-treesitter"
-    },
-
-    -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
-    {'junegunn/limelight.vim'},
-
-    -- for markdown tables
-    {'dhruvasagar/vim-table-mode'},
-
-    -- ---------------- Language Server Protocol Plugins ---------------------
-    --
-    -- --------- completion for the above language servers and more ----------
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/cmp-buffer'},
-    {'hrsh7th/cmp-path'},
-    {'hrsh7th/cmp-cmdline'},
-    -- automatically type the closing }]"
-    {'windwp/nvim-autopairs'},
-    -- emojis and nerfont icon completions
-    {'hrsh7th/cmp-emoji'},
-    {'chrisgrieser/cmp-nerdfont'},
-    -- nvim lua api completion
-    {'hrsh7th/cmp-nvim-lua'},
-    -- our preferred neovim autocompletion plugin
-    {'hrsh7th/nvim-cmp'},
-
-    -- this helps to configure the built-in language server protocol for nvim
-    {'neovim/nvim-lspconfig'},
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-
-    -- ------------------- fuzzy completion for files ------------------------
-    -- telescope: extendable fuzzy finder over lists
-    {'nvim-telescope/telescope.nvim', tag = '0.1.0',
-         dependencies = { {'nvim-lua/plenary.nvim'} },
-    },
-
-    -- --------------------- Language Specific Stuff -------------------------
-
-    -- for highlighting hex colors (in vim, CSS, JS, HTML)
-    {'norcalli/nvim-colorizer.lua'},
-
-    -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
-    {'mtdl9/vim-log-highlighting'},
-
-    -- terraform commands for neovim :)
-    {'hashivim/vim-terraform'},
-
-    -- code location at top of window
+    -- code refence at top of window
     {"utilyre/barbecue.nvim",
       name = "barbecue",
       version = "*",
@@ -169,7 +110,89 @@ local plugins = {
                     TypeParameter = "",
             },
         },
-    }
+    },
+
+    -- ------------------ dimming inactive windows ---------------------------
+    {'levouh/tint.nvim'},
+
+    -- ------------------------------ git ------------------------------------
+    -- git plugin for running git commands with :git
+    {'tpope/vim-fugitive',
+        lazy = true,
+    },
+
+    -- puts a git + or - in side line to show git changes in file
+    {'lewis6991/gitsigns.nvim'},
+
+    -- ---------------- syntax highlighting installer ------------------------
+
+    {'nvim-treesitter/nvim-treesitter'},
+    -- I have this mostly for the :TSHighlightCapturesUnderCursor command
+    -- https://github.com/nvim-treesitter/playground/pull/9
+    {'nvim-treesitter/playground',
+        lazy = true,
+    },
+
+    -- because indenting is still broken in treesitter for python
+    -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
+    {"yioneko/nvim-yati",
+         dependencies = "nvim-treesitter/nvim-treesitter"
+    },
+
+    -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
+    {'junegunn/limelight.vim'},
+
+    -- for markdown tables
+    {'dhruvasagar/vim-table-mode'},
+
+    -- ---------------- Language Server Protocol Plugins ---------------------
+    --
+    -- --------- completion for the above language servers and more ----------
+    -- our preferred neovim autocompletion plugin
+    {'hrsh7th/nvim-cmp',
+        -- load cmp on InsertEnter
+        event = "InsertEnter",
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            -- automatically type the closing ]"
+            'windwp/nvim-autopairs',
+            -- emojis and nerfont icon completions
+            'hrsh7th/cmp-emoji',
+            'chrisgrieser/cmp-nerdfont',
+            -- nvim lua api completion
+            'hrsh7th/cmp-nvim-lua'},
+    },
+
+    -- this helps to configure the built-in language server protocol for nvim
+    {'neovim/nvim-lspconfig'},
+    {'williamboman/mason-lspconfig.nvim',
+        dependencies = {'williamboman/mason.nvim'},
+    },
+
+    -- ------------------- fuzzy completion for files ------------------------
+    -- telescope: extendable fuzzy finder over lists
+    {'nvim-telescope/telescope.nvim',
+        tag = '0.1.1',
+        dependencies = {'nvim-lua/plenary.nvim'}
+    },
+
+    -- --------------------- Language Specific Stuff -------------------------
+
+    -- for highlighting hex colors (in vim, CSS, JS, HTML)
+    {'norcalli/nvim-colorizer.lua',
+        ft = {'css', 'lua'},
+    },
+
+    -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
+    {'mtdl9/vim-log-highlighting'},
+
+    -- terraform commands for neovim :)
+    {'hashivim/vim-terraform',
+        ft = "terraform",
+    },
 }
 
 require("lazy").setup(plugins)
