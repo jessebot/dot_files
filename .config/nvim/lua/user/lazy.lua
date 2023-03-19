@@ -177,7 +177,9 @@ local plugins = {
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     {'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+	version = false, -- telescope did only one release, so use HEAD for now
+        -- tag = '0.1.1', -- latest we've seen
+	cmd = "Telescope",
         dependencies = {'nvim-lua/plenary.nvim'}
     },
 
@@ -195,6 +197,15 @@ local plugins = {
     {'hashivim/vim-terraform',
         ft = "terraform",
     },
+
+  -- search/replace in multiple files -- untested
+  {
+    "windwp/nvim-spectre",
+    -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+    },
+  },
 }
 
 require("lazy").setup(plugins)
