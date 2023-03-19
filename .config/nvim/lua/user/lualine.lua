@@ -87,9 +87,17 @@ require('lualine').setup {
     lualine_b = { 'filename', 'branch', 'diff' },
     lualine_c = { 'fileformat' },
     lualine_x = {},
-    lualine_y = { 'diagnostics', 'progress' },
-    lualine_z = {
+    lualine_y = {
+      'diagnostics',
+      'progress',
       { 'location', separator = { right = '' }, left_padding = 2 },
+    },
+    lualine_z = {
+      {
+        function()
+          return " " .. os.date("%R")
+        end,
+      },
     },
   },
   inactive_sections = {
