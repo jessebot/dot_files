@@ -312,7 +312,6 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   ### [`~/.config/nvim/lua/user/dashboard.lua`](.config/nvim/lua/user/dashboard.lua)
   config for a starting screen [dashboard] for neovim. You should just check out the file to see what's being done. It's cute ascii art, and utilizes [telescope] to open your recent files or search your files. 
 
-
   ### [`~/.config/nvim/lua/user/folding.lua`](.config/nvim/lua/user/folding.lua)
   config file to enable folding, which is just vim speak for collapsing
   blocks of code. Sets some defaults.

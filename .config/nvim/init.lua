@@ -41,7 +41,7 @@ require('user.tree-sitter')
 require('user.folding')
 require('user.indent')
 
--- tab line at top of window for tabs when there's more than one tab :)
+-- tab line at top of window for tabs when there's more than one tab :) -- might switch to bufferline
 require('user.barbar')
 -- status line at bottom of window for cool file facts 
 require('user.lualine')
