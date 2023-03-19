@@ -75,12 +75,13 @@
                         "function": "powerline.segments.common.bat.battery",
                         "priority": 70,
                         "draw_soft_divider": false,
+                        "draw_hard_divider": false,
                         "args": {
                             "gamify": true,
-                            "full_heart": " ♥",
-                            "empty_heart": " ",
-                            "online": "",
-                            "offline": "ﮤ"
+                            "full_heart": " ",
+                            "empty_heart": " ",
+                            "online": " ",
+                            "offline": "ﮤ "
                         }
 
                     },
