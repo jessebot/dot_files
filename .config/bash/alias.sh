@@ -93,7 +93,7 @@ alias gsa='ls -1 -A | xargs -I % sh -c "if [ -d % ]; then toilet -f smblock % | 
 alias gd='git diff'
 alias ga='git add .'
 alias gph='git push && git push --tags'
-alias gpl='git pull'
+alias gp='git pull && git log -1'
 
 # typos
 alias gitcommit='git commit'
