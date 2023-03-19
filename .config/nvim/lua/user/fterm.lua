@@ -5,11 +5,6 @@ local fterm = require("FTerm")
 -- create a vim command for FTermOpen
 vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
 
--- CTRL+t keybindings to toggle terminal
-vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-
-
 -- -------------------------- open normal terminal ----------------------------
 -- cmatrix must be installed beforehand with brew install cmatrix
 local cmatrix = fterm:new({

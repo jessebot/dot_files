@@ -163,8 +163,6 @@ local plugins = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
-            -- automatically type the closing ]"
-            'windwp/nvim-autopairs',
             -- emojis and nerfont icon completions
             'hrsh7th/cmp-emoji',
             'chrisgrieser/cmp-nerdfont',
@@ -178,6 +176,18 @@ local plugins = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
+    },
+
+    -- 
+    {
+      "folke/trouble.nvim",
+      dependencies = "nvim-tree/nvim-web-devicons",
+      cmd = {'Trouble', 'TroubleToggle'},
+      opts = function()
+        require("trouble").setup {
+          -- leave it empty to use the default settings
+        }
+      end
     },
 
     -- ------------------- fuzzy completion for files ------------------------
