@@ -129,6 +129,7 @@ brew:
       - zathura-pdf-mupdf
       - "--cask font-mononoki"
       - "--cask font-hack-nerd-font"
+      - "--cask font-symbols-only-nerd-font"
       # this lets us resize windows on macOS
       - "--cask rectangle"
       # Default browser
@@ -188,6 +189,10 @@ brew:
       # for work chats
       - "--cask slack"
       - "--cask zoom"
+    Linux:
+      - "font-mononoki"
+      - "font-symbols-only-nerd-font"
+      - "font-hack-nerd-font"
 
 apt:
   emoji: "🙃"
