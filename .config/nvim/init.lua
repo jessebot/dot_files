@@ -42,14 +42,12 @@ require('user.completion')
 require('user.lsp-configs')
 require('user.tree-sitter')
 
--- folding parameters
+-- folding and indentation
 require('user.folding')
--- indentation
 require('user.indent')
 
 -- tab line at top of window for tabs when there's more than one tab :)
 require('user.barbar')
-
 -- status line at bottom of window for cool file facts 
 require('user.lualine')
 
