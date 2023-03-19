@@ -13,4 +13,4 @@ vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99
 
 -- let spacebar allow me to fold the code
-vim.keymap.set('n', '<space>', 'za')
+vim.keymap.set('n', '<enter>', 'za')

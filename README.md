@@ -297,9 +297,11 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   - turning off mouse scrolling (might re-enable this 🤔)
   - enabling line numbers
   - adding a cursorline
+  - <kbd>enter</kbd> folds the current code block
+  - <kbd>space</kbd> is our leader key (a custom modifier key for neovim)
   - setting column 80 to be a different color for tidy code
   - searches are case insensitive
-  - enabling gui colors so you aren't limited to like 8 colors
+  - enabling gui colors so you aren't limited to like 16 colors
   - uses the [spacechalk.nvim] colorscheme
   - sources all the files in [`~/.config/nvim/lua`](.config/nvim/lua),
     including all our [plugin configs](.config/nvim/lua/user/lazy.lua).
