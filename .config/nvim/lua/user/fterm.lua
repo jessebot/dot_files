@@ -28,7 +28,13 @@ vim.keymap.set('n', '<A-m>', function()
     cmatrix:toggle()
 end)
 
-
+vim.api.nvim_create_user_command(
+    'Matrix',
+    function()
+        cmatrix:toggle()
+    end,
+    { bang = true }
+)
 
 -- ---------------------------- open gitui -----------------------------------
 -- gitui must be installed beforehand with brew install gitui
@@ -48,6 +54,13 @@ vim.keymap.set('n', '<A-g>', function()
     gitui:toggle()
 end)
 
+vim.api.nvim_create_user_command(
+    'Gitui',
+    function()
+        gitui:toggle()
+    end,
+    { bang = true }
+)
 
 -- ------------------------------ open k9s -----------------------------------
 -- install k9s beforehand: https://k9scli.io/topics/install/
@@ -66,3 +79,11 @@ local k9s = fterm:new({
 vim.keymap.set('n', '<A-b>', function()
     k9s:toggle()
 end)
+
+vim.api.nvim_create_user_command(
+    'K9s',
+    function()
+        k9s:toggle()
+    end,
+    { bang = true }
+)

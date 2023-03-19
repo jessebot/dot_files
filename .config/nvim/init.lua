@@ -1,8 +1,3 @@
--- disable netrw at the very start of your init.lua (strongly advised)
--- nvim-tree requires this
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- sometimes neovim can't remember where python is if you install with linuxbrew
 -- if vim.loop.os_uname().sysname == 'Linux'
 --	then
@@ -51,8 +46,8 @@ require('user.barbar')
 -- status line at bottom of window for cool file facts 
 require('user.lualine')
 
--- directory tree for neovim; can option with :NvimTreeToggle
-require('user.nvim-tree')
+-- directory tree; can open with :Neotree
+require('user.neo-tree')
 
 -- scrollbar on the right side of the screen that also shows errors
 require("user.gitsigns")

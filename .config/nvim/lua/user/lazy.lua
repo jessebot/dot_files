@@ -25,15 +25,16 @@ local plugins = {
             vim.g.colors_name = 'spacechalk'
         end,
     },
-    -- backup colorscheme in case everything is broken
-    -- {'folke/tokyonight.nvim'},
 
     { 'nvim-tree/nvim-web-devicons', lazy = true },
 
     -- -------------------- startup screen for neovim ------------------------
     {'glepnir/dashboard-nvim',
         event = 'VimEnter',
-        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'MunifTanjim/nui.nvim',
+        }
     },
 
     -- cute halloween dashboard for neovim start screen :3
@@ -42,25 +43,24 @@ local plugins = {
     -- -------------------------- status line --------------------------------
     {'nvim-lualine/lualine.nvim',
          lazy = false,
-         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
     -- -------------------- floating window plugins --------------------------
     -- configurable floating terminal window, replaces 'hsalem7/nvim-k8s'
     {"numToStr/FTerm.nvim",
-        lazy = true,
+        cmd = {'FtermOpen', 'Gitui', 'Matrix', 'K9s'}
     },
 
-    -- NeoVim UI toolkit that supports floating windows 
-    {'MunifTanjim/nui.nvim',
-        lazy = true,
-    },
-
-    -- ------------------------- file directory tree -------------------------
-    -- nvim new nerdtree replacement
-    {'nvim-tree/nvim-tree.lua',
-         dependencies = {'nvim-tree/nvim-web-devicons'},
-         tag = 'nightly'
+    -- ------------------ sidebar file directory tree -----------------------
+    {'nvim-neo-tree/neo-tree.nvim',
+         cmd = "Neotree",
+	 branch = "v2.x",
+         dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+            'MunifTanjim/nui.nvim',
+         },
     },
 
     -- ---------------- scroll bar for the right hand side -------------------
@@ -167,9 +167,11 @@ local plugins = {
     },
 
     -- this helps to configure the built-in language server protocol for nvim
-    {'neovim/nvim-lspconfig'},
-    {'williamboman/mason-lspconfig.nvim',
-        dependencies = {'williamboman/mason.nvim'},
+    {'neovim/nvim-lspconfig',
+        dependencies = {
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+        },
     },
 
     -- ------------------- fuzzy completion for files ------------------------
