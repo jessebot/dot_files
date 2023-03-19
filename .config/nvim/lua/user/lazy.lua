@@ -67,6 +67,8 @@ local plugins = {
     {"petertriho/nvim-scrollbar"},
 
     -- ------------------------------ tab line -------------------------------
+    -- might go to bufferline:
+    -- https://github.com/LazyVim/LazyVim/blob/7a8ca6222a554bdb78fb8de35404672fc4042302/lua/lazyvim/plugins/ui.lua#L52
     {'romgrk/barbar.nvim',
         dependencies = {'nvim-tree/nvim-web-devicons'},
         lazy = true,
@@ -131,6 +133,7 @@ local plugins = {
     -- https://github.com/nvim-treesitter/playground/pull/9
     {'nvim-treesitter/playground',
         lazy = true,
+        cmd = 'TSHighlightCapturesUnderCursor',
     },
 
     -- because indenting is still broken in treesitter for python
@@ -142,8 +145,8 @@ local plugins = {
     -- This is helpful for markdown -- 'junegunn/limelight.config/vim'
     {'junegunn/limelight.vim'},
 
-    -- for markdown tables
-    {'dhruvasagar/vim-table-mode'},
+    -- for markdown tables -- maybe not working?
+    -- {'dhruvasagar/vim-table-mode'},
 
     -- ---------------- Language Server Protocol Plugins ---------------------
     --
@@ -180,7 +183,15 @@ local plugins = {
 	version = false, -- telescope did only one release, so use HEAD for now
         -- tag = '0.1.1', -- latest we've seen
 	cmd = "Telescope",
-        dependencies = {'nvim-lua/plenary.nvim'}
+        dependencies = {'nvim-lua/plenary.nvim'},
+        key = {
+            { "<leader>:", "<cmd>Telescope commands<cr>", desc = "All Commands" },
+            { "<leader>H", "<cmd>Telescope highlights<cr>", desc = "Highlight groups for the current buffer" },
+            { "<leader>h", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+            { "<leader>ff", "<cmd>Telescope files<cr>", desc = "Find Files (cwd)" },
+            { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Files Recently Opened in Neovim" },
+        },
+
     },
 
     -- --------------------- Language Specific Stuff -------------------------
@@ -198,14 +209,25 @@ local plugins = {
         ft = "terraform",
     },
 
-  -- search/replace in multiple files -- untested
-  {
-    "windwp/nvim-spectre",
-    lazy = true,
-    -- stylua: ignore
-    keys = {
-      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+    -- search/replace in multiple files -- untested
+    {
+      "windwp/nvim-spectre",
+      lazy = true,
+      -- stylua: ignore
     },
+
+    -- a help menu for which key does what
+    {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
   },
 }
 

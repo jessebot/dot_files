@@ -23,8 +23,7 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
--- spacebar is our leader key
-vim.g.mapleader = '<space>'
+require('user.keymap')
 
 -- load plugins
 require('user.lazy')
