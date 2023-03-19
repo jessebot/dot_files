@@ -26,8 +26,6 @@ local plugins = {
         end,
     },
 
-    { 'nvim-tree/nvim-web-devicons', lazy = true },
-
     -- -------------------- startup screen for neovim ------------------------
     {'glepnir/dashboard-nvim',
         event = 'VimEnter',
@@ -128,11 +126,16 @@ local plugins = {
 
     -- ---------------- syntax highlighting installer ------------------------
 
-    {'nvim-treesitter/nvim-treesitter'},
+    {'nvim-treesitter/nvim-treesitter',
+        config = function()
+            vim.opt.foldmethod     = "expr"
+            vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
+            vim.opt.foldlevelstart = 99
+        end,
+    },
     -- I have this mostly for the :TSHighlightCapturesUnderCursor command
     -- https://github.com/nvim-treesitter/playground/pull/9
     {'nvim-treesitter/playground',
-        lazy = true,
         cmd = 'TSHighlightCapturesUnderCursor',
     },
 
@@ -229,6 +232,9 @@ local plugins = {
       })
     end,
   },
+
+    { 'nvim-tree/nvim-web-devicons', lazy = true },
+
 }
 
 require("lazy").setup(plugins)

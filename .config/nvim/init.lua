@@ -32,17 +32,6 @@ require('user.lazy')
 -- starting page for neovim
 require('user.dashboard')
 
--- completion from nvim-cmp
-require('user.completion')
-
--- Language Server configs and other syntax checking and highlight tools
-require('user.lsp-configs')
-require('user.tree-sitter')
-
--- folding and indentation
-require('user.folding')
-require('user.indent')
-
 -- tab line at top of window for tabs when there's more than one tab :) -- might switch to bufferline
 require('user.barbar')
 -- status line at bottom of window for cool file facts 
@@ -58,8 +47,18 @@ require("user.scrollbar")
 -- floating windows
 require('user.fterm')
 
--- syntax highlighting for hex codes
-require('user.nvim-colorizer')
-
 -- dim inactive windows
 require("tint").setup()
+
+-- Language Server configs and other syntax checking and highlight tools
+require('user.lsp-configs')
+require('user.tree-sitter')
+
+-- folding and indentation
+require('user.indent')
+
+-- completion from nvim-cmp
+require('user.completion')
+
+-- syntax highlighting for hex codes
+require('user.nvim-colorizer')
