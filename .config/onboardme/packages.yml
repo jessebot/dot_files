@@ -9,6 +9,9 @@ brew:
     cleanup: "brew cleanup"
   # these are essentially just extra git repos to query for installs/updates
   taps:
+    Linux:
+      # this should solve font issues :D
+      - "homebrew/linux-fonts"
     macOS:
       - "wez/wezterm"
       - "zegervdv/zathura"
@@ -107,6 +110,8 @@ brew:
       - spotifyd
       # spotify TUI
       - spotify-tui
+      # linuxbrew asks for this
+      - gcc
     # macOS specific stuff. Won't work with LinuxBrew
     macOS:
       # python 3.11 already ships with Debian bookworm, only needed for macOS
@@ -196,7 +201,8 @@ apt:
     default:
       - bash-completion
       - curl
-      - gcc-11
+      # was for euporie
+      # - gcc-11
       - build-essential
       - python3
       - python3-dev
