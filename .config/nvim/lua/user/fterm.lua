@@ -2,13 +2,13 @@
 
 local fterm = require("FTerm")
 
+-- create a vim command for FTermOpen
+vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
+
 -- CTRL+t keybindings to toggle terminal
 vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
-
--- create a vim command for FTermOpen
-vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
 
 -- -------------------------- open normal terminal ----------------------------
 -- cmatrix must be installed beforehand with brew install cmatrix
@@ -21,13 +21,6 @@ local cmatrix = fterm:new({
     }
 })
 
--- Use this to toggle gitui in a floating terminal
--- firt arg of 'n' is for normal mode
--- <A-g> are keys: Alt + m (alt is option on macOS)
-vim.keymap.set('n', '<A-m>', function()
-    cmatrix:toggle()
-end)
-
 vim.api.nvim_create_user_command(
     'Matrix',
     function()
@@ -35,6 +28,11 @@ vim.api.nvim_create_user_command(
     end,
     { bang = true }
 )
+
+-- Use this to toggle cmatrix in a floating terminal
+-- normal mode keys: <Space> + M
+vim.keymap.set('n', '<leader>M', '<cmd>Matrix<cr>', { desc = "c the matrix 󰘨 " })
+
 
 -- ---------------------------- open gitui -----------------------------------
 -- gitui must be installed beforehand with brew install gitui
@@ -47,12 +45,6 @@ local gitui = fterm:new({
     }
 })
 
--- Use this to toggle gitui in a floating terminal
--- firt arg of 'n' is for normal mode
--- <A-g> are keys: Alt + g (alt is option on macOS)
-vim.keymap.set('n', '<A-g>', function()
-    gitui:toggle()
-end)
 
 vim.api.nvim_create_user_command(
     'Gitui',
@@ -61,6 +53,10 @@ vim.api.nvim_create_user_command(
     end,
     { bang = true }
 )
+
+-- Use this to toggle gitui in a floating terminal
+-- normal mode keys: <Space> + g
+vim.keymap.set('n', '<leader>g', '<cmd>Gitui<cr>', { desc = "Git TUI  " })
 
 -- ------------------------------ open k9s -----------------------------------
 -- install k9s beforehand: https://k9scli.io/topics/install/
@@ -87,3 +83,7 @@ vim.api.nvim_create_user_command(
     end,
     { bang = true }
 )
+
+-- Use this to toggle k9s in a floating terminal
+-- normal mode keys: <Space> + k
+vim.keymap.set('n', '<leader>k', '<cmd>K9s<cr>', { desc = "k9s - kubernetes dashboard TUI 󱃾 " })
