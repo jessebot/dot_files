@@ -47,4 +47,6 @@ require'nvim-treesitter.configs'.setup {
     -- python disabled till this is resolved: github.com/nvim-treesitter/nvim-treesitter/issues/1136
     disable = { "python" },
     }
+  -- checkout incremental selection:
+  -- https://github.com/LazyVim/LazyVim/blob/7a8ca6222a554bdb78fb8de35404672fc4042302/lua/lazyvim/plugins/treesitter.lua#L57
 }

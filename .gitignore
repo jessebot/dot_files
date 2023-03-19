@@ -1,11 +1,9 @@
-# mac generates this all over the place. messy
-**.DS_Store
-
 # never check in a brew lock file
 **/.Brewfile.lock.json
 
 # this is all private info
 .config/asciinema/install-id
+.config/docker/**
 .config/glab-cli/aliases.yml
 .config/gh/hosts.yml
 .config/git/personal
@@ -13,7 +11,7 @@
 .config/bash/personal/bashrc
 .confg/jump
 .config/helm/repositories.lock
-.confg/kube
+.confg/kube/**
 .config/krew/**
 
 # neovim plugin manager called lazy generates this lock file each run
@@ -24,6 +22,7 @@
 
 #------- cache and other temp files ------------
 # standard don't check in cache or trash
+**.DS_Store
 .cache
 .Trash
 
