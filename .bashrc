@@ -20,6 +20,9 @@ export HOWDOI_COLORIZE=1
 # makes gpg prompt for passphrase in the terminal for git commit -S
 export GPG_TTY=$(tty)
 
+# use linux/amd64 platform by default on macOS - may break KinD!
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
 # source all the pathing exports including XDG Base Dir Spec env vars
 . ~/.config/bash/path.sh
 
