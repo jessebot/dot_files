@@ -23,9 +23,11 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
-require('user.keymap')
+-- moved directly to lazy
+-- require('user.keymap')
 
 -- load plugins
+-- require("lazy").setup("plugins")
 require('user.lazy')
 
 -- --------- Plugin configs that have to be called after lazy --------------
@@ -47,8 +49,8 @@ require("user.scrollbar")
 -- floating windows
 require('user.fterm')
 
--- dim inactive windows
-require("tint").setup()
+-- dim inactive windows - moved to lazy directly
+-- require("tint").setup()
 
 -- Language Server configs and other syntax checking and highlight tools
 require('user.lsp-configs')
