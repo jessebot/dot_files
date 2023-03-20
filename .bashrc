@@ -64,9 +64,15 @@ fi
 #  you can set $LOCALHOST_PRESET to a fastfetch preset you have locally in:  #
 #                  $XDG_DATA_HOME/fastfetch/presets/                         #
 # -------------------------------------------------------------------------- #
-if [ ! -z $LOCALHOST_PRESET ]; then
+if [ ! -z $LOCALHOST_PRESET ] && [ -z $NVIM ]; then
     alias fastfetch="echo '' && fastfetch --load-config $LOCALHOST_PRESET"
 else
     alias fastfetch="echo '' && fastfetch"
 fi
-fastfetch
+
+# don't print fastfetch in neovim by default, and use no logo when we do
+if [ ! -z $NVIM ]; then
+    alias fastfetch="echo '' && fastfetch --logo-type none"
+else
+    fastfetch
+fi
