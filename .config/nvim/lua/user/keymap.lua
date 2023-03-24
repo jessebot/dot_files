@@ -10,11 +10,13 @@ vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 -- cmatrix
-vim.keymap.set('n', '<leader>M', '<cmd>Matrix<cr>', { desc = "c the matrix 󰘨 " })
+vim.keymap.set('n', '<leader>M', '<cmd>Matrix<cr>', { desc = "󰘨  The Matrix™️" })
 -- gitui
-vim.keymap.set('n', '<leader>g', '<cmd>Gitui<cr>', { desc = "Git TUI  " })
+vim.keymap.set('n', '<leader>g', '<cmd>Gitui<cr>', { desc = "  gitui - terminal UI for git" })
 -- k9s
-vim.keymap.set('n', '<leader>K', '<cmd>K9s<cr>', { desc = "k9s - kubernetes dashboard TUI 󱃾 " })
+vim.keymap.set('n', '<leader>K', '<cmd>K9s<cr>', { desc = "󱃾 k9s - kubernetes dashboard" })
+-- bpython
+vim.keymap.set('n', '<leader>p', '<cmd>Bpython<cr>', { desc = "  bpython - color + docs in interactive python" })
 
 -- ---------------------- Telescope windows ----------------------------
 vim.keymap.set('n', "<leader>:", "<cmd>Telescope commands<cr>", { desc = "All Commands" })
@@ -24,9 +26,6 @@ vim.keymap.set('n', "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fin
 vim.keymap.set('n', "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Files Recently Opened in Neovim" })
 
 -- --------------------------- Diagnostics ------------------------------
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true}
-)
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+vim.keymap.set("n", "<leader>d", "<cmd>TroubleToggle<cr>",
   {silent = true, noremap = true}
 )
