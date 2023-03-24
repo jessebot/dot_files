@@ -326,9 +326,8 @@ pip3.11:
       - poetry
       - build
       - twine
-    macOS:
-      # this is for hacking on the iterm2 python api
-      - iterm2
+      # this is needed to make python respect XDG Base directory specific
+      - xdg_base_dirs
     devops:
       # this is a k8s tool to spin up clusters on your local machine
       - smol-k8s-lab

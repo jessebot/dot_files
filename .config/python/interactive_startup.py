@@ -4,7 +4,7 @@ import atexit
 import os
 from pathlib import Path
 import readline
-from xdg import xdg_state_home
+from xdg_base_dirs import xdg_state_home
 
 # define and create the state dir for python if it doesn't exist
 # state_dir = os.path.join(xdg_state_home(), 'python')
