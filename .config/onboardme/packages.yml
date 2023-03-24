@@ -2,6 +2,7 @@
 brew:
   emoji: "🍺"
   commands:
+    setup: "brew upgrade --cask --quiet"
     list: "brew list -1"
     update: "brew update --quiet"
     upgrade: "brew upgrade --quiet"
@@ -19,6 +20,8 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
+      # cool interactive python with colors + docs
+      - bpython
       # TUI browser
       - w3m
       # markdown rendering
@@ -328,8 +331,6 @@ pip3.11:
       - twine
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
-      # cool interactive python with colors + docs
-      - bpython
     devops:
       # this is a k8s tool to spin up clusters on your local machine
       - smol-k8s-lab
