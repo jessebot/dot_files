@@ -74,7 +74,7 @@ else
 fi
 
 # don't print fastfetch in neovim or poetry shell by default, and don't use logo
-if [ ! -z $NVIM ] || [ ! -z $POETRY_ACTIVE ]; then
+if [ ! -z $NVIM ] || [ ! -z $POETRY_ACTIVE ] || [ ! -z $ZELLIJ ]; then
     alias fastfetch="echo '' && fastfetch --logo-type none"
 else
     fastfetch
