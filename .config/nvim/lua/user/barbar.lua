@@ -17,15 +17,6 @@ require("bufferline").setup({
   --  - middle-click: delete buffer
   clickable = true,
 
-  -- Enables / disables diagnostic symbols
-  diagnostics = {
-    -- you can use a list
-    {enabled = true, icon = '󰋔'}, -- ERROR
-    {enabled = false, icon = ''}, -- WARN
-    {enabled = false, icon = ''}, -- INFO
-    {enabled = true, icon = '󰌵'},  -- HINT
-  },
-
   -- Excludes buffers from the tabline
   exclude_ft = {'dashboard', 'TelescopePrompt'},
   -- exclude_name = {'package.json'},
@@ -45,20 +36,24 @@ require("bufferline").setup({
   -- Enable/disable icons
   -- if set to 'numbers', will show buffer index in the tabline
   -- if set to 'both', will show buffer index and icons in the tabline
-  icons = true,
-
-  -- If set, the icon color will follow its corresponding buffer
-  -- highlight group. By default, the Buffer*Icon group is linked to the
-  -- Buffer* group (see Highlighting below). Otherwise, it will take its
-  -- default value as defined by devicons.
-  icon_custom_colors = false,
-
-  -- Configure icons on the bufferline.
-  icon_separator_active = '▎',
-  icon_separator_inactive = '▎',
-  icon_close_tab = '󰅗',
-  icon_close_tab_modified = '󰽃',
-  icon_pinned = '',
+  icons = {
+        filetype = { enabled = true },
+        diagnostics = {
+            { enabled = true, icon = '󰋔' }, -- ERROR
+            { enabled = false, icon = '' }, -- WARN
+            { enabled = false, icon = '' }, -- INFO
+            { enabled = true, icon = '󰌵' },  -- HINT
+          },
+        -- Configure icons on the bufferline
+        separator = { left = '▎'},
+        inactive = {
+            separator = { left = '▎' },
+        },
+        custom_colors = false,
+        button = '󰅗',
+        close_tab_modified = '󰽃',
+        pinned = { button = ''},
+  },
 
   -- If true, new buffers will be inserted at the start/end of the list.
   -- Default is to insert after current buffer.
