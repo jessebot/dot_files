@@ -64,3 +64,6 @@ require('user.completion')
 
 -- syntax highlighting for hex codes
 require('user.nvim-colorizer')
+
+-- experiment to give you a remote git permalink URL for your your current line
+require('user.git_url')
