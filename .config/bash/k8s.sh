@@ -25,6 +25,9 @@ alias kdn="kubectl describe nodes -l kubernetes.io/role=node"
 alias kgm="kubectl get nodes -l kubernetes.io/role=master"
 alias kgn="kubectl get nodes -l kubernetes.io/role=node"
 
+# get shell access to nextcloud pod in nextcloud namespace
+alias ncsh="ke -n nextcloud $(kg pods -n nextcloud | grep -v postgres | grep -v metrics | tail -n 1 | awk '{print $1}') -- /bin/sh"
+
 # switch to different k8s envs
 function kcs() {
     kubectl config use-context k8s-$1.$domain
