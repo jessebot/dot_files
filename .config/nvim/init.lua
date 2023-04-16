@@ -66,4 +66,4 @@ require('user.completion')
 require('user.nvim-colorizer')
 
 -- experiment to give you a remote git permalink URL for your your current line
-require('user.git_url')
+-- require('user.git_url')
