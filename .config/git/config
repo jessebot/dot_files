@@ -31,3 +31,5 @@
 # personal stuff like gpg config, username, etc
 [includeIf "gitdir:~/"]
     path = ~/.config/git/personal
+[alias]
+	root = rev-parse --show-toplevel
