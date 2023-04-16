@@ -20,6 +20,7 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
+      - jump
       # cool interactive python with colors + docs
       - bpython
       # TUI browser
