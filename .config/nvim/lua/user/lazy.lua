@@ -177,6 +177,8 @@ local plugins = {
 
     -- for markdown tables -- maybe not working?
     -- {'dhruvasagar/vim-table-mode'},
+    --
+    {'towolf/vim-helm'},
 
     -- ---------------- Language Server Protocol Plugins ---------------------
     -- snippets
