@@ -2,9 +2,16 @@
 #   Pathing:   Adhereing as closely as possible to XDG Base Directory Spec
 #   https://specifications.freedesktop.org/basedir-spec/latest/
 # --------------------------------------------------------------------------
+OS=$(uname)
+
+if [[ "$OS" == *"Linux"* ]]; then
+    export XDG_DATA_HOME="$HOME/.local"
+else
+    export XDG_DATA_HOME="$HOME/.local/share"
+fi
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # this relative is used for both macOS and Debian based distros
@@ -31,9 +38,9 @@ if [[ $(uname) == *"Linux"* ]]; then
     # pip_packages="/home/linuxbrew/.linuxbrew/$pip_path_suffix"
 
     # pip packages with command line tools install here by default with apt installed python
-    export PATH=$PATH:$XDG_DATA_HOME/python/bin
+    export PATH=$PATH:$XDG_DATA_HOME/bin
     # apt installed location of pip installed python3.x packages
-    pip_packages="$XDG_DATA_HOME/python/$pip_path_suffix"
+    pip_packages="$XDG_DATA_HOME/$pip_path_suffix"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
@@ -64,9 +71,14 @@ fi
 # python default install location when you: pip$VERSION install --user package
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
-# make python do it's cache in ~/.cache/python
-export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
-export PYTHONUSERBASE=$XDG_DATA_HOME/python
+if [[ "$OS" == *"Linux"* ]]; then
+    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME
+    export PYTHONUSERBASE=$XDG_DATA_HOME
+else
+    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+    export PYTHONUSERBASE=$XDG_DATA_HOME/python
+fi
+
 # Run py cmds in this file b4 the 1st prompt is displayed in interactive mode
 export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/interactive_startup.py
 
@@ -105,4 +117,4 @@ export W3M_DIR="~/.local/state/w3m"
 # add gcloud to path on macOS because they don't have a homebrew package
 export PATH=$PATH:$HOME/.local/bin/google-cloud-sdk/bin
 # updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jesse/.local/bin/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jesse/.local/bin/google-cloud-sdk/path.bash.inc'; fi
+if [ -f "/Users/$USER/.local/bin/google-cloud-sdk/path.bash.inc" ]; then . "/Users/$USER/.local/bin/google-cloud-sdk/path.bash.inc"; fi
