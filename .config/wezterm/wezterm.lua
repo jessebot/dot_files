@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 return {
        -- never play a bell sound
@@ -22,13 +23,28 @@ return {
 
        -- key mappings
        keys = {
-        -- This will create a new split and run your default program inside it
-         {
-           key = 's',
-           mods = 'CTRL',
-           action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-         },
+        -- This will create a new split and run your default program inside its
+        {
+            key = 's',
+            mods = 'CTRL',
+            action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+        },
+        -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
+        { 
+            key = 'LeftArrow',
+            mods = 'OPT',
+            action = act.SendString '\x1bb'
+        },
+        -- Make Option-Right equivalent to Alt-f; forward-word
+        { 
+            key = 'RightArrow',
+            mods = 'OPT',
+            action = act.SendString '\x1bf'
+        },
        },
+
+
+
 
        -- default terminal colors
        colors = {
