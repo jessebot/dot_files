@@ -534,11 +534,17 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   This file is configuration for the terminal emulator [wezterm]:
 
   - disables bell noises
-  - sets font size to 12
+  - sets font face to [mononoki](https://madmalik.github.io/mononoki/)
+  - sets font size to `15`
+  - ignore warnings about missing glyphs
   - hides tab bar if only one tab
-  - remove top title bar
-  - set background opacity to 0.7
+  - removes top title bar
+  - set background opacity to `0.95`
   - change colors to a softer [spacechalk.nvim] aligned colorscheme
+  - maps <kbd>alt</kbd>+⬅️ to go back a word on the command line
+  - maps <kbd>alt</kbd>+➡️ to go forward a word on the command line
+  - maps <kbd>ctrl</kbd>+<kbd>s</kbd> to open a split pane to the right
+  - makes links clickable
 
   </blockquote>
 
