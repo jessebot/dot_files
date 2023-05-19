@@ -98,12 +98,6 @@ brew:
       - clamav
       # TUI for gpg keys, for the lazy, like me
       - gpg-tui
-      # spotify daemon
-      - spotifyd
-      # spotify TUI
-      - spotify-tui
-      # linuxbrew asks for this
-      - gcc
     # macOS specific stuff. Won't work with LinuxBrew
     macOS:
       # this is installed via apt for linux
@@ -181,6 +175,10 @@ brew:
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
     extra:
+      # spotify daemon
+      - spotifyd
+      # spotify TUI
+      - spotify-tui
       # preview videos in the terminal. commented by default because it is big
       # - ffmpegthumbnailer
       # for working w/ images and making lsimg work, disabled by default due to size
@@ -194,6 +192,8 @@ brew:
       - "--cask slack"
       - "--cask zoom"
     Linux:
+      # linuxbrew asks for this
+      - gcc
       - "font-mononoki"
       - "font-symbols-only-nerd-font"
       # - "font-hack-nerd-font"
@@ -209,12 +209,10 @@ apt:
   packages:
     default:
       - bash-completion
+      - build-essential
       # this is just to keep us up to date
       - git
       - curl
-      # was for euporie
-      # - gcc-11
-      - build-essential
       - python3
       - python3-dev
       - python3-pip
@@ -241,6 +239,8 @@ apt:
       - containerd.io
       # like top but for GPUs
       - nvtop
+      # was for euporie - notebooks in terminals
+      # - gcc-11
     gui:
       # package manager
       - snapd
@@ -313,8 +313,6 @@ pip3.11:
       - onboardme
       # powerline: for the internal ip address prompt segment
       - netifaces
-      # powerline: supposed to work spotify info
-      - dbus
       # neovim: needed for neovim's python3 interface, I think
       - pynvim
       # this is for git pre-commits
@@ -332,22 +330,26 @@ pip3.11:
       - pyflakes
       - autoflake
       - poetry
-      - build
-      - twine
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
+    extra:
+      # powerline: supposed to work spotify info
+      - dbus
     devops:
+      # might be needed for development and building
+      - build
+      - twine
       # this is a k8s tool to spin up clusters on your local machine
       - smol-k8s-lab
       # need this for python notebooks
       - ipykernel
-      # classic python notebooks
-      - notebook
       # latest jupyter notebooks
       - jupyterlab
+      # classic python notebooks
+      # - notebook
       # notebook-driven development platform
-      - nbdev
+      # - nbdev
+      # this is for markdown notebook docs and such
+      # - quarto
       # notebooks in the terminal 💚
       - euporie
-      # this is for markdown notebook docs and such
-      - quarto
