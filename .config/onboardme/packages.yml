@@ -204,7 +204,7 @@ apt:
     list: "scripts/get_apt_list.sh"
     update: "sudo apt-get update -y"
     upgrade: "sudo apt-get upgrade -y"
-    install: "sudo apt-get install -y "
+    install: "sudo apt-get install -y --no-install-recommends"
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
@@ -232,6 +232,8 @@ apt:
       - colortest
       # help fix locale issues
       - "locales-all"
+      # for installing stuff through ssh
+      - "openssh-client"
     devops:
       - docker-ce
       - docker-ce-cli
