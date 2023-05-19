@@ -25,7 +25,7 @@
                             "show_tag": "exact",
                             "formats": {
                                 "branch": " {}",
-                                "tag": " ﮉ {}",
+                                "tag": " 󰚋 {}",
                                 "untracked": "  {}",
                                 "changed": "  {}",
                                 "staged": "  {}",
@@ -89,7 +89,7 @@
                         "function": "powerline.segments.common.time.date",
                         "draw_soft_divider": false,
                         "args": {
-                            "format": " %H:%M"
+                            "format": "  %H:%M"
                         }
                     }
                 ]
