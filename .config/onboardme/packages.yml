@@ -78,8 +78,6 @@ brew:
       - go
       # node.js
       - node
-      # installs cargo and rust
-      - rustup
       # linter for YAML
       - yamllint
       # for parsing json via cli
@@ -175,6 +173,8 @@ brew:
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
     extra:
+      # installs cargo and rust
+      - rustup
       # spotify daemon
       - spotifyd
       # spotify TUI
