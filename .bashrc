@@ -51,6 +51,10 @@ if [ -f $personal_rc_file ]; then
     . $personal_rc_file
 fi
 
+if [ -f "/.dockerenv" ]; then
+    export DOCKER_CONTAINER="🐳"
+fi
+
 # launch powerline only if we're not in a neovim fterm floating window
 if [ -z $FTERM_TUI ] ; then
     # powerline - a fancy extensible prompt: https://powerline.readthedocs.io
