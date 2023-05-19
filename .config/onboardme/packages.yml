@@ -48,12 +48,8 @@ brew:
       - rich-cli
       # file TUI: https://www.geeksforgeeks.org/ranger-a-cli-file-manager/
       - ranger
-      # preview videos in the terminal. commented by default because it is big
-      # - ffmpegthumbnailer
       # cat images in the terminal (e.g. img2sixel imagename.png)
       - libsixel
-      # for working with images and making lsimg work
-      - imagemagick
       # ag command: like grep or ack, but more modern, for searching file text
       - the_silver_searcher
       # diff, but with colors
@@ -78,8 +74,6 @@ brew:
       - cmatrix
       # a cow that says things
       - cowsay
-      # revision control system stuff
-      - git
       # terminal user interface for git
       - gitui
       # github cli
@@ -118,6 +112,8 @@ brew:
       - gcc
     # macOS specific stuff. Won't work with LinuxBrew
     macOS:
+      # this is installed via apt for linux
+      - git
       # python 3.11 already ships with Debian bookworm, only needed for macOS
       - python@3.11
       # for hiding the top bar on an M1
@@ -160,16 +156,17 @@ brew:
       - "--cask protonmail-bridge"
       # libreoffice is a FOSS office suite that replaces Google Docs/Office365
       - "--cask libreoffice"
-    devops:
-      - "docker"
       # docker desktop
-      - "--cask docker"
+      # - "--cask docker"
       # colima is a docker desktop replacement
       - "colima"
+      # docker cli
+      - "docker"
+    devops:
       # for backups
       - restic
       # terraform for building stuff
-      - terraform
+      - tfenv
       - tflint
       - terraform-docs
       # cli for k8s (kubernetes)
@@ -185,10 +182,13 @@ brew:
       # KinD (Kubernetes in Docker), for small k8s clusters for testing
       - kind
       # other useful goodies
-      # manage multiple versions of terraform
-      - tfenv
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
+    extra:
+      # preview videos in the terminal. commented by default because it is big
+      - ffmpegthumbnailer
+      # for working w/ images and making lsimg work, disabled by default due to size
+      - imagemagick
     work:
       # for work chats
       - "--cask slack"
@@ -196,7 +196,7 @@ brew:
     Linux:
       - "font-mononoki"
       - "font-symbols-only-nerd-font"
-      - "font-hack-nerd-font"
+      # - "font-hack-nerd-font"
 
 apt:
   emoji: "🙃"
@@ -209,6 +209,8 @@ apt:
   packages:
     default:
       - bash-completion
+      # this is just to keep us up to date
+      - git
       - curl
       # was for euporie
       # - gcc-11
