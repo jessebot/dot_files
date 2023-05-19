@@ -306,7 +306,7 @@ pip3.11:
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     setup: "sudo rm /usr/lib/python3.*/EXTERNALLY-MANAGED"
     list: "pip3.11 list"
-    install: "pip3.11 install --upgrade --user --break-system-packages"
+    install: "pip3.11 install --upgrade --user --break-system-packages "
   packages:
     default:
       # keep ourselves up to date
