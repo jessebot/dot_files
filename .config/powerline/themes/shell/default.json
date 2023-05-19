@@ -2,6 +2,15 @@
         "above": [{
                 "left": [
                     {
+                        "function": "powerline.segments.common.env.environment",
+                        "name": "docker_enabled",
+                        "draw_soft_divider": false,
+                        "draw_hard_divider": true,
+                        "args": {
+                            "variable": "DOCKER_CONTAINER"
+                        }
+                    },
+                    {
                         "function": "powerline.segments.common.net.hostname"
                     },
                     {
@@ -69,7 +78,6 @@
                             "use_ssl": false,
                             "interval": 60
                         }
-
                     },
                     {
                         "function": "powerline.segments.common.bat.battery",
