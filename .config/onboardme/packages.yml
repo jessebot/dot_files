@@ -318,7 +318,7 @@ pip3.11:
       # this is for git pre-commits
       - pre-commit
       # powerline: (status line for tmux/BASH), this works on linux
-      - "git+https://github.com/powerline/powerline"
+      - "git+https://github.com/powerline/powerline --break-system-packages"
       # this might work on macOS?
       # - "git+ssh://git@github.com/powerline/powerline"
       # these are powerline extensions
