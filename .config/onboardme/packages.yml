@@ -306,7 +306,7 @@ pip3.11:
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     setup: "sudo rm /usr/lib/python3.*/EXTERNALLY-MANAGED"
     list: "pip3.11 list"
-    install: "pip3.11 install --upgrade --user "
+    install: "pip3.11 install --upgrade --user --break-system-packages"
   packages:
     default:
       # keep ourselves up to date
@@ -318,7 +318,7 @@ pip3.11:
       # this is for git pre-commits
       - pre-commit
       # powerline: (status line for tmux/BASH), this works on linux
-      - "git+https://github.com/powerline/powerline --break-system-packages"
+      - "git+https://github.com/powerline/powerline"
       # this might work on macOS?
       # - "git+ssh://git@github.com/powerline/powerline"
       # these are powerline extensions
