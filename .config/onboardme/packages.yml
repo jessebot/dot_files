@@ -34,10 +34,6 @@ brew:
       - asciinema
       # TUI IDE is neovim 
       - neovim
-      # TUI email client
-      - neomutt
-      # fetch your mail locally for neomutt
-      - offlineimap
       # fuzzy search, helps with completion and searching
       - fzf
       # ls replacement written in rust: https://github.com/Peltoche/lsd
@@ -55,7 +51,7 @@ brew:
       # diff, but with colors
       - colordiff
       # prettier top alternatives in C++ and Rust respectively
-      - btop
+      # - btop
       - bottom
       # quick system metrics, typically used as an MOTD
       - fastfetch
@@ -78,8 +74,6 @@ brew:
       - gitui
       # github cli
       - gh
-      # gitlab cli
-      - glab
       # programming languages and their package managers
       - go
       # node.js
@@ -163,6 +157,8 @@ brew:
       # docker cli
       - "docker"
     devops:
+      # gitlab cli
+      - glab
       # for backups
       - restic
       # terraform for building stuff
@@ -186,9 +182,13 @@ brew:
       # - kubeseal
     extra:
       # preview videos in the terminal. commented by default because it is big
-      - ffmpegthumbnailer
+      # - ffmpegthumbnailer
       # for working w/ images and making lsimg work, disabled by default due to size
       - imagemagick
+      # TUI email client
+      - neomutt
+      # fetch your mail locally for neomutt
+      - offlineimap
     work:
       # for work chats
       - "--cask slack"
@@ -230,8 +230,6 @@ apt:
       # networking and firewall
       - iptables
       - net-tools
-      # package manager
-      - snapd
       # print a pretty pallete to see all colors the terminal can render
       - colortest
       # help fix locale issues
@@ -244,6 +242,8 @@ apt:
       # like top but for GPUs
       - nvtop
     gui:
+      # package manager
+      - snapd
       # package manager for gui apps
       - flatpak
       # needed for freetube
@@ -319,9 +319,11 @@ pip3.11:
       - pynvim
       # this is for git pre-commits
       - pre-commit
-      # for git commits
-      # powerline: (status line for tmux/BASH)
-      - "git+ssh://git@github.com/powerline/powerline"
+      # powerline: (status line for tmux/BASH), this works on linux
+      - "git+https://github.com/powerline/powerline"
+      # this might work on macOS?
+      # - "git+ssh://git@github.com/powerline/powerline"
+      # these are powerline extensions
       - powerline-kubernetes
       - powerline-gitstatus
       # python development: linting/auto-linting
