@@ -68,7 +68,7 @@ lspconfig.marksman.setup{
 }
 
 -- python
-lspconfig.jedils.setup{
+lspconfig.jedi_language_server.setup{
    capabilities = capabilities
 }
 
