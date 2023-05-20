@@ -29,12 +29,14 @@ return {
             mods = 'CTRL',
             action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
         },
+
         -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
         { 
             key = 'LeftArrow',
             mods = 'OPT',
             action = act.SendString '\x1bb'
         },
+
         -- Make Option-Right equivalent to Alt-f; forward-word
         { 
             key = 'RightArrow',
@@ -42,8 +44,6 @@ return {
             action = act.SendString '\x1bf'
         },
        },
-
-
 
 
        -- default terminal colors
