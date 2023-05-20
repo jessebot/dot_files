@@ -243,6 +243,8 @@ apt:
       - nvtop
       # was for euporie - notebooks in terminals
       # - gcc-11
+      # might be needed for python virtual environments
+      # - python3-venv
     gui:
       # package manager
       - snapd
