@@ -61,14 +61,9 @@ if [[ $(uname) == *"Darwin"* ]]; then
         export PATH="$PYTHONUSERBASE/bin:$PATH"
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
-        # pip_packages="/opt/homebrew/$pip_path_suffix"
     else
         # For older macs before the M1, pre-2020, WITHOUT apple silicon
         export PATH="$PYTHONUSERBASE/bin:$PATH"
-        # pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
-        # these lines below used to work, but stopped for some reason...
-        # pip_packages="/usr/local/$pip_path_suffix"
-        # export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
