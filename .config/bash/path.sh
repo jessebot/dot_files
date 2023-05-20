@@ -41,7 +41,9 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PYTHONUSERBASE=$XDG_DATA_HOME
 fi
 
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# powerline - a fancy extensible prompt: https://powerline.readthedocs.io
 if [[ $(uname) == *"Darwin"* ]]; then
 
     # iterm2 specific commands and functions
@@ -57,8 +59,11 @@ if [[ $(uname) == *"Darwin"* ]]; then
         pip_packages="/opt/homebrew/$pip_path_suffix"
     else
         # For older macs before the M1, pre-2020, WITHOUT apple silicon
-        export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
-        pip_packages="/usr/local/$pip_path_suffix"
+        export PATH="$XDG_DATA_HOME/python/bin:$PATH"
+        pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
+        # these lines below used to work, but stopped for some reason...
+        # pip_packages="/usr/local/$pip_path_suffix"
+        # export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
