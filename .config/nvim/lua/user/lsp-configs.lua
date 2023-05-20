@@ -4,7 +4,8 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
   -- automatically install language servers setup below for lspconfig
-  automatic_installation = true
+  automatic_installation = true,
+  ensure_installed = { "bashls", "jedi_language_server", "ruff_lsp", "lua_ls" }
 }
 
 -- Set up lspconfig.
@@ -70,6 +71,9 @@ lspconfig.marksman.setup{
 lspconfig.jedi_language_server.setup{
    capabilities = capabilities
 }
+
+-- python - ruff linting
+lspconfig.ruff.setup{}
 
 -- python - ruff linting
 lspconfig.ruff_lsp.setup{}
