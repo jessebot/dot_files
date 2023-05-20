@@ -41,25 +41,29 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PYTHONUSERBASE=$XDG_DATA_HOME
 fi
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # powerline - a fancy extensible prompt: https://powerline.readthedocs.io
 if [[ $(uname) == *"Darwin"* ]]; then
-
-    # iterm2 specific commands and functions
+    # iterm2 specific commands and functions, not really using this these days
     export PATH=$PATH:$HOME/.local/bin/iterm2
 
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
+    # make python do it's cache in ~/.cache/python
+    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+    # put python data into $HOME/.local/share/python
+    export PYTHONUSERBASE=$XDG_DATA_HOME/python
 
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
+        # this is for python XDG spec stuff
+        export PATH="$PYTHONUSERBASE/bin:$PATH"
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
         pip_packages="/opt/homebrew/$pip_path_suffix"
     else
         # For older macs before the M1, pre-2020, WITHOUT apple silicon
-        export PATH="$XDG_DATA_HOME/python/bin:$PATH"
+        export PATH="$PYTHONUSERBASE/bin:$PATH"
         pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
         # these lines below used to work, but stopped for some reason...
         # pip_packages="/usr/local/$pip_path_suffix"
@@ -68,10 +72,6 @@ if [[ $(uname) == *"Darwin"* ]]; then
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-
-    # make python do it's cache in ~/.cache/python
-    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
-    export PYTHONUSERBASE=$XDG_DATA_HOME/python
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
