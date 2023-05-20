@@ -69,8 +69,6 @@ brew:
       - gitui
       # github cli
       - gh
-      # programming languages and their package managers
-      - go
       # node.js
       - node
       # linter for YAML
@@ -87,8 +85,6 @@ brew:
       - openssl@3
       # password management
       - bitwarden-cli
-      # anti virus
-      - clamav
       # TUI for gpg keys, for the lazy, like me
       - gpg-tui
     # macOS specific stuff. Won't work with LinuxBrew
@@ -105,9 +101,6 @@ brew:
       - bash
       # so that bash completion stuff works
       - "bash-completion@2"
-      # zathura is a document viewer
-      - zathura
-      - zathura-pdf-mupdf
       # fonts
       - "--cask font-mononoki"
       - "--cask font-symbols-only-nerd-font"
@@ -145,14 +138,8 @@ brew:
       # docker cli
       - "docker"
     devops:
-      # gitlab cli
-      - glab
-      # for backups
-      - restic
-      # terraform for building stuff
-      - tfenv
-      - tflint
-      - terraform-docs
+      # programming languages and their package managers
+      - go
       # cli for k8s (kubernetes)
       - kubectl
       # kubectl plugin manager
@@ -165,9 +152,16 @@ brew:
       - argocd
       # KinD (Kubernetes in Docker), for small k8s clusters for testing
       - kind
-      # other useful goodies
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
+      # gitlab cli
+      - glab
+      # for backups
+      - restic
+      # terraform for building stuff
+      - tfenv
+      - tflint
+      - terraform-docs
     extras:
       # installs cargo and rust
       # - rustup
@@ -179,16 +173,19 @@ brew:
       # - ffmpegthumbnailer
       # for working w/ images and making lsimg work, disabled by default due to size
       - imagemagick
-      # TUI email client
-      - neomutt
       # fetch your mail locally for neomutt
       - offlineimap
+      # anti virus mostly for mail
+      - clamav
+      # TUI email client
+      - neomutt
+      # zathura is a document viewer, that is not working yet
+      # - zathura
+      # - zathura-pdf-mupdf
       # a cow that says things
       - cowsay
       # steam locomotive
       - sl
-      # blocky fonts: https://devhints.io/figlet
-      # - figlet
     work:
       # for work chats
       - "--cask slack"
