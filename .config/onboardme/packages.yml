@@ -57,9 +57,7 @@ brew:
       - fastfetch
       # prettier du/df outputs: https://github.com/muesli/duf
       - duf
-      # rainbow text
-      - lolcat
-      # blocky fonts
+      # blocky fonts with the options for colors
       - toilet
       # less: b/c you get new features if you stay up2date, & brew is up2date
       - less
@@ -175,6 +173,8 @@ brew:
       - cowsay
       # steam locomotive
       - sl
+      # rainbow text
+      - lolcat
     mail:
       # fetch your mail locally for neomutt
       - offlineimap
@@ -204,7 +204,7 @@ apt:
     list: "scripts/get_apt_list.sh"
     update: "sudo apt-get update -y"
     upgrade: "sudo apt-get upgrade -y"
-    install: "sudo apt-get install -y --no-install-recommends"
+    install: "sudo apt-get install -y --no-install-recommends "
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
