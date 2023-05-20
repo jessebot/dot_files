@@ -229,6 +229,7 @@ local plugins = {
 
     -- this helps to configure the built-in language server protocol for nvim
     {'neovim/nvim-lspconfig',
+      lazy = false,
         dependencies = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
