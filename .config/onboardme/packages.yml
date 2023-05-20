@@ -59,17 +59,12 @@ brew:
       - duf
       # rainbow text
       - lolcat
-      # blocky fonts: https://devhints.io/figlet
-      - figlet
+      # blocky fonts
       - toilet
       # less: b/c you get new features if you stay up2date, & brew is up2date
       - less
-      # steam locamotive
-      - sl
       # The Matrix screensaver for the terminal
       - cmatrix
-      # a cow that says things
-      - cowsay
       # terminal user interface for git
       - gitui
       # github cli
@@ -106,16 +101,17 @@ brew:
       - topnotch
       # for testing apis and downloading things
       - curl
-      # current version of bash :)
+      # current version of bash 😍
       - bash
       # so that bash completion stuff works
       - "bash-completion@2"
       # zathura is a document viewer
       - zathura
       - zathura-pdf-mupdf
+      # fonts
       - "--cask font-mononoki"
-      - "--cask font-hack-nerd-font"
       - "--cask font-symbols-only-nerd-font"
+      # - "--cask font-hack-nerd-font"
       # this lets us resize windows on macOS
       - "--cask rectangle"
       # Default browser
@@ -172,9 +168,9 @@ brew:
       # other useful goodies
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
-    extra:
+    extras:
       # installs cargo and rust
-      - rustup
+      # - rustup
       # spotify daemon
       - spotifyd
       # spotify TUI
@@ -187,6 +183,12 @@ brew:
       - neomutt
       # fetch your mail locally for neomutt
       - offlineimap
+      # a cow that says things
+      - cowsay
+      # steam locomotive
+      - sl
+      # blocky fonts: https://devhints.io/figlet
+      # - figlet
     work:
       # for work chats
       - "--cask slack"
@@ -306,10 +308,9 @@ snap:
 pip3.11:
   emoji: "🐍"
   commands:
+    list: "pip3.11 list"
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
-    setup: "sudo rm /usr/lib/python3.*/EXTERNALLY-MANAGED"
-    list: "pip3.11 list"
     install: "pip3.11 install --upgrade --user --break-system-packages "
   packages:
     default:
