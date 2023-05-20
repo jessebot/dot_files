@@ -73,9 +73,6 @@ lspconfig.jedi_language_server.setup{
 }
 
 -- python - ruff linting
-lspconfig.ruff.setup{}
-
--- python - ruff linting
 lspconfig.ruff_lsp.setup{}
 
 -- terraform

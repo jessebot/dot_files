@@ -2,16 +2,11 @@ require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = {
                       "bash",
-                      "css",
                       "dockerfile",
                       "hcl",
-                      "html",
-                      "kdl",
-                      "lua",
                       "markdown",
                       "markdown_inline",
                       "python",
-                      "sql",
                       "terraform",
                       "toml",
                       "yaml",
