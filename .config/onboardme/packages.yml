@@ -194,8 +194,9 @@ brew:
     Linux:
       # linuxbrew asks for this
       - gcc
-      - "font-mononoki"
-      - "font-symbols-only-nerd-font"
+      # linuxbrew fonts aren't working for some reason
+      # - "font-mononoki"
+      # - "font-symbols-only-nerd-font"
       # - "font-hack-nerd-font"
 
 apt:
