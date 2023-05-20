@@ -127,8 +127,6 @@ brew:
       - "--cask bitwarden"
       # VPN
       - "--cask protonvpn"
-      # email
-      - "--cask protonmail-bridge"
       # libreoffice is a FOSS office suite that replaces Google Docs/Office365
       - "--cask libreoffice"
       # docker desktop
@@ -173,6 +171,11 @@ brew:
       # - ffmpegthumbnailer
       # for working w/ images and making lsimg work, disabled by default due to size
       - imagemagick
+      # a cow that says things
+      - cowsay
+      # steam locomotive
+      - sl
+    mail:
       # fetch your mail locally for neomutt
       - offlineimap
       # anti virus mostly for mail
@@ -182,10 +185,8 @@ brew:
       # zathura is a document viewer, that is not working yet
       # - zathura
       # - zathura-pdf-mupdf
-      # a cow that says things
-      - cowsay
-      # steam locomotive
-      - sl
+      # proton bridge for getting mail locally
+      - "--cask protonmail-bridge"
     work:
       # for work chats
       - "--cask slack"
