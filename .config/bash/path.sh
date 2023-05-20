@@ -28,7 +28,7 @@ if [[ $(uname) == *"Linux"* ]]; then
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
-    # pip packages installed via linuxbrew will be here (if python is installed via linuxbrew)
+    # pip packages installed via linuxbrew will be here (if python is installed via brew)
     # pip_packages="/home/linuxbrew/.linuxbrew/$pip_path_suffix"
 
     # pip packages with command line tools install here by default with apt installed python
