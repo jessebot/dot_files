@@ -4,13 +4,22 @@ import atexit
 import os
 from pathlib import Path
 import readline
-from xdg_base_dirs import xdg_state_home
+from xdg_base_dirs import xdg_state_home, xdg_cache_home, xdg_data_home
 
-# define and create the state dir for python if it doesn't exist
-# state_dir = os.path.join(xdg_state_home(), 'python')
+# create the XDG_STATE_HOME/python dir if it doesn't exist
+# most likely going to be $HOME/.local/state/python
 state_dir = Path.joinpath(xdg_state_home(), 'python')
 Path(state_dir).mkdir(exist_ok=True)
 
+# create the XDG_CACHE_HOME/python dir if it doesn't exist
+# most likely going to be $HOME/.cache/python
+cache_dir = Path.joinpath(xdg_cache_home(), 'python')
+Path(cache_dir).mkdir(exist_ok=True)
+
+# create the XDG_DATA_HOME/python dir if it doesn't exist
+# most likely going to be $HOME/.local/share/python
+data_dir = Path.joinpath(xdg_data_home(), 'python')
+Path(data_dir).mkdir(exist_ok=True)
 
 # define history file name
 history = os.path.join(state_dir, 'history')
