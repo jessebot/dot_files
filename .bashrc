@@ -72,14 +72,14 @@ fi
 #                  $XDG_DATA_HOME/fastfetch/presets/                         #
 # -------------------------------------------------------------------------- #
 if [ ! -z $LOCALHOST_PRESET ] && [ -z $NVIM ]; then
-    alias fastfetch="echo '' && fastfetch --load-config $LOCALHOST_PRESET"
+    alias fastfetch="echo '' && fastfetch --load-config $LOCALHOST_PRESET && echo ''"
 else
-    alias fastfetch="echo '' && fastfetch"
+    alias fastfetch="echo '' && fastfetch && echo ''"
 fi
 
 # don't print fastfetch in neovim or poetry shell by default, and don't use logo
 if [ ! -z $NVIM ] || [ ! -z $POETRY_ACTIVE ] || [ ! -z $ZELLIJ ]; then
-    alias fastfetch="echo '' && fastfetch --logo-type none"
+    alias fastfetch="echo '' && fastfetch --logo-type none && echo ''"
 else
     fastfetch
 fi
