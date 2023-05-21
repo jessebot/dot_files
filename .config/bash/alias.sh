@@ -29,6 +29,8 @@ alias leegmaken='clear'
 alias ter='tree'
 alias tre='tree'
 alias tere='tree'
+# can't spell docker
+alias docekr='docker'
 
 # can't spell python
 alias pip="pip3.11"
