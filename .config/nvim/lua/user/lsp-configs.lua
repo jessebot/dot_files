@@ -19,22 +19,24 @@ local lspconfig = require('lspconfig')
 
 -- ansible 
 lspconfig.ansiblels.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- bash 
 lspconfig.bashls.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
--- docker 
+-- docker
+-- when this is enabled in neovim 0.9.0+, it can compete with treesitter for
+-- highlighting, for more info, see :h lsp-semantic-highlighting
 lspconfig.dockerls.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- json
 lspconfig.jsonls.setup {
-  capabilities = capabilities,
+    capabilities = capabilities
 }
 
 
@@ -73,11 +75,13 @@ lspconfig.jedi_language_server.setup{
 }
 
 -- python - ruff linting
-lspconfig.ruff_lsp.setup{}
+lspconfig.ruff_lsp.setup{
+    capabilities = capabilities
+}
 
 -- terraform
 lspconfig.terraformls.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- Terraform linter that can act as lsp server.
@@ -86,12 +90,12 @@ lspconfig.tflint.setup{}
 
 -- toml 
 lspconfig.taplo.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- vim -- will be removed when I finish converting everything to lua
 lspconfig.vimls.setup{
-   capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- yaml - not sure if this is worth it yet

@@ -54,6 +54,17 @@ require('user.fterm')
 
 -- Language Server configs and other syntax checking and highlight tools
 require('user.lsp-configs')
+
+-- autocommand to disable lsp semantic highlighting for parameter/variable in 
+-- Dockerfile because it competes with treesitter and is worse
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"Dockerfile"},
+  callback = function()
+        vim.api.nvim_set_hl(0, '@lsp.type.parameter.dockerfile', {})
+        vim.api.nvim_set_hl(0, '@lsp.type.variable.dockerfile', {})
+    end,
+})
+
 require('user.tree-sitter')
 
 -- folding and indentation

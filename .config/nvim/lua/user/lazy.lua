@@ -16,7 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- ------------ makes sure the nerdfont icons and colorscheme ------------
     -- preferred colorscheme right now
-    {'space-chalk/spacechalk.nvim',
+    {
+        dir = '/Users/jhitch/repos/spacechalk.nvim',
         lazy = false, -- loaded during startup since it's the main colorscheme
         priority = 1000, -- load this before all other start plugins
         config = function()
@@ -41,6 +42,7 @@ local plugins = {
     -- -------------------------- status line --------------------------------
     {'nvim-lualine/lualine.nvim',
          lazy = false,
+         priority = 900, -- load this b4 all other plugins, except colorscheme
          dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
@@ -153,17 +155,13 @@ local plugins = {
 
     -- ---------------- syntax highlighting installer ------------------------
     {'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        priority = 700, -- load this after colorscheme, statusline, and lsp
         config = function()
             vim.opt.foldmethod     = "expr"
             vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
             vim.opt.foldlevelstart = 99
         end,
-    },
-
-    -- I have this mostly for the :TSHighlightCapturesUnderCursor command
-    -- https://github.com/nvim-treesitter/playground/pull/9
-    {'nvim-treesitter/playground',
-        cmd = 'TSHighlightCapturesUnderCursor',
     },
 
     -- because indenting is still broken in treesitter for python
@@ -229,7 +227,8 @@ local plugins = {
 
     -- this helps to configure the built-in language server protocol for nvim
     {'neovim/nvim-lspconfig',
-      lazy = false,
+        lazy = false,
+        priority = 800, -- load this after colorscheme and statusline
         dependencies = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
