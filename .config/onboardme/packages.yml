@@ -13,6 +13,7 @@ brew:
     Linux:
       # this should solve font issues :D
       - "homebrew/linux-fonts"
+      - "wez/wezterm-linuxbrew"
     macOS:
       - "wez/wezterm"
       - "zegervdv/zathura"
@@ -131,10 +132,10 @@ brew:
       # docker desktop
       # - "--cask docker"
       # colima is a docker desktop replacement
-      - "colima"
-      # docker cli
-      - "docker"
+      - colima
     devops:
+      # docker cli
+      - docker
       # programming languages and their package managers
       - go
       # cli for k8s (kubernetes)
@@ -196,6 +197,9 @@ brew:
       # linuxbrew fonts aren't working for some reason
       # - "font-mononoki"
       # - "font-symbols-only-nerd-font"
+    gui:
+      # wezterm: Rust based terminal the is cross-OS-compatible
+      - wezterm
 
 apt:
   emoji: "🙃"
@@ -235,9 +239,6 @@ apt:
       - "openssh-client"
     devops:
       - docker-ce
-      - docker-ce-cli
-      - docker.io
-      - containerd.io
       # vpn
       - wireguard
       # like top but for GPUs
@@ -284,7 +285,6 @@ flatpak:
       - com.bitwarden.desktop
       # youtube alternative
       - io.freetubeapp.FreeTube
-      - org.wezfurlong.wezterm
     gaming:
       - lutris
 
