@@ -310,6 +310,8 @@ pip3.11:
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     install: "pip3.11 install --upgrade --user --break-system-packages "
+  # env_vars:
+  #   PYTHONUSERBASE: ""
   packages:
     default:
       # keep ourselves up to date
