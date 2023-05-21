@@ -40,6 +40,10 @@ alias python="python$PYTHON_VERSION"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
+# makes wget XDG compliant (this goes to ~/.local/share/wget/wget-hsts)
+mkdir -p $XDG_DATA_HOME/wget/wget-hsts
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget/wget-hsts"'
+
 # colordiff - diff, but with colors for accessibility
 alias diff='colordiff -uw'
 
