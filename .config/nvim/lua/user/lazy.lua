@@ -232,7 +232,8 @@ local plugins = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        cmd = {'Lazy'}
+        cmd = "TSUpdateSync",
+        build = ":MasonUpdate" -- :MasonUpdate updates registry contents
     },
 
     -- 
