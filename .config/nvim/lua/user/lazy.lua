@@ -16,8 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- ------------ makes sure the nerdfont icons and colorscheme ------------
     -- preferred colorscheme right now
-    {
-        dir = '/Users/jhitch/repos/spacechalk.nvim',
+    {'space-chalk/spacechalk.nvim',
         lazy = false, -- loaded during startup since it's the main colorscheme
         priority = 1000, -- load this before all other start plugins
         config = function()
