@@ -20,7 +20,8 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
-      - jump
+      # for working w/ images and making lsimg work, is lorg
+      - imagemagick
       # cool interactive python with colors + docs
       - bpython
       # TUI browser
@@ -167,8 +168,6 @@ brew:
       - spotify-tui
       # preview videos in the terminal. commented by default because it is big
       # - ffmpegthumbnailer
-      # for working w/ images and making lsimg work, disabled by default due to size
-      - imagemagick
       # a cow that says things
       - cowsay
       # steam locomotive
@@ -197,7 +196,6 @@ brew:
       # linuxbrew fonts aren't working for some reason
       # - "font-mononoki"
       # - "font-symbols-only-nerd-font"
-      # - "font-hack-nerd-font"
 
 apt:
   emoji: "🙃"
@@ -224,8 +222,6 @@ apt:
       - silversearcher-ag
       # this should let you use the a yubikey for auth
       - libpam-yubico
-      # vpn
-      - wireguard
       # troubleshooting
       - sysstat
       # networking and firewall
@@ -242,9 +238,12 @@ apt:
       - docker-ce-cli
       - docker.io
       - containerd.io
+      # vpn
+      - wireguard
       # like top but for GPUs
       - nvtop
-      # was for euporie - notebooks in terminals
+      # was for euporie - notebooks in terminals, but gcc is already installed 
+      # by brew so might be able to remove this
       # - gcc-11
     gui:
       # package manager

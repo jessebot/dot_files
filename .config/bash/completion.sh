@@ -44,4 +44,5 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ jump ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # https://github.com/gsamokovarov/jump
 # remembers directories overtime and helps with auto-completion
-eval "$(jump shell bash)"
+# I never use this though...
+# eval "$(jump shell bash)"
