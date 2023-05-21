@@ -7,9 +7,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# this relative is used for both macOS and Debian based distros
-pip_path_suffix="lib/python$PYTHON_VERSION/site-packages"
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
     # iptables on debian is here
@@ -27,16 +24,17 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
     # pip packages installed via linuxbrew will be here (if python is installed via brew)
-    # pip_packages="/home/linuxbrew/.linuxbrew/$pip_path_suffix"
+    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
+
+    # apt installed location of pip installed python3.x packages
+    pip_packages="$XDG_DATA_HOME/python/lib/python$PYTHON_VERSION/site-packages"
 
     # pip packages with command line tools install here by default with apt installed python
     export PATH=$PATH:$HOME/.local/bin
-    # apt installed location of pip installed python3.x packages
-    pip_packages="$HOME/.local/$pip_path_suffix"
 
     # make python do it's cache in ~/.cache/python
-    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME
-    export PYTHONUSERBASE=$XDG_DATA_HOME
+    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+    export PYTHONUSERBASE=$XDG_DATA_HOME/python
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
