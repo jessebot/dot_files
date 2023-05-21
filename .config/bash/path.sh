@@ -12,8 +12,6 @@ pip_path_suffix="lib/python$PYTHON_VERSION/site-packages"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
-
-    export XDG_DATA_HOME="$HOME/.local"
     # iptables on debian is here
     export PATH=$PATH:/usr/sbin:/usr/share
 
@@ -32,9 +30,9 @@ if [[ $(uname) == *"Linux"* ]]; then
     # pip_packages="/home/linuxbrew/.linuxbrew/$pip_path_suffix"
 
     # pip packages with command line tools install here by default with apt installed python
-    export PATH=$PATH:$XDG_DATA_HOME/bin
+    export PATH=$PATH:$HOME/.local/bin
     # apt installed location of pip installed python3.x packages
-    pip_packages="$XDG_DATA_HOME/$pip_path_suffix"
+    pip_packages="$HOME/.local/$pip_path_suffix"
 
     # make python do it's cache in ~/.cache/python
     export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME
