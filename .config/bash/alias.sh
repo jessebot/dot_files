@@ -69,6 +69,9 @@ alias todo="$EDITOR ~/todo.md"
 # so that w3m uses the correct XDG config location
 alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
+# to run my main dev environment container
+alias devd="docker run -it -v ~/repos:/home/friend/repos --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # lsd instead of ls for colors/icons
 alias ls='lsd -a'
