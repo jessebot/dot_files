@@ -70,7 +70,8 @@ alias todo="$EDITOR ~/todo.md"
 alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
 # to run my main dev environment container
-alias devd="docker run -it -v ~/repos:/home/friend/repos --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
+# run the docker container with my local repos dir and local ssh keys as well as my timezone already set 
+alias devd="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # lsd instead of ls for colors/icons
