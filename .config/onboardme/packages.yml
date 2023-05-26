@@ -136,6 +136,8 @@ brew:
     devops:
       # docker cli
       - docker
+      # docker dashboard tui
+      - lazydocker
       # programming languages and their package managers
       - go
       # cli for k8s (kubernetes)
