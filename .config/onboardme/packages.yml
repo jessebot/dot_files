@@ -27,8 +27,7 @@ brew:
       - bpython
       # TUI browser
       - w3m
-      # markdown rendering
-      - pandoc
+      # less complicated curl
       - wget
       # tmux replacement :)
       - zellij
@@ -184,6 +183,8 @@ brew:
       - clamav
       # TUI email client
       - neomutt
+      # markdown rendering
+      - pandoc
       # zathura is a document viewer, that is not working yet
       # - zathura
       # - zathura-pdf-mupdf
@@ -237,7 +238,7 @@ apt:
       - colortest
       # help fix locale issues
       - "locales-all"
-      # for installing stuff through ssh
+      # for installing stuff through ssh - might not be needed with powerline anymore
       - "openssh-client"
     devops:
       - docker-ce
