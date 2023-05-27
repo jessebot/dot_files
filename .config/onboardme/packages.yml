@@ -1,23 +1,6 @@
 ---
 brew:
   emoji: "🍺"
-  commands:
-    setup: "brew upgrade --cask --quiet"
-    list: "brew list -1"
-    update: "brew update --quiet"
-    upgrade: "brew upgrade --quiet"
-    install: "brew install "
-    cleanup: "brew cleanup"
-  # these are essentially just extra git repos to query for installs/updates
-  taps:
-    Linux:
-      # this should solve font issues :D
-      - "homebrew/linux-fonts"
-      - "wez/wezterm-linuxbrew"
-    macOS:
-      - "wez/wezterm"
-      - "zegervdv/zathura"
-      - "homebrew/cask-fonts"
   packages:
     # these are all for both macOS and Debian
     default:
@@ -34,16 +17,10 @@ brew:
       - kubectl
       # kubectl plugin manager
       - krew
-      # terminal based dashbaord for k8s
-      - k9s
-      # package manager for k8s
-      - helm
       # gitops continuous delivery for k8s configs
       - argocd
       # generating SSL certs and random strings
       - openssl@3
-      # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
-      # - kubeseal
       # gitlab cli
       - glab
       # github cli
@@ -65,10 +42,6 @@ brew:
       - spotify-tui
       # preview videos in the terminal. commented by default because it is big
       # - ffmpegthumbnailer
-      # a cow that says things
-      - cowsay
-      # steam locomotive
-      - sl
       # rainbow text
       - lolcat
     mail:
@@ -184,6 +157,11 @@ apt:
       # was for euporie - notebooks in terminals, but gcc is already installed 
       # by brew so might be able to remove this
       # - gcc-11
+    extra:
+      # a cow that says things
+      - cowsay
+      # steam locomotive
+      - sl
     gui:
       # package manager
       - snapd
