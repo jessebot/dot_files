@@ -27,4 +27,8 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent1",
         "IndentBlanklineIndent2",
     },
+    -- :echo &filetype
+    filetype_exclude = {
+        "dashboard"
+    }
 }
