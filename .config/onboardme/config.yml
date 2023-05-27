@@ -59,7 +59,6 @@ package:
       - pip3.11
     # these are linux specific steps
     Linux:
-      - brew
       - pip3.11
       - apt
       - snap
