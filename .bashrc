@@ -52,7 +52,13 @@ if [ -f $personal_rc_file ]; then
 fi
 
 if [ -f "/.dockerenv" ]; then
-    export DOCKER_CONTAINER="🐳"
+    export CURRENT_SHELL_LOCATION="🐳"
+fi
+
+if [ ! -z $SSH_CLIENT ]; then
+    export CURRENT_SHELL_LOCATION="󰣀 "
+else
+    export CURRENT_SHELL_LOCATION="🏡"
 fi
 
 # launch powerline only if we're not in a neovim fterm floating window
