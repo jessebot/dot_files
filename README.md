@@ -544,6 +544,7 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   - maps <kbd>alt</kbd>+⬅️ to go back a word on the command line
   - maps <kbd>alt</kbd>+➡️ to go forward a word on the command line
   - maps <kbd>ctrl</kbd>+<kbd>s</kbd> to open a split pane to the right
+  - maps <kbd>ctrl</kbd>+<kbd>S</kbd> to open a split pane below the current pane
   - makes links clickable
 
   </blockquote>
