@@ -224,7 +224,8 @@ apt:
       - python3-pip
       # needed for python virtual environments, especially for jedi
       - python3-venv
-      - mono-complete
+      # I think we actually just needed this one for youcompleteme but we don't use that anymore
+      # - mono-complete
       # grep alternative
       - silversearcher-ag
       # this should let you use the a yubikey for auth
