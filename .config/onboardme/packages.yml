@@ -66,8 +66,6 @@ brew:
       - cmatrix
       # terminal user interface for git
       - gitui
-      # github cli
-      - gh
       # node.js
       - node
       # linter for YAML
@@ -80,8 +78,6 @@ brew:
       - howdoi
       # get the quick, short text of how to use various commands
       - tealdeer
-      # generating SSL certs and random strings
-      - openssl@3
       # password management
       - bitwarden-cli
       # TUI for gpg keys, for the lazy, like me
@@ -151,10 +147,14 @@ brew:
       - argocd
       # KinD (Kubernetes in Docker), for small k8s clusters for testing
       - kind
+      # generating SSL certs and random strings
+      - openssl@3
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
       # - kubeseal
       # gitlab cli
       - glab
+      # github cli
+      - gh
       # for backups
       - restic
       # terraform for building stuff
