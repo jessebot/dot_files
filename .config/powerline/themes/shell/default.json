@@ -7,7 +7,7 @@
                         "draw_soft_divider": false,
                         "draw_hard_divider": true,
                         "args": {
-                            "variable": "DOCKER_CONTAINER"
+                            "variable": "CURRENT_SHELL_LOCATION"
                         }
                     },
                     {
