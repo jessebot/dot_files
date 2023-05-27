@@ -30,6 +30,12 @@ return {
             action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
         },
 
+        {
+            key = 'S',
+            mods = 'CTRL',
+            action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+        },
+
         -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
         { 
             key = 'LeftArrow',
