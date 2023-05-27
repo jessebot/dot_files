@@ -49,8 +49,8 @@ package:
     Linux:
       - pip3.11
       - apt
-      - snap
-      - flatpak
+      # - snap
+      # - flatpak
   # list of extra existing packages groups to install
   groups:
     - default
