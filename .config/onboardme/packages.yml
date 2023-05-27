@@ -33,8 +33,6 @@ brew:
       - zellij
       # recording a shell session to share with others
       - asciinema
-      # TUI IDE is neovim 
-      - neovim
       # fuzzy search, helps with completion and searching
       - fzf
       # ls replacement written in rust: https://github.com/Peltoche/lsd
@@ -52,7 +50,6 @@ brew:
       # diff, but with colors
       - colordiff
       # prettier top alternatives in C++ and Rust respectively
-      # - btop
       - bottom
       # quick system metrics, typically used as an MOTD
       - fastfetch
@@ -74,8 +71,6 @@ brew:
       - jq
       # it's like jq but for yaml
       - yq
-      # search stackoverflow e.g. howdoi extend a dictionary in python
-      - howdoi
       # get the quick, short text of how to use various commands
       - tealdeer
       # password management
@@ -162,6 +157,8 @@ brew:
       - tflint
       - terraform-docs
     extras:
+      # search stackoverflow e.g. howdoi extend a dictionary in python
+      - howdoi
       # installs cargo and rust
       # - rustup
       # spotify daemon
