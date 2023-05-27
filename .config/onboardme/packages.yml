@@ -35,10 +35,6 @@ brew:
       - asciinema
       # fuzzy search, helps with completion and searching
       - fzf
-      # ls replacement written in rust: https://github.com/Peltoche/lsd
-      - lsd
-      #  A cat(1) clone with syntax highlighting and Git integration.
-      - bat
       # pretty formatting and syntax highlighting
       - rich-cli
       # file TUI: https://www.geeksforgeeks.org/ranger-a-cli-file-manager/
@@ -51,10 +47,6 @@ brew:
       - colordiff
       # prettier top alternatives in C++ and Rust respectively
       - bottom
-      # quick system metrics, typically used as an MOTD
-      - fastfetch
-      # prettier du/df outputs: https://github.com/muesli/duf
-      - duf
       # blocky fonts with the options for colors
       - toilet
       # less: b/c you get new features if you stay up2date, & brew is up2date
@@ -63,8 +55,6 @@ brew:
       - cmatrix
       # terminal user interface for git
       - gitui
-      # node.js
-      - node
       # linter for YAML
       - yamllint
       # for parsing json via cli
@@ -211,6 +201,19 @@ apt:
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
+      #  A cat(1) clone with syntax highlighting and Git integration.
+      # can't be installed via brew because of compiling issues May 2023
+      - bat
+      # prettier du/df outputs: https://github.com/muesli/duf
+      # can't be installed via brew because of compiling issues May 2023
+      - duf
+      # node.js and npm for a bunch of neovim stuff
+      # can't be installed via brew because of compiling issues May 2023
+      - nodejs
+      - npm
+      # ls replacement written in rust: https://github.com/Peltoche/lsd
+      # can't be installed via brew because of compiling issues May 2023
+      - lsd
       - bash-completion
       - build-essential
       # this is just to keep us up to date
