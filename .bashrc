@@ -56,7 +56,7 @@ if [ -f "/.dockerenv" ]; then
 fi
 
 if [ ! -z $SSH_CLIENT ]; then
-    export CURRENT_SHELL_LOCATION="󰣀 "
+    export CURRENT_SHELL_LOCATION="🤖"
 else
     export CURRENT_SHELL_LOCATION="🏡"
 fi
