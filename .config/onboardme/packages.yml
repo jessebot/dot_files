@@ -4,60 +4,34 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
-      # cat images in the terminal (e.g. img2sixel imagename.png)
-      - libsixel
       # password management
       - bitwarden-cli
       # TUI for gpg keys, for the lazy, like me: has to be compiled from source
-      # - gpg-tui
+      - gpg-tui
     devops:
-      # programming languages and their package managers
-      - go
       # cli for k8s (kubernetes)
       - kubectl
       # kubectl plugin manager
       - krew
       # gitops continuous delivery for k8s configs
       - argocd
-      # generating SSL certs and random strings
-      - openssl@3
       # gitlab cli
       - glab
       # github cli
       - gh
-      # for backups
-      - restic
       # terraform for building stuff
       - tfenv
       - tflint
       - terraform-docs
     extras:
-      # search stackoverflow e.g. howdoi extend a dictionary in python
-      - howdoi
       # installs cargo and rust
-      # - rustup
+      - rustup
       # spotify daemon
       - spotifyd
       # spotify TUI
       - spotify-tui
       # preview videos in the terminal. commented by default because it is big
-      # - ffmpegthumbnailer
-      # rainbow text
-      - lolcat
-    mail:
-      # fetch your mail locally for neomutt
-      - offlineimap
-      # anti virus mostly for mail
-      - clamav
-      # TUI email client
-      - neomutt
-      # markdown rendering
-      - pandoc
-      # zathura is a document viewer, that is not working yet
-      # - zathura
-      # - zathura-pdf-mupdf
-      # proton bridge for getting mail locally
-      - "--cask protonmail-bridge"
+      - ffmpegthumbnailer
 
 apt:
   emoji: "🙃"
@@ -69,6 +43,8 @@ apt:
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
+      # cat images in the terminal (e.g. img2sixel imagename.png)
+      - libsixel-bin
       # ag command: like grep or ack, but more modern, for searching file text
       - silversearcher-ag
       # diff, but with colors
@@ -131,8 +107,6 @@ apt:
       - python3-pip
       # needed for python virtual environments, especially for jedi
       - python3-venv
-      # I think we actually just needed this one for youcompleteme but we don't use that anymore
-      # - mono-complete
       # grep alternative
       - silversearcher-ag
       # this should let you use the a yubikey for auth
@@ -149,6 +123,10 @@ apt:
       # for installing stuff through ssh - might not be needed with powerline anymore
       - "openssh-client"
     devops:
+      # programming languages and their package managers
+      - go
+      # for backups
+      - restic
       - docker-ce
       # vpn
       - wireguard
@@ -162,6 +140,10 @@ apt:
       - cowsay
       # steam locomotive
       - sl
+      # search stackoverflow e.g. howdoi extend a dictionary in python
+      - howdoi
+      # rainbow text
+      - lolcat
     gui:
       # package manager
       - snapd
@@ -187,36 +169,21 @@ apt:
       - "steam:i386"
       # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
       # - exfat-utils
+    mail:
+      # fetch your mail locally for neomutt
+      - offlineimap
+      # anti virus mostly for mail
+      - clamav
+      # TUI email client
+      - neomutt
+      # markdown rendering
+      - pandoc
+      # zathura is a document viewer, that is not working yet
+      - zathura
+      - zathura-pdf-mupdf
+      # proton bridge for getting mail locally
+      - "protonmail-bridge"
 
-flatpak:
-  emoji: "🫓 "
-  commands:
-    setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
-    list: "flatpak list --user --columns=application"
-    install: "flatpak install --user --app -y "
-  packages:
-    gui:
-      - "org.freedesktop.Platform/x86_64/21.08"
-      # password manager
-      - com.bitwarden.desktop
-      # youtube alternative
-      - io.freetubeapp.FreeTube
-    gaming:
-      - lutris
-
-snap:
-  emoji: "🫰 "
-  commands:
-    upgrade: "sudo snap refresh"
-    list: "snap list"
-    install: "sudo snap install "
-  packages:
-    gui:
-      - core
-      # screen debugger/sharing tool for android
-      - scrcpy
-      # media player
-      - vlc
 
 # most of this is actually for powerline, my shell prompt
 pip3.11:
@@ -270,8 +237,6 @@ pip3.11:
       - ipykernel
       # latest jupyter notebooks
       - jupyterlab
-      # classic python notebooks
-      # - notebook
       # notebook-driven development platform
       # - nbdev
       # this is for markdown notebook docs and such
