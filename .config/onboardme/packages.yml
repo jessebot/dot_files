@@ -1,11 +1,14 @@
 ---
-brew:
-  emoji: "🍺"
+npm:
+  emoji: "?"
   packages:
-    # these are all for both macOS and Debian
     default:
       # password management
       - bitwarden-cli
+brew:
+  packages:
+    # these are all for both macOS and Debian
+    default:
       # TUI for gpg keys, for the lazy, like me: has to be compiled from source
       - gpg-tui
     devops:
