@@ -143,3 +143,5 @@ function b64 {
 function decode {
     echo -n $1 | base64 --decode
 }
+
+## MORE ALIASES IN text_editing.sh
