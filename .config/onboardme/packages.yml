@@ -20,6 +20,8 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
+      # for working w/ images and making lsimg work, is lorg
+      - imagemagick
       # cool interactive python with colors + docs
       - bpython
       # TUI browser
@@ -81,8 +83,6 @@ brew:
       - gpg-tui
     # macOS specific stuff. Won't work with LinuxBrew
     macOS:
-      # for working w/ images and making lsimg work, is lorg
-      - imagemagick
       # this is installed via apt for linux
       - git
       # python 3.11 already ships with Debian bookworm, only needed for macOS
@@ -213,8 +213,6 @@ apt:
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
-      # fastfetch needs the dev package
-      - libmagickcore-dev
       - bash-completion
       - build-essential
       # this is just to keep us up to date
