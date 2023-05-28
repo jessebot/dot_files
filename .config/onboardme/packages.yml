@@ -18,7 +18,7 @@ apt:
     # none can be installed via brew because of compiling issues on arm May 2023
     default:
       # for working w/ images and making lsimg/fastfetch work, is lorg
-      - imagemagick
+      # - imagemagick
       # fastfetch needs the dev package
       - libmagickcore-dev
       # cat images in the terminal (e.g. img2sixel imagename.png)
