@@ -8,7 +8,7 @@ if [[ $(uname) == *"Darwin"* ]]; then
     alias sed='gsed'
 else
     # wezterm requires this if it's installed via flatpak
-    alias wezterm='flatpak run org.wezfurlong.wezterm'
+    # alias wezterm='flatpak run org.wezfurlong.wezterm'
     # freetube only seems to work through flatpak on debian
     alias freetube="flatpak run io.freetubeapp.FreeTube"
     # lutris works better through flatpak
