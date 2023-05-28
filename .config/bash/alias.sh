@@ -71,7 +71,12 @@ alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
 # to run my main dev environment container
 # run the docker container with my local repos dir and local ssh keys as well as my timezone already set 
-alias devd="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
+if [[ "$(arch)" == "arm64" ]]; then
+    alias devd="docker run --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest-arm"
+else
+    alias devd="docker run -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
+fi
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ls ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # lsd instead of ls for colors/icons
