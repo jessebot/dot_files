@@ -57,7 +57,7 @@ apt:
       - toilet
       # for working w/ images and making lsimg work, is lorg
       # can't be installed via brew because of compiling issues May 2023
-      - imagemagick
+      # - imagemagick
       #  A cat(1) clone with syntax highlighting and Git integration.
       # can't be installed via brew because of compiling issues May 2023
       - bat
