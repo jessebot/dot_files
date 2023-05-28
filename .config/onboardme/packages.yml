@@ -16,6 +16,9 @@ apt:
     cleanup: "sudo apt-get autoremove -y"
   packages:
     default:
+      # for working w/ images and making lsimg/fastfetch work, is lorg
+      # can't be installed via brew because of compiling issues May 2023
+      - imagemagick
       # cat images in the terminal (e.g. img2sixel imagename.png)
       - libsixel-bin
       # ag command: like grep or ack, but more modern, for searching file text
@@ -55,9 +58,6 @@ apt:
       # can't be installed via brew because of compiling issues May 2023
       # blocky fonts with the options for colors
       - toilet
-      # for working w/ images and making lsimg work, is lorg
-      # can't be installed via brew because of compiling issues May 2023
-      # - imagemagick
       #  A cat(1) clone with syntax highlighting and Git integration.
       # can't be installed via brew because of compiling issues May 2023
       - bat
