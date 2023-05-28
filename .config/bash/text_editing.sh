@@ -62,7 +62,7 @@ function dog {
         fi
     else
         # use batcat - sytnax highlighting + git support and pager
-        bat $1
+        bat $1 || batcat $1
     fi
 }
 
