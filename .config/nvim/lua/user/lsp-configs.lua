@@ -64,10 +64,10 @@ lspconfig.lua_ls.setup{
     },
 }
 
--- markdown 
-lspconfig.marksman.setup{
-   capabilities = capabilities
-}
+-- -- markdown - commented out on docker arm builds because it is unsupported
+-- lspconfig.marksman.setup{
+--    capabilities = capabilities
+-- }
 
 -- python
 lspconfig.jedi_language_server.setup{
