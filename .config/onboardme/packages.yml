@@ -272,6 +272,9 @@ apt:
       - "steam:i386"
       # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
       # - exfat-utils
+    music:
+      - vlc
+      - pulseaudio
 
 flatpak:
   emoji: "🫓 "
@@ -300,8 +303,6 @@ snap:
       - core
       # screen debugger/sharing tool for android
       - scrcpy
-      # media player
-      - vlc
 
 # most of this is actually for powerline, my shell prompt
 pip3.11:
@@ -336,9 +337,6 @@ pip3.11:
       - poetry
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
-    extra:
-      # powerline: supposed to work spotify info
-      - dbus
     devops:
       # might be needed for development and building
       - build
@@ -357,3 +355,8 @@ pip3.11:
       # - quarto
       # notebooks in the terminal 💚
       - euporie
+    music:
+      # terminal based youtube player
+      - yewtube
+      # powerline: supposed to work spotify info
+      - dbus
