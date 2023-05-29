@@ -51,11 +51,18 @@ if [ -f $personal_rc_file ]; then
     . $personal_rc_file
 fi
 
+# -------------------------------------------------------------------------- #
+#                        BASH Prompt using POWERLINE                         #
+# -------------------------------------------------------------------------- #
+
 if [ -f "/.dockerenv" ]; then
+    # if we're in docker, this file should exist, so show a whale in powerline
     export CURRENT_SHELL_LOCATION="🐳"
-elif [ ! -z $SSH_CLIENT ]; then
+elif [ -n "$SSH_CLIENT" ]; then
+    # if $SSH_CLIENT is not empty, we're SSHed into something, so show a robot
     export CURRENT_SHELL_LOCATION="🤖"
 else
+    # if not in SSH or docker, then show a house :)
     export CURRENT_SHELL_LOCATION="🏡"
 fi
 
