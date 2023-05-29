@@ -1,24 +1,16 @@
 ---
-# ______________________________________________________________ #
-#         Config file for the onboardme cli command.             #
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-#  - This is the default config file that pip will install into: #
-#    $PYTHON_PATH/lib/onboardme/config/onboardme_config.yaml      #
-#                                                                #
-#  - If this files exists as: ~/.config/onboardme/config.yaml    #
-#    then its loaded instead of the default config               #
-# -------------------------------------------------------------- #
-
+# ------------------------------------------------------------------ #
+# Config file for onboardme command for use on linux/arm64 (aarch64) #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+#  - If this files exists as: ~/.config/onboardme/config.yaml        #
+#    then its loaded instead of the default config                   #
+# __________________________________________________________________ #
 
 log:
   # Full path to a file you'd like to log to. Creates file if it doesn't exist
   file: ""
   # what level of logs to output (debug, info, warn, error)
   level: "warn"
-  # don't output anything to the console, if set and log file passed in, still
-  # creates a log file. unstable.
-  # quiet: false
-
 
 # steps refer to a specific function in the list of functions we run
 steps:
@@ -35,10 +27,11 @@ dot_files:
   git_url: "https://github.com/jessebot/dot_files.git"
   # the branch to use for the git repo above, defaults to main
   git_branch: "docker-arm64-only"
-  # !CAREFUL: runs a `git reset --hard`, which will overwite/delete files in ~
-  # that conflict with the above defined git repo url and branch.
+  # !!CAREFUL: runs a `git reset --hard`, which will overwite/delete files in 
+  # $HOME that conflict with the above defined git repo url and branch.
   # You should run the following to get the files that would be overwritten:
   # onboardme -s dot_files
+  # if set to true, then using onboardme -O will toggle it back to false
   overwrite: true
 
 # This is the basic package config.
@@ -53,12 +46,25 @@ package:
       # - flatpak
   # list of extra existing packages groups to install
   groups:
-    - default
-    # uncomment these to add them as default installed package groups
-    # - gaming
-    # - work
-
-# Coming soon: to edit the specific packages: ~/.config/onboardme/packages.yaml
+    default:
+      # basic tui stuff to have a nice time in the terminal :)
+      - default
+    # move these package.groups.default to always install them
+    optional:
+      # setting up more python data science specific tooling
+      - data_science
+      # kubernetes and docker tools
+      - devops
+      # gaming always installs gui
+      - gaming
+      # freetube and other gui applications
+      - gui
+      # this configures neomutt and offlineimap
+      - mail
+      # sets up useful music tui stuff for spotify and youtube
+      - music
+      # things like zoom and slack
+      - work
 
 # known safe remote hosts that you expect to be able to ping and SSH into
 remote_hosts: []
