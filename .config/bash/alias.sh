@@ -72,9 +72,13 @@ alias w3m="w3m -sixel -config ~/.config/w3m/config"
 # to run my main dev environment container
 # run the docker container with my local repos dir and local ssh keys as well as my timezone already set 
 if [[ "$(arch)" == "arm64" ]]; then
-    alias devd="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest-arm"
+    alias do-ide="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:latest-arm"
+    alias do-devops="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:arm-devops"
+    alias do-full="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:arm-full-tui"
 else
-    alias devd="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' jessebot/onboardme:latest"
+    alias do-ide="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:latest"
+    alias do-devops="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:devops"
+    alias do-full="docker run -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:full-tui"
 fi
 
 
