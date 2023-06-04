@@ -55,6 +55,12 @@ if [[ $(uname) == *"Darwin"* ]]; then
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
+    else
+        if [ ! -f "/usr/local/bin/python" ]; then
+            # this will link python3.11 to python which will fix poetry issues
+            # ref: https://stackoverflow.com/a/74582011/3547184
+            ln -s -f /usr/local/bin/python3.11 /usr/local/bin/python
+        fi
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
