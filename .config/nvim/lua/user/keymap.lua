@@ -4,10 +4,10 @@ vim.g.mapleader = " "
 -- enter to fold code (collapses code block)
 vim.keymap.set('n', '<enter>', 'za')
 
--- ---------------------- fterm windows ----------------------------
+-- ---------------------- toggleterm windows ----------------------------
 -- CTRL+t keybindings to toggle terminal
-vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('n', '<C-t>', '<CMD>ToggleTerm<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>ToggleTerm<CR>')
 
 -- cmatrix
 vim.keymap.set('n', '<leader>M', '<cmd>Matrix<cr>', { desc = "󰘨  The Matrix™️" })
