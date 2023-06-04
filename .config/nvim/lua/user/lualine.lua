@@ -103,8 +103,16 @@ require('lualine').setup {
                newfile = '🆕',     -- Text to show for newly created file before first write
              }
         },
-    'branch',
-    'diff' 
+            {'branch'},
+            {
+                'diff',
+                diff_color = {
+                    added    = 'LualineGitAdd',    -- Changes the diff's added color
+                    modified = 'LualineGitChange', -- Changes the diff's modified color
+                    removed  = 'LualineGitDelete', -- Changes the diff's removed color you
+                },
+
+            },
     },
     lualine_c = { 'fileformat' },
     lualine_x = {},
