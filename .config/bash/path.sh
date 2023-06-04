@@ -23,12 +23,6 @@ if [[ $(uname) == *"Linux"* ]]; then
     export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
-    # pip packages installed via linuxbrew will be here (if python is installed via brew)
-    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
-
-    # apt installed location of pip installed python3.x packages
-    pip_packages="$HOME/.local/lib/python$PYTHON_VERSION/site-packages"
-
     # pip packages with command line tools install here by default with apt installed python
     export PATH=$PATH:$HOME/.local/bin
 
@@ -36,14 +30,17 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
     # not respected on Debian for some reason :shrug:
     # export PYTHONUSERBASE=$XDG_DATA_HOME/python
+
+    # apt installed location of pip installed python3.x packages
+    pip_packages="$HOME/.local/lib/python$PYTHON_VERSION/site-packages"
+    #
+    # pip packages installed via linuxbrew will be here (if python is installed via brew)
+    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # powerline - a fancy extensible prompt: https://powerline.readthedocs.io
 if [[ $(uname) == *"Darwin"* ]]; then
-    # iterm2 specific commands and functions, not really using this these days
-    export PATH=$PATH:$HOME/.local/bin/iterm2
-
     # don't warn me that BASH is deprecated, becasuse it is already upgraded
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -52,19 +49,18 @@ if [[ $(uname) == *"Darwin"* ]]; then
     # put python data into $HOME/.local/share/python
     export PYTHONUSERBASE=$XDG_DATA_HOME/python
 
-    pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
+    # this is for python XDG spec stuff
+    export PATH="$PYTHONUSERBASE/bin:$PATH"
+
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
-        # this is for python XDG spec stuff
-        export PATH="$PYTHONUSERBASE/bin:$PATH"
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
-    else
-        # For older macs before the M1, pre-2020, WITHOUT apple silicon
-        export PATH="$PYTHONUSERBASE/bin:$PATH"
     fi
 
     # Load GNU sed, called gsed, instead of MacOS's POSIX sed
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+
+    pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
 fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
