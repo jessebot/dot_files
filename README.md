@@ -645,7 +645,8 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   - turns off bells
   - enables 256 colors
   - sources all the files in `~/.config/bash` (see above under config > bash )
-  - sources personal file in `~/.config/bash/personal/bashrc`
+  - sources personal file in `~/.config/bash/personal/bashrc` (this files is never checked in and is where you put sensitive host specific bash configs)
+  - starts powerline daemon, which is used for our fancy status line for BASH
   - runs [fastfetch] when you source it
 
   </blockquote>
