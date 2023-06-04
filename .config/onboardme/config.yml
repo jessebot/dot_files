@@ -27,6 +27,9 @@ dot_files:
   git_url: "https://github.com/jessebot/dot_files.git"
   # the branch to use for the git repo above, defaults to main
   git_branch: "docker-arm64-only"
+  # this is where the actual git config for your dot files lives
+  # it can't live in ~/.git because that will affect _everything_ under ~/
+  git_config_dir: "/home/friend/.config/dot_files"
   # !!CAREFUL: runs a `git reset --hard`, which will overwite/delete files in 
   # $HOME that conflict with the above defined git repo url and branch.
   # You should run the following to get the files that would be overwritten:
