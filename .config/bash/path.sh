@@ -55,6 +55,10 @@ if [[ $(uname) == *"Darwin"* ]]; then
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
         # On apple silicon: brew default installs here
         export PATH=/opt/homebrew/bin:$PATH
+
+        # use linux/amd64 platform by default on macOS - may break KinD!
+        # export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
     else
         if [ ! -f "/usr/local/bin/python" ]; then
             # this will link python3.11 to python which will fix poetry issues
