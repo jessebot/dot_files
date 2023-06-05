@@ -23,11 +23,7 @@ vim.opt.termguicolors = true
 -- make searching case insensitive
 vim.opt.ignorecase = true
 
--- moved directly to lazy
--- require('user.keymap')
-
 -- load plugins
--- require("lazy").setup("plugins")
 require('user.lazy')
 
 -- --------- Plugin configs that have to be called after lazy --------------
@@ -36,6 +32,7 @@ require('user.dashboard')
 
 -- tab line at top of window for tabs when there's more than one tab :) -- might switch to bufferline
 require('user.barbar')
+
 -- status line at bottom of window for cool file facts 
 require('user.lualine')
 
@@ -46,11 +43,8 @@ require('user.neo-tree')
 require("user.gitsigns")
 require("user.scrollbar")
 
--- floating windows
-require('user.fterm')
-
--- dim inactive windows - moved to lazy directly
--- require("tint").setup()
+-- more configurable terminal for neovim
+require("user.toggleterm")
 
 -- Language Server configs and other syntax checking and highlight tools
 require('user.lsp-configs')

@@ -1,20 +1,26 @@
--- this file is for customizations for floating terminals in neovim
+-- this file is for customizations for terminal windows in neovim
+require("toggleterm").setup{
+    -- configuration
+    highlights = {
+        -- highlights which map to a highlight group name and a table of it's values
+        -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
+        Normal = {
+          guibg = "LualineGitAdd",
+        },
+    },
+}
 
-local fterm = require("FTerm")
-
--- create a vim command for FTermOpen
-vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
+local Terminal = require('toggleterm.terminal').Terminal
 
 -- -------------------------- open normal terminal ----------------------------
 -- cmatrix must be installed beforehand with brew install cmatrix
-local cmatrix = fterm:new({
-    ft = 'fterm_cmatrix',
-    cmd = "cmatrix",
-    env = {FTERM_TUI = 'True'},
-    dimensions = {
-        height = 0.9,
-        width = 0.9
-    }
+local cmatrix = Terminal:new({
+	cmd = "cmatrix",
+	direction = "float",
+	close_on_exit = true,
+	env = {
+	    NVIM_TOGGLE_TERM = 'True'
+	},
 })
 
 vim.api.nvim_create_user_command(
@@ -28,16 +34,14 @@ vim.api.nvim_create_user_command(
 
 -- ---------------------------- open gitui -----------------------------------
 -- gitui must be installed beforehand with brew install gitui
-local gitui = fterm:new({
-    ft = 'fterm_gitui',
-    cmd = "gitui",
-    env = {FTERM_TUI = 'True'},
-    dimensions = {
-        height = 0.9,
-        width = 0.9
-    }
+local gitui = Terminal:new({
+	cmd = "gitui",
+	direction = "float",
+	close_on_exit = true,
+	env = {
+	    NVIM_TOGGLE_TERM = 'True'
+	},
 })
-
 
 vim.api.nvim_create_user_command(
     'Gitui',
@@ -50,14 +54,13 @@ vim.api.nvim_create_user_command(
 
 -- ------------------------------ open k9s -----------------------------------
 -- install k9s beforehand: https://k9scli.io/topics/install/
-local k9s = fterm:new({
-    ft = 'fterm_k9s',
-    cmd = "k9s",
-    env = {FTERM_TUI = 'True'},
-    dimensions = {
-        height = 0.9,
-        width = 0.9
-    }
+local k9s = Terminal:new({
+	cmd = "k9s",
+	direction = "float",
+	close_on_exit = true,
+	env = {
+	    NVIM_TOGGLE_TERM = 'True'
+	},
 })
 
 vim.api.nvim_create_user_command(
@@ -69,16 +72,16 @@ vim.api.nvim_create_user_command(
 )
 
 
+
 -- ------------------------------ open bpython -------------------------------
 -- install bpython beforehand: brew install bpython 
-local bpython = fterm:new({
-    ft = 'fterm_bpython',
-    cmd = "bpython",
-    env = {FTERM_TUI = 'True'},
-    dimensions = {
-        height = 0.9,
-        width = 0.9
-    }
+local bpython = Terminal:new({
+	cmd = "bpython",
+	direction = "float",
+	close_on_exit = true,
+	env = {
+	    NVIM_TOGGLE_TERM = 'True'
+	},
 })
 
 vim.api.nvim_create_user_command(

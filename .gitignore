@@ -9,7 +9,8 @@
 .config/git/personal
 .config/neomutt/keys
 .config/bash/personal/bashrc
-.confg/jump
+.confg/jump/**
+.confg/pulse/**
 .config/helm/repositories.lock
 .confg/kube/**
 .config/krew/**

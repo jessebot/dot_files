@@ -305,9 +305,10 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
   - uses the [spacechalk.nvim] colorscheme
   - sources all the files in [`~/.config/nvim/lua`](.config/nvim/lua),
     including all our [plugin configs](.config/nvim/lua/user/lazy.lua).
+  - adds a nice little terminal called [toggleterm.nvim] in [`toggleterm.lua`](.config/nvim/lua/user/toggleterm.lua)
 
 
-  ### [`~/.config/nvim/lua/plugins.lua`](.config/nvim/lua/plugins.lua)
+  ### [`~/.config/nvim/lua/user/lazy.lua`](.config/nvim/lua/user/lazy.lua)
   This is the configuration for [`lazy.nvim`], our plugin manager for neovim. It
   installs lazy, and then all of our plugins.
 
@@ -769,5 +770,6 @@ onboardme --git_url https://github.com/your_username/dot_files --git_branch main
 [neovim]: https://neovim.io/ "neovim, vim based text editor"
 [nvim-tree]: https://github.com/nvim-tree/ "nvim-tree"
 [telescope]: https://github.com/nvim-telescope/telescope.nvim "telescope.nvim"
+[toggleterm]: https://github.com/akinsho/toggleterm.nvim "toggleterm.nvim"
 [tree-sitter]: https://github.com/nvim-treesitter/nvim-treesitter "nvim-treesitter"
 [vim]: https://www.vim.org/ "vim, a text editor"

@@ -43,12 +43,18 @@ local plugins = {
         priority = 900, -- load this b4 all other plugins, except colorscheme
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
-    -- -------------------- floating window plugins --------------------------
-    -- configurable floating terminal window, replaces 'hsalem7/nvim-k8s'
+
+    -- --------------- fancy terminal, use CTRL+t to try it out --------------
     {
-        "numToStr/FTerm.nvim",
-        cmd = {'FtermOpen', 'Gitui', 'Matrix', 'K9s'}
+      {
+	'akinsho/toggleterm.nvim',
+	version = "*",
+	opts = {--[[ things you want to change go here]]}
+      }
     },
+
+    -- -------------------- floating window plugins --------------------------
+    -- -----------------------------------------------------------------------
     -- noicer ui - experimental
     {
         "folke/noice.nvim",
