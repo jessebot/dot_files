@@ -140,13 +140,11 @@ apt:
     devops:
       - gpg
       # programming languages and their package managers
-      - go
+      # - go
       # for backups
       - restic
       # vpn
       - wireguard
-      # like top but for GPUs
-      - nvtop
     extra:
       # a cow that says things
       - cowsay
@@ -159,6 +157,8 @@ apt:
       # preview videos in the terminal. commented by default because it is big
       # - ffmpegthumbnailer
     gui:
+      # like top but for GPUs
+      - nvtop
       # package manager
       - snapd
       # package manager for gui apps
@@ -172,7 +172,7 @@ apt:
       # pdf viewer with themeing
       - zathura
       # commented out till nextcloud is working
-      # - nextcloud-desktop
+      - nextcloud-desktop
       # libreoffice is a FOSS office suite that replaces Google Docs/Office365
       - libreoffice
       # GUI interface for pulseaudio, so you can disable audio devices
