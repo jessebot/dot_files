@@ -56,11 +56,10 @@ pip3.11:
     music:
       # terminal based youtube player
       - yewtube
+      # python spotify tui, wraps spotifyd: https://github.com/ceuk/spotui
+      - spotui
       # powerline: supposed to work spotify info
       - dbus
-    # data_science:
-    # # conda still doesn't support python 3.11, May 2023
-    # - conda
 
 apt:
   emoji: "🙃"
@@ -80,6 +79,8 @@ apt:
       - python3-pip
       # needed for python virtual environments, especially for jedi
       - python3-venv
+      # needed for storing different versions of python
+      - pyenv
       # for working w/ images and making lsimg work, is lorg
       # - imagemagick
       # fastfetch needs the dev package
