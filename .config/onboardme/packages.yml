@@ -138,6 +138,7 @@ apt:
       # for installing stuff through ssh - might not be needed with powerline anymore
       - "openssh-client"
     devops:
+      - gpg
       # programming languages and their package managers
       - go
       # for backups
