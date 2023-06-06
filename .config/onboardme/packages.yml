@@ -79,8 +79,6 @@ apt:
       - python3-pip
       # needed for python virtual environments, especially for jedi
       - python3-venv
-      # needed for storing different versions of python
-      - pyenv
       # for working w/ images and making lsimg work, is lorg
       # - imagemagick
       # fastfetch needs the dev package
