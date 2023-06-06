@@ -4,8 +4,8 @@
 export KUBECONFIG=$XDG_CONFIG_HOME/kube/config
 
 # this is for the kubernetes plugin manager, krew
-export KREW_ROOT=$XDG_DATA_HOME/krew
-export PATH="${PATH}:$XDG_DATA_HOME/krew/bin"
+export KREW_ROOT=/home/friend/.krew
+export PATH="${PATH}:$KREW_ROOT/bin"
 
 # change this to what ever search tool you'd like,
 # e.g. "grep -i"
