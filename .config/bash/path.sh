@@ -102,12 +102,14 @@ export PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ pyenv ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -d "$PYENV_ROOT" ]; then
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
 
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
-eval "$(pyenv virtualenv-init -)"
+    # Load pyenv-virtualenv automatically by adding
+    # the following to ~/.bashrc:
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ general ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
