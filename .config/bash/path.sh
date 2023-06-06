@@ -1,77 +1,30 @@
 # --------------------------------------------------------------------------
-#   Pathing:   Adhereing as closely as possible to XDG Base Directory Spec
-#   https://specifications.freedesktop.org/basedir-spec/latest/
+#   Pathing: Adhereing as closely as possible to XDG Base Directory Spec
+#            https://specifications.freedesktop.org/basedir-spec/latest/
 # --------------------------------------------------------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-if [[ $(uname) == *"Linux"* ]]; then
-    # iptables on debian is here
-    export PATH=$PATH:/usr/sbin:/usr/share
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# iptables on debian is here
+export PATH=$PATH:/usr/sbin:/usr/share
 
-    # snap package manager installs commands here
-    export PATH=$PATH:/snap/bin
+# snap package manager installs commands here
+# export PATH=$PATH:/snap/bin
 
-    # HomeBrew on Linux needs all of this to work
-    export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-    export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
-    export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
-    export MANPATH=$MANPATH:/home/linuxbrew/.linuxbrew/share/man
-    export INFOPATH=$INFOPATH:/home/linuxbrew/.linuxbrew/share/info
-    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
+# pip packages with command line tools install here by default with apt installed python
+export PATH=$PATH:$HOME/.local/bin
 
-    # pip packages with command line tools install here by default with apt installed python
-    export PATH=$PATH:$HOME/.local/bin
+# make python do it's cache in ~/.cache/python
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
 
-    # make python do it's cache in ~/.cache/python
-    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
-    # not respected on Debian for some reason :shrug:
-    # export PYTHONUSERBASE=$XDG_DATA_HOME/python
+# not respected on Debian for some reason :shrug:
+# export PYTHONUSERBASE=$XDG_DATA_HOME/python
 
-    # apt installed location of pip installed python3.x packages
-    pip_packages="$HOME/.local/lib/python$PYTHON_VERSION/site-packages"
-    #
-    # pip packages installed via linuxbrew will be here (if python is installed via brew)
-    # pip_packages="/home/linuxbrew/.linuxbrew/lib/python$PYTHON_VERSION/site-packages"
-fi
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-# powerline - a fancy extensible prompt: https://powerline.readthedocs.io
-if [[ $(uname) == *"Darwin"* ]]; then
-    # don't warn me that BASH is deprecated, becasuse it is already upgraded
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-
-    # make python do it's cache in ~/.cache/python
-    export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
-    # put python data into $HOME/.local/share/python
-    export PYTHONUSERBASE=$XDG_DATA_HOME/python
-
-    # this is for python XDG spec stuff
-    export PATH="$PYTHONUSERBASE/bin:$PATH"
-
-    if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
-        # On apple silicon: brew default installs here
-        export PATH=/opt/homebrew/bin:$PATH
-
-        # use linux/amd64 platform by default on macOS - may break KinD!
-        # export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
-    else
-        if [ ! -f "/usr/local/bin/python" ]; then
-            # this will link python3.11 to python which will fix poetry issues
-            # ref: https://stackoverflow.com/a/74582011/3547184
-            ln -s -f /usr/local/bin/python3.11 /usr/local/bin/python
-        fi
-    fi
-
-    # Load GNU sed, called gsed, instead of MacOS's POSIX sed
-    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-
-    pip_packages="$XDG_DATA_HOME/python/lib/python/site-packages"
-fi
+# apt installed location of pip installed python3.x packages
+pip_packages="$HOME/.local/lib/python$PYTHON_VERSION/site-packages"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # python default install location when you: pip$VERSION install --user package
