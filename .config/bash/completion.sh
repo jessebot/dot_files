@@ -11,7 +11,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS completion ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Terraform ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+complete -C /usr/local/bin/terraform terraform
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ macOS completion ~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Darwin"* ]]; then
 
     if [ $(uname -a | grep arm > /dev/null ; echo $?) -eq 0 ]; then
@@ -19,6 +22,7 @@ if [[ $(uname) == *"Darwin"* ]]; then
         if [ -f "/opt/homebrew/etc/profile.d/bash_completion.sh" ]; then
             . "/opt/homebrew/etc/profile.d/bash_completion.sh"
         fi
+        complete -C /opt/homebrew/bin/terraform terraform
     else
         # bash completion on macOS (x86)
         if [ -f "/usr/local/etc/profile.d/bash_completion.sh" ]; then
@@ -27,8 +31,6 @@ if [[ $(uname) == *"Darwin"* ]]; then
     fi
 fi
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Terraform ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-complete -C /usr/local/bin/terraform terraform
 
 # This loads nvm (for node.js) bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -36,10 +38,9 @@ complete -C /usr/local/bin/terraform terraform
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ gcloud ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # enables shell command completion for gcloud.
-if [ -f '/Users/jesse/.local/bin/google-cloud-sdk/completion.bash.inc' ]; then
-	. '/Users/jesse/.local/bin/google-cloud-sdk/completion.bash.inc'
+if [ -f "$HOME/.local/bin/google-cloud-sdk/completion.bash.inc" ]; then
+	. "$HOME/.local/bin/google-cloud-sdk/completion.bash.inc"
 fi
-
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ jump ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # https://github.com/gsamokovarov/jump

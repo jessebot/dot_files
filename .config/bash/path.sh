@@ -78,5 +78,3 @@ export W3M_DIR="~/.local/state/w3m"
 
 # add gcloud to path on macOS because they don't have a homebrew package
 export PATH=$PATH:$HOME/.local/bin/google-cloud-sdk/bin
-# updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/.local/bin/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/.local/bin/google-cloud-sdk/path.bash.inc"; fi
