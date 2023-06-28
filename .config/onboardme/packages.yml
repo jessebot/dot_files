@@ -196,6 +196,7 @@ brew:
       - spotifyd
       # spotify TUI: written in rust, but no longer maintained
       # - spotify-tui
+      - nuclear
     Linux:
       # linuxbrew asks for this
       - gcc
