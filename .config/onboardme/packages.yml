@@ -103,8 +103,8 @@ brew:
       - "--cask rectangle"
       # Default browser
       - "--cask firefox"
-      # File server cloud replacement, not ready yet
-      # - "--cask nextcloud"
+      # File server cloud replacement
+      - "--cask nextcloud"
       # wezterm: Rust based terminal the is cross-OS-compatible
       - "--cask wez/wezterm/wezterm"
       # gives us the default gnu/linux sed we all know and love
