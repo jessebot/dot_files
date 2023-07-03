@@ -265,8 +265,8 @@ apt:
       - gufw
       # pdf viewer with themeing
       - zathura
-      # commented out till nextcloud is working
-      # - nextcloud-desktop
+      # nextcloud is a self hosted file share app
+      - nextcloud-desktop
       # libreoffice is a FOSS office suite that replaces Google Docs/Office365
       - libreoffice
       # GUI interface for pulseaudio, so you can disable audio devices
