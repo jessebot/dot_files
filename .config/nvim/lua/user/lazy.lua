@@ -234,7 +234,8 @@ local plugins = {
     -- {'dhruvasagar/vim-table-mode'},
     --
     {
-        'towolf/vim-helm'
+        'towolf/vim-helm',
+        ft = {'helm'},
     },
     -- ---------------- Language Server Protocol Plugins ---------------------
     -- snippets
