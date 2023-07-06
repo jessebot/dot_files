@@ -9,13 +9,19 @@ vim.keymap.set('n', '<enter>', 'za')
 vim.keymap.set('n', '<C-t>', '<CMD>ToggleTerm<CR>')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>ToggleTerm<CR>')
 
--- cmatrix
+-- cmatrix - goofy "The Matrix" terminal wallpaper
 vim.keymap.set('n', '<leader>M', '<cmd>Matrix<cr>', { desc = "󰘨  The Matrix™️" })
--- gitui
+
+-- neotree - this launches a file browser on the left hand side of the screen :tree:
+vim.keymap.set('n', '<leader>n', '<cmd>NeoTreeShowToggle<cr>', { desc = "🌳 Neotree - a file browser tree for neovim" })
+
+-- gitui - a TUI for git
 vim.keymap.set('n', '<leader>g', '<cmd>Gitui<cr>', { desc = "  gitui - terminal UI for git" })
--- k9s
+
+-- k9s - a TUI dashboard for k8s
 vim.keymap.set('n', '<leader>K', '<cmd>K9s<cr>', { desc = "󱃾 k9s - kubernetes dashboard" })
--- bpython
+
+-- bpython - colorful and rich python interpretter
 vim.keymap.set('n', '<leader>p', '<cmd>Bpython<cr>', { desc = "  bpython - color + docs in interactive python" })
 
 -- ---------------------- Telescope windows ----------------------------
