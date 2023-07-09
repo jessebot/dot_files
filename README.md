@@ -692,12 +692,33 @@ These are the sensible defaults for [`onboardme`](https://github.com/jessebot/on
 
 
 Please feel free to fork this repo and make it your own.
-You can still use `onboardme`, but you'll want to pass in _your_ git URL and branch. Example:
+You can still use `onboardme`, but you'll want to pass in _your_ git URL and branch.
+
+Example via the CLI:
 
 ```bash
 # this uses your personal git URL and makes sure to always pull from main
 # if you want to overwrite your existing dot files, you can also add --overwrite to this command
 onboardme --git_url https://github.com/your_username/dot_files --git_branch main
+```
+
+Example via the config file, `~/.config/onboardme/config.yaml`:
+
+```yaml
+# this uses your personal git URL and makes sure to always pull from main
+dot_files:
+  # your personal git repo URL for your dot files
+  # defaults to https://github.com/jessebot/dot_files.git if not set
+  git_url: "https://github.com/your_username/dot_files.git"
+  # the branch to use for the git repo above, defaults to main
+  git_branch: "main"
+  # !!CAREFUL: runs a `git reset --hard`, which will overwrite/delete dot files in
+  # $HOME that conflict with the above defined git repo url and branch.
+  # Unless you know for sure you want to overwrite everytime you run onboardme, you
+  # should run the following to get the files that would be overwritten before setting this:
+  # onboardme -s dot_files
+  # if set to true, then using onboardme -O will toggle it back to false
+  overwrite: false
 ```
 
 ### FAQ
