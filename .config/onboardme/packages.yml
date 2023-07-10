@@ -142,6 +142,8 @@ brew:
       - kubectl
       # kubectl plugin manager
       - krew
+      # kubecolor, a kubectl colorizer
+      - hidetatz/tap/kubecolor
       # terminal based dashbaord for k8s
       - k9s
       # package manager for k8s
