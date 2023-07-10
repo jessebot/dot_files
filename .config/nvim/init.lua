@@ -59,6 +59,22 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
+-- autocommand to set the file type to helm based on files ending in tpl
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*/charts/*/templates/*.tpl"},
+  callback = function()
+        vim.cmd("set filetype=helm")
+    end,
+})
+
+-- autocommand to set the file type to cfg for wireguard configs
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*/etc/wireguard/wg*.conf"},
+  callback = function()
+        vim.cmd("set filetype=cfg")
+    end,
+})
+
 require('user.tree-sitter')
 
 -- folding and indentation

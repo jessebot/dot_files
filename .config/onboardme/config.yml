@@ -69,13 +69,55 @@ package:
       # things like zoom and slack
       - work
 
+# 🚧 this section is under construction
+# cron:
+#   reminders:
+#     lunch:
+#       enabled:
+#         Linux: true
+#         Darwin: true
+#       # daily at noon
+#       schedule: "0 12 * * *"
+#       # whether or not to use the macOS "say" program
+#       # not sure equivilent on linux 🤔
+#       text_to_speech: true
+#       blurb: "It is snack time!"
+# 
+#     take_breaks:
+#       enabled:
+#         Linux: true
+#         Darwin: true
+#       # hourly by default
+#       schedule: "0 * * * *"
+#       text_to_speech: true
+#       blurb: "Take a break from your screen! Consider a glass of water and a short walk to stretch your legs."
+# 
+#   backups:
+#     freetube:
+#       # defaults to daily at 6PM in your local timezone
+#       # you can use this site for schedules: https://crontab-generator.org/
+#       schedule: "0 18 * * *"
+#       files:
+#         - history.db
+#         - playlists.db
+#         - profiles.db
+#         - settings.db
+#       from_dir:
+#         Linux: "~/.config/FreeTube"
+#         Darwin: "~/Library/Application\ Support/FreeTube"
+#       to_dir:
+#         Linux: "~/Nextcloud/freetube/linux"
+#         Darwin: "~/Nextcloud/freetube/macos"
+
+# 🚧 this section is under construction
 # known safe remote hosts that you expect to be able to ping and SSH into
 remote_hosts: []
   # - 192.168.42.42
 
+# 🚧 this section is under construction
 # setup iptable on Linux only
 firewall: false
 
-### TODO: make this work, it's a nice dream though.
-# any URL we can curl to download a folder from
-# wallpapers_download_url: ""
+# 🚧 this section is under construction
+# set wallpapers directory. MacOS: https://apple.stackexchange.com/a/348454
+# wallpapers_dir: ""

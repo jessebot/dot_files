@@ -7,8 +7,6 @@ if [[ $(uname) == *"Darwin"* ]]; then
     # Always use GNU sed
     alias sed='gsed'
 else
-    # wezterm requires this if it's installed via flatpak
-    # alias wezterm='flatpak run org.wezfurlong.wezterm'
     # freetube only seems to work through flatpak on debian
     alias freetube="flatpak run io.freetubeapp.FreeTube"
     # lutris works better through flatpak
@@ -32,8 +30,9 @@ alias tere='tree'
 # can't spell docker
 alias docekr='docker'
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python 🐍 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # can't spell python
-alias pip="pip3.11"
+alias pip="pip$PYTHON_VERSION"
 alias pthyon="python$PYTHON_VERSION"
 alias ptyhon="python$PYTHON_VERSION"
 alias pythong="python$PYTHON_VERSION"
@@ -41,6 +40,9 @@ alias pythong="python$PYTHON_VERSION"
 alias python="python$PYTHON_VERSION"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# allow setting wezterm tab title more easily
+alias tab='wezterm cli set-tab-title'
 
 # makes wget XDG compliant (this goes to ~/.local/share/wget/wget-hsts)
 mkdir -p $XDG_DATA_HOME/wget/wget-hsts

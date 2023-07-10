@@ -231,10 +231,19 @@ local plugins = {
         'folke/twilight.nvim'
     },
     -- for markdown tables -- maybe not working?
-    -- {'dhruvasagar/vim-table-mode'},
-    --
     {
-        'towolf/vim-helm'
+        'dhruvasagar/vim-table-mode'
+    },
+
+    -- markdown table of contents generator
+    {
+        'mzlogin/vim-markdown-toc'
+    },
+
+    -- formatting helm charts properly
+    {
+        'towolf/vim-helm',
+        ft = {'helm'},
     },
     -- ---------------- Language Server Protocol Plugins ---------------------
     -- snippets
