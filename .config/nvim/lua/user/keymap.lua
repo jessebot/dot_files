@@ -14,6 +14,14 @@ vim.keymap.set(
     { desc = "🌳 Neotree - a file browser tree for neovim" }
 )
 
+-- ---------------------- markdown table formatting -------------------------
+vim.keymap.set(
+    'n',
+    '<leader>tm',
+    '<cmd>TableModeToggle<cr>',
+    { desc = "󰓱  Table Mode - format your markdown tables as you go" }
+)
+
 -- ------------------------ terminal windows ----------------------------
 
 -- CTRL+t keybindings to toggle terminal

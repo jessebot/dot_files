@@ -231,8 +231,10 @@ local plugins = {
         'folke/twilight.nvim'
     },
     -- for markdown tables -- maybe not working?
-    -- {'dhruvasagar/vim-table-mode'},
-    --
+    {
+        'dhruvasagar/vim-table-mode'
+    },
+
     {
         'towolf/vim-helm',
         ft = {'helm'},
