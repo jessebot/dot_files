@@ -235,6 +235,12 @@ local plugins = {
         'dhruvasagar/vim-table-mode'
     },
 
+    -- markdown table of contents generator
+    {
+        'mzlogin/vim-markdown-toc'
+    },
+
+    -- formatting helm charts properly
     {
         'towolf/vim-helm',
         ft = {'helm'},
