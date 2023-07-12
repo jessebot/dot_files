@@ -7,16 +7,6 @@ brew:
     upgrade: "brew upgrade --quiet"
     install: "brew install "
     cleanup: "brew cleanup"
-  # these are essentially just extra git repos to query for installs/updates
-  taps:
-    Linux:
-      # this should solve font issues :D
-      - "homebrew/linux-fonts"
-      - "wez/wezterm-linuxbrew"
-    macOS:
-      - "wez/wezterm"
-      - "zegervdv/zathura"
-      - "homebrew/cask-fonts"
   packages:
     # these are all for both macOS and Debian
     default:
@@ -96,8 +86,8 @@ brew:
       # so that bash completion stuff works
       - "bash-completion@2"
       # fonts
-      - "--cask font-mononoki"
-      - "--cask font-symbols-only-nerd-font"
+      - "--cask homebrew/cask-fonts/font-mononoki"
+      - "--cask homebrew/cask-fonts/font-symbols-only-nerd-font"
       # - "--cask font-hack-nerd-font"
       # this lets us resize windows on macOS
       - "--cask rectangle"
@@ -128,6 +118,7 @@ brew:
       # colima is a docker desktop replacement
       - colima
     devops:
+      - helm/tap/chart-releaser
       # for removing passwords or large files from git history
       - bfg
       - pyenv
@@ -187,8 +178,8 @@ brew:
       # markdown rendering
       - pandoc
       # zathura is a document viewer, that is not working yet
-      # - zathura
-      # - zathura-pdf-mupdf
+      # - zegervdv/zathura/zathura
+      # - zegervdv/zathura/zathura-pdf-mupdf
       # proton bridge for getting mail locally
       - "--cask protonmail-bridge"
     work:
@@ -204,12 +195,13 @@ brew:
     Linux:
       # linuxbrew asks for this
       - gcc
+      # this should solve font issues :D but...
       # linuxbrew fonts aren't working for some reason
-      # - "font-mononoki"
-      # - "font-symbols-only-nerd-font"
+      # - "homebrew/linux-fonts/font-mononoki"
+      # - "homebrew/linux-fonts/font-symbols-only-nerd-font"
     gui:
       # wezterm: Rust based terminal the is cross-OS-compatible
-      - wezterm
+      - "wez/wezterm-linuxbrew/wezterm"
 
 apt:
   emoji: "🙃"
@@ -323,6 +315,8 @@ pip3.11:
   #   PYTHONUSERBASE: ""
   packages:
     default:
+      # pip itself needs to be kept up to up2date
+      - pip
       # keep ourselves up to date
       - onboardme
       # powerline: for the internal ip address prompt segment
