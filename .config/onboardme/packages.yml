@@ -119,6 +119,7 @@ brew:
       - colima
     devops:
       - helm/tap/chart-releaser
+      - helm/tap/chart-testing
       # for removing passwords or large files from git history
       - bfg
       - pyenv
