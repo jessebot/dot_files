@@ -39,7 +39,7 @@
                                 "changed": "  {}",
                                 "staged": " 󰅍 {}",
                                 "stashed": "  {}",
-                                "ahead": " 󰓠 {}",
+                                "ahead": " 󰜷 {}",
                                 "behind": "   {}"
                             }
                         }
@@ -111,7 +111,7 @@
             {
                 "type": "string",
                 "name": "newline_prompt",
-                "contents": "󱞩",
+                "contents": "󱞩 ",
                 "highlight_groups": ["newline_prompt"],
                 "draw_soft_divider": false,
                 "draw_hard_divider": true
