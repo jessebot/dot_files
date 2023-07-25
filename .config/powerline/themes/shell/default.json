@@ -37,9 +37,9 @@
                                 "tag": " 󰚋 {}",
                                 "untracked": "  {}",
                                 "changed": "  {}",
-                                "staged": "  {}",
+                                "staged": " 󰅍 {}",
                                 "stashed": "  {}",
-                                "ahead": "  {}",
+                                "ahead": " 󰓠 {}",
                                 "behind": "   {}"
                             }
                         }
@@ -87,8 +87,8 @@
                         "args": {
                             "gamify": true,
                             "full_heart": " ",
-                            "empty_heart": " ",
-                            "online": " ",
+                            "empty_heart": " ",
+                            "online": " ",
                             "offline": "󰟧 "
                         }
 
@@ -111,7 +111,7 @@
             {
                 "type": "string",
                 "name": "newline_prompt",
-                "contents": "﬌",
+                "contents": "󱞩",
                 "highlight_groups": ["newline_prompt"],
                 "draw_soft_divider": false,
                 "draw_hard_divider": true
