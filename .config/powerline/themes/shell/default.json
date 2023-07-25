@@ -2,16 +2,16 @@
         "above": [{
                 "left": [
                     {
+                        "function": "powerline.segments.common.net.hostname"
+                    },
+                    {
                         "function": "powerline.segments.common.env.environment",
                         "name": "docker_enabled",
-                        "draw_soft_divider": false,
+                        "draw_soft_divider": true,
                         "draw_hard_divider": true,
                         "args": {
                             "variable": "CURRENT_SHELL_LOCATION"
                         }
-                    },
-                    {
-                        "function": "powerline.segments.common.net.hostname"
                     },
                     {
                         "function": "powerline.segments.common.net.internal_ip",
@@ -111,9 +111,9 @@
             {
                 "type": "string",
                 "name": "newline_prompt",
-                "contents": "󱞩 ",
+                "contents": " ",
                 "highlight_groups": ["newline_prompt"],
-                "draw_soft_divider": false,
+                "draw_soft_divider": true,
                 "draw_hard_divider": true
             }
         ],
