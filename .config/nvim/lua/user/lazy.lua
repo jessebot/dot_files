@@ -244,6 +244,7 @@ local plugins = {
     {
         'towolf/vim-helm',
         ft = {'helm'},
+        enabled = true,
     },
     -- ---------------- Language Server Protocol Plugins ---------------------
     -- snippets
