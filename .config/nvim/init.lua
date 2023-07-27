@@ -60,12 +60,12 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
 })
 
 -- autocommand to set the file type to helm based on files ending in tpl
--- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
---   pattern = {"*/charts/*/templates/*.tpl"},
---   callback = function()
---         vim.cmd("set filetype=helm")
---     end,
--- })
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*/charts/*/templates/*.tpl", "*/charts/*/templates/*.yaml"},
+  callback = function()
+        vim.cmd("set filetype=gotmpl")
+    end,
+})
 
 -- autocommand to set the file type to cfg for wireguard configs
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
