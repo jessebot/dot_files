@@ -142,6 +142,8 @@ brew:
       - k9s
       # package manager for k8s
       - helm
+      # for kustomize k8s manifest directories
+      - kustomize
       # gitops continuous delivery for k8s configs
       - argocd
       # KinD (Kubernetes in Docker), for small k8s clusters for testing
