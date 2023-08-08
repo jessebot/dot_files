@@ -317,12 +317,13 @@ local plugins = {
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
         },
-        cmd = "TSUpdateSync",
-        build = "MasonUpdate" -- :MasonUpdate updates registry contents
+        -- :MasonUpdate updates LSP installer registry contents
+        -- :TSUpdateSync updates the nvim_treesitter compiling stuff
+        build = {":MasonUpdate", ":TSUpdateSync"}
     },
     -- this helps bridge the gap between additional linters that don't have proper LSP
     {
-        'jose-elias-alvarez/null-ls.nvim'
+        'jose-elias-alvarez/null-ls.nvim',
     },
     -- may replace null-ls since it is being deprecated
     --{
@@ -348,7 +349,6 @@ local plugins = {
     {
         'nvim-telescope/telescope.nvim',
         version = false, -- telescope did only one release, so use HEAD for now
-        -- tag = '0.1.1', -- latest we've seen
         cmd = "Telescope",
         dependencies = {'nvim-lua/plenary.nvim'},
         key = {
