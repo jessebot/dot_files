@@ -49,6 +49,9 @@ require("user.toggleterm")
 -- Language Server configs and other syntax checking and highlight tools
 require('user.lsp-configs')
 
+-- Language server configs for stuff that doesn't have it
+require('user.null_ls')
+
 -- autocommand to disable lsp semantic highlighting for parameter/variable in 
 -- Dockerfile because it competes with treesitter and is worse
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {

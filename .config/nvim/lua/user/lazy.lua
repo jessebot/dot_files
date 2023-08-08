@@ -320,6 +320,15 @@ local plugins = {
         cmd = "TSUpdateSync",
         build = "MasonUpdate" -- :MasonUpdate updates registry contents
     },
+    -- this helps bridge the gap between additional linters that don't have proper LSP
+    {
+        'jose-elias-alvarez/null-ls.nvim'
+    },
+    -- may replace null-ls since it is being deprecated
+    --{
+    --    'nvimdev/guard.nvim'
+    --},
+
     -- Diagnostics with leader key + d
     {
         "folke/trouble.nvim",

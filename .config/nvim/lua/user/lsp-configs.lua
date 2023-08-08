@@ -34,7 +34,6 @@ lspconfig.dockerls.setup{
     capabilities = capabilities
 }
 
-
 -- helm
 local configs = require('lspconfig.configs')
 local util = require('lspconfig.util')
