@@ -118,6 +118,10 @@ brew:
       # colima is a docker desktop replacement
       - colima
     devops:
+      # for github actions linting
+      - actionlint
+      # vale helps with english grammar formatting and markdown formatting
+      - vale
       # for k8s helm chart development
       - helm/tap/chart-releaser
       - helm/tap/chart-testing
@@ -130,6 +134,8 @@ brew:
       - docker
       # docker dashboard tui
       - lazydocker
+      # linter for dockerfiles
+      - hadolint
       # programming languages and their package managers
       - go
       # cli for k8s (kubernetes)
