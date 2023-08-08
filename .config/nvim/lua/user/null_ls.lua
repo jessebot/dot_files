@@ -8,14 +8,14 @@ null_ls.setup({
         -- linting for Dockerfile best practices
         null_ls.builtins.diagnostics.hadolint,
         -- markdown linting for actual language
-        null_ls.builtins.diagnostics.vale.with {
-                filetypes = {
-                        'asciidoc',
-                        'markdown',
-                        'tex',
-                        'text',
-                },
-        },
+        -- null_ls.builtins.diagnostics.vale.with {
+        --        filetypes = {
+        --                'asciidoc',
+        --                'markdown',
+        --                'tex',
+        --                'text',
+        --        },
+        --},
         -- this should lint github actions
         null_ls.builtins.diagnostics.actionlint
     }
