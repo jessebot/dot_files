@@ -120,12 +120,12 @@ lspconfig.vimls.setup{
 }
 
 -- yaml - not sure if this is worth it yet
--- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 lspconfig.yamlls.setup {
   settings = {
     yaml = {
       schemas = {
-        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.23.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.27.4-standalone-strict/all.json"] = "/manifests/*",
         ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
         ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-schemas-for-2.8.0/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
         ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-schemas-for-2.8.0/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
