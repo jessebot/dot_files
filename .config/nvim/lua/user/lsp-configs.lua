@@ -127,7 +127,9 @@ lspconfig.yamlls.setup {
       schemas = {
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.23.0-standalone-strict/all.json"] = "/*.k8s.yaml",
         ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-        ["https://gist.githubusercontent.com/johnhamelink/8bff8a54c3bf2c445e740e9765ca852e/raw/742556c5e52e52e2e995b4a8a10d6470d6ad06ee/argocd-application.schema.json"] = "/argocd_*.yaml"
+        ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-schemas-for-2.8.0/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
+        ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-schemas-for-2.8.0/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
+        ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-schemas-for-2.8.0/argoproj.io/appproject_v1alpha1.json"] = "/*argocd_project.yaml"
             },
     }},
     capabilities = capabilities
