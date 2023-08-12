@@ -83,6 +83,14 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
+-- autocommand to set the file type to yaml for kubeconfig
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*/kubeconfig", "*/.config/kube/config"},
+  callback = function()
+        vim.cmd("set filetype=yaml")
+    end,
+})
+
 require('user.tree-sitter')
 
 -- folding and indentation
