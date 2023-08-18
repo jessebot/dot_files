@@ -11,6 +11,9 @@ export PATH="${PATH}:$XDG_DATA_HOME/krew/bin"
 # e.g. "grep -i"
 export SEARCH_TOOL="ag"
 
+# I always forget that krew isn't a command
+alias krew='kubectl krew'
+
 # cluster context shortcut
 alias k="kubecolor"
 alias ka="kubecolor apply -f"
