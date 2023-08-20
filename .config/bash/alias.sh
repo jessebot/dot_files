@@ -133,7 +133,17 @@ function gi {
     if [[ $1 = "tpull" || $1 = "pull" ]]; then
         git pull
     elif [ $1 = "tpush" ]; then
-        git push 
+        git push
+    elif [ $1 = "tdiff" ]; then
+        # this drops the tdiff arg and then starts the arg array at the next arg
+        shift
+        # $@ is all of the arguments passed in
+        git diff "$@"
+    elif [ $1 = "tcommit" ]; then
+        # this drops the tcommit arg and then starts the arg array at the next arg
+        shift
+        # $@ is all of the arguments passed in
+        git commit "$@"
     fi
 }
 
