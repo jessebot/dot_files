@@ -119,14 +119,24 @@ alias ga='git add .'
 alias gph='git push && git push --tags'
 alias gp='git pull && git log -1'
 
+# glab is gitlab's cli, but I always type gl by accident
+alias gl='glab'
+
 # typos
 alias gitcommit='git commit'
 alias gitadd='git add'
 alias gti='git'
 alias gtt='git'
 
-# glab is gitlab's cli, but I always type gl by accident
-alias gl='glab'
+# Function to attempt to fix gi typos
+function gi {
+    if [[ $1 = "tpull" || $1 = "pull" ]]; then
+        git pull
+    elif [ $1 = "tpush" ]; then
+        git push 
+    fi
+}
+
 
 # -------------------------------------------------------------------------- #
 # --------------------------  CUSTOM FUNCTIONS ----------------------------- #
