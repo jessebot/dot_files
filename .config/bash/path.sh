@@ -92,8 +92,7 @@ export NVM_DIR="$XDG_DATA_HOME"/nvm
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ golang ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # to make it more XDG compliant
-# export GOROOT=$HOME/.local/bin/go
-export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin/go
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin/go
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ rust ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
