@@ -128,12 +128,13 @@ alias gitadd='git add'
 alias gti='git'
 alias gtt='git'
 
-# Function to attempt to fix gi typos
+# Function to fix gi typos
 function gi {
     if [[ $1 = "tpull" || $1 = "pull" ]]; then
         git pull
     elif [ $1 = "tpush" ]; then
-        git push
+        shift
+        git push $@
     elif [ $1 = "tdiff" ]; then
         # this drops the tdiff arg and then starts the arg array at the next arg
         shift
