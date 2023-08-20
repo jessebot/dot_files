@@ -258,6 +258,8 @@ apt:
       # by brew so might be able to remove this
       # - gcc-11
     gui:
+      # my favorite font :)
+      - fonts-mononoki
       # package manager
       - snapd
       # package manager for gui apps
