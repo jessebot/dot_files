@@ -212,7 +212,7 @@ local plugins = {
             vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
             vim.opt.foldlevelstart = 99
         end,
-        build = "TSUpdateSync"
+        build = ":TSUpdateSync"
     },
     -- add visual lines for indentation
     {
