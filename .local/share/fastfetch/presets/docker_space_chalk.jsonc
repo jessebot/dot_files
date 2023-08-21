@@ -7,7 +7,9 @@
         "width": 29,
         "height": 13,
         "type": "sixel",
-        "source": "spacechalkwhale.jpg"
+        "source": "spacechalkwhale.jpg",
+        "padding": {"top": 2,
+                    "left": 1}
     },
     "display": {
         "percentType": 9, // colored percent number
@@ -17,6 +19,8 @@
         }
     },
     "modules": [
+        "break",
+        "break",
         "title",
         "separator",
         "os",
@@ -30,6 +34,7 @@
         "disk",
         "battery",
         "break",
-        "colors"
+        "colors",
+        "break"
     ]
 }

@@ -7,7 +7,10 @@
         "width": 22,
         "height": 14,
         "type": "sixel",
-        "source": "dogontheinternet.png"
+        "source": "dogontheinternet.png",
+        "padding": {"top": 1,
+                    "left": 1,
+                    "right": 1}
     },
     "display": {
         "percentType": 9, // colored percent number
@@ -16,21 +19,8 @@
             "title": "bright_blue"
         }
     },
-    // optional modules we left out:
-    //    "de",        - desktop environment
-    //    "wm",        - window manager
-    //    "wmtheme",   - window manager theme
-    //    "cursor",    - details about your cursor (blink, black/white, etc)
-    //    "terminal",  - the terminal we're using
-    //    "display",   - the monitor you're using, and resolution
-    //    "font",      - this is the system font, not the terminal font
-    //    "locale",    - local info like en_US.UTF-8
-    //    "icons",     - :shrug:
-    // "terminalfont", - font that the actual terminal is using
-    //  "kernel",      - this is the kernel of the OS
-    // "shell",        - shell such as bash and the version
-    // "poweradapter", - the poweradapter and cable attached to the machine
     "modules": [
+        "break",
         "break",
         "title",
         "separator",
@@ -45,6 +35,7 @@
         "disk",
         "battery",
         "break",
-        "colors"
+        "colors",
+        "break"
     ]
 }

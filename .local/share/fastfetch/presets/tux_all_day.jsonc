@@ -6,8 +6,13 @@
     "logo": {
         "width": 23,
         "height": 11,
-        "type": "sixel",
-        "source": "tux.gif"
+        "type": "iterm",
+        "source": "tux.gif",
+        "padding": {
+            "top": 2,
+            "left": 1,
+            "right": 0
+        }
     },
     "display": {
         "percentType": 9, // colored percent number
@@ -17,6 +22,7 @@
         }
     },
     "modules": [
+        "break",
         "title",
         "separator",
         "os",
@@ -30,6 +36,7 @@
         "disk",
         "battery",
         "break",
-        "colors"
+        "colors",
+        "break"
     ]
 }
