@@ -31,6 +31,7 @@
     // "shell",        - shell such as bash and the version
     // "poweradapter", - the poweradapter and cable attached to the machine
     "modules": [
+        "break",
         "title",
         "separator",
         "os",
