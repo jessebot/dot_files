@@ -57,7 +57,14 @@ lspconfig.helm_ls.setup {
 
 -- json
 lspconfig.jsonls.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        json = {
+            schemas = {
+        ["https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"] = "/*/fastfetch/config.jsonc"
+            }
+        }
+    }
 }
 
 
@@ -109,7 +116,7 @@ lspconfig.terraformls.setup{
 -- Installation ref: https://github.com/terraform-linters/tflint#installation
 lspconfig.tflint.setup{}
 
--- toml 
+-- toml
 lspconfig.taplo.setup{
     capabilities = capabilities
 }
@@ -119,7 +126,7 @@ lspconfig.vimls.setup{
     capabilities = capabilities
 }
 
--- yaml - not sure if this is worth it yet
+-- yaml
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
 lspconfig.yamlls.setup {
   settings = {
@@ -130,7 +137,8 @@ lspconfig.yamlls.setup {
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/appproject_v1alpha1.json"] = "/*argocd_project.yaml",
-        ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/external-secrets.io/externalsecret_v1beta1.json"] = "/external_secrets/*"
+        ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/external-secrets.io/externalsecret_v1beta1.json"] = "/external_secrets/*",
+        [""] = ""
             },
     }},
     capabilities = capabilities
