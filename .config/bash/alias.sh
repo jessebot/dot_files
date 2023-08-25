@@ -8,7 +8,7 @@ if [[ $(uname) == *"Darwin"* ]]; then
     alias sed='gsed'
 else
     # freetube only seems to work through flatpak on debian
-    alias freetube="flatpak run io.freetubeapp.FreeTube"
+    # alias freetube="flatpak run io.freetubeapp.FreeTube"
     # lutris works better through flatpak
     alias lutris="flatpak run net.lutris.Lutris"
 fi
