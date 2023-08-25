@@ -263,7 +263,7 @@ apt:
       # package manager
       - snapd
       # package manager for gui apps
-      - flatpak
+      # - flatpak
       # needed for freetube
       - youtube-dl
       # this lets you install flatpak packages via the gui
@@ -296,11 +296,11 @@ flatpak:
     install: "flatpak install --user --app -y "
   packages:
     gui:
-      - "org.freedesktop.Platform/x86_64/21.08"
+      # - "org.freedesktop.Platform/x86_64/21.08"
       # password manager
-      - com.bitwarden.desktop
+      # - com.bitwarden.desktop
       # youtube alternative
-      - io.freetubeapp.FreeTube
+      # - io.freetubeapp.FreeTube
     gaming:
       - lutris
 
