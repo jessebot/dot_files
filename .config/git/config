@@ -32,5 +32,6 @@
 [includeIf "gitdir:~/"]
     path = ~/.config/git/personal
 [alias]
-	root = rev-parse --show-toplevel
-	psuh = push
+    root = rev-parse --show-toplevel
+    psuh = push
+    commti = commit
