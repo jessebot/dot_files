@@ -35,3 +35,4 @@
     root = rev-parse --show-toplevel
     psuh = push
     commti = commit
+    ocmmit = commit
