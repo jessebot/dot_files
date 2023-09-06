@@ -65,8 +65,8 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
 -- autocommand to set the file type to helm based on files ending in tpl
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {
-        "*/charts/*/templates/*.tpl",
-        "*/charts/*/templates/*.yaml",
+        "*/templates/*.tpl",
+        "*/templates/*.yaml",
         "*/.github/workflows/*.yml",
         "*/.github/workflows/*.yaml"
     },
