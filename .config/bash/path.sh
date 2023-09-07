@@ -86,6 +86,9 @@ export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 # ~~~~~~~~~~~~~~~~~~~ nvm/npm for javascript stuff  ~~~~~~~~~~~~~~~~~~~~~~~~~
 # for npm to use XDG stuff
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# make sure we can run programs installed via npm
+export PATH=$PATH:$XDG_DATA_HOME/npm/bin
+
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 # TODO: loads nvm - maybe goes into devops build?
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
