@@ -91,6 +91,14 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
+-- autocommand to set the file type to css for tcss
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.tcss"},
+  callback = function()
+        vim.cmd("set filetype=css")
+    end,
+})
+
 require('user.tree-sitter')
 
 -- folding and indentation
