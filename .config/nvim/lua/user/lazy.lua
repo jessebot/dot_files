@@ -344,6 +344,17 @@ local plugins = {
           }
         end
     },
+    {
+      "folke/todo-comments.nvim",
+      dependencies = {
+            "nvim-lua/plenary.nvim",
+            "folke/trouble.nvim"
+        },
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+      }
+    },
     -- ------------------- fuzzy completion for files ------------------------
     -- telescope: extendable fuzzy finder over lists
     {
@@ -384,7 +395,7 @@ local plugins = {
     -- for highlighting hex colors (in vim, CSS, JS, HTML)
     {
         'norcalli/nvim-colorizer.lua',
-        ft = {'css', 'lua'},
+        ft = {'css', 'lua', 'vim', 'html', 'js'},
     },
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
     {
