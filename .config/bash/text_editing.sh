@@ -18,8 +18,10 @@ alias vim=$EDITOR
 # I and many others always try to type neovim :)
 alias neovim=$EDITOR
 
-# make all colors work by default
+# make all colors work by default, including via ssh!!
+unset TERM
 export TERM=xterm-256color
+export COLORTERM=truecolor
 
 # -- This is for making some basic resizing working with various cli tools --
 # check the window size after each command and, if necessary,
