@@ -22,12 +22,14 @@ vim.opt.termguicolors = true
 
 -- make searching case insensitive
 vim.opt.ignorecase = true
+-- make searching case sensitive if at least one character is cap
+vim.opt.smartcase = true
 
 -- load plugins
 require('user.lazy')
 
 -- --------- Plugin configs that have to be called after lazy --------------
--- starting page for neovim
+-- starting page for neovim - dashbaord plugin
 require('user.dashboard')
 
 -- tab line at top of window for tabs when there's more than one tab :) -- might switch to bufferline
