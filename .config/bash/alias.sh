@@ -126,6 +126,7 @@ alias gl='glab'
 alias gitcommit='git commit'
 alias gitadd='git add'
 alias gti='git'
+alias gt='git'
 alias gtt='git'
 
 # Function to fix gi typos

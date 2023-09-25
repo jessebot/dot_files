@@ -17,6 +17,9 @@ alias vi=$EDITOR
 alias vim=$EDITOR
 # I and many others always try to type neovim :)
 alias neovim=$EDITOR
+alias nivm=$EDITOR
+alias ivm=$EDITOR
+alias vmi=$EDITOR
 
 # make all colors work by default, including via ssh!!
 unset TERM
