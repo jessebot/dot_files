@@ -179,6 +179,8 @@ brew:
       - sl
       # rainbow text
       - lolcat
+      # tool for mirroring android screen
+      - scrcpy
     mail:
       # fetch your mail locally for neomutt
       - offlineimap
@@ -260,10 +262,12 @@ apt:
     gui:
       # my favorite font :)
       - fonts-mononoki
-      # package manager
-      - snapd
-      # package manager for gui apps
+      # package manager we don't use right now
+      # - snapd
+      # package manager for gui apps that we also don't use
       # - flatpak
+      # this is for android development
+      - adb
       # needed for freetube
       - youtube-dl
       # this lets you install flatpak packages via the gui
@@ -314,7 +318,7 @@ snap:
     gui:
       - core
       # screen debugger/sharing tool for android
-      - scrcpy
+      # - scrcpy
 
 # most of this is actually for powerline, my shell prompt
 pip3.11:
