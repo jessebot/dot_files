@@ -1,5 +1,5 @@
 require("colorizer").setup({
-	'css';
+	css = { rgb_fn = true; };
 	'lua';
 	'vim';
 })
