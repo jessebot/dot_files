@@ -12,6 +12,8 @@ vim.opt.autoindent  = true
 -- Also load indent files, to automatically do language-dependent indenting.
 -- filetype plugin indent on
 
+-- ref: https://github.com/lukas-reineke/indent-blankline.nvim
+
 local highlight = {
     "DarkBlueGray",
     "BlueGray"
