@@ -12,20 +12,21 @@ vim.opt.autoindent  = true
 -- Also load indent files, to automatically do language-dependent indenting.
 -- filetype plugin indent on
 
--- from https://github.com/lukas-reineke/indent-blankline.nvim#screenshots
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#47476c gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#5b5b8b gui=nocombine]]
+local highlight = {
+    "DarkBlueGray",
+    "BlueGray"
+}
 
-vim.opt.list = true
--- add a dot in blank spaces for indents
--- vim.opt.listchars:append "space:⋅"
+local hooks = require "ibl.hooks"
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    char_highlight_list = {
-        "IndentBlanklineIndent1",
-        "IndentBlanklineIndent2",
-    },
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "DarkBlueGray", { fg = "#47476c" })
+    vim.api.nvim_set_hl(0, "BlueGray", { fg = "#5b5b8b" })
+end)
+
+require("ibl").setup {
+    indent = { highlight = highlight },
+
     -- :echo &filetype
     filetype_exclude = {
         "dashboard"

@@ -216,7 +216,8 @@ local plugins = {
     },
     -- add visual lines for indentation
     {
-        "lukas-reineke/indent-blankline.nvim"
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl"
     },
     -- because indenting is still broken in treesitter for python
     -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
