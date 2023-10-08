@@ -36,3 +36,4 @@
     psuh = push
     commti = commit
     ocmmit = commit
+    checkut = checkout
