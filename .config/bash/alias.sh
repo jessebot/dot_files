@@ -58,9 +58,6 @@ alias tracert='traceroute'
 alias whereami='hostname'
 alias whoareyou='echo "I am $HOSTNAME, your favorite computer 🥰"'
 
-# scrncpy installs adb for you, but it's awkward to use, so we just alias it
-alias adb='scrcpy.adb'
-
 # I never remember what the img2sixel command is called
 alias sixel='img2sixel'
 alias imgcat='wezterm imgcat'
