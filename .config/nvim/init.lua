@@ -98,11 +98,11 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
--- autocommand to only set 8 character line on python
--- highlighted column 81, only on python files, to keep lines shorter
+-- autocommand to only set 81 character line limit on python, go, yaml, and shell scripts
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.py", "*.go", "*.yaml"},
+  pattern = {"*.py", "*.go", "*.yaml", "*.sh"},
   callback = function()
+        -- highlighted column 81, to keep lines to average terminal size
         vim.opt.colorcolumn = '81'
     end,
 })
