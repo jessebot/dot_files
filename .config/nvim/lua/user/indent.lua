@@ -32,7 +32,8 @@ require("ibl").setup {
     -- :echo &filetype
     exclude = {
         filetypes = {
-            "dashboard"
+            "dashboard",
+            "markdown"
         }
     }
 }

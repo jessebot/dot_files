@@ -14,9 +14,6 @@ vim.opt.numberwidth = 4
 -- highlight current line
 vim.opt.cursorline = true
 
--- highlighted column 81, only on python files, to keep lines shorter
-vim.opt.colorcolumn = '81'
-
 -- vim.opt.termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
@@ -100,6 +97,16 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
         vim.cmd("set filetype=css")
     end,
 })
+
+-- autocommand to only set 8 character line on python
+-- highlighted column 81, only on python files, to keep lines shorter
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.py", "*.go", "*.yaml"},
+  callback = function()
+        vim.opt.colorcolumn = '81'
+    end,
+})
+
 
 require('user.tree-sitter')
 
