@@ -30,7 +30,7 @@ require("ibl").setup {
     indent = { highlight = highlight },
 
     -- :echo &filetype
-    filetype_exclude = {
-        "dashboard"
+    exclude = {
+        filetype = "dashboard"
     }
 }
