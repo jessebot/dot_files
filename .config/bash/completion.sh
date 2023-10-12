@@ -48,5 +48,5 @@ fi
 # I never use this though...
 # eval "$(jump shell bash)"
 
-source ./lima_completion.sh
-source ./helm_completion.sh
+source ~/.config/bash/lima_completion.sh
+source ~/.config/bash/helm_completion.sh
