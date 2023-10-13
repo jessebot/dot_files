@@ -50,3 +50,4 @@ fi
 
 source ~/.config/bash/lima_completion.sh
 source ~/.config/bash/helm_completion.sh
+source ~/.config/bash/yq_completion.sh
