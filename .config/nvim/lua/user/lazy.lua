@@ -393,10 +393,10 @@ local plugins = {
 
     },
     -- --------------------- Language Specific Stuff -------------------------
-    -- for highlighting hex colors (in vim, CSS, JS, HTML)
     {
         'norcalli/nvim-colorizer.lua',
-        ft = {'css', 'lua', 'vim', 'html', 'js'},
+        -- for highlighting hex colors
+        ft = {'css', 'lua', 'vim', 'html', 'js', 'scss'},
     },
     -- logging syntax and highlighting -- 'mtdl9/vim-log-highlighting'
     {

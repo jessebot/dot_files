@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*.tcss"},
   callback = function()
-        vim.cmd("set filetype=css")
+        vim.cmd("set filetype=scss")
     end,
 })
 
