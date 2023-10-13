@@ -107,6 +107,13 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
+-- autocommand to only set 81 character line limit on python, go, yaml, and shell scripts
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.txt", "*.md", "*.mdx"},
+  callback = function()
+        vim.cmd("set spell")
+    end,
+})
 
 require('user.tree-sitter')
 
