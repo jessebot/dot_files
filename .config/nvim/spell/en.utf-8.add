@@ -8,3 +8,10 @@ stdout
 OIDC
 Zitadel
 k3d
+QuickStart
+FQDN
+ApplicationSets
+ApplicationSet
+letsencrypt
+XDG_CACHE_HOME
+traefik
