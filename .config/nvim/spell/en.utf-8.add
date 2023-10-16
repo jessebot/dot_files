@@ -83,3 +83,6 @@ GKE
 VPC
 CICD
 DevOps
+Ansible
+iTerm2
+nvim-treesitter
