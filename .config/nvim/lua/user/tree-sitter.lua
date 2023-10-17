@@ -6,6 +6,8 @@ require'nvim-treesitter.configs'.setup {
                       "hcl",
                       "markdown",
                       "markdown_inline",
+                      "html",
+                      "css",
                       "python",
                       "terraform",
                       "toml",
