@@ -95,3 +95,7 @@ OSX
 hostname
 .yaml
 WSL
+Restic
+B2
+Backblaze
+MinIO
