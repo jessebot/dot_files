@@ -99,3 +99,7 @@ Restic
 B2
 Backblaze
 MinIO
+Grafana
+ESO
+Kyverno
+kubectl
