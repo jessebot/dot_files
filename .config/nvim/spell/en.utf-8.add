@@ -104,3 +104,5 @@ WSL
 XDG_CACHE_HOME
 YAML
 Zitadel
+Lua
+tmux
