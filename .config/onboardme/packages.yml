@@ -88,6 +88,7 @@ brew:
       # fonts
       - "--cask homebrew/cask-fonts/font-mononoki"
       - "--cask homebrew/cask-fonts/font-symbols-only-nerd-font"
+      - "--cask homebrew/cask-fonts/font-victor-mono"
       # - "--cask font-hack-nerd-font"
       # this lets us resize windows on macOS
       - "--cask rectangle"
