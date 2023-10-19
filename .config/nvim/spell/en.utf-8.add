@@ -109,3 +109,8 @@ tmux
 v1
 smol
 XDG_CONFIG_HOME
+BW_CLIENTID
+ClusterIssuers
+SSO
+restic
+GitLab
