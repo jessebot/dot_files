@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
        -- never play a bell sound
-       audible_bell = "Disabled",
+       -- audible_bell = "Disabled",
 
        -- initial size of the terminal
        initial_cols = 162,
@@ -12,7 +12,37 @@ return {
        -- font stuff
        -- don't complain if an icon or character is missing
        warn_about_missing_glyphs = false,
-       font = wezterm.font_with_fallback { 'mononoki', 'Mononoki Nerd Font', 'Symbols Nerd Font Mono' },
+       font = wezterm.font_with_fallback { 'mononoki', 'Symbols Nerd Font Mono' },
+
+       font_rules = {
+         {
+           intensity = 'Bold',
+           italic = true,
+           font = wezterm.font {
+             family = 'Victor Mono',
+             weight = 'Bold',
+             style = 'Italic',
+           },
+         },
+         {
+           italic = true,
+           intensity = 'Half',
+           font = wezterm.font {
+             family = 'Victor Mono',
+             weight = 'DemiBold',
+             style = 'Italic',
+           },
+         },
+         {
+           italic = true,
+           intensity = 'Normal',
+           font = wezterm.font {
+             family = 'Victor Mono',
+             style = 'Italic',
+           },
+         },
+       },
+ 
        font_size = 15,
 
        -- window look and feel
