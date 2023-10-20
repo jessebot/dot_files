@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
        -- never play a bell sound
-       -- audible_bell = "Disabled",
+       audible_bell = "Disabled",
 
        -- initial size of the terminal
        initial_cols = 162,
