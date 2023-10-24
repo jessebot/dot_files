@@ -119,6 +119,8 @@ brew:
       # colima is a docker desktop replacement
       - colima
     devops:
+      # this install the minio cli called mc
+      - minio-mc
       # for github actions linting
       - actionlint
       # vale helps with english grammar formatting and markdown formatting
