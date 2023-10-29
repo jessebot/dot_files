@@ -38,9 +38,9 @@ function kgsdump() {
     GREEN='\033[1;32m'
     NC='\033[0m'
     if [ -z $@ ]; then
-        echo -e "󰛨  Usage: ksgdump SECRET"
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgsdump SECRET${NC}\n\nDumps all the keys for a given k8s SECRET in plain text"
     elif [[ $@ == "--help" ]]; then
-        echo -e "󰛨  Usage: ksgdump SECRET"
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgsdump SECRET${NC}\n\nDumps all the keys for a given k8s SECRET in plain text"
     else
         counter=0
         # for every key in a secret, decode the base64 value and print it
@@ -57,11 +57,19 @@ function kgsdump() {
     fi
 }
 
+# dump all secrets in your current namespace
 function kgsdumpall() {
-    RES=$(kg secrets --no-headers=true | cut -d ' ' -f 1 | grep -v "tls")
-    for secret in ${RES}; do
-        kgsdump $secret
-    done
+    BLUE='\033[1;34m'
+    GREEN='\033[1;32m'
+    NC='\033[0m'
+    if [[ $@ == "--help" ]]; then
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}ksgdumpall${NC}\n\nDump all the k8s secrets in the current namespace in plain text"
+    else
+        RES=$(kg secrets --no-headers=true | cut -d ' ' -f 1 | grep -v "tls")
+        for secret in ${RES}; do
+            kgsdump $secret
+        done
+    fi
 }
 
 # force delete function
