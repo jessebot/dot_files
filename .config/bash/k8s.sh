@@ -47,20 +47,21 @@ function kgsdump() {
         for secret in `kg secret $@ -o json | jq .data[]`; do
           key=`kg secret $@ -o json | jq .data | jq 'keys' | jq -r .[$counter]`
           value=`echo "$secret" | tr -d '"' | base64 --decode`
+
+          # pretty printing
           echo -en "${BLUE}${key}${NC}: ${GREEN}$value${NC}\n"
+
           # tick up the counter
           let counter++
         done
     fi
 }
 
-# switch to different k8s envs
-function kcs() {
-    kubecolor config use-context k8s-$1.$domain
-    if [ "$?" != "0" ]; then
-        kubecolor config use-context k8s-$1.$domain
-    fi
-    kubecolor config set-context $(kubecolor config current-context) --namespace=default
+function kgsdumpall() {
+    RES=$(kg secrets --no-headers=true | cut -d ' ' -f 1 | grep -v "tls")
+    for secret in ${RES}; do
+        kgsdump $secret
+    done
 }
 
 # force delete function
