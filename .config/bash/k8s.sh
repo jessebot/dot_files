@@ -32,6 +32,26 @@ alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 alias nextcloud_pod="kg pods -n nextcloud | grep -v postgres | grep -v metrics | tail -n 1 | awk '{print $1}'"
 alias ncsh='ke -n nextcloud $(nextcloud_pod) -- /bin/sh'
 
+# print every k8s secret in plain text... very secure 
+function kgsdump() {
+    BLUE='\033[1;34m'
+    GREEN='\033[1;32m'
+    NC='\033[0m'
+    if [[ $@ == "--help" ]]; then
+        echo -e "󰛨 Usage: ksgdump SECRET"
+    else
+        counter=0
+        # for every key in a secret, decode the base64 value and print it
+        for secret in `kg secret $@ -o json | jq .data[]`; do
+          key=`kg secret $@ -o json | jq .data | jq 'keys' | jq -r .[$counter]`
+          value=`echo "$secret" | tr -d '"' | base64 --decode`
+          echo -en "${BLUE}${key}${NC}: ${GREEN}$value${NC}\n"
+          # tick up the counter
+          let counter++
+        done
+    fi
+}
+
 # switch to different k8s envs
 function kcs() {
     kubecolor config use-context k8s-$1.$domain
