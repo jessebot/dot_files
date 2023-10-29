@@ -80,10 +80,11 @@ function khelp {
   echo "k8p                 = switch to prod k8 instance";
   echo "k8dw                = switch to data warehouse k8 instance";
   echo "kcc                 = echoes current k8s cluster you're connecting to";
-  echo "kcs <dev/qa/prod>  = switch current context to given namespace";
+  echo "kcs <dev/qa/prod>   = switch current context to given namespace";
   echo "kdn                 = kubecolor describe nodes";
   echo "kfd <pod-name>      = force delete of pod";
   echo "kns <namespace>     = switch current context to given namespace";
+  echo "kgsdump <secret>    = dump the contents of a secret in plain text";
 };
 
 # set current namespace function
