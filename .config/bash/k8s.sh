@@ -37,8 +37,10 @@ function kgsdump() {
     BLUE='\033[1;34m'
     GREEN='\033[1;32m'
     NC='\033[0m'
-    if [[ $@ == "--help" ]]; then
-        echo -e "󰛨 Usage: ksgdump SECRET"
+    if [ ! -z $@ ]; then
+        echo -e "󰛨  Usage: ksgdump SECRET"
+    elif [[ $@ == "--help" ]]; then
+        echo -e "󰛨  Usage: ksgdump SECRET"
     else
         counter=0
         # for every key in a secret, decode the base64 value and print it
