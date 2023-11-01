@@ -31,6 +31,8 @@
 # personal stuff like gpg config, username, etc
 [includeIf "gitdir:~/"]
     path = ~/.config/git/personal
+
+# aliases, mostly fixing typos
 [alias]
     root = rev-parse --show-toplevel
     psuh = push
@@ -38,3 +40,4 @@
     ocmmit = commit
     checkut = checkout
     checkuot = checkout
+    chekcout = checkout
