@@ -13,7 +13,9 @@
                     "right": 1}
     },
     "display": {
-        "percentType": 9, // colored percent number
+        "percent": {
+            "Type": 9
+            }, // colored percent number
         "color": {
             "keys": "magenta",
             "title": "bright_blue"
