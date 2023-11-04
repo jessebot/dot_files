@@ -31,7 +31,7 @@ k9s:
   # ClusterInfoView styles.
   info:
     fgColor: *pink
-    sectionColor: *current_line
+    sectionColor: *comment
   # Dialog styles.
   dialog:
     fgColor: *foreground
