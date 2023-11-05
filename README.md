@@ -1,6 +1,6 @@
 # Dot Files for `onboardme`
 
-These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onboardme), but also the personal dot files of @cloudymax and @jessebot. The directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible. We update these pretty regularly.
+These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onboardme), but also the personal dot files of [@cloudymax](https://github.com/cloudymax) and [@jessebot](https://github.com/jessebot). The directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible. We update these pretty regularly.
 
 ### Sections for each config directory/file
 
