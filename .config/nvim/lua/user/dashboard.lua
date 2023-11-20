@@ -89,6 +89,15 @@ db.setup({
                 action = "Lazy sync",
             },
             {
+                icon = "󰒻  ",
+                icon_hl = icon_color,
+                desc = "Rebuild Dictionary            ",
+                desc_hl = description_color,
+                key = "s",
+                key_hl = keymap_color,
+                action = "mkspell! $XDG_CONFIG_HOME/nvim/spell/en.utf-8.add",
+            },
+            {
                 icon = "  ",
                 icon_hl = icon_color,
                 desc = "Exit                          ",
