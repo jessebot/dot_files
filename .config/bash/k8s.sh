@@ -21,6 +21,8 @@ alias kc="kubecolor config use-context"
 alias kd="kubecolor describe"
 alias ke="kubecolor exec -it"
 alias kg="kubecolor get"
+alias kgs="kubecolor get secrets"
+alias kgcm="kubecolor get configmaps"
 alias kl="kubecolor logs -f"
 alias kcc="$SEARCH_TOOL current $KUBECONFIG"
 alias kdm="kubecolor describe nodes -l kubernetes.io/role=master"
@@ -31,6 +33,27 @@ alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 # get shell access to nextcloud pod in nextcloud namespace
 alias nextcloud_pod="kg pods -n nextcloud | grep -v postgres | grep -v metrics | tail -n 1 | awk '{print $1}'"
 alias ncsh='ke -n nextcloud $(nextcloud_pod) -- /bin/sh'
+
+
+
+function kgall() {
+    echo -e "\n─────────────────────────────────────────────────────────────────"
+    echo -e "                           🐋 Pods 🐋"
+    echo -e "─────────────────────────────────────────────────────────────────\n"
+    kubecolor get pods
+    echo -e "\n─────────────────────────────────────────────────────────────────"
+    echo -e "                           💾 PVCS 💾"
+    echo -e "─────────────────────────────────────────────────────────────────\n"
+    kubecolor get pvc 
+    echo -e "\n─────────────────────────────────────────────────────────────────"
+    echo -e "                          🤫 Secrets 🤫"
+    echo -e "─────────────────────────────────────────────────────────────────\n"
+    kubecolor get secrets 
+    echo -e "\n─────────────────────────────────────────────────────────────────"
+    echo -e "                          ⚙️ ConfigMaps ⚙️"
+    echo -e "─────────────────────────────────────────────────────────────────\n"
+    kubecolor get configmaps
+}
 
 # print every k8s secret in plain text... very secure 
 function kgsdump() {
@@ -85,6 +108,9 @@ function khelp {
   echo "kd                  = kubecolor describe";
   echo "ke                  = kubecolor exec -it";
   echo "kg                  = kubecolor get";
+  echo "kgall               = kubecolor get (pods, secrets, configmaps, PVCs)";
+  echo "kgcm                = kubecolor get configmaps";
+  echo "kgs                 = kubecolor get secrets";
   echo "kl                  = kubecolor logs -f (follow logs for a pod)";
   echo "k8p                 = switch to prod k8 instance";
   echo "k8dw                = switch to data warehouse k8 instance";
