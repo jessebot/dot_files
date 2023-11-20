@@ -87,7 +87,12 @@ These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onbo
   #### [`~/.config/bash/k8s.sh`](.config/bash/k8s.sh)
   kubernetes defaults:
   - set pathing for [`krew`][krew], a plugin manager for [`kubectl`][kubectl].
-  - helpful sensible aliases such as: `kg` for `kubectl get`
+  - helpful aliases and functions such as:
+    - `k` is aliased to `kubecolor` (`kubectl` with colors)
+    - `kg` for `kubecolor get`
+    - `kgs` to get secrets
+    - `kgsdump` to dump the contents of a given secret in plain text
+    - `kgall` to get pods, PVCs, secrets, and configmaps in one go
 
   #### [`~/.config/bash/path.sh`](.config/bash/path.sh)
   - set [XDG Base Directory Spec]
