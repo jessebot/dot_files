@@ -36,7 +36,9 @@
 [alias]
     root = rev-parse --show-toplevel
     psuh = push
+    puhs = push
     commti = commit
+    comit = commit
     ocmmit = commit
     checkut = checkout
     checkuot = checkout
