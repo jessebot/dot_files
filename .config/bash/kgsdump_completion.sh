@@ -5,3 +5,4 @@ _kgsdump_completions()
 }
 
 complete -F _kgsdump_completions kgsdump
+complete -F _kgsdump_completions kgs
