@@ -74,7 +74,7 @@ These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onbo
   a config file to organize all our BASH aliases
 
   #### [`~/.config/bash/completion.sh`](.config/bash/completion.sh)
-  enable tab completion
+  enable tab completion for all common commands that support it.
 
   #### [`~/.config/bash/history.sh`](.config/bash/history.sh)
   - sets history to be in `~/.local/state/bash/history`
@@ -90,8 +90,7 @@ These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onbo
   - helpful aliases and functions such as:
     - `k` is aliased to `kubecolor` (`kubectl` with colors)
     - `kg` for `kubecolor get`
-    - `kgs` to get secrets
-    - `kgsdump` to dump the contents of a given secret in plain text
+    - `kgsdump` and `kgs` to dump the contents of a given secret in plain text (supports tab completion)
     - `kgall` to get pods, PVCs, secrets, and configmaps in one go
 
   #### [`~/.config/bash/path.sh`](.config/bash/path.sh)
