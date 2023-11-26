@@ -21,7 +21,6 @@ alias kc="kubecolor config use-context"
 alias kd="kubecolor describe"
 alias ke="kubecolor exec -it"
 alias kg="kubecolor get"
-alias kgs="kubecolor get secrets"
 alias kgcm="kubecolor get configmaps"
 alias kl="kubecolor logs -f"
 alias kcc="$SEARCH_TOOL current $KUBECONFIG"
@@ -33,8 +32,6 @@ alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 # get shell access to nextcloud pod in nextcloud namespace
 alias nextcloud_pod="kg pods -n nextcloud | grep -v postgres | grep -v metrics | tail -n 1 | awk '{print $1}'"
 alias ncsh='ke -n nextcloud $(nextcloud_pod) -- /bin/sh'
-
-
 
 function kgall() {
     echo -e "\n─────────────────────────────────────────────────────────────────"
@@ -61,9 +58,11 @@ function kgsdump() {
     GREEN='\033[1;32m'
     NC='\033[0m'
     if [ -z $@ ]; then
-        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgsdump SECRET${NC}\n\nDumps all the keys for a given k8s SECRET in plain text"
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgsdump SECRET${NC}\n\nDumps all the keys for a given k8s SECRET in plain text\n"
+        kubecolor get secrets
     elif [[ $@ == "--help" ]]; then
         echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgsdump SECRET${NC}\n\nDumps all the keys for a given k8s SECRET in plain text"
+        kubecolor get secrets
     else
         counter=0
         # for every key in a secret, decode the base64 value and print it
@@ -79,6 +78,8 @@ function kgsdump() {
         done
     fi
 }
+
+alias kgs="kgsdump"
 
 # dump all secrets in your current namespace
 function kgsdumpall() {
