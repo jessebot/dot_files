@@ -149,6 +149,7 @@ brew:
       - hidetatz/tap/kubecolor
       # terminal based dashbaord for k8s
       - k9s
+      - kompose
       # package manager for k8s
       - helm
       # for kustomize k8s manifest directories
