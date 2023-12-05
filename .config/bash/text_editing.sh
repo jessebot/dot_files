@@ -21,6 +21,9 @@ alias nivm=$EDITOR
 alias ivm=$EDITOR
 alias vmi=$EDITOR
 
+# this is useful because I split a lot of files
+alias vsplit="$EDITOR -O"
+
 # make all colors work by default, including via ssh!!
 unset TERM
 export TERM=xterm-256color
