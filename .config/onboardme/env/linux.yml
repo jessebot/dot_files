@@ -1,0 +1,8 @@
+---
+brew:
+  # linuxbrew asks for this
+  - gcc
+  # this should solve font issues :D but...
+  # linuxbrew fonts aren't working for some reason
+  # - "homebrew/linux-fonts/font-mononoki"
+  # - "homebrew/linux-fonts/font-symbols-only-nerd-font"

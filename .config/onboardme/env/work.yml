@@ -1,0 +1,5 @@
+---
+brew:
+  # for work chats
+  - "--cask slack"
+  - "--cask zoom"

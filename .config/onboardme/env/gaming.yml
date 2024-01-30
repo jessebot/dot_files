@@ -1,0 +1,10 @@
+---
+apt:
+  # helpful for gaming on linux
+  - "nvidia-driver-libs:i386"
+  - "steam:i386"
+  # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
+  # - exfat-utils
+
+flatpak:
+  - lutris

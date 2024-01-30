@@ -1,0 +1,41 @@
+---
+brew:
+  emoji: "🍺"
+  commands:
+    list: "brew list -1"
+    update: "brew update --quiet"
+    upgrade: "brew upgrade --quiet"
+    install: "brew install "
+    cleanup: "brew cleanup"
+
+apt:
+  emoji: "🙃"
+  commands:
+    update: "sudo apt-get update -y"
+    upgrade: "sudo apt-get upgrade -y"
+    install: "sudo apt-get install -y --no-install-recommends "
+    cleanup: "sudo apt-get autoremove -y"
+
+flatpak:
+  emoji: "🫓 "
+  commands:
+    setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
+    list: "flatpak list --user --columns=application"
+    install: "flatpak install --user --app -y "
+
+snap:
+  emoji: "🫰 "
+  commands:
+    upgrade: "sudo snap refresh"
+    list: "snap list"
+    install: "sudo snap install "
+
+pip3.11:
+  emoji: "🐍"
+  commands:
+    list: "pip3.11 list"
+    # this is just till there's a better solution than pipx for Debian Bookworm
+    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
+    install: "pip3.11 install --upgrade --user --break-system-packages "
+  # env_vars:
+  #   PYTHONUSERBASE: ""
