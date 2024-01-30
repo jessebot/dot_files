@@ -1,0 +1,71 @@
+---
+brew:
+  # for github actions linting
+  - actionlint
+  # vale helps with english grammar formatting and markdown formatting
+  - vale
+  # for k8s helm chart development
+  - helm/tap/chart-releaser
+  - helm/tap/chart-testing
+  - norwoodj/tap/helm-docs
+  # for removing passwords or large files from git history
+  - bfg
+  - pyenv
+  - pyenv-virtualenv
+  # docker cli
+  - docker
+  # docker dashboard tui
+  - lazydocker
+  # linter for dockerfiles
+  - hadolint
+  # programming languages and their package managers
+  - go
+  # lab for installing slim distros of k8s
+  - small-hack/tap/smol-k8s-lab
+  # kubecolor, a kubectl colorizer
+  - hidetatz/tap/kubecolor
+  # for kustomize k8s manifest directories
+  - kustomize
+  # generating SSL certs and random strings
+  - openssl@3
+  # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
+  # - kubeseal
+  # gitlab cli
+  - glab
+  # github cli
+  - gh
+  # for backups
+  - restic
+  # terraform for building stuff
+  - tfenv
+  - tflint
+  - terraform-docs
+
+apt:
+  - docker-ce
+  # vpn
+  - wireguard
+  # like top but for GPUs
+  - nvtop
+  # was for euporie - notebooks in terminals, but gcc is already installed 
+  # by brew so might be able to remove this
+  # - gcc-11
+
+
+# most of this is actually for powerline, my shell prompt
+pip3.11:
+  # might be needed for development and building
+  - build
+  - twine
+  # need this for python notebooks
+  - ipykernel
+  # latest jupyter notebooks
+  - jupyterlab
+  # classic python notebooks
+  # - notebook
+  # notebook-driven development platform
+  # - nbdev
+  # this is for markdown notebook docs and such
+  # - quarto
+  # notebooks in the terminal 💚
+  - euporie

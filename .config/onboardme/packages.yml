@@ -7,6 +7,7 @@ brew:
     upgrade: "brew upgrade --quiet"
     install: "brew install "
     cleanup: "brew cleanup"
+    search: "brew search"
   packages:
     # these are all for both macOS and Debian
     default:
@@ -133,6 +134,16 @@ brew:
       - bfg
       - pyenv
       - pyenv-virtualenv
+      # might be needed for python development and building
+      - python-build
+      - twine
+      - ruff
+      - flake8
+      - poetry
+      # latest jupyter notebooks
+      - jupyterlab
+      # this is for markdown notebook docs and such
+      # - quarto
       # docker cli
       - docker
       # docker dashboard tui
@@ -166,6 +177,8 @@ brew:
       - glab
       # github cli
       - gh
+      # this is for git pre-commits
+      - pre-commit
       # for backups
       - restic
       # terraform for building stuff
@@ -209,6 +222,10 @@ brew:
       # spotify TUI: written in rust, but no longer maintained
       # - spotify-tui
       - nuclear
+      # terminal based youtube player
+      - yewtube
+      # powerline: supposed to work spotify info
+      - dbus
     Linux:
       # linuxbrew asks for this
       - gcc
@@ -220,6 +237,49 @@ brew:
       # wezterm: Rust based terminal the is cross-OS-compatible
       - "wez/wezterm-linuxbrew/wezterm"
 
+
+# most of this is actually for powerline, my shell prompt
+
+pip3.11:
+  emoji: "🐍"
+  commands:
+    list: "pip3.11 list"
+    # this is just till there's a better solution than pipx for Debian Bookworm
+    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
+    install: "pip3.11 install --upgrade --user --break-system-packages "
+  # env_vars:
+  #   PYTHONUSERBASE: ""
+  packages:
+    default:
+      # keep ourselves up to date
+      - onboardme
+      # powerline: for the internal ip address prompt segment
+      - netifaces
+      # neovim: needed for neovim's python3 interface, I think
+      - pynvim
+      # powerline: (status line for tmux/BASH), this works on linux
+      - "git+https://github.com/jessebot/powerline@patch-2"
+      # these are powerline extensions
+      - powerline-kubernetes
+      - powerline-gitstatus
+      # python development: linting/auto-linting
+      - pyflakes
+      - autoflake
+      # this is needed to make python respect XDG Base directory specific
+      - xdg_base_dirs
+    devops:
+      # need this for python notebooks
+      - ipykernel
+      # classic python notebooks
+      # - notebook
+      # notebook-driven development platform
+      # - nbdev
+      # notebooks in the terminal 💚
+      - euporie
+    music:
+      # python spotify tui: https://github.com/ceuk/spotui
+      - spotui
+
 apt:
   emoji: "🙃"
   commands:
@@ -227,6 +287,7 @@ apt:
     upgrade: "sudo apt-get upgrade -y"
     install: "sudo apt-get install -y --no-install-recommends "
     cleanup: "sudo apt-get autoremove -y"
+    search: "apt-cache search"
   packages:
     default:
       - bash-completion
@@ -290,40 +351,41 @@ apt:
       # helpful for gaming on linux
       - "nvidia-driver-libs:i386"
       - "steam:i386"
+      - wine
       # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
       # - exfat-utils
     music:
       - vlc
       - pulseaudio
 
-flatpak:
-  emoji: "🫓 "
+app_image:
+  emoji: "📱"
   commands:
-    setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
-    list: "flatpak list --user --columns=application"
-    install: "flatpak install --user --app -y "
+    install: ""
   packages:
-    gui:
-      # - "org.freedesktop.Platform/x86_64/21.08"
-      # password manager
-      # - com.bitwarden.desktop
-      # youtube alternative
-      # - io.freetubeapp.FreeTube
-    gaming:
-      - lutris
+    x86_64_gui:
+      - https://github.com/bitwarden/clients/releases/download/desktop-v2024.1.0/Bitwarden-2024.1.0-x86_64.AppImage
+      - https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/WezTerm-20230712-072601-f4abf8fd-Ubuntu20.04.AppImage
+      - https://github.com/FreeTubeApp/FreeTube/releases/download/v0.19.1-beta/FreeTube_0.19.1_amd64.AppImage
 
-snap:
-  emoji: "🫰 "
-  commands:
-    upgrade: "sudo snap refresh"
-    list: "snap list"
-    install: "sudo snap install "
-  packages:
-    gui:
-      - core
-      # screen debugger/sharing tool for android
-      # - scrcpy
+# flatpak:
+#   emoji: "🫓 "
+#   commands:
+#     setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
+#     list: "flatpak list --user --columns=application"
+#     install: "flatpak install --user --app -y "
+#     search: "flatpak search"
+#   packages:
+#     #  gui:
+#     #    - "org.freedesktop.Platform/x86_64/21.08"
+#     #    password manager
+#     #    - com.bitwarden.desktop
+#     #    youtube alternative
+#     #    - io.freetubeapp.FreeTube
+#     gaming:
+#       - lutris
 
+<<<<<<< Updated upstream
 # most of this is actually for powerline, my shell prompt
 pip3.11:
   emoji: "🐍"
@@ -384,3 +446,15 @@ pip3.11:
       - dbus
       # python spotify tui: https://github.com/ceuk/spotui
       - spotui
+=======
+# snap:
+#   emoji: "🫰 "
+#   commands:
+#     upgrade: "sudo snap refresh"
+#     list: "snap list"
+#     install: "sudo snap install "
+#     search: "snap search"
+#   packages:
+#     gui:
+#       - core
+>>>>>>> Stashed changes

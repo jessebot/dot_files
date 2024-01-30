@@ -1,0 +1,47 @@
+---
+brew:
+  # this is installed via apt for linux
+  - git
+  # python 3.11 already ships with Debian bookworm, only needed for macOS
+  - python@3.11
+  # for hiding the top bar on an M1
+  - topnotch
+  # for testing apis and downloading things
+  - curl
+  # current version of bash 😍
+  - bash
+  # so that bash completion stuff works
+  - "bash-completion@2"
+  # fonts
+  - "--cask homebrew/cask-fonts/font-mononoki"
+  - "--cask homebrew/cask-fonts/font-symbols-only-nerd-font"
+  - "--cask homebrew/cask-fonts/font-victor-mono"
+  # - "--cask font-hack-nerd-font"
+  # this lets us resize windows on macOS
+  - "--cask rectangle"
+  # Default browser
+  - "--cask firefox"
+  # File server cloud replacement
+  - "--cask nextcloud"
+  # wezterm: Rust based terminal the is cross-OS-compatible
+  - "--cask wez/wezterm/wezterm"
+  # gives us the default gnu/linux sed we all know and love
+  - "gnu-sed"
+  # remap keys on macOS
+  # - "--cask karabiner-elements"
+  # primary media player
+  - "--cask vlc"
+  # youtube replacement
+  - "--cask freetube"
+  # firewall
+  - "--cask lulu"
+  # password manager
+  - "--cask bitwarden"
+  # VPN
+  - "--cask protonvpn"
+  # libreoffice is a FOSS office suite that replaces Google Docs/Office365
+  - "--cask libreoffice"
+  # docker desktop
+  # - "--cask docker"
+  # colima is a docker desktop replacement
+  - colima

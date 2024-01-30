@@ -1,0 +1,15 @@
+---
+brew:
+  # fetch your mail locally for neomutt
+  - offlineimap
+  # anti virus mostly for mail
+  - clamav
+  # TUI email client
+  - neomutt
+  # markdown rendering
+  - pandoc
+  # zathura is a document viewer, that is not working yet
+  # - zegervdv/zathura/zathura
+  # - zegervdv/zathura/zathura-pdf-mupdf
+  # proton bridge for getting mail locally
+  - "--cask protonmail-bridge"

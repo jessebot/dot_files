@@ -1,0 +1,20 @@
+---
+brew:
+  # spotify daemon
+  - spotifyd
+  # spotify TUI: written in rust, but no longer maintained
+  # - spotify-tui
+  - nuclear
+
+apt:
+  - vlc
+  - pulseaudio
+
+# most of this is actually for powerline, my shell prompt
+pip3.11:
+  # terminal based youtube player
+  - yewtube
+  # powerline: supposed to work spotify info
+  - dbus
+  # python spotify tui: https://github.com/ceuk/spotui
+  - spotui

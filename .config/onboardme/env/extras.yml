@@ -1,0 +1,14 @@
+---
+brew:
+  # installs cargo and rust
+  # - rustup
+  # preview videos in the terminal. commented by default because it is big
+  # - ffmpegthumbnailer
+  # a cow that says things
+  - cowsay
+  # steam locomotive
+  - sl
+  # rainbow text
+  - lolcat
+  # tool for mirroring android screen
+  - scrcpy

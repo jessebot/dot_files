@@ -1,0 +1,33 @@
+---
+brew:
+  # wezterm: Rust based terminal the is cross-OS-compatible
+  - "wez/wezterm-linuxbrew/wezterm"
+
+apt:
+  # my favorite font :)
+  - fonts-mononoki
+  # package manager we don't use right now
+  # - snapd
+  # package manager for gui apps that we also don't use
+  # - flatpak
+  # this is for android development
+  - adb
+  # needed for freetube
+  - youtube-dl
+  # this lets you install flatpak packages via the gui
+  - gnome-software-plugin-flatpak
+  # gui firewall
+  - gufw
+  # pdf viewer with themeing
+  - zathura
+  # nextcloud is a self hosted file share app
+  - nextcloud-desktop
+  # libreoffice is a FOSS office suite that replaces Google Docs/Office365
+  - libreoffice
+  # GUI interface for pulseaudio, so you can disable audio devices
+  - pavucontrol
+
+snap:
+  - core
+  # screen debugger/sharing tool for android
+  # - scrcpy
