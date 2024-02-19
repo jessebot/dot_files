@@ -134,14 +134,10 @@ dot_files:
 #         Darwin: "~/Nextcloud/freetube/macos"
 
 # 🚧 this section is under construction
-# known safe remote hosts that you expect to be able to ping and SSH into
-remote_hosts: []
-  # - 192.168.42.42
-
-# 🚧 this section is under construction
 # setup iptable on Linux only
-firewall: false
-
-# 🚧 this section is under construction
-# set wallpapers directory. MacOS: https://apple.stackexchange.com/a/348454
-# wallpapers_dir: ""
+firewall:
+  enabled: false
+  # 🚧 this section is under construction
+  # known safe remote hosts that you expect to be able to ping and SSH into
+  remote_hosts: []
+    # - 192.168.42.42
