@@ -1,10 +1,8 @@
-<<<<<<< Updated upstream
+---
 #         Config file for the onboardme cli command.             #
 # -------------------------------------------------------------- #
 #    This files should be in: ~/.config/onboardme/config.yaml    #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
----
-=======
 tui:
   # enable tui, otherwise you need to use -i via the cli
   enabled: true
@@ -17,17 +15,13 @@ tui:
       on_focus: true
       # ring the built in terminal bell when something is wrong
       on_error: true
->>>>>>> Stashed changes
 
 log:
   # Full path to a file you'd like to log to. Creates file if it doesn't exist
   # if empty, onboardme does not log to a file
   file: ""
   # what level of logs to output (debug, info, warn, error)
-<<<<<<< Updated upstream
   level: "warn"
-=======
-  level: warn
 
 # This is the basic package config.
 package:
@@ -65,26 +59,16 @@ package:
     - music
       # things like zoom and slack
     - work
->>>>>>> Stashed changes
 
 # steps refer to a specific function in the list of functions we run
 steps:
   # mac specific steps
   Darwin:
-<<<<<<< Updated upstream
-    - dot_files
-    - packages
-    - font_setup
-    - neovim_setup
-    - sudo_setup
-  # linux specific steps
-=======
   - dot_files
   - packages
   - font_setup
   - neovim_setup
   - sudo_setup
->>>>>>> Stashed changes
   Linux:
     - dot_files
     - packages
@@ -108,42 +92,6 @@ dot_files:
   overwrite: false
 
 # This is the basic package config.
-package:
-  # Remove any of the below pkg managers to only run the remaining pkg managers
-  managers:
-    # macOS specific steps
-    Darwin:
-      - brew
-      - pip3.11
-    # Debian/Ubuntu specific steps
-    Linux:
-      - apt
-      - brew
-      - pip3.11
-      - flatpak
-      - snap
-  # list of extra existing packages groups to install
-  groups:
-    # any package groups in this default section are always installed
-    default:
-      # basic tui stuff to have a nice time in the terminal :)
-      - default
-    # move these package.groups.default to always install them
-    optional:
-      # setting up more python data science specific tooling
-      - data_science
-      # kubernetes and docker tools
-      - devops
-      # gaming always installs gui
-      - gaming
-      # freetube and other gui applications
-      - gui
-      # this configures neomutt and offlineimap
-      - mail
-      # sets up useful music tui stuff for spotify and youtube
-      - music
-      # things like zoom and slack
-      - work
 
 # 🚧 this section is under construction
 # cron:
