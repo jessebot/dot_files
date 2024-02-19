@@ -15,6 +15,16 @@ tui:
       on_focus: true
       # ring the built in terminal bell when something is wrong
       on_error: true
+    text_to_speech:
+      # use a specific program for text to speech - needs to be a full path
+      # macOS default: say
+      speech_program: say
+      # read aloud the screen title and description
+      screen_titles: false
+      # read aloud the element id, value, and tooltip each time you switch focus
+      on_focus: false
+      # press f5 to read the element id and selected row of DataTables
+      on_key_press: true
 
 log:
   # Full path to a file you'd like to log to. Creates file if it doesn't exist
