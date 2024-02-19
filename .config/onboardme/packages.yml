@@ -238,48 +238,6 @@ brew:
       - "wez/wezterm-linuxbrew/wezterm"
 
 
-# most of this is actually for powerline, my shell prompt
-
-pip3.11:
-  emoji: "🐍"
-  commands:
-    list: "pip3.11 list"
-    # this is just till there's a better solution than pipx for Debian Bookworm
-    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
-    install: "pip3.11 install --upgrade --user --break-system-packages "
-  # env_vars:
-  #   PYTHONUSERBASE: ""
-  packages:
-    default:
-      # keep ourselves up to date
-      - onboardme
-      # powerline: for the internal ip address prompt segment
-      - netifaces
-      # neovim: needed for neovim's python3 interface, I think
-      - pynvim
-      # powerline: (status line for tmux/BASH), this works on linux
-      - "git+https://github.com/jessebot/powerline@patch-2"
-      # these are powerline extensions
-      - powerline-kubernetes
-      - powerline-gitstatus
-      # python development: linting/auto-linting
-      - pyflakes
-      - autoflake
-      # this is needed to make python respect XDG Base directory specific
-      - xdg_base_dirs
-    devops:
-      # need this for python notebooks
-      - ipykernel
-      # classic python notebooks
-      # - notebook
-      # notebook-driven development platform
-      # - nbdev
-      # notebooks in the terminal 💚
-      - euporie
-    music:
-      # python spotify tui: https://github.com/ceuk/spotui
-      - spotui
-
 apt:
   emoji: "🙃"
   commands:
@@ -385,8 +343,8 @@ app_image:
 #     gaming:
 #       - lutris
 
-<<<<<<< Updated upstream
 # most of this is actually for powerline, my shell prompt
+
 pip3.11:
   emoji: "🐍"
   commands:
@@ -446,7 +404,7 @@ pip3.11:
       - dbus
       # python spotify tui: https://github.com/ceuk/spotui
       - spotui
-=======
+
 # snap:
 #   emoji: "🫰 "
 #   commands:
@@ -457,4 +415,3 @@ pip3.11:
 #   packages:
 #     gui:
 #       - core
->>>>>>> Stashed changes
