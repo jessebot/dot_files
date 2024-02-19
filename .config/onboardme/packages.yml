@@ -355,9 +355,14 @@ pipx:
       - poetry
       # this is for git pre-commits
       - pre-commit
+      # python development: linting/auto-linting
+      - pyflakes
+      - autoflake
       - ruff
       - flake8
+      # might be needed for development and building
       - twine
+      - build
     devops:
       # this is a k8s tool to spin up clusters on your local machine
       - smol-k8s-lab
@@ -365,6 +370,12 @@ pipx:
       - jupyterlab
       # notebooks in the terminal 💚
       - euporie
+      # classic python notebooks
+      # - notebook
+      # notebook-driven development platform
+      # - nbdev
+      # this is for markdown notebook docs and such
+      # - quarto
     music:
       # terminal based youtube player
       - yewtube
@@ -394,22 +405,11 @@ pip3.11:
       # these are powerline extensions
       - powerline-kubernetes
       - powerline-gitstatus
-      # python development: linting/auto-linting
-      - pyflakes
-      - autoflake
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
     devops:
-      # might be needed for development and building
-      - build
       # need this for python notebooks
       - ipykernel
-      # classic python notebooks
-      # - notebook
-      # notebook-driven development platform
-      # - nbdev
-      # this is for markdown notebook docs and such
-      # - quarto
     music:
       # powerline: supposed to work spotify info
       - dbus
