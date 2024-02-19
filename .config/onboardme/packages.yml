@@ -137,11 +137,8 @@ brew:
       # might be needed for python development and building
       - python-build
       - twine
-      - ruff
       - flake8
       - poetry
-      # latest jupyter notebooks
-      - jupyterlab
       # this is for markdown notebook docs and such
       # - quarto
       # docker cli
@@ -344,7 +341,37 @@ app_image:
 #       - lutris
 
 # most of this is actually for powerline, my shell prompt
+pipx:
+  emoji: "𝑋"
+  commands:
+    list: "pipx list"
+    # this is just till there's a better solution than pipx for Debian Bookworm
+    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
+    install: "pipx install "
+  packages:
+    default:
+      # keep ourselves up to date
+      - onboardme
+      - poetry
+      # this is for git pre-commits
+      - pre-commit
+      - ruff
+      - flake8
+      - twine
+    devops:
+      # this is a k8s tool to spin up clusters on your local machine
+      - smol-k8s-lab
+      # latest jupyter notebooks
+      - jupyterlab
+      # notebooks in the terminal 💚
+      - euporie
+    music:
+      # terminal based youtube player
+      - yewtube
+      # python spotify tui: https://github.com/ceuk/spotui
+      - spotui
 
+# most of this is actually for powerline, my shell prompt
 pip3.11:
   emoji: "🐍"
   commands:
@@ -358,52 +385,34 @@ pip3.11:
     default:
       # pip itself needs to be kept up to up2date
       - pip
-      # keep ourselves up to date
-      - onboardme
       # powerline: for the internal ip address prompt segment
       - netifaces
       # neovim: needed for neovim's python3 interface, I think
       - pynvim
-      # this is for git pre-commits
-      - pre-commit
       # powerline: (status line for tmux/BASH), this works on linux
       - "git+https://github.com/jessebot/powerline@patch-2"
       # these are powerline extensions
       - powerline-kubernetes
       - powerline-gitstatus
       # python development: linting/auto-linting
-      - ruff
-      - flake8
       - pyflakes
       - autoflake
-      - poetry
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
     devops:
       # might be needed for development and building
       - build
-      - twine
-      # this is a k8s tool to spin up clusters on your local machine
-      - smol-k8s-lab
       # need this for python notebooks
       - ipykernel
-      # latest jupyter notebooks
-      - jupyterlab
       # classic python notebooks
       # - notebook
       # notebook-driven development platform
       # - nbdev
       # this is for markdown notebook docs and such
       # - quarto
-      # notebooks in the terminal 💚
-      - euporie
     music:
-      # terminal based youtube player
-      - yewtube
       # powerline: supposed to work spotify info
       - dbus
-      # python spotify tui: https://github.com/ceuk/spotui
-      - spotui
 
 # snap:
 #   emoji: "🫰 "
