@@ -1,6 +1,6 @@
 ---
 apt:
-  emoji: "🙃"
+  emoji: "🍥"
   commands:
     update: "sudo apt-get update -y"
     upgrade: "sudo apt-get upgrade -y"
