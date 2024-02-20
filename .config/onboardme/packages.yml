@@ -285,7 +285,7 @@ apt:
       # package manager we don't use right now
       # - snapd
       # package manager for gui apps that we also don't use
-      # - flatpak
+      - flatpak
       # this is for android development
       - adb
       # needed for freetube
@@ -313,32 +313,35 @@ apt:
       - vlc
       - pulseaudio
 
-app_image:
-  emoji: "📱"
+cargo:
+  emoji: "🦀"
   commands:
-    install: ""
+    install: "cargo install "
   packages:
-    x86_64_gui:
-      - https://github.com/bitwarden/clients/releases/download/desktop-v2024.1.0/Bitwarden-2024.1.0-x86_64.AppImage
-      - https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/WezTerm-20230712-072601-f4abf8fd-Ubuntu20.04.AppImage
-      - https://github.com/FreeTubeApp/FreeTube/releases/download/v0.19.1-beta/FreeTube_0.19.1_amd64.AppImage
+    extras:
+      - "russ --git https://github.com/ckampfe/russ"
+    # x86_64_gui:
+    #   - https://github.com/wez/wezterm/releases/download/20230712-072601-f4abf8fd/WezTerm-20230712-072601-f4abf8fd-Ubuntu20.04.AppImage
 
-# flatpak:
-#   emoji: "🫓 "
-#   commands:
-#     setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
-#     list: "flatpak list --user --columns=application"
-#     install: "flatpak install --user --app -y "
-#     search: "flatpak search"
-#   packages:
-#     #  gui:
-#     #    - "org.freedesktop.Platform/x86_64/21.08"
-#     #    password manager
-#     #    - com.bitwarden.desktop
-#     #    youtube alternative
-#     #    - io.freetubeapp.FreeTube
-#     gaming:
-#       - lutris
+
+flatpak:
+  emoji: "🫓 "
+  commands:
+    setup: "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
+    list: "flatpak list --user --columns=application"
+    install: "flatpak install --user --app -y "
+    search: "flatpak search"
+  packages:
+    gui:
+      # - "org.freedesktop.Platform/x86_64/21.08"
+      # password manager
+      - com.bitwarden.desktop
+      # youtube alternative
+      - io.freetubeapp.FreeTube
+      # terminal
+      - org.wezfurlong.wezterm
+    gaming:
+      - lutris
 
 # most of this is actually for powerline, my shell prompt
 pipx:
@@ -348,6 +351,7 @@ pipx:
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     install: "pipx install "
+    search: "poetry search"
   packages:
     default:
       # keep ourselves up to date
@@ -387,6 +391,7 @@ pip3.11:
   emoji: "🐍"
   commands:
     list: "pip3.11 list"
+    search: "poetry search"
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     install: "pip3.11 install --upgrade --user --break-system-packages "
