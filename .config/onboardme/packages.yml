@@ -1,4 +1,82 @@
 ---
+apt:
+  emoji: "🙃"
+  commands:
+    update: "sudo apt-get update -y"
+    upgrade: "sudo apt-get upgrade -y"
+    install: "sudo apt-get install -y --no-install-recommends "
+    cleanup: "sudo apt-get autoremove -y"
+    search: "apt-cache search"
+  packages:
+    default:
+      - bash-completion
+      - build-essential
+      # this is just to keep us up to date
+      - git
+      - curl
+      - python3
+      - python3-dev
+      - python3-pip
+      # needed for python virtual environments, especially for jedi
+      - python3-venv
+      # grep alternative
+      - silversearcher-ag
+      # this should let you use the a yubikey for auth
+      - libpam-yubico
+      # troubleshooting
+      - sysstat
+      # networking and firewall
+      - iptables
+      - net-tools
+      # print a pretty pallete to see all colors the terminal can render
+      - colortest
+      # help fix locale issues
+      - "locales-all"
+      # for installing stuff through ssh - might not be needed with powerline anymore
+      - "openssh-client"
+    devops:
+      - docker-ce
+      # vpn
+      - wireguard
+      # like top but for GPUs
+      - nvtop
+      # was for euporie - notebooks in terminals, but gcc is already installed 
+      # by brew so might be able to remove this
+      # - gcc-11
+    gui:
+      # my favorite font :)
+      - fonts-mononoki
+      # package manager we don't use right now
+      # - snapd
+      # package manager for gui apps that we also don't use
+      - flatpak
+      # this is for android development
+      - adb
+      # needed for freetube
+      - youtube-dl
+      # this lets you install flatpak packages via the gui
+      - gnome-software-plugin-flatpak
+      # gui firewall
+      - gufw
+      # pdf viewer with themeing
+      - zathura
+      # nextcloud is a self hosted file share app
+      - nextcloud-desktop
+      # libreoffice is a FOSS office suite that replaces Google Docs/Office365
+      - libreoffice
+      # GUI interface for pulseaudio, so you can disable audio devices
+      - pavucontrol
+    gaming:
+      # helpful for gaming on linux
+      - "nvidia-driver-libs:i386"
+      - "steam:i386"
+      - wine
+      # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
+      # - exfat-utils
+    music:
+      - vlc
+      - pulseaudio
+
 brew:
   emoji: "🍺"
   commands:
@@ -235,83 +313,6 @@ brew:
       - "wez/wezterm-linuxbrew/wezterm"
 
 
-apt:
-  emoji: "🙃"
-  commands:
-    update: "sudo apt-get update -y"
-    upgrade: "sudo apt-get upgrade -y"
-    install: "sudo apt-get install -y --no-install-recommends "
-    cleanup: "sudo apt-get autoremove -y"
-    search: "apt-cache search"
-  packages:
-    default:
-      - bash-completion
-      - build-essential
-      # this is just to keep us up to date
-      - git
-      - curl
-      - python3
-      - python3-dev
-      - python3-pip
-      # needed for python virtual environments, especially for jedi
-      - python3-venv
-      # grep alternative
-      - silversearcher-ag
-      # this should let you use the a yubikey for auth
-      - libpam-yubico
-      # troubleshooting
-      - sysstat
-      # networking and firewall
-      - iptables
-      - net-tools
-      # print a pretty pallete to see all colors the terminal can render
-      - colortest
-      # help fix locale issues
-      - "locales-all"
-      # for installing stuff through ssh - might not be needed with powerline anymore
-      - "openssh-client"
-    devops:
-      - docker-ce
-      # vpn
-      - wireguard
-      # like top but for GPUs
-      - nvtop
-      # was for euporie - notebooks in terminals, but gcc is already installed 
-      # by brew so might be able to remove this
-      # - gcc-11
-    gui:
-      # my favorite font :)
-      - fonts-mononoki
-      # package manager we don't use right now
-      # - snapd
-      # package manager for gui apps that we also don't use
-      - flatpak
-      # this is for android development
-      - adb
-      # needed for freetube
-      - youtube-dl
-      # this lets you install flatpak packages via the gui
-      - gnome-software-plugin-flatpak
-      # gui firewall
-      - gufw
-      # pdf viewer with themeing
-      - zathura
-      # nextcloud is a self hosted file share app
-      - nextcloud-desktop
-      # libreoffice is a FOSS office suite that replaces Google Docs/Office365
-      - libreoffice
-      # GUI interface for pulseaudio, so you can disable audio devices
-      - pavucontrol
-    gaming:
-      # helpful for gaming on linux
-      - "nvidia-driver-libs:i386"
-      - "steam:i386"
-      - wine
-      # to format disks to exFAT; FAT is too thin for modern windows 10 ISOs
-      # - exfat-utils
-    music:
-      - vlc
-      - pulseaudio
 
 cargo:
   emoji: "🦀"
@@ -343,6 +344,38 @@ flatpak:
       - org.wezfurlong.wezterm
     gaming:
       - lutris
+
+pip3.11:
+  emoji: "🐍"
+  commands:
+    list: "pip3.11 list"
+    search: "poetry search"
+    # this is just till there's a better solution than pipx for Debian Bookworm
+    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
+    install: "pip3.11 install --upgrade --user --break-system-packages "
+  # env_vars:
+  #   PYTHONUSERBASE: ""
+  packages:
+    default:
+      # pip itself needs to be kept up to up2date
+      - pip
+      # powerline: for the internal ip address prompt segment
+      - netifaces
+      # neovim: needed for neovim's python3 interface, I think
+      - pynvim
+      # powerline: (status line for tmux/BASH), this works on linux
+      - "git+https://github.com/jessebot/powerline@patch-2"
+      # these are powerline extensions
+      - powerline-kubernetes
+      - powerline-gitstatus
+      # this is needed to make python respect XDG Base directory specific
+      - xdg_base_dirs
+    devops:
+      # need this for python notebooks
+      - ipykernel
+    music:
+      # powerline: supposed to work spotify info
+      - dbus
 
 # most of this is actually for powerline, my shell prompt
 pipx:
@@ -388,38 +421,6 @@ pipx:
       - spotui
 
 # most of this is actually for powerline, my shell prompt
-pip3.11:
-  emoji: "🐍"
-  commands:
-    list: "pip3.11 list"
-    search: "poetry search"
-    # this is just till there's a better solution than pipx for Debian Bookworm
-    # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
-    install: "pip3.11 install --upgrade --user --break-system-packages "
-  # env_vars:
-  #   PYTHONUSERBASE: ""
-  packages:
-    default:
-      # pip itself needs to be kept up to up2date
-      - pip
-      # powerline: for the internal ip address prompt segment
-      - netifaces
-      # neovim: needed for neovim's python3 interface, I think
-      - pynvim
-      # powerline: (status line for tmux/BASH), this works on linux
-      - "git+https://github.com/jessebot/powerline@patch-2"
-      # these are powerline extensions
-      - powerline-kubernetes
-      - powerline-gitstatus
-      # this is needed to make python respect XDG Base directory specific
-      - xdg_base_dirs
-    devops:
-      # need this for python notebooks
-      - ipykernel
-    music:
-      # powerline: supposed to work spotify info
-      - dbus
-
 # snap:
 #   emoji: "🫰 "
 #   commands:
