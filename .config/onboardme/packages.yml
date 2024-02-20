@@ -317,6 +317,7 @@ cargo:
   emoji: "🦀"
   commands:
     install: "cargo install "
+    search: "cargo search"
   packages:
     extras:
       - "russ --git https://github.com/ckampfe/russ"
