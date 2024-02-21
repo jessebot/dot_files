@@ -86,6 +86,7 @@ brew:
     install: "brew install "
     cleanup: "brew cleanup"
     search: "brew search"
+    info: "brew info"
   packages:
     # these are all for both macOS and Debian
     default:
@@ -313,12 +314,12 @@ brew:
       - "wez/wezterm-linuxbrew/wezterm"
 
 
-
 cargo:
   emoji: "🦀"
   commands:
     install: "cargo install "
     search: "cargo search"
+    list: "cargo install --list"
   packages:
     extras:
       - "russ --git https://github.com/ckampfe/russ"
@@ -342,6 +343,8 @@ flatpak:
       - io.freetubeapp.FreeTube
       # terminal
       - org.wezfurlong.wezterm
+      # spotify app
+      - com.github.KRTirtho.Spotube
     gaming:
       - lutris
 
