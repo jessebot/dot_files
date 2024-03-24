@@ -127,3 +127,6 @@ function khelp {
 function kns() {
     kubecolor config set-context $(kubecolor config current-context) --namespace=$1
 }
+
+# helm shortcuts
+alias helmtmp='helm template . | bat -l yaml'
