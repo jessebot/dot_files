@@ -66,11 +66,11 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {
         "*/templates/*.tpl",
         "*/templates/*.yaml",
+        "*/.github/workflows/*.yaml",
         "*/.github/workflows/*.yml",
-        "*/.github/workflows/*.yaml"
     },
   callback = function()
-        vim.cmd("set filetype=gotmpl")
+        vim.cmd("set filetype=helm")
     end,
 })
 

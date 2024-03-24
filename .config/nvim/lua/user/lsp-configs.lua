@@ -133,7 +133,7 @@ lspconfig.yamlls.setup {
     yaml = {
       schemas = {
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.29.3-standalone-strict/all.json"] = "/manifests/*",
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        ["https://json.schemastore.org/github-workflow.json"] = "*/.github/workflows/*",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/appproject_v1alpha1.json"] = "/*argocd_project.yaml",
