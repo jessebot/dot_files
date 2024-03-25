@@ -35,14 +35,16 @@
 # aliases, mostly fixing typos
 [alias]
     root = rev-parse --show-toplevel
-    psuh = push
-    puhs = push
+    brnach = branch
     commti = commit
     comit = commit
     ocmmit = commit
+    hceckout = checkout
     chckout = checkout
     chekout = checkout
     checkut = checkout
     checkuot = checkout
     chekcout = checkout
     idff = diff
+    psuh = push
+    puhs = push
