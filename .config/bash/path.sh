@@ -24,7 +24,7 @@ if [[ $(uname) == *"Linux"* ]]; then
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin
 
     # pip packages with command line tools install here by default with apt installed python
-    export PATH=$PATH:$HOME/.local/bin
+    export PATH=$HOME/.local/bin:$PATH
 
     # make python do it's cache in ~/.cache/python
     export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
