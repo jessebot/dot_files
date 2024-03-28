@@ -7,6 +7,7 @@ apt:
     install: "sudo apt-get install -y --no-install-recommends "
     cleanup: "sudo apt-get autoremove -y"
     search: "apt-cache search"
+    info: "sudo apt-get show"
   packages:
     default:
       - bash-completion
@@ -356,6 +357,7 @@ pip3.11:
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
     install: "pip3.11 install --upgrade --user --break-system-packages "
+    info: "pip3.11 show"
   # env_vars:
   #   PYTHONUSERBASE: ""
   packages:
