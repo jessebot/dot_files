@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
-local personal_config = require 'personal_wezterm_config.lua'
+local personal_config = require 'personal_wezterm_config'
 
 return {
        -- never play a bell sound
