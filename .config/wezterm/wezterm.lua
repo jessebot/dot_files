@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
+local personal_config = require 'personal_wezterm_config.lua'
 
 return {
        -- never play a bell sound
@@ -161,4 +162,6 @@ return {
          format = '$0',
        },
       },
+
+    ssh_domains = personal_config.ssh_domains
 }
