@@ -35,6 +35,7 @@
 # aliases, mostly fixing typos
 [alias]
     root = rev-parse --show-toplevel
+    ad = add
     brnach = branch
     commti = commit
     comit = commit
