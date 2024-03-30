@@ -134,8 +134,8 @@ lspconfig.yamlls.setup {
       schemas = {
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.29.3-standalone-strict/all.json"] = "/manifests/*",
         ["https://json.schemastore.org/github-workflow.json"] = "*/.github/workflows/*",
-        ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
-        ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
+        ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-crds/argoproj.io/application_v1alpha1.json"] = "/*argocd_app.yaml",
+        ["https://raw.githubusercontent.com/jessebot/CRDs-catalog/update-argocd-crds/argoproj.io/applicationset_v1alpha1.json"] = "/*argocd_appset.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/appproject_v1alpha1.json"] = "/*argocd_project.yaml",
         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/external-secrets.io/externalsecret_v1beta1.json"] = "/external_secrets/*",
         [""] = ""
