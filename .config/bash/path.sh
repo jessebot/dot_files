@@ -127,3 +127,6 @@ export W3M_DIR="~/.local/state/w3m"
 
 # add gcloud to path on macOS because they don't have a homebrew package
 export PATH=$PATH:$HOME/.local/bin/google-cloud-sdk/bin
+
+# make sure we make all yamllint changes for safer linting
+export YAMLLINT_CONFIG_FILE="$XDG_CONFIG_HOME/yamllint/config.yml"
