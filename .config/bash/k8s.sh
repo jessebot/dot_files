@@ -41,18 +41,18 @@ function kgall() {
     echo -e "\n─────────────────────────────────────────────────────────────────"
     echo -e "                           💾 PVCS 💾"
     echo -e "─────────────────────────────────────────────────────────────────\n"
-    kubecolor get pvc 
+    kubecolor get pvc
     echo -e "\n─────────────────────────────────────────────────────────────────"
     echo -e "                          🤫 Secrets 🤫"
     echo -e "─────────────────────────────────────────────────────────────────\n"
-    kubecolor get secrets 
+    kubecolor get secrets
     echo -e "\n─────────────────────────────────────────────────────────────────"
     echo -e "                          ⚙️ ConfigMaps ⚙️"
     echo -e "─────────────────────────────────────────────────────────────────\n"
     kubecolor get configmaps
 }
 
-# print every k8s secret in plain text... very secure 
+# print every k8s secret in plain text... very secure
 function kgsdump() {
     BLUE='\033[1;34m'
     GREEN='\033[1;32m'
@@ -95,6 +95,20 @@ function kgsdumpall() {
         done
     fi
 }
+
+# dump all tls secret manifests in the current namespace into files in current dir
+function kgsdumpalltofile() {
+    BLUE='\033[1;34m'
+    GREEN='\033[1;32m'
+    NC='\033[0m'
+    if [[ $@ == "--help" ]]; then
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}ksgdumpalltofile${NC}\n\nDump all the k8s TLS secrets in the current namespace to files in the current directory"
+    else
+        kubectl get secrets | grep '\-tls' | awk '{print $1}' | xargs -I % sh -c 'kubectl get secret -o yaml % > %.yaml'
+    fi
+}
+
+alias kgsf='kgsdumpalltofile'
 
 # force delete function
 function kfd() {
