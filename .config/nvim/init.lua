@@ -32,7 +32,7 @@ require('user.dashboard')
 -- tab line at top of window for tabs when there's more than one tab :) -- might switch to bufferline
 require('user.barbar')
 
--- status line at bottom of window for cool file facts 
+-- status line at bottom of window for cool file facts
 require('user.lualine')
 
 -- directory tree; can open with :Neotree
@@ -51,7 +51,7 @@ require('user.lsp-configs')
 -- Language server configs for stuff that doesn't have it
 require('user.null_ls')
 
--- autocommand to disable lsp semantic highlighting for parameter/variable in 
+-- autocommand to disable lsp semantic highlighting for parameter/variable in
 -- Dockerfile because it competes with treesitter and is worse
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"Dockerfile", "Dockerfile.*"},
@@ -116,8 +116,8 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
--- delete whitespace - https://vi.stackexchange.com/a/41388
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+-- delete whitespace on save - https://vi.stackexchange.com/a/41388
+vim.api.nvim_create_autocmd({ "BufWritePre", "ExitPre" }, {
     pattern = {"*"},
     callback = function()
       local save_cursor = vim.fn.getpos(".")
