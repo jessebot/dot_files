@@ -43,8 +43,8 @@ return {
            },
          },
        },
- 
-       font_size = 15,
+
+       font_size = 13,
 
        -- window look and feel
        hide_tab_bar_if_only_one_tab = true,
@@ -68,14 +68,14 @@ return {
         },
 
         -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
-        { 
+        {
             key = 'LeftArrow',
             mods = 'OPT',
             action = act.SendString '\x1bb'
         },
 
         -- Make Option-Right equivalent to Alt-f; forward-word
-        { 
+        {
             key = 'RightArrow',
             mods = 'OPT',
             action = act.SendString '\x1bf'
