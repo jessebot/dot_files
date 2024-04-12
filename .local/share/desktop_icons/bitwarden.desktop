@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=2024.4.0
+Type=Application
+Terminal=false
+Exec=/home/friend/.local/bin/Bitwarden-2024.4.0-x86_64.AppImage
+Name=bitwarden
+Comment=Password manager
+Icon=/home/friend/Pictures/icons/bitwarden.png

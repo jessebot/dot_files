@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=20240203-110809-5046fc22
+Type=Application
+Terminal=false
+Exec=/home/linuxbrew/.linuxbrew/bin/wezterm
+Name=wezterm
+Comment=wezterm terminal
+Icon=/home/friend/Pictures/icons/wezterm.svg
