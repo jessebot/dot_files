@@ -102,7 +102,7 @@ function kdumpcerts() {
     GREEN='\033[1;32m'
     NC='\033[0m'
     if [[ $@ == "--help" ]]; then
-        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kdumpcerts${NC}\n\nDump all the k8s TLS secrets in the current namespace to files in the current directory"
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kdumpcerts [-n NAMESPACE]${NC}\n\nDump all the k8s TLS secrets in the current namespace to files in the current directory"
     elif [[ $1 == "-n" ]]; then
         namespace=$2
         echo -e "Dumping all certs for namespace ${GREEN}$namespace${NC} to files."
