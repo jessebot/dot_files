@@ -97,18 +97,23 @@ function kgsdumpall() {
 }
 
 # dump all tls secret manifests in the current namespace into files in current dir
-function kgsdumpalltofile() {
+function kdumpcerts() {
     BLUE='\033[1;34m'
     GREEN='\033[1;32m'
     NC='\033[0m'
     if [[ $@ == "--help" ]]; then
-        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}ksgdumpalltofile${NC}\n\nDump all the k8s TLS secrets in the current namespace to files in the current directory"
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kdumpcerts${NC}\n\nDump all the k8s TLS secrets in the current namespace to files in the current directory"
+    elif [[ $1 == "-n" ]]; then
+        namespace=$2
+        echo -e "Dumping all certs for namespace ${GREEN}$namespace${NC} to files."
+        kubectl get secrets -n $namespace | grep '\-tls' | awk '{print $1}' | xargs -I % sh -c "kubectl get secret -n $namespace -o yaml % > %.yaml"
     else
+        echo "Dumping all certs for current namespace to files."
         kubectl get secrets | grep '\-tls' | awk '{print $1}' | xargs -I % sh -c 'kubectl get secret -o yaml % > %.yaml'
     fi
 }
 
-alias kgsf='kgsdumpalltofile'
+alias kgscerts='kdumpcerts'
 
 # force delete function
 function kfd() {
