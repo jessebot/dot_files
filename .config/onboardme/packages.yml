@@ -158,6 +158,8 @@ brew:
       - argocd
       # KinD (Kubernetes in Docker), for small k8s clusters for testing
       - kind
+      # k3s (slim k8s) in docker
+      - k3d
       # generating SSL certs and random strings
       - openssl@3
       # Bitnami sealed-secrets cli: encrypt secrets in yaml files for gitops
