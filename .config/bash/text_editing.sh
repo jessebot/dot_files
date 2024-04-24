@@ -21,6 +21,15 @@ alias nivm=$EDITOR
 alias ivm=$EDITOR
 alias vmi=$EDITOR
 
+# open vi, vim, or nvim to a specific line
+# example to open a file to line 255
+# lnvim /home/friend/somefile.py:255
+lnvim() {
+    file=$(echo $1 |cut -f 1 -d ":")
+    line=$(echo $1 | cut -f 2 -d ":")
+    $EDITOR +$line $file
+}
+
 # this is useful because I split a lot of files
 alias vsplit="$EDITOR -O"
 
