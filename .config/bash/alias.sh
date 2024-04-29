@@ -72,7 +72,7 @@ alias todo="$EDITOR ~/todo.md"
 alias w3m="w3m -sixel -config ~/.config/w3m/config"
 
 # to run my main dev environment container
-# run the docker container with my local repos dir and local ssh keys as well as my timezone already set 
+# run the docker container with my local repos dir and local ssh keys as well as my timezone already set
 if [[ "$(arch)" == "arm64" ]]; then
     alias do-ide="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:latest-arm"
     alias do-devops="docker run -it --platform=linux/arm64 -it -v ~/repos:/home/friend/repos -v ~/.ssh:/home/friend/.ssh --env 'TZ=Europe/Brussels' --rm jessebot/onboardme:arm-devops"
@@ -125,6 +125,7 @@ alias gitadd='git add'
 alias gti='git'
 alias gt='git'
 alias gtt='git'
+alias girt='git'
 
 # Function to fix gi typos
 function gi {
