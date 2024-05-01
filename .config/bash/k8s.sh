@@ -14,23 +14,29 @@ export SEARCH_TOOL="ag"
 # I always forget that krew isn't a command
 alias krew='kubectl krew'
 
-# cluster context shortcut
 alias k="kubecolor"
 alias ka="kubecolor apply -f"
+# cluster context shortcut
 alias kc="kubecolor config use-context"
+alias kcc="kubecolor config current-context"
 alias kd="kubecolor describe"
 alias ke="kubecolor exec -it"
-alias kg="kubecolor get"
-alias kgcm="kubecolor get configmaps"
 alias kl="kubecolor logs -f"
-alias kcc="$SEARCH_TOOL current $KUBECONFIG"
 alias kdm="kubecolor describe nodes -l kubernetes.io/role=master"
 alias kdn="kubecolor describe nodes -l kubernetes.io/role=node"
+alias kg="kubecolor get"
+alias kgcm="kubecolor get configmaps"
 alias kgm="kubecolor get nodes -l kubernetes.io/role=master"
 alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
+# get cnpg backups
+alias kgpgb="kubecolor get backups.postgresql.cnpg.io -o custom-columns=name:.metadata.name,status:.status.phase"
+# get k8up backups
+alias kgb="kubecolor get backups -o custom-columns=name:.metadata.name,status:.status.phase"
+alias kgp="kubecolor get pods -o custom-columns=name:.metadata.name,status:.status.phase"
+alias kgj="kubecolor get jobs -o custom-columns=name:.metadata.name,status:.status.phase"
 
 # get shell access to nextcloud pod in nextcloud namespace
-alias nextcloud_pod="kg pods -n nextcloud | grep -v postgres | grep -v metrics | tail -n 1 | awk '{print $1}'"
+alias nextcloud_pod="kg pods -n nextcloud -l app.kubernetes.io/component=app,app.kubernetes.io/instance=nextcloud-web-app,app.kubernetes.io/name=nextcloud"
 alias ncsh='ke -n nextcloud $(nextcloud_pod) -- /bin/sh'
 
 function kgall() {
@@ -128,9 +134,14 @@ function khelp {
   echo "kd                  = kubecolor describe";
   echo "ke                  = kubecolor exec -it";
   echo "kg                  = kubecolor get";
-  echo "kgall               = kubecolor get (pods, secrets, configmaps, PVCs)";
   echo "kgcm                = kubecolor get configmaps";
+  echo "kgb                 = kubecolor get backups";
+  echo "kgpgb               = kubecolor get backups.postgresql.cnpg.io";
+  echo "kgp                 = kubecolor get pods with only name and status columns";
+  echo "kgj                 = kubecolor get jobs with only name and status columns";
   echo "kgs                 = kubecolor get secrets";
+
+  echo "kgall               = kubecolor get (pods, secrets, configmaps, PVCs)";
   echo "kl                  = kubecolor logs -f (follow logs for a pod)";
   echo "k8p                 = switch to prod k8 instance";
   echo "k8dw                = switch to data warehouse k8 instance";
