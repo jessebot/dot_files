@@ -12,7 +12,7 @@ esac
 set bell-style none
 
 # python version is subject to change, but really important for pathing
-export PYTHON_VERSION="3.11"
+export PYTHON_VERSION="3.12"
 
 # this just makes howdoi use colors
 export HOWDOI_COLORIZE=1
