@@ -76,7 +76,7 @@ brew:
       # this is installed via apt for linux
       - git
       # python 3.11 already ships with Debian bookworm, only needed for macOS
-      - python@3.11
+      - python@3.12
       # for hiding the top bar on an M1
       - topnotch
       # for testing apis and downloading things
@@ -327,13 +327,13 @@ snap:
       # - scrcpy
 
 # most of this is actually for powerline, my shell prompt
-pip3.11:
+pip3.12:
   emoji: "🐍"
   commands:
-    list: "pip3.11 list"
+    list: "pip3.12 list"
     # this is just till there's a better solution than pipx for Debian Bookworm
     # ref: https://salsa.debian.org/cpython-team/python3/-/blob/master/debian/README.venv
-    install: "pip3.11 install --upgrade --user --break-system-packages "
+    install: "pip3.12 install --upgrade --user --break-system-packages "
   # env_vars:
   #   PYTHONUSERBASE: ""
   packages:
