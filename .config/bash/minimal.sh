@@ -7,7 +7,7 @@ source ~/.config/bash/history.sh
 #                                 Pathing                                    #
 # -------------------------------------------------------------------------- #
 # python version is subject to change
-export PYTHON_VERSION="3.11"
+export PYTHON_VERSION="3.12"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Linux PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
