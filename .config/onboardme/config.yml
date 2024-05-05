@@ -36,7 +36,7 @@ dot_files:
   # this is where the actual git config for your dot files lives
   # it can't live in ~/.git because that will affect _everything_ under ~/
   git_config_dir: "~/.config/dot_files"
-  # !!CAREFUL: runs a `git reset --hard`, which will overwite/delete files in 
+  # !!CAREFUL: runs a `git reset --hard`, which will overwite/delete files in
   # $HOME that conflict with the above defined git repo url and branch.
   # You should run the following to get the files that would be overwritten:
   # onboardme -s dot_files
@@ -50,12 +50,14 @@ package:
     # macOS specific steps
     Darwin:
       - brew
-      - pip3.11
+      - pip3.12
+      - pipx
     # Debian/Ubuntu specific steps
     Linux:
       - apt
       - brew
-      - pip3.11
+      - pip3.12
+      - pipx
       - flatpak
       - snap
   # list of extra existing packages groups to install
@@ -94,7 +96,7 @@ package:
 #       # not sure equivilent on linux 🤔
 #       text_to_speech: true
 #       blurb: "It is snack time!"
-# 
+#
 #     take_breaks:
 #       enabled:
 #         Linux: true
@@ -103,7 +105,7 @@ package:
 #       schedule: "0 * * * *"
 #       text_to_speech: true
 #       blurb: "Take a break from your screen! Consider a glass of water and a short walk to stretch your legs."
-# 
+#
 #   backups:
 #     freetube:
 #       # defaults to daily at 6PM in your local timezone
