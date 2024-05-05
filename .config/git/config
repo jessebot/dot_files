@@ -36,6 +36,7 @@
 [alias]
     root = rev-parse --show-toplevel
     ad = add
+    addd = add
     brnach = branch
     rbanch = branch
     commmit = commit
@@ -44,6 +45,7 @@
     ocmmit = commit
     hceckout = checkout
     chckout = checkout
+    ceckout = checkout
     chekout = checkout
     checkut = checkout
     checkuot = checkout
