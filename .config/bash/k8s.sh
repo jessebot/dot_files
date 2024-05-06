@@ -31,7 +31,7 @@ alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 # get cnpg backups
 alias kgpgb="kubecolor get backups.postgresql.cnpg.io -o custom-columns=name:.metadata.name,status:.status.phase"
 # get k8up backups
-alias kgb="kubecolor get backups -o custom-columns=name:.metadata.name,status:.status.phase"
+alias kgb="kubecolor get backups -o custom-columns=name:.metadata.name,status:.status.conditions[-1].reason"
 alias kgp="kubecolor get pods -o custom-columns=name:.metadata.name,status:.status.phase"
 alias kgj="kubecolor get jobs -o custom-columns=name:.metadata.name,status:.status.conditions[0].type"
 
@@ -57,6 +57,9 @@ function kgall() {
     echo -e "─────────────────────────────────────────────────────────────────\n"
     kubecolor get configmaps
 }
+
+# alias a common typo
+alias gkall="kgall"
 
 # print every k8s secret in plain text... very secure
 function kgsdump() {
