@@ -348,8 +348,6 @@ pip3.12:
       - netifaces
       # neovim: needed for neovim's python3 interface, I think
       - pynvim
-      # this is for git pre-commits
-      - pre-commit
       # powerline: (status line for tmux/BASH), this works on linux
       - "git+https://github.com/jessebot/powerline@patch-2"
       # these are powerline extensions
@@ -362,29 +360,9 @@ pip3.12:
       # - autoflake
       # this is needed to make python respect XDG Base directory specific
       - xdg_base_dirs
-    devops:
-      # might be needed for development and building
-      # - build
-      # - twine
-      # need this for python notebooks
-      # - ipykernel
-      # latest jupyter notebooks
-      # - jupyterlab
-      # classic python notebooks
-      # - notebook
-      # notebook-driven development platform
-      # - nbdev
-      # this is for markdown notebook docs and such
-      # - quarto
-      # notebooks in the terminal 💚
-      # - euporie
     music:
-      # terminal based youtube player
-      - yewtube
       # powerline: supposed to work spotify info
       - dbus
-      # python spotify tui: https://github.com/ceuk/spotui
-      - spotui
 
 pipx:
   emoji: "🐍"
@@ -396,7 +374,25 @@ pipx:
   packages:
     default:
       - onboardme
+      # this is for git pre-commits
+      - pre-commit
     devops:
       - smol-k8s-lab
       - poetry
       - ruff
+      - euporie
+      # need this for python notebooks
+      # - ipykernel
+      # notebook-driven development platform
+      # - nbdev
+      # this is for markdown notebook docs and such
+      # - quarto
+      # notebooks in the terminal 💚
+      # - jupyterlab
+      # classic python notebooks
+      # - notebook
+    music:
+      # terminal based youtube player
+      - yewtube
+      # python spotify tui: https://github.com/ceuk/spotui
+      - spotui
