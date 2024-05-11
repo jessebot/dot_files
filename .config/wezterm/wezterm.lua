@@ -1,8 +1,8 @@
+local personal_config = require 'personal_wezterm_config'
 local wezterm = require 'wezterm'
 local act = wezterm.action
-local personal_config = require 'personal_wezterm_config'
 
-return {
+local config = {
        -- never play a bell sound
        audible_bell = "Disabled",
 
@@ -44,7 +44,7 @@ return {
          },
        },
 
-       font_size = 13,
+       font_size = 12,
 
        -- window look and feel
        hide_tab_bar_if_only_one_tab = true,
@@ -85,6 +85,7 @@ return {
 
        -- default terminal colors
        colors = {
+           -- change color for background to this if you need high contrast: #1b1b29
            background = '#232336',
            foreground = '#c0caf5',
 
@@ -161,7 +162,14 @@ return {
          regex = [[\b\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*\b]],
          format = '$0',
        },
-      },
-
-    ssh_domains = personal_config.ssh_domains
+      }
 }
+
+-- add ssh_domains only if they're present in a local file
+local function add_personal_config()
+    config["ssh_domains"] = personal_config.ssh_domains
+end
+
+pcall(add_personal_config)
+
+return config
