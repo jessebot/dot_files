@@ -131,7 +131,7 @@ brew:
       - vale
       # for k8s helm chart development
       - helm/tap/chart-releaser
-      - helm/tap/chart-testing
+      - chart-testing
       - norwoodj/tap/helm-docs
       # for removing passwords or large files from git history
       - bfg
