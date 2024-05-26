@@ -52,4 +52,4 @@ source ~/.config/bash/lima_completion.sh
 source ~/.config/bash/helm_completion.sh
 source ~/.config/bash/yq_completion.sh
 source ~/.config/bash/kubectl_completion.sh
-source ~/.config/bash/kgsdump_completion.sh
+source ~/.config/bash/k8s_custom_complete.sh
