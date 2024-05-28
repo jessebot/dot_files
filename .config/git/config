@@ -37,6 +37,7 @@
     root = rev-parse --show-toplevel
     ad = add
     addd = add
+    banch = branch
     brnach = branch
     rbanch = branch
     commmit = commit
