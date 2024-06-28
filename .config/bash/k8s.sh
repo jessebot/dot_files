@@ -17,7 +17,6 @@ alias krew='kubectl krew'
 alias k="kubecolor"
 alias ka="kubecolor apply -f"
 # cluster context shortcut
-alias kc="kubecolor config use-context 2> /dev/null || kubecolor config get-contexts"
 alias kcc="kubecolor config get-contexts"
 alias kd="kubecolor describe"
 alias ke="kubecolor exec -it"
@@ -135,6 +134,11 @@ function kfd() {
 # set current namespace function
 function kns() {
     kubecolor config set-context $(kubecolor config current-context) --namespace=$1
+}
+
+# use a new context
+function kc() {
+    kubecolor config use-context $1
 }
 
 # help text for k commands
