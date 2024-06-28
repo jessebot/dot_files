@@ -30,7 +30,7 @@ _kgi_completions()
 
 complete -F _kgi_completions kgi
 
-# kubernetes
+# kubernetes services
 _kgsvc_completions()
 {
   COMPREPLY=($(compgen -W "$(kubecolor get service --no-headers -o custom-columns=Name:.metadata.name)" -- "${COMP_WORDS[1]}"))
@@ -38,10 +38,19 @@ _kgsvc_completions()
 
 complete -F _kgsvc_completions kgsvc
 
-# kubernetes
+# kubernetes configmaps
 _kgcm_completions()
 {
   COMPREPLY=($(compgen -W "$(kubecolor get configmap --no-headers -o custom-columns=Name:.metadata.name)" -- "${COMP_WORDS[1]}"))
 }
 
 complete -F _kgcm_completions kgcm
+
+
+# kubernetes context
+_kc_completions()
+{
+  COMPREPLY=($(compgen -W "$(kubecolor config get-contexts -o name)" -- "${COMP_WORDS[1]}"))
+}
+
+complete -F _kc_completions kc

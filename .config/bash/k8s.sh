@@ -17,8 +17,8 @@ alias krew='kubectl krew'
 alias k="kubecolor"
 alias ka="kubecolor apply -f"
 # cluster context shortcut
-alias kc="kubecolor config use-context"
-alias kcc="kubecolor config current-context"
+alias kc="kubecolor config use-context 2> /dev/null || kubecolor config get-contexts"
+alias kcc="kubecolor config get-contexts"
 alias kd="kubecolor describe"
 alias ke="kubecolor exec -it"
 alias kl="kubecolor logs -f"
