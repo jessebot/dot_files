@@ -29,7 +29,7 @@ alias kgcm="kubecolor get configmaps"
 alias kgm="kubecolor get nodes -l kubernetes.io/role=master"
 alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 # get cnpg backups
-alias kgpgb="kubecolor get backups.postgresql.cnpg.io -o custom-columns=name:.metadata.name,status:.status.phase"
+alias kgpgb="echo -e 'backups.postgresql.cnpg.io\n─────────────────────────────────────────────────────────────────' && kubecolor get backups.postgresql.cnpg.io -o custom-columns=name:.metadata.name,status:.status.phase"
 # get k8up backups
 alias kgb="kubecolor get backups -o custom-columns=name:.metadata.name,status:.status.conditions[-1].reason"
 alias kgp="kubecolor get pods -o custom-columns=name:.metadata.name,status:.status.phase"
