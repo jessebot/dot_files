@@ -79,6 +79,9 @@ function dog {
             rich $1
             echo ""
         fi
+    # if this is a json file, use jq
+    elif [[ "$1" == *".json" ]]; then
+        env cat $1 | jq
     else
         # use batcat - sytnax highlighting + git support and pager
         bat $1 || batcat $1
