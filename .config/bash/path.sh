@@ -7,6 +7,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~ LinuxBrew PATH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 if [[ $(uname) == *"Linux"* ]]; then
     # iptables on debian is here
@@ -130,3 +131,7 @@ export PATH=$PATH:$HOME/.local/bin/google-cloud-sdk/bin
 
 # make sure we make all yamllint changes for safer linting
 export YAMLLINT_CONFIG_FILE="$XDG_CONFIG_HOME/yamllint/config.yml"
+
+# linkerd - service mesh cli for k8s
+export PATH="$PATH:$HOME/.linkerd2/bin"
+
