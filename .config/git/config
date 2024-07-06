@@ -1,19 +1,19 @@
 # set better default colors
 [color]
-    ui = auto
+        ui = auto
 [color "branch"]
-    current = green bold
-    local = green dim
-    remote = blue
+        current = green bold
+        local = green dim
+        remote = blue
 [color "diff"]
-    meta = yellow bold
-    frag = magenta ul
-    old = magenta bold
-    new = green bold
+        meta = yellow bold
+        frag = magenta ul
+        old = magenta bold
+        new = green bold
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = magenta
+        added = green
+        changed = yellow
+        untracked = magenta
 
 # set the default branch to main
 [init]
@@ -26,34 +26,40 @@
 
 # default rebase commits to avoid merge issues
 [pull]
-    rebase = true
+        rebase = true
 
 # personal stuff like gpg config, username, etc
 [includeIf "gitdir:~/"]
-    path = ~/.config/git/personal
+        path = ~/.config/git/personal
 
 # aliases, mostly fixing typos
 [alias]
-    root = rev-parse --show-toplevel
-    ad = add
-    addd = add
-    banch = branch
-    brnach = branch
-    rbanch = branch
-    commmit = commit
-    commti = commit
-    comit = commit
-    ocmmit = commit
-    checkotu = checkout
-    hceckout = checkout
-    chckout = checkout
-    ceckout = checkout
-    chekout = checkout
-    checkut = checkout
-    checkuot = checkout
-    chekcout = checkout
-    cehckout = checkout
-    chckeout = checkout
-    idff = diff
-    psuh = push
-    puhs = push
+        root = rev-parse --show-toplevel
+        ad = add
+        addd = add
+        banch = branch
+        brnach = branch
+        rbanch = branch
+        commmit = commit
+        commti = commit
+        comit = commit
+        ocmmit = commit
+        checkotu = checkout
+        hceckout = checkout
+        chckout = checkout
+        ceckout = checkout
+        chekout = checkout
+        checkut = checkout
+        checkuot = checkout
+        chekcout = checkout
+        cehckout = checkout
+        chckeout = checkout
+        idff = diff
+        psuh = push
+        puhs = push
+[gpg]
+	format = ssh
+[user]
+	signingkey = ~/.ssh/id_rsa.pub
+[commit]
+	gpgsign = true
