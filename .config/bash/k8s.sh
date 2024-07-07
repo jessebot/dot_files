@@ -25,7 +25,6 @@ alias kdm="kubecolor describe nodes -l kubernetes.io/role=master"
 alias kdn="kubecolor describe nodes -l kubernetes.io/role=node"
 alias kg="kubecolor get"
 alias kgi="kubecolor get ingress"
-alias kgcm="kubecolor get configmaps"
 alias kgm="kubecolor get nodes -l kubernetes.io/role=master"
 alias kgn="kubecolor get nodes -l kubernetes.io/role=node"
 # get cnpg backups
@@ -62,6 +61,51 @@ function kgall() {
 
 # alias a common typo
 alias gkall="kgall"
+
+# print every k8s secret in plain text... very secure
+function kgcm() {
+    BLUE='\033[1;34m'
+    GREEN='\033[1;32m'
+    NC='\033[0m'
+    if [ -z $@ ]; then
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgcm CONFIGMAP_NAME${NC}\n\nDumps all the data fields for a given k8s ConfigMap in plain text\n"
+        kubecolor get configmaps
+    elif [[ $@ == "--help" ]]; then
+        echo -e "󰛨  ${BLUE}Usage${NC}: ${GREEN}kgcm CONFIGMAP_NAME${NC}\n\nDumps all the data fields for a given k8s ConfigMap in plain text"
+        kubecolor get configmaps
+    else
+        kubecolor get configmap $@ -o yaml | yq .data
+        # the world isn't ready for this yet.
+        #
+        # input_cm=$@
+        # counter=0
+        # for config_data in `kg configmap $@ -o json | jq .data[]`; do
+        #     echo "counter is $counter"
+        #     parameter=`kg configmap $input_cm -o json | jq .data | jq 'keys' | jq -r .[$counter]`
+        #     echo "parameter is $parameter"
+        #     echo "input cm is $input_cm"
+
+        #     if [[ "$parameter" == "null" ]]; then
+        #         break
+        #     elif [[ "$parameter" == *".json" ]]; then
+        #         echo -e "${BLUE}${parameter}${NC}:"
+        #         kg configmap $input_cm -o json | jq -r --arg PARAMETER "$parameter" '.data[] | select(env.parameter)'
+        #         echo "hi max"
+        #     elif [[ "$parameter" == *".yml" ]] || [[ "$parameter" == *".yaml" ]]; then
+        #         echo -en "${BLUE}${parameter}${NC}:\n"
+        #         kg configmap $@ -o yaml | yq .data | yq $parameter
+        #     elif [[ "$parameter" == *".cfg" ]] || [[ "$parameter" == *".conf" ]]; then
+        #         echo -en "${BLUE}${parameter}${NC}:\n"
+        #         kg configmap $@ -o json | jq .data | jq $parameter | bat -l cfg
+        #     else
+        #         value=`kg configmap $@ -o json | jq .data | jq $parameter`
+        #         echo -en "${BLUE}${parameter}${NC}: ${GREEN}$value${NC}\n"
+        #     fi
+        #     # tick up the counter
+        #     let counter++
+        # done
+    fi
+}
 
 # print every k8s secret in plain text... very secure
 function kgsdump() {
