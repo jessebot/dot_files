@@ -108,11 +108,11 @@ vim.keymap.set(
     { desc = "🔭 Files Recently Opened in Neovim" }
 )
 
--- --------------------------- Diagnostics ------------------------------ 
+-- --------------------------- Diagnostics ------------------------------
 vim.keymap.set(
     "n",
     "<leader>d",
-    "<cmd>TroubleToggle<cr>",
+    "<cmd>Trouble diagnostics toggle<cr>",
     {
         silent = true,
         noremap = true,

@@ -17,12 +17,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Setup the language servers so that they're available for our LSP client.
 local lspconfig = require('lspconfig')
 
--- ansible 
+-- ansible
 lspconfig.ansiblels.setup{
     capabilities = capabilities
 }
 
--- bash 
+-- bash
 lspconfig.bashls.setup{
     capabilities = capabilities
 }
@@ -61,14 +61,15 @@ lspconfig.jsonls.setup {
     settings = {
         json = {
             schemas = {
-        ["https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"] = "/*/fastfetch/config.jsonc"
+        ["https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"] = "/*/fastfetch/config.jsonc",
+        ["https://docs.renovatebot.com/renovate-schema.json"] = "/*/renovate.json"
             }
         }
     }
 }
 
 
--- lua 
+-- lua
 lspconfig.lua_ls.setup{
     settings = {
         Lua = {
@@ -92,7 +93,7 @@ lspconfig.lua_ls.setup{
     },
 }
 
--- markdown 
+-- markdown
 lspconfig.marksman.setup{
    capabilities = capabilities
 }
