@@ -40,6 +40,7 @@
         banch = branch
         brnach = branch
         rbanch = branch
+        cmmit = commit
         commmit = commit
         commti = commit
         comit = commit
