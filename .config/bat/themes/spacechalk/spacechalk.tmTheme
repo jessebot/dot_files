@@ -419,7 +419,10 @@
             <key>name</key>
             <string>Markdown Heading 1</string>
             <key>scope</key>
-            <string>markup.heading.1</string>
+            <string>
+                markup.heading.1,
+                meta.table.header.markdown-gfm
+            </string>
             <key>settings</key>
             <dict>
                 <key>fontStyle</key>
@@ -463,10 +466,44 @@
             <string>markup.heading.4</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string>normal</string>
                 <key>foreground</key>
                 <string>#7aa2f7</string>
+            </dict>
+        </dict>
+        <!-- markdown tables -->
+        <dict>
+            <key>name</key>
+            <string>Markdown Table Cell</string>
+            <key>scope</key>
+            <string>meta.table.markdown-gfm</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#c0caf5</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markdown Table Separator</string>
+            <key>scope</key>
+            <string>punctuation.separator.table-cell.markdown</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#f289f9</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markdown Table HEADER Separator line</string>
+            <key>scope</key>
+            <string>meta.table.header-separator.markdown-gfm</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#f6f76a</string>
             </dict>
         </dict>
     </array>
