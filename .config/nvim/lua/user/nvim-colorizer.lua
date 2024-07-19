@@ -3,4 +3,5 @@ require("colorizer").setup({
 	'lua';
 	'vim';
         'scss';
+        'xml';
 })
