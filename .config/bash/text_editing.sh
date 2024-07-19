@@ -61,30 +61,30 @@ export LESS_TERMCAP_us=$'\e[1;4;35m'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
-# TODO: Write those docs with links to both apps (rich, and bat)
+# build current bat cache to index new themes or syntax
+bat cache --build || batcat cache --build
+
+# TODO:
+# - Write those docs with links to both apps (rich, and bat)
+# Take args:
+#   -H, --head $NUMBER for head
+#   -p                 for enabling pager
+#   -t, --tail $NUMBER for tail
+#
 # Function to use the best syntax highlighting app for the job
 function dog {
-    # if file has more lines than legnth of the terminal use app with pager
-    too_long=false
-    if [ $(wc -l $1 | awk '{print $1}') -gt $(tput lines) ]; then
-        too_long=true
-    fi
-
-    # if this is a markdown or csv file, ALWAYS use rich to print the data
-    if [[ "$1" == *".md" ]] || [[ "$1" == *".csv" ]]; then
-        if $too_long; then
-            # pager allows moving with j for down, k for up, and :q for quit
-            rich --pager $1
-        else
-            rich $1
-            echo ""
-        fi
-    # if this is a json file, use jq
+    # if this is a csv file, ALWAYS use rich to print the data
+    if [[ "$1" == *".csv" ]]; then
+        rich $1
+    # if this is a json file, always use jq to pretty print it
     elif [[ "$1" == *".json" ]]; then
         env cat $1 | jq
+    # if this is a YAML file, always use yq to pretty print and validate it
+    elif [[ "$1" == *".yaml" ]] || [[ "$1" == *".yml" ]]; then
+        env cat $1 | yq
     else
-        # use batcat - sytnax highlighting + git support and pager
-        bat $1 || batcat $1
+        # use batcat - syntax highlighting + git support
+        bat --plain --theme=spacechalk --pager=never $1 || batcat --pager=never --theme=spacechalk --plain $1
     fi
 }
 
