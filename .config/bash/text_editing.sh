@@ -62,7 +62,7 @@ export LESS_TERMCAP_us=$'\e[1;4;35m'
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ cat ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
 # build current bat cache to index new themes or syntax
-bat cache --build || batcat cache --build
+bat cache --build > /dev/null || batcat cache --build > /dev/null
 
 # TODO:
 # - Write those docs with links to both apps (rich, and bat)
