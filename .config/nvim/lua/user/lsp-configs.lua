@@ -108,6 +108,17 @@ lspconfig.ruff_lsp.setup{
     capabilities = capabilities
 }
 
+-- rust
+lspconfig.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true;
+      }
+    }
+  }
+}
+
 -- terraform
 lspconfig.terraformls.setup{
     capabilities = capabilities
