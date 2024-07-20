@@ -2,13 +2,14 @@ require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = {
                       "bash",
+                      "css",
                       "dockerfile",
                       "hcl",
+                      "html",
                       "markdown",
                       "markdown_inline",
-                      "html",
-                      "css",
                       "python",
+                      "rust",
                       "terraform",
                       "toml",
                       "yaml",
@@ -27,8 +28,8 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
 
-    -- NOTE: these're names of parsers and NOT the filetype. 
-    -- e.g. disable highlighting for the `tex` filetype, you need to include 
+    -- NOTE: these're names of parsers and NOT the filetype.
+    -- e.g. disable highlighting for the `tex` filetype, you need to include
     -- `latex` in this list as this is the name of the parser)
     -- list of language that will be disabled
     -- disable = { "toml"},
