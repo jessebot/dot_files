@@ -61,6 +61,17 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     end,
 })
 
+-- autocommand to set the file type to php if the extension is php.tpl
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {
+        "*.php.tpl",
+    },
+  callback = function()
+        vim.cmd("set filetype=php")
+    end,
+})
+
+
 -- autocommand to set the file type to helm based on files ending in tpl
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {
@@ -73,7 +84,6 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
         vim.cmd("set filetype=helm")
     end,
 })
-
 -- autocommand to set the file type to cfg for wireguard configs
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*/etc/wireguard/wg*.conf"},
