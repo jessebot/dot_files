@@ -55,6 +55,7 @@ alias raw="env cat"
 alias cat="bat"
 alias gs="git status"
 
+# not sure what this does...
 if which lesspipe 1>/dev/null 2>&1; then
     eval "`lesspipe`"
 fi
