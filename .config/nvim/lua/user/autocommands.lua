@@ -19,26 +19,23 @@ autocmd({ "BufWritePre", "ExitPre" }, {
 -- Autocommands to run immediately for SPECIFIC file types --
 -------------------------------------------------------------
 
--- disable lsp semantic highlighting for parameter/variable in
--- Dockerfile because it competes with treesitter and is worse
+-- set file type to dockerfile if Dockerfile anywhere in the file name
 autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"Dockerfile", "Dockerfile.*"},
+  pattern = {"Dockerfile*"},
   callback = function()
-        vim.api.nvim_set_hl(0, '@lsp.type.parameter.dockerfile', {})
-        vim.api.nvim_set_hl(0, '@lsp.type.variable.dockerfile', {})
-    end,
+      vim.bo.filetype = "dockerfile"
+  end,
 })
 
 -- set the file type to PHP if the extension is php.tpl
 autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {
         "*.php.tpl",
-    },
+  },
   callback = function()
-        vim.cmd("set filetype=php")
-    end,
+      vim.bo.filetype = "php"
+  end,
 })
-
 
 -- set the file type to helm based on files ending in tpl
 autocmd({"BufEnter", "BufWinEnter"}, {
@@ -49,8 +46,8 @@ autocmd({"BufEnter", "BufWinEnter"}, {
         "*/.github/workflows/*.yml",
     },
   callback = function()
-        vim.cmd("set filetype=helm")
-    end,
+      vim.bo.filetype = "helm"
+  end,
 })
 
 -- this catches any stray helm files that weren't where we expected them
@@ -67,40 +64,31 @@ autocmd("FileType", {
 autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*/etc/wireguard/wg*.conf"},
   callback = function()
-        vim.cmd("set filetype=cfg")
-    end,
+      vim.bo.filetype = "cfg"
+  end,
 })
 
--- set the file type to YAML for kubeconfig
+-- set the file type to YAML for kubeconfig files and helm chart lock files
 autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*/kubeconfig", "*/.config/kube/config"},
+  pattern = {"*/kubeconfig", "*/.config/kube/config", "Chart.lock"},
   callback = function()
-        vim.cmd("set filetype=yaml")
-    end,
+      vim.bo.filetype = "yaml"
+  end,
 })
 
 -- set the file type to CSS for tcss
 autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"*.tcss"},
   callback = function()
-        vim.cmd("set filetype=scss")
-        vim.cmd("set foldmethod=indent")
-    end,
+      vim.bo.filetype = "scss"
+      vim.cmd("set foldmethod=indent")
+  end,
 })
 
--- only set 81 character line limit on Python, Go, YAML, and shell scripts
+-- set TXT (text files) to filetype markdown
 autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.py", "*.go", "*.yaml", "*.sh"},
+  pattern = {"*.txt"},
   callback = function()
-        -- highlighted column 81, to keep lines to average terminal size
-        vim.opt.colorcolumn = '81'
-    end,
-})
-
--- enable spellcheck for TXT (text) and MD (markdown) filetypes
-autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.txt", "*.md", "*.mdx"},
-  callback = function()
-        vim.cmd("set spell")
-    end,
+      vim.bo.filetype = "markdown"
+  end,
 })
