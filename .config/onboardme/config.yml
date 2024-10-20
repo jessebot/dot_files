@@ -19,6 +19,7 @@ steps:
     - packages
     - font_setup
     - neovim_setup
+    - cron
     - sudo_setup
   # linux specific steps
   Linux:
@@ -26,6 +27,7 @@ steps:
     - packages
     - font_setup
     - neovim_setup
+    - cron
     - group_setup
 
 dot_files:
