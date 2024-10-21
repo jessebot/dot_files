@@ -44,7 +44,6 @@ logs
 .tldr
 .tldrc
 go
-cron
 
 # --------- I do not know what this is ------------------
 .CFUserTextEncoding
