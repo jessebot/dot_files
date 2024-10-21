@@ -108,6 +108,15 @@ These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onbo
   </details>
 
   <details>
+    <summary><code>cron</code></summary>
+
+   <blockquote>
+   local cron jobs for alarms, package manager updates, and ide package updates
+   </blockquote>
+
+  </details>
+
+  <details>
     <summary><code>fastfetch</code></summary>
 
   <blockquote>
@@ -555,15 +564,6 @@ These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onbo
   </blockquote>
 
   </details>
-</details>
-
-<details>
-  <summary><code>.cron</code></summary>
-
-   <blockquote>
-  local cron jobs for alarms, and package manager updates
-    </blockquote>
-
 </details>
 
 <details>
