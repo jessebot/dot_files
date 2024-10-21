@@ -1,4 +1,6 @@
-# file structure
+# ⏰ Cron jobs
+
+### file structure
 
 ```
  .
@@ -38,7 +40,8 @@ The "user" is the user that ran last ran `onboardme`. All scripts below will run
 
 `user/lunch.sh` gets run at lunch time (noon) by the user, for reminders.
 `user/daily.sh` gets run daily by the user right after lunch reminders.
-- Currently, this runs `onboardme` for updating dot files, OS packages (brew, pip3.12, pipx), fonts, and neovim packages.
+- Currently, this runs `onboardme` for updating dot files, OS packages (brew, pip3.12, pipx), and neovim packages.
+- also updates `tldr`
 `user/go_home.sh` gets run at at 17:10 to remind the user to go home.
 `user/self_care_time.sh` gets run at at 22:30 to remind the user to do self care tasks.
 
