@@ -1,1 +1,1 @@
-0 12 * * * ~/.config/cron/daily_root.sh
+0 12 * * * ~/.config/cron/root/daily.sh
