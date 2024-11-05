@@ -1,4 +1,3 @@
-local personal_config = require 'personal_wezterm_config'
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
@@ -166,8 +165,18 @@ local config = {
 }
 
 -- add ssh_domains only if they're present in a local file
+local function file_exists(name)
+    local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+
 local function add_personal_config()
-    config["ssh_domains"] = personal_config.ssh_domains
+    local home = os.getenv("HOME")
+    if file_exists(home .. '/.config/wezterm/personal_wezterm_config.lua') then
+        local personal_config = require 'personal_wezterm_config'
+        config["ssh_domains"] = personal_config.ssh_domains
+    end
 end
 
 pcall(add_personal_config)
