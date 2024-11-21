@@ -92,3 +92,11 @@ autocmd({"BufEnter", "BufWinEnter"}, {
       vim.bo.filetype = "markdown"
   end,
 })
+
+-- set file type to groovy if Jenkinsfile is the file name
+autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"Jenkinsfile"},
+  callback = function()
+      vim.bo.filetype = "groovy"
+  end,
+})
