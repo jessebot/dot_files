@@ -380,6 +380,8 @@ pipx:
       - smol-k8s-lab
       - poetry
       - ruff
+      # aws stuff
+      - aws-mfa
       - euporie
       # need this for python notebooks
       # - ipykernel
