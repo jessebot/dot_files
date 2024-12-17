@@ -123,6 +123,8 @@ brew:
       # colima is a docker desktop replacement
       - colima
     devops:
+      # for calculating IPs
+      - ipcalc
       # this install the minio cli called mc
       - minio-mc
       # for github actions linting
@@ -214,6 +216,7 @@ brew:
       - spotifyd
       # spotify TUI: written in rust, but no longer maintained
       # - spotify-tui
+      # music thing
       - nuclear
     Linux:
       # linuxbrew asks for this
