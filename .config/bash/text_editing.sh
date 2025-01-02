@@ -75,16 +75,17 @@ bat cache --build > /dev/null || batcat cache --build > /dev/null
 function dog {
     # if this is a csv file, ALWAYS use rich to print the data
     if [[ "$1" == *".csv" ]]; then
-        rich $1
+        rich "$1"
     # if this is a json file, always use jq to pretty print it
     elif [[ "$1" == *".json" ]]; then
-        env cat $1 | jq
+        env cat "$1" | jq
     # if this is a YAML file, always use yq to pretty print and validate it
+    # if using yq fails, fall back to bat & redirect errors to the shadow realm
     elif [[ "$1" == *".yaml" ]] || [[ "$1" == *".yml" ]]; then
-        env cat $1 | yq
+        env cat "$1" | yq 2> /dev/null || bat --plain --theme=spacechalk --pager=never "$1"
     else
         # use batcat - syntax highlighting + git support
-        bat --plain --theme=spacechalk --pager=never $1 || batcat --pager=never --theme=spacechalk --plain $1
+        bat --plain --theme=spacechalk --pager=never "$1" || batcat --pager=never --theme=spacechalk --plain "$1"
     fi
 }
 
