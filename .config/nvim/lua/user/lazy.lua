@@ -427,6 +427,7 @@ local plugins = {
         'nvim-tree/nvim-web-devicons',
         lazy = true
     },
+    -- preview markdown in a web browser
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
