@@ -49,7 +49,7 @@ local config = {
        hide_tab_bar_if_only_one_tab = true,
        window_decorations = "RESIZE",
        -- transparency
-       window_background_opacity = 0.95,
+       window_background_opacity = 0.96,
 
        -- key mappings
        keys = {
@@ -119,7 +119,7 @@ local config = {
                '#dadfe0',
            },
            brights = {
-               '#282727',
+               '#6e77a0',
                '#fe8ea2',
                '#97e178',
                '#f6f76a',
