@@ -4,6 +4,14 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Autocommands to run immediately for for ALL file types --
 ------------------------------------------------------------
 
+-- on file enter, set file format to unix
+autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*"},
+    callback = function()
+      vim.cmd("set fileformat=unix")
+    end,
+})
+
 -- delete whitespace on save - https://vi.stackexchange.com/a/41388
 autocmd({ "BufWritePre", "ExitPre" }, {
     pattern = {"*"},
@@ -13,7 +21,6 @@ autocmd({ "BufWritePre", "ExitPre" }, {
       vim.fn.setpos(".", save_cursor)
     end,
 })
-
 
 -------------------------------------------------------------
 -- Autocommands to run immediately for SPECIFIC file types --
