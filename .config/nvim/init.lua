@@ -7,6 +7,8 @@
 -- turn off the mouse scrolling because it is confusing
 vim.opt.mousescroll = 'ver:0,hor:0'
 
+vim.api.nvim_command('set ff=unix')
+
 -- line numbers for debugging and screen sharing, takes up 4 columns
 vim.opt.number = true
 vim.opt.numberwidth = 4
