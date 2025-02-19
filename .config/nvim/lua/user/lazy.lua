@@ -130,7 +130,7 @@ local plugins = {
     {
         'nvim-neo-tree/neo-tree.nvim',
         cmd = "Neotree",
-        branch = "v2.x",
+        branch = "v3.x",
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-tree/nvim-web-devicons',
@@ -391,6 +391,18 @@ local plugins = {
             },
         },
 
+    },
+    -- add gitbrowse to easily get git url
+    {
+      "folke/snacks.nvim",
+      ---@type snacks.Config
+      opts = {
+        gitbrowse = {
+          -- your gitbrowse configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      }
     },
     -- --------------------- Language Specific Stuff -------------------------
     {

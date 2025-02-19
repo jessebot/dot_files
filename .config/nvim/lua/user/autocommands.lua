@@ -6,7 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- on file enter, set file format to unix
 autocmd({"BufEnter", "BufWinEnter"}, {
-    pattern = {"*"},
+    pattern = {"*yaml", "*yml", "*tpl"},
     callback = function()
       vim.cmd("set fileformat=unix")
     end,
