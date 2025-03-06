@@ -97,7 +97,7 @@ brew:
       # this lets us resize windows on macOS
       - "--cask rectangle"
       # Default browser
-      - "--cask firefox"
+      - "--cask librewolf"
       # File server cloud replacement
       - "--cask nextcloud"
       # wezterm: Rust based terminal the is cross-OS-compatible
