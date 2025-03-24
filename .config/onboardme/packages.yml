@@ -26,6 +26,8 @@ brew:
       - zellij
       # recording a shell session to share with others
       - asciinema
+      # scientific calculator
+      - numbat
       # TUI IDE is neovim
       - neovim
       # fuzzy search, helps with completion and searching
