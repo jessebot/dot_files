@@ -120,6 +120,8 @@ brew:
       - "--cask protonvpn"
       # libreoffice is a FOSS office suite that replaces Google Docs/Office365
       - "--cask libreoffice"
+      # program to keep mac from sleeping
+      - "--cask caffeine"
       # docker desktop
       # - "--cask docker"
       # colima is a docker desktop replacement
