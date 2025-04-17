@@ -1,16 +1,17 @@
 -- installs lazy, our plugin manager for neovim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system(
-        {
-            "git",
-            "clone",
-            "--filter=blob:none",
-            "https://github.com/folke/lazy.nvim.git",
-            "--branch=stable", -- latest stable release
-            lazypath,
-        }
-    )
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -32,8 +33,7 @@ local plugins = {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
         dependencies = {
-            'nvim-tree/nvim-web-devicons',
-            'MunifTanjim/nui.nvim',
+            'nvim-tree/nvim-web-devicons'
         }
     },
     -- -------------------------- status line --------------------------------
@@ -322,15 +322,11 @@ local plugins = {
         -- :TSUpdateSync updates the nvim_treesitter compiling stuff
         build = {":MasonUpdate", ":TSUpdateSync"}
     },
-    -- this helps bridge the gap between additional linters that don't have proper LSP
+    -- may replace null-ls since was deprecated
+    -- https://github.com/nvimdev/guard.nvim
     {
-        'jose-elias-alvarez/null-ls.nvim',
+        'nvimdev/guard.nvim'
     },
-    -- may replace null-ls since it is being deprecated
-    --{
-    --    'nvimdev/guard.nvim'
-    --},
-
     -- Diagnostics with leader key + d
     {
         "folke/trouble.nvim",
