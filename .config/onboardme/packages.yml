@@ -10,6 +10,7 @@ brew:
   packages:
     # these are all for both macOS and Debian
     default:
+      - nvim
       # neither macos nor debian are using 3.12 yet, so we have to install it
       - python@3.12
       # for working w/ images and making lsimg work, is lorg
