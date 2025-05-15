@@ -99,7 +99,9 @@ brew:
       # - "--cask font-hack-nerd-font"
       # this lets us resize windows on macOS
       - "--cask rectangle"
-      # Default browser
+      # default browser (cool looking firefox fork)
+      - "--cask zen"
+      # back browser (regular firefox fork)
       - "--cask librewolf"
       # File server cloud replacement
       - "--cask nextcloud"
