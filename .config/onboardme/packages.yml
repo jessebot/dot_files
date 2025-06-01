@@ -129,6 +129,8 @@ brew:
       # - "--cask docker"
       # colima is a docker desktop replacement
       - colima
+      # opensource video editor
+      - kdenlive
     devops:
       # for calculating IPs
       - ipcalc
