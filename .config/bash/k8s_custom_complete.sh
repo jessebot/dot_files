@@ -41,7 +41,7 @@ complete -F _kgsvc_completions kgsvc
 # kubernetes configmaps
 _kgcm_completions()
 {
-  COMPREPLY=($(compgen -W "$(kubecolor get configmap --no-headers -o custom-columns=Name:.metadata.name)" -- "${COMP_WORDS[1]}"))
+  COMPREPLY=($(compgen -W "$(kubecolor get configmap --no-headers -o custom-columns=name:.metadata.name)" -- "${COMP_WORDS[1]}"))
 }
 
 complete -F _kgcm_completions kgcm
@@ -54,3 +54,11 @@ _kc_completions()
 }
 
 complete -F _kc_completions kc
+
+# kubernetes crds
+_kdcrd_completions()
+{
+  COMPREPLY=($(compgen -W "$(kubecolor get crds --no-headers -o custom-columns=name:.metadata.name)" -- "${COMP_WORDS[1]}"))
+}
+
+complete -F _kdcrd_completions kdcrd

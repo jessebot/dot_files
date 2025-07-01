@@ -185,6 +185,11 @@ function kc() {
     kubecolor config use-context $1
 }
 
+# delete a crd by removing finalizers
+function kdcrd() {
+    kubectl patch crd/$1 -p '{"metadata":{"finalizers":[]}}' --type=merge
+}
+
 # help text for k commands
 function khelp {
   BLUE='\033[1;34m'
@@ -195,6 +200,7 @@ function khelp {
   echo -e "${GREEN}kc${NC}                 = ${BLUE}k config use-context (switch to EXACT cluster name)${NC}";
   echo -e "${GREEN}kcc${NC}                = ${BLUE}echoes current k8s cluster you're connecting to${NC}";
   echo -e "${GREEN}kd${NC}                 = ${BLUE}k describe${NC}";
+  echo -e "${GREEN}kdcrd${NC}              = ${BLUE}k delete crd${NC}";
   echo -e "${GREEN}kdn${NC}                = ${BLUE}k describe nodes${NC}";
   echo -e "${GREEN}ke${NC}                 = ${BLUE}k exec -it${NC}";
   echo -e "${GREEN}kfd${NC} <pod-name>     = ${BLUE}k force delete of pod${NC}";
