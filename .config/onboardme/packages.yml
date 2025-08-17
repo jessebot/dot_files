@@ -92,6 +92,8 @@ brew:
       - bash
       # so that bash completion stuff works
       - "bash-completion@2"
+      # FOSS video editoring software https://kdenlive.org/
+      - kdenlive
       # fonts
       - "--cask homebrew/cask-fonts/font-mononoki"
       - "--cask homebrew/cask-fonts/font-symbols-only-nerd-font"
