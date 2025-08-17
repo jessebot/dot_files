@@ -453,6 +453,11 @@ local plugins = {
         vim.g.mkdp_filetypes = { "markdown" }
       end,
       ft = { "markdown" },
+    },
+    -- highing for grafana alloy file
+    -- https://github.com/grafana/vim-alloy
+    {
+        "michaelPotter/vim-alloy"
     }
 
 }
