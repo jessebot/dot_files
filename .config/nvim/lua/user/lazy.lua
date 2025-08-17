@@ -454,10 +454,10 @@ local plugins = {
       end,
       ft = { "markdown" },
     },
-    -- highing for grafana alloy file
-    -- https://github.com/grafana/vim-alloy
+    -- highlighting for grafana alloy files
+    -- fork of: https://github.com/grafana/vim-alloy
     {
-        "michaelPotter/vim-alloy"
+        "jessebot/vim-alloy"
     }
 
 }
