@@ -157,7 +157,7 @@ lspconfig.yamlls.setup {
 }
 
 -- change the diagnostic signs to be nerdfonts
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
