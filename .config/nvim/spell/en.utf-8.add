@@ -125,3 +125,6 @@ SeaweedFS
 argo
 kubelet
 Infisical
+ApplicationSet
+Kargo
+RBAC
