@@ -181,6 +181,7 @@ local plugins = {
     -- code refence at top of window
     {
     'Bekaboo/dropbar.nvim',
+    version = "v14.1.0",
     -- optional, but required for fuzzy finder support
     dependencies = {
       'nvim-telescope/telescope-fzf-native.nvim',
@@ -455,11 +456,11 @@ local plugins = {
       ft = { "markdown" },
     },
     -- highlighting for grafana alloy files
-    -- fork of: https://github.com/grafana/vim-alloy
+    -- was "grafana/vim-alloy" https://github.com/grafana/vim-alloy
+    -- now we use the below fork
     {
-        "jessebot/vim-alloy"
+       "jessebot/vim-alloy"
     }
-
 }
 
 require("lazy").setup(plugins)
