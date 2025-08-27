@@ -43,7 +43,7 @@ local config = {
          },
        },
 
-       font_size = 12,
+       font_size = 14,
 
        -- window look and feel
        hide_tab_bar_if_only_one_tab = true,
