@@ -5,7 +5,8 @@ export arg="$1"
 
 # if `which $arg` returns an exit code that isn't 0 (success)
 if ! which "$arg"; then
-    echo -e "\e[33mLooks like there's no $arg command in your PATH, maybe it's an alias?\e[0m 🤔"
+    # this is for debugging
+    # echo -e "\e[33mLooks like there's no $arg command in your PATH, maybe it's an alias?\e[0m 🤔"
 
     # grab all the user's aliases
     bash -i -c "alias -p > /tmp/aliases" > /dev/null
@@ -18,7 +19,7 @@ if ! which "$arg"; then
         # get the actual locaiton of the aliased command
         location=$(which "$alias_command")
 
-        echo -e "\nwe found an alias to $alias_command which lives in:"
+        echo -e "Looks like \e[33m$arg\e[0m is aliased to \e[33m$alias_command\e[0m which lives in:"
         echo -e "\e[32m$location\e[0m"
     else
         echo -e "\e[31mCouldn't find an alias for the command either\e[0m 😔"
