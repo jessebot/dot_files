@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+# script by jessebot, License: AGPL
 
 export arg="$1"
-export user=$(whoami)
 
 # if `which $arg` returns an exit code that isn't 0 (success)
 if ! which "$arg"; then
@@ -13,15 +13,14 @@ if ! which "$arg"; then
     # then check if there's an alias for that command
     alias_command=$(grep "$arg=" /tmp/aliases | cut -d '=' -f 2 | tr -d "'")
 
-    # if there's an alias, print it
+    # if the above alias check returned anything
     if [[ $alias_command ]]; then
-        echo -e "\nwe found an alias to $alias_command which lives in:"
-
+        # get the actual locaiton of the aliased command
         location=$(which "$alias_command")
 
+        echo -e "\nwe found an alias to $alias_command which lives in:"
         echo -e "\e[32m$location\e[0m"
     else
         echo -e "\e[31mCouldn't find an alias for the command either\e[0m 😔"
     fi
 fi
-
