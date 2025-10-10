@@ -8,7 +8,7 @@ if ! which "$arg"; then
     echo -e "\e[33mLooks like there's no $arg command in your PATH, maybe it's an alias?\e[0m 🤔"
 
     # grab all the user's aliases
-    sudo -u $user bash -i -c "alias -p > /tmp/aliases" > /dev/null
+    bash -i -c "alias -p > /tmp/aliases" > /dev/null
 
     # then check if there's an alias for that command
     alias_command=$(grep "$arg=" /tmp/aliases | cut -d '=' -f 2 | tr -d "'")
