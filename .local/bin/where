@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+export arg="$1"
+export user=$(whoami)
+
+# if `which $arg` returns an exit code that isn't 0 (success)
+if ! which "$arg"; then
+    echo -e "\e[33mLooks like there's no $arg command in your PATH, maybe it's an alias?\e[0m 🤔"
+
+    # grab all the user's aliases
+    sudo -u $user bash -i -c "alias -p > /tmp/aliases" > /dev/null
+
+    # then check if there's an alias for that command
+    alias_command=$(grep "$arg=" /tmp/aliases | cut -d '=' -f 2 | tr -d "'")
+
+    # if there's an alias, print it
+    if [[ $alias_command ]]; then
+        echo -e "\nwe found an alias to $alias_command which lives in:"
+
+        location=$(which "$alias_command")
+
+        echo -e "\e[32m$location\e[0m"
+    else
+        echo -e "\e[31mCouldn't find an alias for the command either\e[0m 😔"
+    fi
+fi
+
