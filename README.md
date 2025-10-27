@@ -1,6 +1,9 @@
+> [!WARNING]
+> These dot files now live at [git.smallhack.org/jessebot/dot_files](https://git.smallhack.org/jessebot/dot_files) and they are mirrored to [codeberg.org/jessebot/dot_files](https://codeberg.org/jessebot/dot_files)
+
 # Dot Files for `onboardme`
 
-These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onboardme), but also the personal dot files of [@cloudymax](https://github.com/cloudymax) and [@jessebot](https://github.com/jessebot). The directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible. We update these pretty regularly.
+These are the chosen defaults for [`onboardme`](https://github.com/jessebot/onboardme), but also the personal dot files of [@cloudymax](https://github.com/cloudymax) and [@jessebot](https://github.com/jessebot). The directories/files are installed to your home directory and follow the [XDG Base Directory Spec] as closely as possible. We update these pretty regularly, but not at this repo anymore
 
 ### Sections for each config directory/file
 
